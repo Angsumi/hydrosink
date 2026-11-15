@@ -1,31 +1,40 @@
-# HydroSink analysis configuration. All thresholds are pre-registered here; change only with a decision-log entry.
+# HydroSink analysis configuration (v1, 2026-11-15). Change only with a decision-log entry in research_plan.md.
 inclusion:
   library_strategy: WGS
   library_source: METAGENOMIC
   platforms: [ILLUMINA]
-  min_read_length: 100
-  min_read_pairs_after_qc: 1000000
-  max_host_fraction: 0.5
-  exclude_host_taxids: [9606, 10090, 10116]   # human, mouse, rat
-  exclude_keywords: [amplicon, 16S, metatranscriptom, virome, "in vitro", enrichment, monensin, bromochloromethane, "3-NOP", nitrate supplement]
-subsample_pairs: 5000000
-depth_sensitivity_pairs: 2000000
+  ena_gut_taxa: [749906, 1861841, 3394441, 506599, 1510822, 506600, 1602388]  # gut, feces, rumen, bovine gut, pig gut, chicken gut, fish gut metagenome
+  host: vertebrate (ENA lineage contains Vertebrata), excluding 9606/10090/10116
+  min_read_count: 5000000
+  min_mean_read_length: 100
+  one_run_per_biosample: deepest
+  exclude_regex: see EXCL_KW in scripts/01_build_inventory.py (treatments, inhibitors, in vitro, controls, non-WGS)
+p1:
+  studies: [PRJNA1068803, PRJNA657455]
+  foregut_chambers: [rumen, reticulum, omasum]
+  hindgut_chambers: [cecum, colon, rectum]
+p2:
+  sample_type: feces
+  cap_runs_per_species: 10   # round-robin across studies
+  seed: 20261115
+sequencing_subsample:
+  strategy: stream first N forward reads (R1) from ENA fastq.gz   # bandwidth ~4 MB/s; Greening protocol uses forward reads only
+  n_reads: 5000000
+  gate1b_check: head-of-file vs full-file random subsample on >=1 run
+qc: {fastp: "-q 20 -l 100 --trim_poly_g --cut_tail"}
+reference:
+  greening_db: {doi: 10.26180/14431208.v1, md5: 986f248875b26ca378b59e58517665e6, genes: 51, all_kept_as_competitors: true}
+  normaliser: UniRef90 full-length (1000-1600 aa) bacterial RpoB, UniProt 2026_04, md5 e8dc40f448d90783511ac1ac82bc00c5; RpoC kept as decoy
 diamond:
-  min_identity: 50
-  min_query_cover: 80
-  max_evalue: 1.0e-10
-  sensitivity: --fast
-  id_sensitivity_grid: [40, 50, 60]
-markers:            # KEGG orthologs used to seed reference sets; hydrogenases via HydDB classes
-  methanogenesis: {mcrA: K00399}
-  acetogenesis:   {acsB: K14138}
-  sulfate_red:    {dsrA: K11180, dsrB: K11181}
-  nitrite_amm:    {nrfA: K03385}
-  nitrate_red:    {narG: K00370, napA: K02567}
-  fumarate_red:   {frdA: K00244}
-  hydrogenases:   [NiFe_1, NiFe_3, NiFe_4, FeFe_A1, FeFe_A3, FeFe_B, FeFe_C]
-normalisation: genome_equivalents_singlem
-pseudocount_rule: half_min_nonzero_per_marker
-fermentation_site_levels: [foregut, hindgut, simple, avian_caecal]
+  mode: blastx --fast --max-target-seqs 1 --max-hsps 1
+  query_cover: 80
+  evalue: 1.0e-5
+  per_gene_identity: "50 default; 60 FeFe, NiFe group 4, nuoF, coxL, rbcL, amoA, nxrA, mmoX; 70 psbA, isoA, atpA, aro, ygfK; 75 hbsT; 80 psaA; 40 rho (Ricci et al. 2025 Nat Commun)"
+  sensitivity_identity_shift: [-10, +10]
+abundance: copies per genome = RPKM(gene) / RPKM(rpoB); RPKM uses mean reference length of the family
+outcomes:
+  primary: ALR_acet = ln((acsB + c) / (mcrA + c)), c = half the minimum non-zero cpg per marker across all samples
+  secondary: [ALR_resp = ln((dsrA+asrA+nrfA+narG+napA+frdA + c)/(mcrA + c)), NiFe_1 uptake hydrogenases, FeFe_B fermentative hydrogenase]
+fermentation_site_levels: [foregut, hindgut, avian_caecal, simple]
 fdr_q: 0.05
 seed: 20261115

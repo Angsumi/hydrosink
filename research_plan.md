@@ -7,7 +7,9 @@ Last updated: 2026-11-15 · Status legend used throughout:
 **[TO VERIFY]** recalled or partially sourced; must be checked before use ·
 **[NOT DONE]** nothing produced yet.
 
-> **Honest status.** Phases 1–2 (literature and dataset feasibility) were carried out with web search. Phase 3 code is written and has been checked for syntax. Only the Python random-effects module was test-run, and only on **synthetic data** to confirm the code works. **No public metagenome has been downloaded or profiled, and no biological result exists yet.** The execution environment had no network route to ENA/SRA (the HTTPS proxy refused the connection with a 403), and no R installation.
+> **Status update (session 2, 2026-11-15, evening).** This machine has network access to ENA/NCBI and R 4.6. The environment, the marker database, the inventory and the PRISMA screening are now **executed** (see §6). Quantification has started with Gate 1a (the positive control). **No biological result is reported anywhere until it is computed.** The note below describes session 1.
+>
+> **Honest status (session 1).** Phases 1–2 (literature and dataset feasibility) were carried out with web search. Phase 3 code is written and has been checked for syntax. Only the Python random-effects module was test-run, and only on **synthetic data** to confirm the code works. **No public metagenome has been downloaded or profiled, and no biological result exists yet.** The execution environment had no network route to ENA/SRA (the HTTPS proxy refused the connection with a 403), and no R installation.
 
 ---
 
@@ -112,3 +114,32 @@ Planned framing: association vs causation (gene potential ≠ flux, so we will c
 2. `python analysis/scripts/01_build_inventory.py --seeds datasets.csv --metalog <metalog_animal.tsv> --out analysis/inventory.tsv`, then complete the PRISMA log
 3. Build the marker database (`03_build_marker_db.md`); validate it on Li 2025 to reproduce their ~12× acsB cecum enrichment (positive control)
 4. Run steps 02 → 05; fill in the manuscript Results from the outputs only
+
+
+---
+
+## 6. Execution log — session 2 (2026-11-15)
+
+### 6.1 Infrastructure (verified)
+- 16 cores, 26 GB RAM, 199 GB disk. Env `hydrosink` (micromamba; `analysis/env/environment.yml`): DIAMOND 2.1.10, fastp 0.23.4, R 4.3 with metafor 4.8.0, MCMCglmm 2.36, ape, phytools, glmmTMB.
+- **Bandwidth ≈ 4 MB/s total** (ENA HTTPS ≈ 0.6–1 MB/s per stream; NCBI S3 similar in aggregate). Full runs (7–18 GB) are infeasible at scale.
+
+### 6.2 Decisions (added to the decision log)
+| Date | Decision | Reason |
+|---|---|---|
+| 2026-11-15 | Continue H1; no restart of Phase 1 | 2026 novelty re-check (web + Europe PMC) found no cross-vertebrate, phylogenetically controlled functional test of H₂-sink partitioning |
+| 2026-11-15 | Stream the first 5 M **forward** reads per run instead of a full download | Bandwidth; the Greening-lab protocol counts forward reads only. Head-of-file bias is tested in Gate 1b |
+| 2026-11-15 | Marker reference = Greening lab compiled DB v3 (51 genes, all kept as competitors) instead of a from-scratch KOfam build | Curated, published, CC-BY; per-gene read thresholds published (Ricci et al. 2025, L23) |
+| 2026-11-15 | Normaliser = full-length UniRef90 bacterial RpoB (5,635 seqs) with RpoC decoys; rejected UniRef50 because its representatives were mostly fragments (median 135 aa) | Accurate gene length for RPKM; copies per genome = RPKM/RPKM_rpoB. Archaeal RpoB is not included (a slight overestimate of copies per genome where archaea are abundant; noted as a limitation) |
+| 2026-11-15 | SingleM and brms dropped; MCMCglmm used for the phylogenetic GLMM | Install reliability; equivalent model class |
+| 2026-11-15 | P2 restricted to **faecal** samples | The only sample type shared by all hosts; gut-content samples go into a sensitivity analysis |
+| 2026-11-15 | P1 restricted to fermentation chambers (rumen, reticulum, omasum vs cecum, colon, rectum) | Abomasum and small intestine are not fermentation chambers and have low biomass / high host DNA |
+| 2026-11-15 | Runs without a structured `host_tax_id` (48,106) excluded | Free-text hosts are mostly domestic pig, cattle, chicken and dog, which are already at the species cap. Limitation: rare wild hosts labelled only in free text are missed |
+| 2026-11-15 | Fermentation site assigned by lineage rules (Stevens & Hume 1998, L20) **before** any marker data were inspected | Blinded predictor assignment; `analysis/scripts/01b_host_traits.py` |
+
+### 6.3 Executed outputs so far
+- `analysis/db/` — hydrosink.faa / .dmnd / labels.tsv (170,171 sequences); sources and md5 values in config.yaml.
+- `analysis/inventory/raw/` — ENA candidate run tables (search date in `search_date.txt`), host lineages, EltonTraits.
+- `analysis/inventory/host_traits.tsv` — 488 vertebrate host taxa with fermentation site and diet.
+- `analysis/prisma_log.tsv` — screening counts: 136,708 runs identified → 19,385 eligible → P2 930 faecal runs (183 species, 189 studies); P1 254 runs (53 animals; Li 2025 + Xie 2021).
+- Pipeline smoke test (SRR28204437, goat cecum): 5 M reads, 4,704 rpoB reads; acsB 0.30 and mcrA 0.004 copies per genome. 14 min wall time (12 min streaming, 2 min DIAMOND on 14 threads).
