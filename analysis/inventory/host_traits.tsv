@@ -1,0 +1,489 @@
+host_tax_id	name	runs	studies	sci_name	rank	vclass	fermentation_site	site_basis	binomial	diet_key	plant_pct	animal_pct	diet_class
+9913	Bos taurus	14625	125	Bos taurus	species	Mammalia	foregut	rule	Bos taurus	Bos taurus	100.0	0.0	herbivore
+9031	Gallus gallus	7957	79	Gallus gallus	species	Aves	avian_caecal	rule	Gallus gallus	Gallus gallus	70.0	30.0	herbivore
+9823	Sus scrofa	5693	95	Sus scrofa	species	Mammalia	hindgut	rule	Sus scrofa	Sus scrofa	70.0	30.0	herbivore
+9796	Equus caballus	2865	9	Equus caballus	species	Mammalia	hindgut	rule	Equus caballus	Equus caballus	100.0	0.0	herbivore
+9825	Sus scrofa domesticus	2178	27	Sus scrofa domesticus	subspecies	Mammalia	hindgut	rule	Sus scrofa	Sus scrofa	70.0	30.0	herbivore
+9615	Canis lupus familiaris	1838	23	Canis lupus familiaris	subspecies	Mammalia	simple	rule	Canis lupus	Canis lupus	0.0	100.0	carnivore
+9103	Meleagris gallopavo	1746	9	Meleagris gallopavo	species	Aves	avian_caecal	rule	Meleagris gallopavo	Meleagris gallopavo	80.0	20.0	herbivore
+89462	Bubalus bubalis	791	7	Bubalus bubalis	species	Mammalia	foregut	rule	Bubalus bubalis	Bubalus bubalis	100.0	0.0	herbivore
+8030	Salmo salar	611	5	Salmo salar	species	Actinopterygii	simple	rule	Salmo salar	Salmo salar			NA
+7955	Danio rerio	570	9	Danio rerio	species	Actinopterygii	simple	rule	Danio rerio	Danio rerio			NA
+9940	Ovis aries	543	25	Ovis aries	species	Mammalia	foregut	rule	Ovis aries	Ovis aries	100.0	0.0	herbivore
+9685	Felis catus	461	14	Felis catus	species	Mammalia	simple	rule	Felis catus	Felis silvestris	0.0	100.0	carnivore
+447135	Myodes glareolus	399	4	Myodes glareolus	species	Mammalia	hindgut	rule	Myodes glareolus	Myodes glareolus	80.0	20.0	herbivore
+9925	Capra hircus	348	61	Capra hircus	species	Mammalia	foregut	rule	Capra hircus	Capra hircus	100.0	0.0	herbivore
+9646	Ailuropoda melanoleuca	308	12	Ailuropoda melanoleuca	species	Mammalia	simple	rule	Ailuropoda melanoleuca	Ailuropoda melanoleuca	90.0	10.0	herbivore
+60711	Chlorocebus sabaeus	243	1	Chlorocebus sabaeus	species	Mammalia	hindgut	rule	Chlorocebus sabaeus	Chlorocebus sabaeus	60.0	40.0	omnivore
+130825	Ochotona curzoniae	225	5	Ochotona curzoniae	species	Mammalia	hindgut	rule	Ochotona curzoniae	Ochotona curzoniae	100.0	0.0	herbivore
+38626	Phascolarctos cinereus	210	3	Phascolarctos cinereus	species	Mammalia	hindgut	rule	Phascolarctos cinereus	Phascolarctos cinereus	100.0	0.0	herbivore
+9544	Macaca mulatta	207	11	Macaca mulatta	species	Mammalia	hindgut	rule	Macaca mulatta	Macaca mulatta	90.0	10.0	herbivore
+10114		198	2	Rattus	genus	Mammalia	hindgut	rule	Rattus	Rattus			NA
+9541	Macaca fascicularis	192	8	Macaca fascicularis	species	Mammalia	hindgut	rule	Macaca fascicularis	Macaca fascicularis	50.0	50.0	omnivore
+9903	Bos	188	8	Bos	genus	Mammalia	foregut	rule	Bos	Bos			NA
+82168	Emys orbicularis	179	1	Emys orbicularis	species	Testudines	simple	rule	Emys orbicularis	Emys orbicularis			NA
+37032	Suricata suricatta	178	2	Suricata suricatta	species	Mammalia	simple	rule	Suricata suricatta	Suricata suricatta	10.0	90.0	carnivore
+9689	Panthera leo	162	1	Panthera leo	species	Mammalia	simple	rule	Panthera leo	Panthera leo	0.0	100.0	carnivore
+64176	Podarcis muralis	154	1	Podarcis muralis	species	Lepidosauria	simple	rule	Podarcis muralis	Podarcis muralis			NA
+9915	Bos indicus	146	3	Bos indicus	species	Mammalia	foregut	rule	Bos indicus	Bos taurus	100.0	0.0	herbivore
+1934190	Hoolock tianxing	145	1	Hoolock tianxing	species	Mammalia	hindgut	rule	Hoolock tianxing	Hoolock tianxing			NA
+129247	Apodemus draco	145	2	Apodemus draco	species	Mammalia	hindgut	rule	Apodemus draco	Apodemus draco	80.0	20.0	herbivore
+9430	Desmodus rotundus	143	1	Desmodus rotundus	species	Mammalia	simple	rule	Desmodus rotundus	Desmodus rotundus	0.0	100.0	carnivore
+55149	Sciurus vulgaris	140	2	Sciurus vulgaris	species	Mammalia	hindgut	rule	Sciurus vulgaris	Sciurus vulgaris	100.0	0.0	herbivore
+30521	Bos grunniens	139	9	Bos grunniens	species	Mammalia	foregut	rule	Bos grunniens	Bos grunniens	100.0	0.0	herbivore
+69293	Gasterosteus aculeatus	124	1	Gasterosteus aculeatus	species	Actinopterygii	simple	rule	Gasterosteus aculeatus	Gasterosteus aculeatus			NA
+72004	Bos mutus	122	1	Bos mutus	species	Mammalia	foregut	rule	Bos mutus	Bos mutus			NA
+30640	Sciurus carolinensis	122	1	Sciurus carolinensis	species	Mammalia	hindgut	rule	Sciurus carolinensis	Sciurus carolinensis	100.0	0.0	herbivore
+10181	Heterocephalus glaber	114	2	Heterocephalus glaber	species	Mammalia	hindgut	rule	Heterocephalus glaber	Heterocephalus glaber	100.0	0.0	herbivore
+9863	Cervus nippon	112	2	Cervus nippon	species	Mammalia	foregut	rule	Cervus nippon	Cervus nippon	100.0	0.0	herbivore
+465719	Trachypithecus poliocephalus	104	2	Trachypithecus poliocephalus	species	Mammalia	foregut	rule	Trachypithecus poliocephalus	Trachypithecus poliocephalus	100.0	0.0	herbivore
+256425	Lissotriton helveticus	101	1	Lissotriton helveticus	species	Amphibia	simple	rule	Lissotriton helveticus	Lissotriton helveticus			NA
+59462	Myotis bechsteinii	96	1	Myotis bechsteinii	species	Mammalia	simple	rule	Myotis bechsteinii	Myotis bechsteinii	0.0	100.0	carnivore
+61862	Plecotus auritus	95	2	Plecotus auritus	species	Mammalia	simple	rule	Plecotus auritus	Plecotus auritus	0.0	100.0	carnivore
+59542	Pseudois nayaur	91	2	Pseudois nayaur	species	Mammalia	foregut	rule	Pseudois nayaur	Pseudois nayaur	100.0	0.0	herbivore
+30415	Grus japonensis	91	2	Grus japonensis	species	Aves	avian_caecal	rule	Grus japonensis	Grus japonensis	40.0	60.0	omnivore
+211834	Lutjanus argentimaculatus	90	1	Lutjanus argentimaculatus	species	Actinopterygii	simple	rule	Lutjanus argentimaculatus	Lutjanus argentimaculatus			NA
+61622	Rhinopithecus roxellana	79	5	Rhinopithecus roxellana	species	Mammalia	foregut	rule	Rhinopithecus roxellana	Rhinopithecus roxellana	100.0	0.0	herbivore
+9337	Trichosurus vulpecula	76	2	Trichosurus vulpecula	species	Mammalia	hindgut	rule	Trichosurus vulpecula	Trichosurus vulpecula	100.0	0.0	herbivore
+9595	Gorilla gorilla gorilla	75	4	Gorilla gorilla gorilla	subspecies	Mammalia	hindgut	rule	Gorilla gorilla	Gorilla gorilla	100.0	0.0	herbivore
+77151	Mustela nigripes	72	1	Mustela nigripes	species	Mammalia	simple	rule	Mustela nigripes	Mustela nigripes	0.0	100.0	carnivore
+53275	Rhizomys pruinosus	72	1	Rhizomys pruinosus	species	Mammalia	hindgut	rule	Rhizomys pruinosus	Rhizomys pruinosus	100.0	0.0	herbivore
+54180	Trachypithecus francoisi	71	3	Trachypithecus francoisi	species	Mammalia	foregut	rule	Trachypithecus francoisi	Trachypithecus francoisi	100.0	0.0	herbivore
+52224	Shinisaurus crocodilurus	69	1	Shinisaurus crocodilurus	species	Lepidosauria	simple	rule	Shinisaurus crocodilurus	Shinisaurus crocodilurus			NA
+52169		69	1	Teratoscincus przewalskii	species	Lepidosauria	simple	rule	Teratoscincus przewalskii	Teratoscincus przewalskii			NA
+59538	Pantholops hodgsonii	68	1	Pantholops hodgsonii	species	Mammalia	foregut	rule	Pantholops hodgsonii	Pantholops hodgsonii	100.0	0.0	herbivore
+2485929	Sus scrofa vittatus	63	1	Sus scrofa vittatus	subspecies	Mammalia	hindgut	rule	Sus scrofa	Sus scrofa	70.0	30.0	herbivore
+232653	Psittacula echo	61	1	Psittacula echo	species	Aves	simple	rule	Psittacula echo	Psittacula echo			NA
+90521	Podarcis gaigeae	61	1	Podarcis gaigeae	species	Lepidosauria	simple	rule	Podarcis gaigeae	Podarcis gaigeae			NA
+9678	Crocuta crocuta	60	1	Crocuta crocuta	species	Mammalia	simple	rule	Crocuta crocuta	Crocuta crocuta	0.0	100.0	carnivore
+8128	Oreochromis niloticus	59	5	Oreochromis niloticus	species	Actinopterygii	simple	rule	Oreochromis niloticus	Oreochromis niloticus			NA
+8022	Oncorhynchus mykiss	59	1	Oncorhynchus mykiss	species	Actinopterygii	simple	rule	Oncorhynchus mykiss	Oncorhynchus mykiss			NA
+39030	Apodemus agrarius	58	3	Apodemus agrarius	species	Mammalia	hindgut	rule	Apodemus agrarius	Apodemus agrarius	80.0	20.0	herbivore
+9822	Sus	56	2	Sus	genus	Mammalia	hindgut	rule	Sus	Sus			NA
+48560	Capreolus pygargus	55	3	Capreolus pygargus	species	Mammalia	foregut	rule	Capreolus pygargus	Capreolus pygargus	100.0	0.0	herbivore
+8404	Lithobates pipiens	55	1	Lithobates pipiens	species	Amphibia	simple	rule	Lithobates pipiens	Lithobates pipiens			NA
+56787	Perisoreus infaustus	54	2	Perisoreus infaustus	species	Aves	simple	rule	Perisoreus infaustus	Perisoreus infaustus	50.0	50.0	omnivore
+27706	Micropterus salmoides	53	3	Micropterus salmoides	species	Actinopterygii	simple	rule	Micropterus salmoides	Micropterus salmoides			NA
+302094		52	1	Bufotes pewzowi	species	Amphibia	simple	rule	Bufotes pewzowi	Bufotes pewzowi			NA
+8389	Anaxyrus americanus	51	1	Anaxyrus americanus	species	Amphibia	simple	rule	Anaxyrus americanus	Anaxyrus americanus			NA
+9838	Camelus dromedarius	50	3	Camelus dromedarius	species	Mammalia	foregut	rule	Camelus dromedarius	Camelus dromedarius	100.0	0.0	herbivore
+68730	Cuon alpinus	50	1	Cuon alpinus	species	Mammalia	simple	rule	Cuon alpinus	Cuon alpinus	0.0	100.0	carnivore
+9794	Equus hemionus	50	4	Equus hemionus	species	Mammalia	hindgut	rule	Equus hemionus	Equus hemionus	100.0	0.0	herbivore
+9983	Lepus europaeus	50	1	Lepus europaeus	species	Mammalia	hindgut	rule	Lepus europaeus	Lepus europaeus	100.0	0.0	herbivore
+9644	Ursus arctos	50	1	Ursus arctos	species	Mammalia	simple	rule	Ursus arctos	Ursus arctos	80.0	20.0	herbivore
+7936		50	1	Anguilla anguilla	species	Actinopterygii	simple	rule	Anguilla anguilla	Anguilla anguilla			NA
+215358	Larimichthys crocea	49	3	Larimichthys crocea	species	Actinopterygii	simple	rule	Larimichthys crocea	Larimichthys crocea			NA
+7959	Ctenopharyngodon idella	49	3	Ctenopharyngodon idella	species	Actinopterygii	simple	rule	Ctenopharyngodon idella	Ctenopharyngodon idella			NA
+146632	Petauroides volans	48	1	Petauroides volans	species	Mammalia	hindgut	rule	Petauroides volans	Petauroides volans	100.0	0.0	herbivore
+9556	Papio cynocephalus	48	1	Papio cynocephalus	species	Mammalia	hindgut	rule	Papio cynocephalus	Papio cynocephalus	80.0	20.0	herbivore
+52775	Ciconia boyciana	47	1	Ciconia boyciana	species	Aves	simple	rule	Ciconia boyciana	Ciconia boyciana	0.0	100.0	carnivore
+670907	Rana kukunoris	45	4	Rana kukunoris	species	Amphibia	simple	rule	Rana kukunoris	Rana kukunoris			NA
+74359	Podarcis pityusensis	44	1	Podarcis pityusensis	species	Lepidosauria	simple	rule	Podarcis pityusensis	Podarcis pityusensis			NA
+9793	Equus asinus	43	3	Equus asinus	species	Mammalia	hindgut	rule	Equus asinus	Equus asinus	100.0	0.0	herbivore
+65481	Podarcis filfolensis	43	1	Podarcis filfolensis	species	Lepidosauria	simple	rule	Podarcis filfolensis	Podarcis filfolensis			NA
+407171	Lasiopodomys brandtii	43	1	Lasiopodomys brandtii	species	Mammalia	hindgut	rule	Lasiopodomys brandtii	Lasiopodomys brandtii	100.0	0.0	herbivore
+79684	Microtus ochrogaster	40	2	Microtus ochrogaster	species	Mammalia	hindgut	rule	Microtus ochrogaster	Microtus ochrogaster	100.0	0.0	herbivore
+685728	Pristis pectinata	40	2	Pristis pectinata	species	Chondrichthyes	simple	rule	Pristis pectinata	Pristis pectinata			NA
+1088058	Cervus albirostris	40	1	Cervus albirostris	species	Mammalia	foregut	rule	Cervus albirostris	Cervus albirostris			NA
+100897	Alexandromys fortis	40	1	Alexandromys fortis	species	Mammalia	hindgut	rule	Alexandromys fortis	Alexandromys fortis			NA
+7965	Hypophthalmichthys nobilis	39	1	Hypophthalmichthys nobilis	species	Actinopterygii	simple	rule	Hypophthalmichthys nobilis	Hypophthalmichthys nobilis			NA
+106732	Chelonoidis porteri	39	1	Chelonoidis porteri	species	Testudines	hindgut	rule	Chelonoidis porteri	Chelonoidis porteri			NA
+219595	Cygnus cygnus	38	2	Cygnus cygnus	species	Aves	avian_caecal	rule	Cygnus cygnus	Cygnus cygnus	100.0	0.0	herbivore
+8167	Perca flavescens	38	1	Perca flavescens	species	Actinopterygii	simple	rule	Perca flavescens	Perca flavescens			NA
+65382	Cervus canadensis nannodes	37	26	Cervus canadensis nannodes	subspecies	Mammalia	foregut	rule	Cervus canadensis	Cervus canadensis			NA
+9783	Elephas maximus	36	13	Elephas maximus	species	Mammalia	hindgut	rule	Elephas maximus	Elephas maximus	100.0	0.0	herbivore
+146133	Eospalax fontanierii cansus	36	1	Eospalax fontanierii cansus	subspecies	Mammalia	hindgut	rule	Eospalax fontanierii	Eospalax fontanierii	100.0	0.0	herbivore
+670348	Mergus squamatus	36	2	Mergus squamatus	species	Aves	avian_caecal	rule	Mergus squamatus	Mergus squamatus	0.0	100.0	carnivore
+56216	Neotoma lepida	35	1	Neotoma lepida	species	Mammalia	hindgut	rule	Neotoma lepida	Neotoma lepida	90.0	10.0	herbivore
+30374	Calotriton asper	35	1	Calotriton asper	species	Amphibia	simple	rule	Calotriton asper	Calotriton asper			NA
+9837	Camelus bactrianus	34	3	Camelus bactrianus	species	Mammalia	foregut	rule	Camelus bactrianus	Camelus bactrianus	100.0	0.0	herbivore
+9657	Lutra lutra	34	2	Lutra lutra	species	Mammalia	simple	rule	Lutra lutra	Lutra lutra	0.0	100.0	carnivore
+9542	Macaca fuscata	33	2	Macaca fuscata	species	Mammalia	hindgut	rule	Macaca fuscata	Macaca fuscata	90.0	10.0	herbivore
+349709	Niviventer excelsior	32	1	Niviventer excelsior	species	Mammalia	hindgut	rule	Niviventer excelsior	Niviventer excelsior	80.0	20.0	herbivore
+343526	Schizopyge nukiangensis	32	1	Schizopyge nukiangensis	species	Actinopterygii	simple	rule	Schizopyge nukiangensis	Schizopyge nukiangensis			NA
+54292	Apodemus flavicollis	31	2	Apodemus flavicollis	species	Mammalia	hindgut	rule	Apodemus flavicollis	Apodemus flavicollis	80.0	20.0	herbivore
+33616	Gymnogyps californianus	31	1	Gymnogyps californianus	species	Aves	simple	rule	Gymnogyps californianus	Gymnogyps californianus	0.0	100.0	carnivore
+8846	Anser indicus	31	4	Anser indicus	species	Aves	avian_caecal	rule	Anser indicus	Anser indicus	100.0	0.0	herbivore
+130843	Ochotona thibetana	30	1	Ochotona thibetana	species	Mammalia	hindgut	rule	Ochotona thibetana	Ochotona thibetana	100.0	0.0	herbivore
+43332	Elaphurus davidianus	30	1	Elaphurus davidianus	species	Mammalia	foregut	rule	Elaphurus davidianus	Elaphurus davidianus	100.0	0.0	herbivore
+9090	Coturnix	30	1	Coturnix	genus	Aves	avian_caecal	rule	Coturnix	Coturnix			NA
+10036	Mesocricetus auratus	30	1	Mesocricetus auratus	species	Mammalia	hindgut	rule	Mesocricetus auratus	Mesocricetus auratus	90.0	10.0	herbivore
+9821	Suidae	30	1	Suidae	family	Mammalia	hindgut	rule	Suidae	Suidae			NA
+51338	Castor canadensis	29	29	Castor canadensis	species	Mammalia	hindgut	rule	Castor canadensis	Castor canadensis	100.0	0.0	herbivore
+42528	Piaractus mesopotamicus	29	1	Piaractus mesopotamicus	species	Actinopterygii	simple	rule	Piaractus mesopotamicus	Piaractus mesopotamicus			NA
+334908	Larimichthys polyactis	28	1	Larimichthys polyactis	species	Actinopterygii	simple	rule	Larimichthys polyactis	Larimichthys polyactis			NA
+43455	Cathartes aura	28	1	Cathartes aura	species	Aves	simple	rule	Cathartes aura	Cathartes aura	0.0	100.0	carnivore
+1049777		28	1	Enhydra lutris nereis	subspecies	Mammalia	simple	rule	Enhydra lutris	Enhydra lutris	0.0	100.0	carnivore
+30668	Lasiorhinus latifrons	28	2	Lasiorhinus latifrons	species	Mammalia	hindgut	rule	Lasiorhinus latifrons	Lasiorhinus latifrons	100.0	0.0	herbivore
+344906	Hydropotes inermis argyropus	28	1	Hydropotes inermis argyropus	subspecies	Mammalia	foregut	rule	Hydropotes inermis	Hydropotes inermis	100.0	0.0	herbivore
+7998	Ictalurus punctatus	27	2	Ictalurus punctatus	species	Actinopterygii	simple	rule	Ictalurus punctatus	Ictalurus punctatus			NA
+83287	Tympanuchus phasianellus	27	1	Tympanuchus phasianellus	species	Aves	avian_caecal	rule	Tympanuchus phasianellus	Tympanuchus phasianellus	90.0	10.0	herbivore
+128390	Nipponia nippon	27	1	Nipponia nippon	species	Aves	simple	rule	Nipponia nippon	Nipponia nippon	0.0	100.0	carnivore
+33614	Coragyps atratus	27	1	Coragyps atratus	species	Aves	simple	rule	Coragyps atratus	Coragyps atratus	0.0	100.0	carnivore
+9798	Equus przewalskii	27	2	Equus przewalskii	species	Mammalia	hindgut	rule	Equus przewalskii	Equus przewalskii			NA
+3370984	Anteliomys custos	27	1	Anteliomys custos	species	Mammalia	hindgut	rule	Anteliomys custos	Anteliomys custos			NA
+99837	Spermophilus dauricus	27	1	Spermophilus dauricus	species	Mammalia	hindgut	rule	Spermophilus dauricus	Spermophilus dauricus	80.0	20.0	herbivore
+1260386	Kyphosus sydneyanus	26	1	Kyphosus sydneyanus	species	Actinopterygii	simple	rule	Kyphosus sydneyanus	Kyphosus sydneyanus			NA
+90522	Podarcis milensis	26	1	Podarcis milensis	species	Lepidosauria	simple	rule	Podarcis milensis	Podarcis milensis			NA
+862701	Sorex bedfordiae	26	1	Sorex bedfordiae	species	Mammalia	simple	rule	Sorex bedfordiae	Sorex bedfordiae	0.0	100.0	carnivore
+9773	Megaptera novaeangliae	25	2	Megaptera novaeangliae	species	Mammalia	simple	rule	Megaptera novaeangliae	Megaptera novaeangliae	0.0	100.0	carnivore
+8409	Pelophylax nigromaculatus	24	2	Pelophylax nigromaculatus	species	Amphibia	simple	rule	Pelophylax nigromaculatus	Pelophylax nigromaculatus			NA
+265035		24	1	Scutiger boulengeri	species	Amphibia	simple	rule	Scutiger boulengeri	Scutiger boulengeri			NA
+10088	Mus	24	1	Mus	genus	Mammalia	hindgut	rule	Mus	Mus			NA
+933992	Chanodichthys erythropterus	24	1	Chanodichthys erythropterus	species	Actinopterygii	simple	rule	Chanodichthys erythropterus	Chanodichthys erythropterus			NA
+232655	Psittacula eupatria	24	1	Psittacula eupatria	species	Aves	simple	rule	Psittacula eupatria	Psittacula eupatria	100.0	0.0	herbivore
+356809	Acrossocheilus fasciatus	24	3	Acrossocheilus fasciatus	species	Actinopterygii	simple	rule	Acrossocheilus fasciatus	Acrossocheilus fasciatus			NA
+77214	Eidolon helvum	24	1	Eidolon helvum	species	Mammalia	simple	rule	Eidolon helvum	Eidolon helvum	100.0	0.0	herbivore
+61621	Rhinopithecus bieti	24	1	Rhinopithecus bieti	species	Mammalia	foregut	rule	Rhinopithecus bieti	Rhinopithecus bieti	100.0	0.0	herbivore
+9549	Macaca sp.	24	1	Macaca sp.	species	Mammalia	hindgut	rule	Macaca sp.	Macaca sp.			NA
+93162	Marmota flaviventris	23	1	Marmota flaviventris	species	Mammalia	hindgut	rule	Marmota flaviventris	Marmota flaviventris	100.0	0.0	herbivore
+103693		23	1	Phrynocephalus axillaris	species	Lepidosauria	simple	rule	Phrynocephalus axillaris	Phrynocephalus axillaris			NA
+29139	Vombatus ursinus	23	1	Vombatus ursinus	species	Mammalia	hindgut	rule	Vombatus ursinus	Vombatus ursinus	100.0	0.0	herbivore
+9598	Pan troglodytes	22	2	Pan troglodytes	species	Mammalia	hindgut	rule	Pan troglodytes	Pan troglodytes	90.0	10.0	herbivore
+2008792	Macaca mulatta vestita	22	2	Macaca mulatta vestita	subspecies	Mammalia	hindgut	rule	Macaca mulatta	Macaca mulatta	90.0	10.0	herbivore
+9004	Tympanuchus cupido	22	1	Tympanuchus cupido	species	Aves	avian_caecal	rule	Tympanuchus cupido	Tympanuchus cupido	80.0	20.0	herbivore
+29092	Microtus agrestis	21	1	Microtus agrestis	species	Mammalia	hindgut	rule	Microtus agrestis	Microtus agrestis	100.0	0.0	herbivore
+103437		21	1	Bufo tibetanus	species	Amphibia	simple	rule	Bufo tibetanus	Bufo tibetanus			NA
+214933	Apodemus latronum	21	1	Apodemus latronum	species	Mammalia	hindgut	rule	Apodemus latronum	Apodemus latronum	80.0	20.0	herbivore
+8839	Anas platyrhynchos	21	2	Anas platyrhynchos	species	Aves	avian_caecal	rule	Anas platyrhynchos	Anas platyrhynchos	40.0	60.0	omnivore
+141262	Andrias davidianus	20	1	Andrias davidianus	species	Amphibia	simple	rule	Andrias davidianus	Andrias davidianus			NA
+156760	Spheniscus mendiculus	20	1	Spheniscus mendiculus	species	Aves	simple	rule	Spheniscus mendiculus	Spheniscus mendiculus	0.0	100.0	carnivore
+36306	Sceloporus grammicus	20	1	Sceloporus grammicus	species	Lepidosauria	simple	rule	Sceloporus grammicus	Sceloporus grammicus			NA
+8855	Cairina moschata	20	1	Cairina moschata	species	Aves	avian_caecal	rule	Cairina moschata	Cairina moschata	50.0	50.0	omnivore
+9770	Balaenoptera physalus	20	1	Balaenoptera physalus	species	Mammalia	simple	rule	Balaenoptera physalus	Balaenoptera physalus	0.0	100.0	carnivore
+1212470	Setophaga striata	20	1	Setophaga striata	species	Aves	simple	rule	Setophaga striata	Setophaga striata			NA
+9899	Ammotragus lervia	20	1	Ammotragus lervia	species	Mammalia	foregut	rule	Ammotragus lervia	Ammotragus lervia	100.0	0.0	herbivore
+2804203	Semnopithecus schistaceus	20	1	Semnopithecus schistaceus	species	Mammalia	foregut	rule	Semnopithecus schistaceus	Semnopithecus schistaceus	100.0	0.0	herbivore
+47230	Microtus arvalis	19	1	Microtus arvalis	species	Mammalia	hindgut	rule	Microtus arvalis	Microtus arvalis	100.0	0.0	herbivore
+37011	Pan troglodytes troglodytes	18	1	Pan troglodytes troglodytes	subspecies	Mammalia	hindgut	rule	Pan troglodytes	Pan troglodytes	90.0	10.0	herbivore
+10117	Rattus rattus	18	2	Rattus rattus	species	Mammalia	hindgut	rule	Rattus rattus	Rattus rattus	70.0	30.0	herbivore
+8843	Anser anser	18	1	Anser anser	species	Aves	avian_caecal	rule	Anser anser	Anser anser	100.0	0.0	herbivore
+1114792	Equus ferus	18	1	Equus ferus	species	Mammalia	hindgut	rule	Equus ferus	Equus ferus			NA
+64668	Lagopus muta	17	1	Lagopus muta	species	Aves	avian_caecal	rule	Lagopus muta	Lagopus muta	100.0	0.0	herbivore
+13733	Trichiurus lepturus	17	1	Trichiurus lepturus	species	Actinopterygii	simple	rule	Trichiurus lepturus	Trichiurus lepturus			NA
+10092	Mus musculus domesticus	17	2	Mus musculus domesticus	subspecies	Mammalia	hindgut	rule	Mus musculus	Mus musculus	80.0	20.0	herbivore
+2936569		16	1	Diploderma yangi	species	Lepidosauria	simple	rule	Diploderma yangi	Diploderma yangi			NA
+10042	Peromyscus maniculatus	16	1	Peromyscus maniculatus	species	Mammalia	hindgut	rule	Peromyscus maniculatus	Peromyscus maniculatus	40.0	60.0	omnivore
+9625	Vulpes	16	1	Vulpes	genus	Mammalia	simple	rule	Vulpes	Vulpes			NA
+8469	Chelonia mydas	16	1	Chelonia mydas	species	Testudines	simple	rule	Chelonia mydas	Chelonia mydas			NA
+2162900	Alexandromys oeconomus	15	1	Alexandromys oeconomus	species	Mammalia	hindgut	rule	Alexandromys oeconomus	Alexandromys oeconomus			NA
+54602	Macaca thibetana	15	1	Macaca thibetana	species	Mammalia	hindgut	rule	Macaca thibetana	Macaca thibetana	90.0	10.0	herbivore
+27606	Eubalaena glacialis	15	1	Eubalaena glacialis	species	Mammalia	simple	rule	Eubalaena glacialis	Eubalaena glacialis	0.0	100.0	carnivore
+125878		14	1	Nanorana parkeri	species	Amphibia	simple	rule	Nanorana parkeri	Nanorana parkeri			NA
+10129	Apodemus sylvaticus	14	1	Apodemus sylvaticus	species	Mammalia	hindgut	rule	Apodemus sylvaticus	Apodemus sylvaticus	80.0	20.0	herbivore
+1680887		14	1	Pelophylax terentievi	species	Amphibia	simple	rule	Pelophylax terentievi	Pelophylax terentievi			NA
+37174	Ovis canadensis	14	1	Ovis canadensis	species	Mammalia	foregut	rule	Ovis canadensis	Ovis canadensis	100.0	0.0	herbivore
+9974	Manis javanica	13	1	Manis javanica	species	Mammalia	simple	rule	Manis javanica	Manis javanica	0.0	100.0	carnivore
+472760	Rattus lutreola	13	1	Rattus lutreola	species	Mammalia	hindgut	rule	Rattus lutreola	Rattus lutreola			NA
+662736	Podarcis liolepis	13	1	Podarcis liolepis	species	Lepidosauria	simple	rule	Podarcis liolepis	Podarcis liolepis			NA
+267130	Acanthogobius hasta	13	1	Acanthogobius hasta	species	Actinopterygii	simple	rule	Acanthogobius hasta	Acanthogobius hasta			NA
+8996	Numida meleagris	13	4	Numida meleagris	species	Aves	avian_caecal	rule	Numida meleagris	Numida meleagris	70.0	30.0	herbivore
+9649	Ailurus fulgens	13	2	Ailurus fulgens	species	Mammalia	simple	rule	Ailurus fulgens	Ailurus fulgens	80.0	20.0	herbivore
+57570	Salamandra atra	13	2	Salamandra atra	species	Amphibia	simple	rule	Salamandra atra	Salamandra atra			NA
+48089		12	2	Romerolagus diazi	species	Mammalia	hindgut	rule	Romerolagus diazi	Romerolagus diazi	100.0	0.0	herbivore
+36722	Martes zibellina	12	1	Martes zibellina	species	Mammalia	simple	rule	Martes zibellina	Martes zibellina	20.0	80.0	carnivore
+8787	Casuarius casuarius	12	2	Casuarius casuarius	species	Aves	avian_caecal	rule	Casuarius casuarius	Casuarius casuarius	80.0	20.0	herbivore
+7962	Cyprinus carpio	12	3	Cyprinus carpio	species	Actinopterygii	simple	rule	Cyprinus carpio	Cyprinus carpio			NA
+72544	Capra sibirica	12	1	Capra sibirica	species	Mammalia	foregut	rule	Capra sibirica	Capra sibirica	100.0	0.0	herbivore
+379532	Propithecus coquereli	12	1	Propithecus coquereli	species	Mammalia	hindgut	rule	Propithecus coquereli	Propithecus coquereli	100.0	0.0	herbivore
+7765	Eptatretus stoutii	12	1	Eptatretus stoutii	species	other	simple	rule	Eptatretus stoutii	Eptatretus stoutii			NA
+9030	Gallus	12	1	Gallus	genus	Aves	avian_caecal	rule	Gallus	Gallus			NA
+161274		12	1	Bombina maxima	species	Amphibia	simple	rule	Bombina maxima	Bombina maxima			NA
+1026970	Nannospalax galili	12	1	Nannospalax galili	species	Mammalia	hindgut	rule	Nannospalax galili	Nannospalax galili			NA
+230172	Ovis ammon polii	12	1	Ovis ammon polii	subspecies	Mammalia	foregut	rule	Ovis ammon	Ovis ammon	100.0	0.0	herbivore
+9872	Odocoileus hemionus	12	1	Odocoileus hemionus	species	Mammalia	foregut	rule	Odocoileus hemionus	Odocoileus hemionus	100.0	0.0	herbivore
+10149	Hydrochoerus hydrochaeris	12	1	Hydrochoerus hydrochaeris	species	Mammalia	hindgut	rule	Hydrochoerus hydrochaeris	Hydrochoerus hydrochaeris	100.0	0.0	herbivore
+208091	Papio kindae	12	2	Papio kindae	species	Mammalia	hindgut	rule	Papio kindae	Papio kindae			NA
+176946	Python bivittatus	12	1	Python bivittatus	species	Lepidosauria	simple	rule	Python bivittatus	Python bivittatus			NA
+399537	Timon lepidus	11	1	Timon lepidus	species	Lepidosauria	simple	rule	Timon lepidus	Timon lepidus			NA
+394588	Neotoma bryanti	11	1	Neotoma bryanti	species	Mammalia	hindgut	rule	Neotoma bryanti	Neotoma bryanti	90.0	10.0	herbivore
+164611	Neotoma stephensi	11	2	Neotoma stephensi	species	Mammalia	hindgut	rule	Neotoma stephensi	Neotoma stephensi	90.0	10.0	herbivore
+37029	Prionailurus bengalensis	11	1	Prionailurus bengalensis	species	Mammalia	simple	rule	Prionailurus bengalensis	Prionailurus bengalensis	0.0	100.0	carnivore
+119488	Siniperca chuatsi	11	2	Siniperca chuatsi	species	Actinopterygii	simple	rule	Siniperca chuatsi	Siniperca chuatsi			NA
+8801	Struthio camelus	11	2	Struthio camelus	species	Aves	avian_caecal	rule	Struthio camelus	Struthio camelus	80.0	20.0	herbivore
+178819	Iberolacerta bonnali	10	1	Iberolacerta bonnali	species	Lepidosauria	simple	rule	Iberolacerta bonnali	Iberolacerta bonnali			NA
+9870	Rangifer tarandus	10	1	Rangifer tarandus	species	Mammalia	foregut	rule	Rangifer tarandus	Rangifer tarandus	100.0	0.0	herbivore
+132587	Anser fabalis	10	1	Anser fabalis	species	Aves	avian_caecal	rule	Anser fabalis	Anser fabalis	100.0	0.0	herbivore
+387934	Microhyla fissipes	10	1	Microhyla fissipes	species	Amphibia	simple	rule	Microhyla fissipes	Microhyla fissipes			NA
+10041	Peromyscus leucopus	10	1	Peromyscus leucopus	species	Mammalia	hindgut	rule	Peromyscus leucopus	Peromyscus leucopus	40.0	60.0	omnivore
+127582	Trichechus manatus latirostris	10	1	Trichechus manatus latirostris	subspecies	Mammalia	hindgut	rule	Trichechus manatus	Trichechus manatus	100.0	0.0	herbivore
+178817	Iberolacerta aranica	10	1	Iberolacerta aranica	species	Lepidosauria	simple	rule	Iberolacerta aranica	Iberolacerta aranica			NA
+248799	Lophiomys imhausi	10	1	Lophiomys imhausi	species	Mammalia	hindgut	rule	Lophiomys imhausi	Lophiomys imhausi	100.0	0.0	herbivore
+8090	Oryzias latipes	10	1	Oryzias latipes	species	Actinopterygii	simple	rule	Oryzias latipes	Oryzias latipes			NA
+2602792		10	1	Diploderma slowinskii	species	Lepidosauria	simple	rule	Diploderma slowinskii	Diploderma slowinskii			NA
+3148847	Murinae sp.	10	1	Murinae sp.	species	Mammalia	hindgut	rule	Murinae sp.	Murinae sp.			NA
+9980		10	1	Lepus	genus	Mammalia	hindgut	rule	Lepus	Lepus			NA
+8496	Alligator mississippiensis	10	2	Alligator mississippiensis	species	Crocodylia	simple	rule	Alligator mississippiensis	Alligator mississippiensis			NA
+2602793		9	1	Diploderma laeviventre	species	Lepidosauria	simple	rule	Diploderma laeviventre	Diploderma laeviventre			NA
+242058	Protobothrops mangshanensis	9	1	Protobothrops mangshanensis	species	Lepidosauria	simple	rule	Protobothrops mangshanensis	Protobothrops mangshanensis			NA
+43179	Ictidomys tridecemlineatus	9	1	Ictidomys tridecemlineatus	species	Mammalia	hindgut	rule	Ictidomys tridecemlineatus	Ictidomys tridecemlineatus			NA
+65476	Lacerta viridis	9	1	Lacerta viridis	species	Lepidosauria	simple	rule	Lacerta viridis	Lacerta viridis			NA
+74533	Panthera tigris altaica	9	1	Panthera tigris altaica	subspecies	Mammalia	simple	rule	Panthera tigris	Panthera tigris	0.0	100.0	carnivore
+3388889		9	1	Capra hircus lanigera	subspecies	Mammalia	foregut	rule	Capra hircus	Capra hircus	100.0	0.0	herbivore
+8164	Lateolabrax japonicus	9	1	Lateolabrax japonicus	species	Actinopterygii	simple	rule	Lateolabrax japonicus	Lateolabrax japonicus			NA
+9901	Bison bison	9	2	Bison bison	species	Mammalia	foregut	rule	Bison bison	Bison bison	100.0	0.0	herbivore
+375578	Sus scrofa leucomystax	9	1	Sus scrofa leucomystax	subspecies	Mammalia	hindgut	rule	Sus scrofa	Sus scrofa	70.0	30.0	herbivore
+9785	Loxodonta africana	9	3	Loxodonta africana	species	Mammalia	hindgut	rule	Loxodonta africana	Loxodonta africana	100.0	0.0	herbivore
+9395	Tupaia glis	9	1	Tupaia glis	species	Mammalia	simple	rule	Tupaia glis	Tupaia glis	10.0	90.0	carnivore
+1171130	Uropsilus aequodonenia	9	1	Uropsilus aequodonenia	species	Mammalia	simple	rule	Uropsilus aequodonenia	Uropsilus aequodonenia			NA
+56790	Pyrrhocorax pyrrhocorax	8	2	Pyrrhocorax pyrrhocorax	species	Aves	simple	rule	Pyrrhocorax pyrrhocorax	Pyrrhocorax pyrrhocorax	30.0	70.0	carnivore
+2489341	Strigops habroptila	8	2	Strigops habroptila	species	Aves	simple	rule	Strigops habroptila	Strigops habroptila	100.0	0.0	herbivore
+477934	Corvus dauuricus	8	2	Corvus dauuricus	species	Aves	simple	rule	Corvus dauuricus	Corvus dauuricus	40.0	60.0	omnivore
+8869	Cygnus olor	8	2	Cygnus olor	species	Aves	avian_caecal	rule	Cygnus olor	Cygnus olor	80.0	20.0	herbivore
+105297	Apodemus peninsulae	8	2	Apodemus peninsulae	species	Mammalia	hindgut	rule	Apodemus peninsulae	Apodemus peninsulae	80.0	20.0	herbivore
+167804	Aldabrachelys gigantea	8	3	Aldabrachelys gigantea	species	Testudines	hindgut	rule	Aldabrachelys gigantea	Aldabrachelys gigantea			NA
+163143	Kyphosus vaigiensis	8	1	Kyphosus vaigiensis	species	Actinopterygii	simple	rule	Kyphosus vaigiensis	Kyphosus vaigiensis			NA
+71006	Myrmecophaga tridactyla	8	2	Myrmecophaga tridactyla	species	Mammalia	simple	rule	Myrmecophaga tridactyla	Myrmecophaga tridactyla	0.0	100.0	carnivore
+36249	Corvus macrorhynchos	8	2	Corvus macrorhynchos	species	Aves	simple	rule	Corvus macrorhynchos	Corvus macrorhynchos	30.0	70.0	carnivore
+798166	Neodon irene	8	1	Neodon irene	species	Mammalia	hindgut	rule	Neodon irene	Neodon irene	100.0	0.0	herbivore
+9662	Meles meles	8	1	Meles meles	species	Mammalia	simple	rule	Meles meles	Meles meles	40.0	60.0	omnivore
+389296		8	1	Bufotes pewzowi taxkorensis	subspecies	Amphibia	simple	rule	Bufotes pewzowi	Bufotes pewzowi			NA
+48850	Tamandua tetradactyla	8	2	Tamandua tetradactyla	species	Mammalia	simple	rule	Tamandua tetradactyla	Tamandua tetradactyla	0.0	100.0	carnivore
+2234023	Goniurosaurus zhoui	8	1	Goniurosaurus zhoui	species	Lepidosauria	simple	rule	Goniurosaurus zhoui	Goniurosaurus zhoui			NA
+75140	Corvus frugilegus	8	2	Corvus frugilegus	species	Aves	simple	rule	Corvus frugilegus	Corvus frugilegus	40.0	60.0	omnivore
+83281	Propithecus diadema	8	1	Propithecus diadema	species	Mammalia	hindgut	rule	Propithecus diadema	Propithecus diadema	100.0	0.0	herbivore
+30493	Triakis semifasciata	8	1	Triakis semifasciata	species	Chondrichthyes	simple	rule	Triakis semifasciata	Triakis semifasciata			NA
+52204		7	1	Laudakia sacra	species	Lepidosauria	simple	rule	Laudakia sacra	Laudakia sacra			NA
+120506		7	1	Rana chaochiaoensis	species	Amphibia	simple	rule	Rana chaochiaoensis	Rana chaochiaoensis			NA
+8790	Dromaius novaehollandiae	7	3	Dromaius novaehollandiae	species	Aves	avian_caecal	rule	Dromaius novaehollandiae	Dromaius novaehollandiae	80.0	20.0	herbivore
+8346	Bombina orientalis	7	1	Bombina orientalis	species	Amphibia	simple	rule	Bombina orientalis	Bombina orientalis			NA
+1618199	Equus hemionus hemionus	7	1	Equus hemionus hemionus	subspecies	Mammalia	hindgut	rule	Equus hemionus	Equus hemionus	100.0	0.0	herbivore
+9768	Balaenoptera borealis	7	2	Balaenoptera borealis	species	Mammalia	simple	rule	Balaenoptera borealis	Balaenoptera borealis	0.0	100.0	carnivore
+9592	Gorilla	7	1	Gorilla	genus	Mammalia	hindgut	rule	Gorilla	Gorilla			NA
+8324	Lissotriton vulgaris	7	1	Lissotriton vulgaris	species	Amphibia	simple	rule	Lissotriton vulgaris	Lissotriton vulgaris			NA
+38937	Anolis sagrei	7	1	Anolis sagrei	species	Lepidosauria	simple	rule	Anolis sagrei	Anolis sagrei			NA
+1159882	Blarinella quadraticauda	7	1	Blarinella quadraticauda	species	Mammalia	simple	rule	Blarinella quadraticauda	Blarinella quadraticauda	0.0	100.0	carnivore
+30344	Pelodryas caerulea	7	1	Pelodryas caerulea	species	Amphibia	simple	rule	Pelodryas caerulea	Pelodryas caerulea			NA
+42408	Neotoma albigula	7	2	Neotoma albigula	species	Mammalia	hindgut	rule	Neotoma albigula	Neotoma albigula	90.0	10.0	herbivore
+1768099	Natrix astreptophora	6	1	Natrix astreptophora	species	Lepidosauria	simple	rule	Natrix astreptophora	Natrix astreptophora			NA
+214657	Girella nigricans	6	1	Girella nigricans	species	Actinopterygii	simple	rule	Girella nigricans	Girella nigricans			NA
+227093	Chalcides striatus	6	1	Chalcides striatus	species	Lepidosauria	simple	rule	Chalcides striatus	Chalcides striatus			NA
+56781	Corvus corax	6	2	Corvus corax	species	Aves	simple	rule	Corvus corax	Corvus corax	30.0	70.0	carnivore
+9447	Lemur catta	6	2	Lemur catta	species	Mammalia	hindgut	rule	Lemur catta	Lemur catta	100.0	0.0	herbivore
+542783		6	1	Tenuidactylus elongatus	species	Lepidosauria	simple	rule	Tenuidactylus elongatus	Tenuidactylus elongatus			NA
+9713	Leptonychotes weddellii	6	2	Leptonychotes weddellii	species	Mammalia	simple	rule	Leptonychotes weddellii	Leptonychotes weddellii	0.0	100.0	carnivore
+8797	Rhea americana	6	2	Rhea americana	species	Aves	avian_caecal	rule	Rhea americana	Rhea americana	60.0	40.0	omnivore
+3370766	Scaptonyx fusicauda	6	1	Scaptonyx fusicauda	species	Mammalia	simple	rule	Scaptonyx fusicauda	Scaptonyx fusicauda			NA
+82468	Eothenomys melanogaster	6	1	Eothenomys melanogaster	species	Mammalia	hindgut	rule	Eothenomys melanogaster	Eothenomys melanogaster	100.0	0.0	herbivore
+349162	Neotoma macrotis	6	1	Neotoma macrotis	species	Mammalia	hindgut	rule	Neotoma macrotis	Neotoma macrotis	90.0	10.0	herbivore
+109175	Dryophytes japonicus	6	1	Dryophytes japonicus	species	Amphibia	simple	rule	Dryophytes japonicus	Dryophytes japonicus			NA
+9568	Mandrillus leucophaeus	6	2	Mandrillus leucophaeus	species	Mammalia	hindgut	rule	Mandrillus leucophaeus	Mandrillus leucophaeus	80.0	20.0	herbivore
+36248	Gyps himalayensis	6	1	Gyps himalayensis	species	Aves	simple	rule	Gyps himalayensis	Gyps himalayensis	0.0	100.0	carnivore
+302418	Smutsia temminckii	6	1	Smutsia temminckii	species	Mammalia	simple	rule	Smutsia temminckii	Smutsia temminckii			NA
+130821	Ochotona cansus	6	1	Ochotona cansus	species	Mammalia	hindgut	rule	Ochotona cansus	Ochotona cansus	100.0	0.0	herbivore
+9612	Canis lupus	6	3	Canis lupus	species	Mammalia	simple	rule	Canis lupus	Canis lupus	0.0	100.0	carnivore
+38654	Alligator sinensis	6	1	Alligator sinensis	species	Crocodylia	simple	rule	Alligator sinensis	Alligator sinensis			NA
+263537	Diptychus maculatus	6	1	Diptychus maculatus	species	Actinopterygii	simple	rule	Diptychus maculatus	Diptychus maculatus			NA
+71582		6	1	Rana dybowskii	species	Amphibia	simple	rule	Rana dybowskii	Rana dybowskii			NA
+9680	Proteles cristata	6	1	Proteles cristata	species	Mammalia	simple	rule	Proteles cristata	Proteles cristata	0.0	100.0	carnivore
+2691115	Geospizopsis unicolor	6	1	Geospizopsis unicolor	species	Aves	simple	rule	Geospizopsis unicolor	Geospizopsis unicolor			NA
+1496311	Malayopython reticulatus	6	1	Malayopython reticulatus	species	Lepidosauria	simple	rule	Malayopython reticulatus	Malayopython reticulatus			NA
+44391	Zonotrichia capensis	6	1	Zonotrichia capensis	species	Aves	simple	rule	Zonotrichia capensis	Zonotrichia capensis	70.0	30.0	herbivore
+171650		5	1	Phrynocephalus theobaldi	species	Lepidosauria	simple	rule	Phrynocephalus theobaldi	Phrynocephalus theobaldi			NA
+1616038	Nomascus annamensis	5	1	Nomascus annamensis	species	Mammalia	hindgut	rule	Nomascus annamensis	Nomascus annamensis			NA
+102190	Ophisaurus apodus;Ophisaurus	5	1	Ophisaurus	genus	Lepidosauria	simple	rule	Ophisaurus	Ophisaurus			NA
+8558	Varanus albigularis	5	1	Varanus albigularis	species	Lepidosauria	simple	rule	Varanus albigularis	Varanus albigularis			NA
+164292	Pedostibes hosii	5	1	Rentapia hosii	species	Amphibia	simple	rule	Rentapia hosii	Rentapia hosii			NA
+62035	Varanus acanthurus acanthurus;Varanus acanthurus	5	1	Varanus acanthurus	species	Lepidosauria	simple	rule	Varanus acanthurus	Varanus acanthurus			NA
+137520	Hypomesus transpacificus	5	1	Hypomesus transpacificus	species	Actinopterygii	simple	rule	Hypomesus transpacificus	Hypomesus transpacificus			NA
+64663	Callosciurus prevosti;Callosciurus	5	1	Callosciurus	genus	Mammalia	hindgut	rule	Callosciurus	Callosciurus			NA
+7973	Ictiobus bubalus	5	1	Ictiobus bubalus	species	Actinopterygii	simple	rule	Ictiobus bubalus	Ictiobus bubalus			NA
+66194	Pyxis arachnoides	5	1	Pyxis arachnoides	species	Testudines	hindgut	rule	Pyxis arachnoides	Pyxis arachnoides			NA
+866438	Rhyticeros undulatus	5	1	Rhyticeros undulatus	species	Aves	simple	rule	Rhyticeros undulatus	Rhyticeros undulatus			NA
+1594397	Lepidobatrachus asper	5	1	Lepidobatrachus asper	species	Amphibia	simple	rule	Lepidobatrachus asper	Lepidobatrachus asper			NA
+9874	Odocoileus virginianus	5	2	Odocoileus virginianus	species	Mammalia	foregut	rule	Odocoileus virginianus	Odocoileus virginianus	100.0	0.0	herbivore
+33605	Torgos tracheliotus;Torgos	5	1	Torgos	genus	Aves	simple	rule	Torgos	Torgos			NA
+61378	Felis margarita	5	1	Felis margarita	species	Mammalia	simple	rule	Felis margarita	Felis margarita	0.0	100.0	carnivore
+310714	Diceros bicornis michaeli	5	1	Diceros bicornis michaeli	subspecies	Mammalia	hindgut	rule	Diceros bicornis	Diceros bicornis	100.0	0.0	herbivore
+8876	Dendrocygna viduata	5	1	Dendrocygna viduata	species	Aves	avian_caecal	rule	Dendrocygna viduata	Dendrocygna viduata	70.0	30.0	herbivore
+89379	Hypogeomys antinena;Hypogeomys antimena	5	1	Hypogeomys antimena	species	Mammalia	hindgut	rule	Hypogeomys antimena	Hypogeomys antimena	100.0	0.0	herbivore
+9089	Chrysolophus pictus	5	1	Chrysolophus pictus	species	Aves	avian_caecal	rule	Chrysolophus pictus	Chrysolophus pictus	90.0	10.0	herbivore
+34880	Nyctereutes procyonoides	5	1	Nyctereutes procyonoides	species	Mammalia	simple	rule	Nyctereutes procyonoides	Nyctereutes procyonoides	40.0	60.0	omnivore
+89386	Ardeotis kori	5	1	Ardeotis kori	species	Aves	avian_caecal	rule	Ardeotis kori	Ardeotis kori	60.0	40.0	omnivore
+2602807		5	1	Diploderma batangense	species	Lepidosauria	simple	rule	Diploderma batangense	Diploderma batangense			NA
+8992	Acryllium vulturinum	5	1	Acryllium vulturinum	species	Aves	avian_caecal	rule	Acryllium vulturinum	Acryllium vulturinum	90.0	10.0	herbivore
+43583	Sarcorhamphus papa;Sarcoramphus papa	5	1	Sarcoramphus papa	species	Aves	simple	rule	Sarcoramphus papa	Sarcoramphus papa	0.0	100.0	carnivore
+402378	Uroplatus lineatus	5	1	Uroplatus lineatus	species	Lepidosauria	simple	rule	Uroplatus lineatus	Uroplatus lineatus			NA
+9091	Coturnix coturnix	5	1	Coturnix coturnix	species	Aves	avian_caecal	rule	Coturnix coturnix	Coturnix coturnix	80.0	20.0	herbivore
+268760	Episoriculus macrurus	5	1	Episoriculus macrurus	species	Mammalia	simple	rule	Episoriculus macrurus	Episoriculus macrurus	0.0	100.0	carnivore
+35510	Equus ferus przewalskii	5	1	Equus	genus	Mammalia	hindgut	rule	Equus	Equus			NA
+93158	Marmota bobak	5	1	Marmota bobak	species	Mammalia	hindgut	rule	Marmota bobak	Marmota bobak	100.0	0.0	herbivore
+9117	Grus americana	5	1	Grus americana	species	Aves	avian_caecal	rule	Grus americana	Grus americana	20.0	80.0	carnivore
+271260	Trachypithecus germaini	5	1	Trachypithecus germaini	species	Mammalia	foregut	rule	Trachypithecus germaini	Trachypithecus germaini	100.0	0.0	herbivore
+8821	Apteryx mantelli;Apteryx	5	1	Apteryx	genus	Aves	avian_caecal	rule	Apteryx	Apteryx			NA
+50046	Geochelone radiata;Geochelone	5	1	Geochelone	genus	Testudines	hindgut	rule	Geochelone	Geochelone			NA
+9715	Mirounga leonina	5	1	Mirounga leonina	species	Mammalia	simple	rule	Mirounga leonina	Mirounga leonina	0.0	100.0	carnivore
+51876	Eunectes murinus	5	1	Eunectes murinus	species	Lepidosauria	simple	rule	Eunectes murinus	Eunectes murinus			NA
+9358	Choloepus hoffmanni	5	1	Choloepus hoffmanni	species	Mammalia	foregut	rule	Choloepus hoffmanni	Choloepus hoffmanni	100.0	0.0	herbivore
+183749	Tolypeutes matacus	5	1	Tolypeutes matacus	species	Mammalia	simple	rule	Tolypeutes matacus	Tolypeutes matacus	20.0	80.0	carnivore
+184239	Crocodylus rhombifer	5	1	Crocodylus rhombifer	species	Crocodylia	simple	rule	Crocodylus rhombifer	Crocodylus rhombifer			NA
+58517	Ceratobatrachus guentheri;Cornufer guentheri	5	1	Cornufer guentheri	species	Amphibia	simple	rule	Cornufer guentheri	Cornufer guentheri			NA
+3041614		5	1	Nidirana sp.	species	Amphibia	simple	rule	Nidirana sp.	Nidirana sp.			NA
+95122	Rhacodactylus leachianus	5	1	Rhacodactylus leachianus	species	Lepidosauria	simple	rule	Rhacodactylus leachianus	Rhacodactylus leachianus			NA
+9790	Equus burchellii	5	1	Equus quagga burchellii	subspecies	Mammalia	hindgut	rule	Equus quagga	Equus quagga	100.0	0.0	herbivore
+318376	Trachycephalus resinifictrix	5	1	Trachycephalus resinifictrix	species	Amphibia	simple	rule	Trachycephalus resinifictrix	Trachycephalus resinifictrix			NA
+30527	Ovis ammon	5	1	Ovis ammon	species	Mammalia	foregut	rule	Ovis ammon	Ovis ammon	100.0	0.0	herbivore
+210647	Helogale parvula	5	1	Helogale parvula	species	Mammalia	simple	rule	Helogale parvula	Helogale parvula	10.0	90.0	carnivore
+9371	Echinops telfairi	5	1	Echinops telfairi	species	Mammalia	simple	rule	Echinops telfairi	Echinops telfairi	40.0	60.0	omnivore
+210652	Mungos mungo	5	1	Mungos mungo	species	Mammalia	simple	rule	Mungos mungo	Mungos mungo	0.0	100.0	carnivore
+224329	Rhinopithecus brelichi	5	1	Rhinopithecus brelichi	species	Mammalia	foregut	rule	Rhinopithecus brelichi	Rhinopithecus brelichi	100.0	0.0	herbivore
+537920	Clethrionomys rutilus	5	1	Clethrionomys rutilus	species	Mammalia	hindgut	rule	Clethrionomys rutilus	Clethrionomys rutilus			NA
+9636	Melursus ursinus	5	1	Melursus ursinus	species	Mammalia	simple	rule	Melursus ursinus	Melursus ursinus	30.0	70.0	carnivore
+122273	Petaurus gracilis	4	1	Petaurus gracilis	species	Mammalia	hindgut	rule	Petaurus gracilis	Petaurus gracilis	50.0	50.0	omnivore
+1192867	Chroicocephalus ridibundus	4	1	Chroicocephalus ridibundus	species	Aves	simple	rule	Chroicocephalus ridibundus	Chroicocephalus ridibundus			NA
+30574	Dasypus sp.	4	1	Dasypus sp.	species	Mammalia	simple	rule	Dasypus sp.	Dasypus sp.			NA
+9555	Papio anubis	4	2	Papio anubis	species	Mammalia	hindgut	rule	Papio anubis	Papio anubis	50.0	50.0	omnivore
+34827	Indri indri	4	1	Indri indri	species	Mammalia	hindgut	rule	Indri indri	Indri indri	100.0	0.0	herbivore
+327700	Schizothorax biddulphi	4	1	Schizothorax biddulphi	species	Actinopterygii	simple	rule	Schizothorax biddulphi	Schizothorax biddulphi			NA
+327957	Trichechus senegalensis	4	1	Trichechus senegalensis	species	Mammalia	hindgut	rule	Trichechus senegalensis	Trichechus senegalensis	100.0	0.0	herbivore
+1260384	Kyphosus hawaiiensis	4	1	Kyphosus hawaiiensis	species	Actinopterygii	simple	rule	Kyphosus hawaiiensis	Kyphosus hawaiiensis			NA
+27787	Eretmochelys imbricata	4	1	Eretmochelys imbricata	species	Testudines	simple	rule	Eretmochelys imbricata	Eretmochelys imbricata			NA
+9601	Pongo abelii	4	1	Pongo abelii	species	Mammalia	hindgut	rule	Pongo abelii	Pongo abelii	80.0	20.0	herbivore
+146136	Eospalax rothschildi	4	1	Eospalax rothschildi	species	Mammalia	hindgut	rule	Eospalax rothschildi	Eospalax rothschildi	100.0	0.0	herbivore
+9818	Orycteropus afer	4	2	Orycteropus afer	species	Mammalia	simple	rule	Orycteropus afer	Orycteropus afer	0.0	100.0	carnivore
+171643		4	1	Phrynocephalus forsythii	species	Lepidosauria	simple	rule	Phrynocephalus forsythii	Phrynocephalus forsythii			NA
+8847	Anser sp.	4	1	Anser sp.	species	Aves	avian_caecal	rule	Anser sp.	Anser sp.			NA
+1677794	Triplophysa yarkandensis	4	1	Triplophysa yarkandensis	species	Actinopterygii	simple	rule	Triplophysa yarkandensis	Triplophysa yarkandensis			NA
+163144	Kyphosus cinerascens	4	1	Kyphosus cinerascens	species	Actinopterygii	simple	rule	Kyphosus cinerascens	Kyphosus cinerascens			NA
+527686		4	1	Craseomys rufocanus	species	Mammalia	hindgut	rule	Craseomys rufocanus	Craseomys rufocanus			NA
+9860	Cervus elaphus	4	1	Cervus elaphus	species	Mammalia	foregut	rule	Cervus elaphus	Cervus elaphus	100.0	0.0	herbivore
+42806	Anas sp.	4	1	Anas sp.	species	Aves	avian_caecal	rule	Anas sp.	Anas sp.			NA
+2796534		4	1	unclassified Altiphylax	no rank	Lepidosauria	simple	rule	unclassified Altiphylax	unclassified Altiphylax			NA
+75329	Misgurnus anguillicaudatus	4	1	Misgurnus anguillicaudatus	species	Actinopterygii	simple	rule	Misgurnus anguillicaudatus	Misgurnus anguillicaudatus			NA
+75352	Megalobrama amblycephala	4	1	Megalobrama amblycephala	species	Actinopterygii	simple	rule	Megalobrama amblycephala	Megalobrama amblycephala			NA
+90387	Macaca leonina	4	1	Macaca leonina	species	Mammalia	hindgut	rule	Macaca leonina	Macaca leonina	90.0	10.0	herbivore
+1311532	Atherinopsis californiensis	4	1	Atherinopsis californiensis	species	Actinopterygii	simple	rule	Atherinopsis californiensis	Atherinopsis californiensis			NA
+100190	Embiotoca jacksoni	4	1	Embiotoca jacksoni	species	Actinopterygii	simple	rule	Embiotoca jacksoni	Embiotoca jacksoni			NA
+9672	Pteronura brasiliensis	3	1	Pteronura brasiliensis	species	Mammalia	simple	rule	Pteronura brasiliensis	Pteronura brasiliensis	0.0	100.0	carnivore
+85694	Didelphis aurita	3	1	Didelphis aurita	species	Mammalia	simple	rule	Didelphis aurita	Didelphis aurita	20.0	80.0	carnivore
+9002	Centrocercus urophasianus	3	1	Centrocercus urophasianus	species	Aves	avian_caecal	rule	Centrocercus urophasianus	Centrocercus urophasianus	90.0	10.0	herbivore
+8840	Anas platyrhynchos platyrhynchos	3	1	Anas platyrhynchos platyrhynchos	subspecies	Aves	avian_caecal	rule	Anas platyrhynchos	Anas platyrhynchos	40.0	60.0	omnivore
+9503	Alouatta seniculus	3	1	Alouatta seniculus	species	Mammalia	hindgut	rule	Alouatta seniculus	Alouatta seniculus	100.0	0.0	herbivore
+452597	Aonyx cinerea;Aonyx cinereus	3	1	Aonyx cinereus	species	Mammalia	simple	rule	Aonyx cinereus	Aonyx cinereus			NA
+48852	Cabassous unicinctus	3	1	Cabassous unicinctus	species	Mammalia	simple	rule	Cabassous unicinctus	Cabassous unicinctus	0.0	100.0	carnivore
+302408	Rhinolophus capensis	3	1	Rhinolophus capensis	species	Mammalia	simple	rule	Rhinolophus capensis	Rhinolophus capensis	0.0	100.0	carnivore
+3076364		3	1	Nanorana huangi	species	Amphibia	simple	rule	Nanorana huangi	Nanorana huangi			NA
+310352	Pygathrix nigripes	3	1	Pygathrix nigripes	species	Mammalia	foregut	rule	Pygathrix nigripes	Pygathrix nigripes	100.0	0.0	herbivore
+2491182	Sorex cansulus	3	1	Sorex cansulus	species	Mammalia	simple	rule	Sorex cansulus	Sorex cansulus	0.0	100.0	carnivore
+240395		3	1	Glandirana emeljanovi	species	Amphibia	simple	rule	Glandirana emeljanovi	Glandirana emeljanovi			NA
+35732	Rattus tanezumi	3	2	Rattus tanezumi	species	Mammalia	hindgut	rule	Rattus tanezumi	Rattus tanezumi	70.0	30.0	herbivore
+164610	Neotoma devia	3	1	Neotoma devia	species	Mammalia	hindgut	rule	Neotoma devia	Neotoma devia	90.0	10.0	herbivore
+147949	Micropterus dolomieu	3	1	Micropterus dolomieu	species	Actinopterygii	simple	rule	Micropterus dolomieu	Micropterus dolomieu			NA
+409609	Giraffa camelopardalis reticulata;Giraffa reticulata	3	1	Giraffa reticulata	species	Mammalia	foregut	rule	Giraffa reticulata	Giraffa reticulata			NA
+42716	Didelphis albiventris	3	1	Didelphis albiventris	species	Mammalia	simple	rule	Didelphis albiventris	Didelphis albiventris	20.0	80.0	carnivore
+429310	Fejervarya multistriata	3	1	Fejervarya multistriata	species	Amphibia	simple	rule	Fejervarya multistriata	Fejervarya multistriata			NA
+143292	Manis pentadactyla	3	1	Manis pentadactyla	species	Mammalia	simple	rule	Manis pentadactyla	Manis pentadactyla	0.0	100.0	carnivore
+59531	Kobus leche	3	1	Kobus leche	species	Mammalia	foregut	rule	Kobus leche	Kobus leche	100.0	0.0	herbivore
+7869	Chimaeridae	3	1	Chimaeridae	family	Chondrichthyes	simple	rule	Chimaeridae	Chimaeridae			NA
+61853	Nomascus leucogenys	3	1	Nomascus leucogenys	species	Mammalia	hindgut	rule	Nomascus leucogenys	Nomascus leucogenys	90.0	10.0	herbivore
+105147	Neotoma cinerea	3	1	Neotoma cinerea	species	Mammalia	hindgut	rule	Neotoma cinerea	Neotoma cinerea	90.0	10.0	herbivore
+118643	Ateles chamek	3	1	Ateles chamek	species	Mammalia	hindgut	rule	Ateles chamek	Ateles chamek	80.0	20.0	herbivore
+58067	Epomophorus wahlbergi	2	1	Epomophorus wahlbergi	species	Mammalia	simple	rule	Epomophorus wahlbergi	Epomophorus wahlbergi	100.0	0.0	herbivore
+9801	Tapirus terrestris	2	1	Tapirus terrestris	species	Mammalia	hindgut	rule	Tapirus terrestris	Tapirus terrestris	100.0	0.0	herbivore
+57098	Cyclura cornuta	2	1	Cyclura cornuta	species	Lepidosauria	hindgut	rule	Cyclura cornuta	Cyclura cornuta			NA
+9361	Dasypus novemcinctus	2	1	Dasypus novemcinctus	species	Mammalia	simple	rule	Dasypus novemcinctus	Dasypus novemcinctus	0.0	100.0	carnivore
+9400	Cynopterus sphinx	2	1	Cynopterus sphinx	species	Mammalia	simple	rule	Cynopterus sphinx	Cynopterus sphinx	100.0	0.0	herbivore
+234634	Dremomys pernyi	2	1	Dremomys pernyi	species	Mammalia	hindgut	rule	Dremomys pernyi	Dremomys pernyi	80.0	20.0	herbivore
+99487	Elephas maximus indicus	2	1	Elephas maximus indicus	subspecies	Mammalia	hindgut	rule	Elephas maximus	Elephas maximus	100.0	0.0	herbivore
+336262	Dorosoma cepedianum	2	1	Dorosoma cepedianum	species	Actinopterygii	simple	rule	Dorosoma cepedianum	Dorosoma cepedianum			NA
+248811	Niviventer confucianus	2	1	Niviventer confucianus	species	Mammalia	hindgut	rule	Niviventer confucianus	Niviventer confucianus	80.0	20.0	herbivore
+2546160		2	1	Diploderma	genus	Lepidosauria	simple	rule	Diploderma	Diploderma			NA
+9589	Hylobates pileatus	2	1	Hylobates pileatus	species	Mammalia	hindgut	rule	Hylobates pileatus	Hylobates pileatus	90.0	10.0	herbivore
+9611	Canis	2	1	Canis	genus	Mammalia	simple	rule	Canis	Canis			NA
+192603	Equus quagga chapmani	2	1	Equus quagga chapmani	subspecies	Mammalia	hindgut	rule	Equus quagga	Equus quagga	100.0	0.0	herbivore
+34871	Naemorhedus goral	2	1	Naemorhedus goral	species	Mammalia	foregut	rule	Naemorhedus goral	Naemorhedus goral	100.0	0.0	herbivore
+9627	Vulpes vulpes	2	1	Vulpes vulpes	species	Mammalia	simple	rule	Vulpes vulpes	Vulpes vulpes	10.0	90.0	carnivore
+51300	Nyctalus noctula	2	1	Nyctalus noctula	species	Mammalia	simple	rule	Nyctalus noctula	Nyctalus noctula	0.0	100.0	carnivore
+9894	Giraffa camelopardalis	2	1	Giraffa camelopardalis	species	Mammalia	foregut	rule	Giraffa camelopardalis	Giraffa camelopardalis	100.0	0.0	herbivore
+3733726	Bos taurus taurus	2	1	Bos taurus taurus	subspecies	Mammalia	foregut	rule	Bos taurus	Bos taurus	100.0	0.0	herbivore
+98922	Myotis daubentonii	2	1	Myotis daubentonii	species	Mammalia	simple	rule	Myotis daubentonii	Myotis daubentonii	0.0	100.0	carnivore
+100784	Balearica regulorum gibbericeps	1	1	Balearica regulorum gibbericeps	subspecies	Aves	avian_caecal	rule	Balearica regulorum	Balearica regulorum	40.0	60.0	omnivore
+96888	Sardinella longiceps	1	1	Sardinella longiceps	species	Actinopterygii	simple	rule	Sardinella longiceps	Sardinella longiceps			NA
+258863	Mops condylurus	1	1	Mops condylurus	species	Mammalia	simple	rule	Mops condylurus	Mops condylurus	0.0	100.0	carnivore
+258952	Scotophilus dinganii	1	1	Scotophilus dinganii	species	Mammalia	simple	rule	Scotophilus dinganii	Scotophilus dinganii	0.0	100.0	carnivore
+129246	Apodemus chevrieri	1	1	Apodemus chevrieri	species	Mammalia	hindgut	rule	Apodemus chevrieri	Apodemus chevrieri	80.0	20.0	herbivore
+268758	Nectogale elegans	1	1	Nectogale elegans	species	Mammalia	simple	rule	Nectogale elegans	Nectogale elegans	0.0	100.0	carnivore
+9668	Mustela putorius	1	1	Mustela putorius	species	Mammalia	simple	rule	Mustela putorius	Mustela putorius	0.0	100.0	carnivore
+9690	Panthera onca	1	1	Panthera onca	species	Mammalia	simple	rule	Panthera onca	Panthera onca	0.0	100.0	carnivore
+274074	Cacatua sanguinea	1	1	Cacatua sanguinea	species	Aves	simple	rule	Cacatua sanguinea	Cacatua sanguinea	90.0	10.0	herbivore
+9654	Procyon lotor	1	1	Procyon lotor	species	Mammalia	simple	rule	Procyon lotor	Procyon lotor	40.0	60.0	omnivore
+27679	Saimiri boliviensis	1	1	Saimiri boliviensis	species	Mammalia	hindgut	rule	Saimiri boliviensis	Saimiri boliviensis	60.0	40.0	omnivore
+2772041	Chroicocephalus brunnicephalus	1	1	Chroicocephalus brunnicephalus	species	Aves	simple	rule	Chroicocephalus brunnicephalus	Chroicocephalus brunnicephalus			NA
+279953	Sterna paradisaea	1	1	Sterna paradisaea	species	Aves	simple	rule	Sterna paradisaea	Sterna paradisaea	0.0	100.0	carnivore
+286003	Gopherus berlandieri	1	1	Gopherus berlandieri	species	Testudines	hindgut	rule	Gopherus berlandieri	Gopherus berlandieri			NA
+9906	Bos javanicus	1	1	Bos javanicus	species	Mammalia	foregut	rule	Bos javanicus	Bos javanicus	100.0	0.0	herbivore
+1343854	Sorex thibetanus	1	1	Sorex thibetanus	species	Mammalia	simple	rule	Sorex thibetanus	Sorex thibetanus	0.0	100.0	carnivore
+175843	Bycanistes brevis	1	1	Bycanistes brevis	species	Aves	simple	rule	Bycanistes brevis	Bycanistes brevis	80.0	20.0	herbivore
+176013	Ara chloropterus	1	1	Ara chloropterus	species	Aves	simple	rule	Ara chloropterus	Ara chloropterus	100.0	0.0	herbivore
+176057	Nestor notabilis	1	1	Nestor notabilis	species	Aves	simple	rule	Nestor notabilis	Nestor notabilis	90.0	10.0	herbivore
+29061	Bos sp.	1	1	Bos sp.	species	Mammalia	foregut	rule	Bos sp.	Bos sp.			NA
+159324	Myotis dasycneme	1	1	Myotis dasycneme	species	Mammalia	simple	rule	Myotis dasycneme	Myotis dasycneme	0.0	100.0	carnivore
+1960652	Notamacropus rufogriseus	1	1	Notamacropus rufogriseus	species	Mammalia	foregut	rule	Notamacropus rufogriseus	Notamacropus rufogriseus			NA
+109478	Myotis brandtii	1	1	Myotis brandtii	species	Mammalia	simple	rule	Myotis brandtii	Myotis brandtii	0.0	100.0	carnivore
+196769	Moxostoma erythrurum	1	1	Moxostoma erythrurum	species	Actinopterygii	simple	rule	Moxostoma erythrurum	Moxostoma erythrurum			NA
+196770	Moxostoma macrolepidotum	1	1	Moxostoma macrolepidotum	species	Actinopterygii	simple	rule	Moxostoma macrolepidotum	Moxostoma macrolepidotum			NA
+9840	Lama guanicoe	1	1	Lama guanicoe	species	Mammalia	foregut	rule	Lama guanicoe	Lama guanicoe			NA
+1985288	Cebus unicolor	1	1	Cebus unicolor	species	Mammalia	hindgut	rule	Cebus unicolor	Cebus unicolor			NA
+154811	Carpiodes carpio	1	1	Carpiodes carpio	species	Actinopterygii	simple	rule	Carpiodes carpio	Carpiodes carpio			NA
+9945	Tragelaphus oryx	1	1	Tragelaphus oryx	species	Mammalia	foregut	rule	Tragelaphus oryx	Tragelaphus oryx			NA
+2021950	Sundamys annandalei	1	1	Sundamys annandalei	species	Mammalia	hindgut	rule	Sundamys annandalei	Sundamys annandalei			NA
+111821	Strix aluco	1	1	Strix aluco	species	Aves	simple	rule	Strix aluco	Strix aluco	0.0	100.0	carnivore
+208451	Spilornis cheela	1	1	Spilornis cheela	species	Aves	simple	rule	Spilornis cheela	Spilornis cheela	0.0	100.0	carnivore
+225389	Aplodinotus grunniens	1	1	Aplodinotus grunniens	species	Actinopterygii	simple	rule	Aplodinotus grunniens	Aplodinotus grunniens			NA
+1215604	Eulemur albifrons	1	1	Eulemur albifrons	species	Mammalia	hindgut	rule	Eulemur albifrons	Eulemur albifrons	80.0	20.0	herbivore
+242384	Mops pumilus	1	1	Mops pumilus	species	Mammalia	simple	rule	Mops pumilus	Mops pumilus			NA
+244777	Carpiodes cyprinus	1	1	Carpiodes cyprinus	species	Actinopterygii	simple	rule	Carpiodes cyprinus	Carpiodes cyprinus			NA
+81630	Dasypus kappleri	1	1	Dasypus kappleri	species	Mammalia	simple	rule	Dasypus kappleri	Dasypus kappleri	0.0	100.0	carnivore
+29080	Chaetophractus villosus	1	1	Chaetophractus villosus	species	Mammalia	simple	rule	Chaetophractus villosus	Chaetophractus villosus	30.0	70.0	carnivore
+9238	Pygoscelis adeliae	1	1	Pygoscelis adeliae	species	Aves	simple	rule	Pygoscelis adeliae	Pygoscelis adeliae	0.0	100.0	carnivore
+36288	Zoothera dauma	1	1	Zoothera dauma	species	Aves	simple	rule	Zoothera dauma	Zoothera dauma	20.0	80.0	carnivore
+371907	Bubo scandiacus	1	1	Bubo scandiacus	species	Aves	simple	rule	Bubo scandiacus	Bubo scandiacus			NA
+9054	Phasianus colchicus	1	1	Phasianus colchicus	species	Aves	avian_caecal	rule	Phasianus colchicus	Phasianus colchicus	90.0	10.0	herbivore
+9049	Pavo cristatus	1	1	Pavo cristatus	species	Aves	avian_caecal	rule	Pavo cristatus	Pavo cristatus	60.0	40.0	omnivore
+395889	Stercorarius maccormicki	1	1	Stercorarius maccormicki	species	Aves	simple	rule	Stercorarius maccormicki	Stercorarius maccormicki			NA
+435155	Harpadon nehereus	1	1	Harpadon nehereus	species	Actinopterygii	simple	rule	Harpadon nehereus	Harpadon nehereus			NA
+459285	Johnius elongatus	1	1	Johnius elongatus	species	Actinopterygii	simple	rule	Johnius elongatus	Johnius elongatus			NA
+459287	Otolithoides biauritus	1	1	Otolithoides biauritus	species	Actinopterygii	simple	rule	Otolithoides biauritus	Otolithoides biauritus			NA
+46259	Morone chrysops	1	1	Morone chrysops	species	Actinopterygii	simple	rule	Morone chrysops	Morone chrysops			NA
+481574	Euroscaptor longirostris	1	1	Euroscaptor longirostris	species	Mammalia	simple	rule	Euroscaptor longirostris	Euroscaptor longirostris	0.0	100.0	carnivore
+8930	Columbidae	1	1	Columbidae	family	Aves	simple	rule	Columbidae	Columbidae			NA
+494514	Vulpes lagopus	1	1	Vulpes lagopus	species	Mammalia	simple	rule	Vulpes lagopus	Vulpes lagopus	0.0	100.0	carnivore
+8868	Cygnus atratus	1	1	Cygnus atratus	species	Aves	avian_caecal	rule	Cygnus atratus	Cygnus atratus	100.0	0.0	herbivore
+58083	Rousettus amplexicaudatus	1	1	Rousettus amplexicaudatus	species	Mammalia	simple	rule	Rousettus amplexicaudatus	Rousettus amplexicaudatus	100.0	0.0	herbivore
+59450	Epomophorus crypturus	1	1	Epomophorus crypturus	species	Mammalia	simple	rule	Epomophorus crypturus	Epomophorus crypturus	100.0	0.0	herbivore
+61294	Capra sp.	1	1	Capra sp.	species	Mammalia	foregut	rule	Capra sp.	Capra sp.			NA
+61400	Galidia elegans	1	1	Galidia elegans	species	Mammalia	simple	rule	Galidia elegans	Galidia elegans	10.0	90.0	carnivore
+61405	Leptailurus serval	1	1	Leptailurus serval	species	Mammalia	simple	rule	Leptailurus serval	Leptailurus serval	0.0	100.0	carnivore
+64678	Callosciurus notatus	1	1	Callosciurus notatus	species	Mammalia	hindgut	rule	Callosciurus notatus	Callosciurus notatus	70.0	30.0	herbivore
+66190	Astrochelys radiata	1	1	Astrochelys radiata	species	Testudines	hindgut	rule	Astrochelys radiata	Astrochelys radiata			NA
+69077	Rattus andamanensis	1	1	Rattus andamanensis	species	Mammalia	hindgut	rule	Rattus andamanensis	Rattus andamanensis	70.0	30.0	herbivore
+693984	Nomascus hainanus	1	1	Nomascus hainanus	species	Mammalia	hindgut	rule	Nomascus hainanus	Nomascus hainanus	90.0	10.0	herbivore
+78454	Saguinus labiatus	1	1	Saguinus labiatus	species	Mammalia	hindgut	rule	Saguinus labiatus	Saguinus labiatus	60.0	40.0	omnivore
+9226	Ara ararauna	1	1	Ara ararauna	species	Aves	simple	rule	Ara ararauna	Ara ararauna	100.0	0.0	herbivore
+9240	Spheniscus humboldti	1	1	Spheniscus humboldti	species	Aves	simple	rule	Spheniscus humboldti	Spheniscus humboldti	0.0	100.0	carnivore
+29086	Hydrurga leptonyx	1	1	Hydrurga leptonyx	species	Mammalia	simple	rule	Hydrurga leptonyx	Hydrurga leptonyx	0.0	100.0	carnivore
+925459	Balearica regulorum	1	1	Balearica regulorum	species	Aves	avian_caecal	rule	Balearica regulorum	Balearica regulorum	40.0	60.0	omnivore
+30520		1	1	Bos frontalis	species	Mammalia	foregut	rule	Bos frontalis	Bos frontalis	100.0	0.0	herbivore
+30538	Vicugna pacos	1	1	Vicugna pacos	species	Mammalia	foregut	rule	Vicugna pacos	Vicugna pacos			NA
+9593	Gorilla gorilla	1	1	Gorilla gorilla	species	Mammalia	hindgut	rule	Gorilla gorilla	Gorilla gorilla	100.0	0.0	herbivore
+30602	Eulemur macaco	1	1	Eulemur macaco	species	Mammalia	hindgut	rule	Eulemur macaco	Eulemur macaco	100.0	0.0	herbivore
+30608	Microcebus murinus	1	1	Microcebus murinus	species	Mammalia	hindgut	rule	Microcebus murinus	Microcebus murinus	60.0	40.0	omnivore
+9561	Mandrillus sphinx	1	1	Mandrillus sphinx	species	Mammalia	hindgut	rule	Mandrillus sphinx	Mandrillus sphinx	80.0	20.0	herbivore
+9557	Papio hamadryas	1	1	Papio hamadryas	species	Mammalia	hindgut	rule	Papio hamadryas	Papio hamadryas	80.0	20.0	herbivore
+8467	Caretta caretta	1	1	Caretta caretta	species	Testudines	simple	rule	Caretta caretta	Caretta caretta			NA
+309913	Sus scrofa cristatus	1	1	Sus scrofa cristatus	subspecies	Mammalia	hindgut	rule	Sus scrofa	Sus scrofa	70.0	30.0	herbivore
+311895	Pyrrhura molinae	1	1	Pyrrhura molinae	species	Aves	simple	rule	Pyrrhura molinae	Pyrrhura molinae	100.0	0.0	herbivore
+9517	Cebus sp.	1	1	Cebus sp.	species	Mammalia	hindgut	rule	Cebus sp.	Cebus sp.			NA
+32536	Acinonyx jubatus	1	1	Acinonyx jubatus	species	Mammalia	simple	rule	Acinonyx jubatus	Acinonyx jubatus	0.0	100.0	carnivore
+9505	Aotus trivirgatus	1	1	Aotus trivirgatus	species	Mammalia	hindgut	rule	Aotus trivirgatus	Aotus trivirgatus	70.0	30.0	herbivore
+9495	Callimico goeldii	1	1	Callimico goeldii	species	Mammalia	hindgut	rule	Callimico goeldii	Callimico goeldii	50.0	50.0	omnivore
+9493	Cebuella pygmaea	1	1	Cebuella pygmaea	species	Mammalia	hindgut	rule	Cebuella pygmaea	Cebuella pygmaea			NA
+9488	Saguinus mystax	1	1	Saguinus mystax	species	Mammalia	hindgut	rule	Saguinus mystax	Saguinus mystax	60.0	40.0	omnivore
+9455	Varecia variegata	1	1	Varecia variegata	species	Mammalia	hindgut	rule	Varecia variegata	Varecia variegata	100.0	0.0	herbivore
+9408	Rousettus leschenaultii	1	1	Rousettus leschenaultii	species	Mammalia	simple	rule	Rousettus leschenaultii	Rousettus leschenaultii	100.0	0.0	herbivore
+9407	Rousettus aegyptiacus	1	1	Rousettus aegyptiacus	species	Mammalia	simple	rule	Rousettus aegyptiacus	Rousettus aegyptiacus	100.0	0.0	herbivore
+34829	Eulemur rubriventer	1	1	Eulemur rubriventer	species	Mammalia	hindgut	rule	Eulemur rubriventer	Eulemur rubriventer	100.0	0.0	herbivore
+34886	Eumetopias jubatus	1	1	Eumetopias jubatus	species	Mammalia	simple	rule	Eumetopias jubatus	Eumetopias jubatus	0.0	100.0	carnivore
+9317	Macropus giganteus	1	1	Macropus giganteus	species	Mammalia	foregut	rule	Macropus giganteus	Macropus giganteus	100.0	0.0	herbivore
+3538334	Elephas sp.	1	1	Elephas sp.	species	Mammalia	hindgut	rule	Elephas sp.	Elephas sp.			NA
+9984	Oryctolagus	1	1	Oryctolagus	genus	Mammalia	hindgut	rule	Oryctolagus	Oryctolagus			NA

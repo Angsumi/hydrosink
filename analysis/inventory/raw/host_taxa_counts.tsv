@@ -1,0 +1,542 @@
+host_tax_id	name	runs	studies
+9913	Bos taurus	14625	125
+9031	Gallus gallus	7957	79
+9823	Sus scrofa	5693	95
+9796	Equus caballus	2865	9
+9825	Sus scrofa domesticus	2178	27
+9615	Canis lupus familiaris	1838	23
+9103	Meleagris gallopavo	1746	9
+89462	Bubalus bubalis	791	7
+8030	Salmo salar	611	5
+7955	Danio rerio	570	9
+9940	Ovis aries	543	25
+9685	Felis catus	461	14
+447135	Myodes glareolus	399	4
+9925	Capra hircus	348	61
+9646	Ailuropoda melanoleuca	308	12
+60711	Chlorocebus sabaeus	243	1
+212257		234	3
+130825	Ochotona curzoniae	225	5
+38626	Phascolarctos cinereus	210	3
+9544	Macaca mulatta	207	11
+10114		198	2
+9541	Macaca fascicularis	192	8
+9903	Bos	188	8
+82168	Emys orbicularis	179	1
+37032	Suricata suricatta	178	2
+9689	Panthera leo	162	1
+64176	Podarcis muralis	154	1
+9915	Bos indicus	146	3
+1934190	Hoolock tianxing	145	1
+129247	Apodemus draco	145	2
+9430	Desmodus rotundus	143	1
+55149	Sciurus vulgaris	140	2
+30521	Bos grunniens	139	9
+69293	Gasterosteus aculeatus	124	1
+72004	Bos mutus	122	1
+30640	Sciurus carolinensis	122	1
+28584		115	1
+10181	Heterocephalus glaber	114	2
+9863	Cervus nippon	112	2
+465719	Trachypithecus poliocephalus	104	2
+256425	Lissotriton helveticus	101	1
+59462	Myotis bechsteinii	96	1
+61862	Plecotus auritus	95	2
+59542	Pseudois nayaur	91	2
+30415	Grus japonensis	91	2
+211834	Lutjanus argentimaculatus	90	1
+6689	Penaeus vannamei	90	4
+61622	Rhinopithecus roxellana	79	5
+9337	Trichosurus vulpecula	76	2
+9595	Gorilla gorilla gorilla	75	4
+77151	Mustela nigripes	72	1
+53275	Rhizomys pruinosus	72	1
+54180	Trachypithecus francoisi	71	3
+52224	Shinisaurus crocodilurus	69	1
+52169		69	1
+59538	Pantholops hodgsonii	68	1
+2485929	Sus scrofa vittatus	63	1
+232653	Psittacula echo	61	1
+90521	Podarcis gaigeae	61	1
+9678	Crocuta crocuta	60	1
+8128	Oreochromis niloticus	59	5
+8022	Oncorhynchus mykiss	59	1
+39030	Apodemus agrarius	58	3
+9822	Sus	56	2
+7460	Apis mellifera	56	5
+48560	Capreolus pygargus	55	3
+8404	Lithobates pipiens	55	1
+56787	Perisoreus infaustus	54	2
+27706	Micropterus salmoides	53	3
+302094		52	1
+8389	Anaxyrus americanus	51	1
+9838	Camelus dromedarius	50	3
+68730	Cuon alpinus	50	1
+9794	Equus hemionus	50	4
+9983	Lepus europaeus	50	1
+9644	Ursus arctos	50	1
+7936		50	1
+215358	Larimichthys crocea	49	3
+7959	Ctenopharyngodon idella	49	3
+146632	Petauroides volans	48	1
+9556	Papio cynocephalus	48	1
+52775	Ciconia boyciana	47	1
+670907	Rana kukunoris	45	4
+74359	Podarcis pityusensis	44	1
+9793	Equus asinus	43	3
+65481	Podarcis filfolensis	43	1
+407171	Lasiopodomys brandtii	43	1
+79684	Microtus ochrogaster	40	2
+685728	Pristis pectinata	40	2
+1088058	Cervus albirostris	40	1
+100897	Alexandromys fortis	40	1
+7965	Hypophthalmichthys nobilis	39	1
+106732	Chelonoidis porteri	39	1
+219595	Cygnus cygnus	38	2
+8167	Perca flavescens	38	1
+65382	Cervus canadensis nannodes	37	26
+9783	Elephas maximus	36	13
+146133	Eospalax fontanierii cansus	36	1
+670348	Mergus squamatus	36	2
+56216	Neotoma lepida	35	1
+30374	Calotriton asper	35	1
+9837	Camelus bactrianus	34	3
+9657	Lutra lutra	34	2
+9542	Macaca fuscata	33	2
+349709	Niviventer excelsior	32	1
+343526	Schizopyge nukiangensis	32	1
+54292	Apodemus flavicollis	31	2
+33616	Gymnogyps californianus	31	1
+8846	Anser indicus	31	4
+130843	Ochotona thibetana	30	1
+43332	Elaphurus davidianus	30	1
+9090	Coturnix	30	1
+10036	Mesocricetus auratus	30	1
+9821	Suidae	30	1
+51338	Castor canadensis	29	29
+42528	Piaractus mesopotamicus	29	1
+334908	Larimichthys polyactis	28	1
+43455	Cathartes aura	28	1
+1049777		28	1
+30668	Lasiorhinus latifrons	28	2
+344906	Hydropotes inermis argyropus	28	1
+7998	Ictalurus punctatus	27	2
+83287	Tympanuchus phasianellus	27	1
+128390	Nipponia nippon	27	1
+33614	Coragyps atratus	27	1
+9798	Equus przewalskii	27	2
+3370984	Anteliomys custos	27	1
+99837	Spermophilus dauricus	27	1
+1260386	Kyphosus sydneyanus	26	1
+90522	Podarcis milensis	26	1
+862701	Sorex bedfordiae	26	1
+6978	Periplaneta americana	25	1
+9773	Megaptera novaeangliae	25	2
+8409	Pelophylax nigromaculatus	24	2
+265035		24	1
+10088	Mus	24	1
+933992	Chanodichthys erythropterus	24	1
+232655	Psittacula eupatria	24	1
+356809	Acrossocheilus fasciatus	24	3
+77214	Eidolon helvum	24	1
+61621	Rhinopithecus bieti	24	1
+9549	Macaca sp.	24	1
+93162	Marmota flaviventris	23	1
+103693		23	1
+96914	Lampsilis cardium	23	1
+29139	Vombatus ursinus	23	1
+9598	Pan troglodytes	22	2
+2008792	Macaca mulatta vestita	22	2
+9004	Tympanuchus cupido	22	1
+29092	Microtus agrestis	21	1
+103437		21	1
+214933	Apodemus latronum	21	1
+6396	Eisenia fetida	21	1
+8839	Anas platyrhynchos	21	2
+141262	Andrias davidianus	20	1
+156760	Spheniscus mendiculus	20	1
+36306	Sceloporus grammicus	20	1
+8855	Cairina moschata	20	1
+9770	Balaenoptera physalus	20	1
+1212470	Setophaga striata	20	1
+9899	Ammotragus lervia	20	1
+2804203	Semnopithecus schistaceus	20	1
+47230	Microtus arvalis	19	1
+37011	Pan troglodytes troglodytes	18	1
+10117	Rattus rattus	18	2
+7667	Strongylocentrotus intermedius	18	1
+8843	Anser anser	18	1
+1114792	Equus ferus	18	1
+64668	Lagopus muta	17	1
+13733	Trichiurus lepturus	17	1
+10092	Mus musculus domesticus	17	2
+2936569		16	1
+10042	Peromyscus maniculatus	16	1
+9625	Vulpes	16	1
+343691	Hermetia illucens	16	2
+191885	Biancaea decapetala	16	1
+8469	Chelonia mydas	16	1
+2162900	Alexandromys oeconomus	15	1
+54602	Macaca thibetana	15	1
+27606	Eubalaena glacialis	15	1
+31192	Holothuria glaberrima	14	2
+307972	Apostichopus japonicus	14	2
+125878		14	1
+10129	Apodemus sylvaticus	14	1
+1680887		14	1
+37174	Ovis canadensis	14	1
+9974	Manis javanica	13	1
+472760	Rattus lutreola	13	1
+662736	Podarcis liolepis	13	1
+267130	Acanthogobius hasta	13	1
+8996	Numida meleagris	13	4
+9649	Ailurus fulgens	13	2
+57570	Salamandra atra	13	2
+48089		12	2
+36722	Martes zibellina	12	1
+85551	Scylla olivacea	12	1
+8787	Casuarius casuarius	12	2
+7962	Cyprinus carpio	12	3
+72544	Capra sibirica	12	1
+379532	Propithecus coquereli	12	1
+7765	Eptatretus stoutii	12	1
+9030	Gallus	12	1
+320993	Amynthas robustus	12	1
+161274		12	1
+1026970	Nannospalax galili	12	1
+230172	Ovis ammon polii	12	1
+9872	Odocoileus hemionus	12	1
+10149	Hydrochoerus hydrochaeris	12	1
+208091	Papio kindae	12	2
+176946	Python bivittatus	12	1
+399537	Timon lepidus	11	1
+394588	Neotoma bryanti	11	1
+164611	Neotoma stephensi	11	2
+37029	Prionailurus bengalensis	11	1
+119488	Siniperca chuatsi	11	2
+8801	Struthio camelus	11	2
+178819	Iberolacerta bonnali	10	1
+9870	Rangifer tarandus	10	1
+132587	Anser fabalis	10	1
+387934	Microhyla fissipes	10	1
+10041	Peromyscus leucopus	10	1
+127582	Trichechus manatus latirostris	10	1
+7067	Tenebrio molitor	10	2
+178817	Iberolacerta aranica	10	1
+248799	Lophiomys imhausi	10	1
+8090	Oryzias latipes	10	1
+2602792		10	1
+3148847	Murinae sp.	10	1
+9980		10	1
+8496	Alligator mississippiensis	10	2
+2602793		9	1
+242058	Protobothrops mangshanensis	9	1
+43179	Ictidomys tridecemlineatus	9	1
+65476	Lacerta viridis	9	1
+74533	Panthera tigris altaica	9	1
+3388889		9	1
+8164	Lateolabrax japonicus	9	1
+9901	Bison bison	9	2
+375578	Sus scrofa leucomystax	9	1
+30195	Bombus terrestris	9	1
+9785	Loxodonta africana	9	3
+9395	Tupaia glis	9	1
+1171130	Uropsilus aequodonenia	9	1
+56790	Pyrrhocorax pyrrhocorax	8	2
+2489341	Strigops habroptila	8	2
+477934	Corvus dauuricus	8	2
+8869	Cygnus olor	8	2
+105297	Apodemus peninsulae	8	2
+167804	Aldabrachelys gigantea	8	3
+163143	Kyphosus vaigiensis	8	1
+71006	Myrmecophaga tridactyla	8	2
+7137	Galleria mellonella	8	1
+36249	Corvus macrorhynchos	8	2
+798166	Neodon irene	8	1
+9662	Meles meles	8	1
+389296		8	1
+7461	Apis cerana	8	1
+48850	Tamandua tetradactyla	8	2
+2234023	Goniurosaurus zhoui	8	1
+75140	Corvus frugilegus	8	2
+83281	Propithecus diadema	8	1
+30493	Triakis semifasciata	8	1
+52204		7	1
+120506		7	1
+8790	Dromaius novaehollandiae	7	3
+8346	Bombina orientalis	7	1
+1618199	Equus hemionus hemionus	7	1
+9768	Balaenoptera borealis	7	2
+9592	Gorilla	7	1
+8324	Lissotriton vulgaris	7	1
+38937	Anolis sagrei	7	1
+1159882	Blarinella quadraticauda	7	1
+3373980	Bulinus sp.	7	1
+30344	Pelodryas caerulea	7	1
+42408	Neotoma albigula	7	2
+1768099	Natrix astreptophora	6	1
+214657	Girella nigricans	6	1
+1885676	Euphaedusa aculus	6	1
+227093	Chalcides striatus	6	1
+56781	Corvus corax	6	2
+9447	Lemur catta	6	2
+542783		6	1
+9713	Leptonychotes weddellii	6	2
+8797	Rhea americana	6	2
+3370766	Scaptonyx fusicauda	6	1
+82468	Eothenomys melanogaster	6	1
+349162	Neotoma macrotis	6	1
+95602	Eriocheir sinensis	6	1
+109175	Dryophytes japonicus	6	1
+9568	Mandrillus leucophaeus	6	2
+36248	Gyps himalayensis	6	1
+302418	Smutsia temminckii	6	1
+130821	Ochotona cansus	6	1
+9612	Canis lupus	6	3
+400727	Pomacea canaliculata	6	1
+38654	Alligator sinensis	6	1
+263537	Diptychus maculatus	6	1
+145438	Rumina decollata	6	1
+71582		6	1
+9680	Proteles cristata	6	1
+2691115	Geospizopsis unicolor	6	1
+1496311	Malayopython reticulatus	6	1
+44391	Zonotrichia capensis	6	1
+2603701	Acusta ravida	6	1
+171650		5	1
+1616038	Nomascus annamensis	5	1
+102190	Ophisaurus apodus;Ophisaurus	5	1
+177283	Birgus latro	5	1
+8558	Varanus albigularis	5	1
+164292	Pedostibes hosii	5	1
+62035	Varanus acanthurus acanthurus;Varanus acanthurus	5	1
+137520	Hypomesus transpacificus	5	1
+64663	Callosciurus prevosti;Callosciurus	5	1
+7973	Ictiobus bubalus	5	1
+66194	Pyxis arachnoides	5	1
+866438	Rhyticeros undulatus	5	1
+1594397	Lepidobatrachus asper	5	1
+9874	Odocoileus virginianus	5	2
+33605	Torgos tracheliotus;Torgos	5	1
+61378	Felis margarita	5	1
+310714	Diceros bicornis michaeli	5	1
+8876	Dendrocygna viduata	5	1
+89379	Hypogeomys antinena;Hypogeomys antimena	5	1
+9089	Chrysolophus pictus	5	1
+34880	Nyctereutes procyonoides	5	1
+89386	Ardeotis kori	5	1
+2602807		5	1
+8992	Acryllium vulturinum	5	1
+43583	Sarcorhamphus papa;Sarcoramphus papa	5	1
+402378	Uroplatus lineatus	5	1
+9091	Coturnix coturnix	5	1
+268760	Episoriculus macrurus	5	1
+35510	Equus ferus przewalskii	5	1
+93158	Marmota bobak	5	1
+9117	Grus americana	5	1
+271260	Trachypithecus germaini	5	1
+8821	Apteryx mantelli;Apteryx	5	1
+50046	Geochelone radiata;Geochelone	5	1
+9715	Mirounga leonina	5	1
+51876	Eunectes murinus	5	1
+9358	Choloepus hoffmanni	5	1
+183749	Tolypeutes matacus	5	1
+184239	Crocodylus rhombifer	5	1
+58517	Ceratobatrachus guentheri;Cornufer guentheri	5	1
+3041614		5	1
+95122	Rhacodactylus leachianus	5	1
+9790	Equus burchellii	5	1
+318376	Trachycephalus resinifictrix	5	1
+30527	Ovis ammon	5	1
+210647	Helogale parvula	5	1
+9371	Echinops telfairi	5	1
+210652	Mungos mungo	5	1
+224329	Rhinopithecus brelichi	5	1
+537920	Clethrionomys rutilus	5	1
+9636	Melursus ursinus	5	1
+122273	Petaurus gracilis	4	1
+1192867	Chroicocephalus ridibundus	4	1
+84662	Petrolisthes armatus	4	1
+30574	Dasypus sp.	4	1
+9555	Papio anubis	4	2
+348688	Protaetia brevitarsis	4	1
+34827	Indri indri	4	1
+327700	Schizothorax biddulphi	4	1
+327957	Trichechus senegalensis	4	1
+1260384	Kyphosus hawaiiensis	4	1
+27787	Eretmochelys imbricata	4	1
+9601	Pongo abelii	4	1
+146136	Eospalax rothschildi	4	1
+9818	Orycteropus afer	4	2
+171643		4	1
+8847	Anser sp.	4	1
+1677794	Triplophysa yarkandensis	4	1
+651863	Rimicaris kairei	4	1
+163144	Kyphosus cinerascens	4	1
+527686		4	1
+9860	Cervus elaphus	4	1
+3018951	Tuerkayana magnum	4	1
+45628	Gecarcoidea natalis	4	1
+42806	Anas sp.	4	1
+2796534		4	1
+75329	Misgurnus anguillicaudatus	4	1
+75352	Megalobrama amblycephala	4	1
+90387	Macaca leonina	4	1
+1311532	Atherinopsis californiensis	4	1
+3018950	Tuerkayana celeste	4	1
+100190	Embiotoca jacksoni	4	1
+9672	Pteronura brasiliensis	3	1
+85694	Didelphis aurita	3	1
+9002	Centrocercus urophasianus	3	1
+8840	Anas platyrhynchos platyrhynchos	3	1
+9503	Alouatta seniculus	3	1
+452597	Aonyx cinerea;Aonyx cinereus	3	1
+3070783	Petrolisthes sp.	3	1
+48852	Cabassous unicinctus	3	1
+302408	Rhinolophus capensis	3	1
+3076364		3	1
+310352	Pygathrix nigripes	3	1
+2491182	Sorex cansulus	3	1
+240395		3	1
+35732	Rattus tanezumi	3	2
+164610	Neotoma devia	3	1
+1529421	Comaster schlegelii	3	1
+386877	Petrolisthes donadio	3	1
+147949	Micropterus dolomieu	3	1
+409609	Giraffa camelopardalis reticulata;Giraffa reticulata	3	1
+42716	Didelphis albiventris	3	1
+429310	Fejervarya multistriata	3	1
+143292	Manis pentadactyla	3	1
+1815282	Gymnolophus obscura	3	1
+59531	Kobus leche	3	1
+7869	Chimaeridae	3	1
+61853	Nomascus leucogenys	3	1
+105147	Neotoma cinerea	3	1
+118643	Ateles chamek	3	1
+58067	Epomophorus wahlbergi	2	1
+9801	Tapirus terrestris	2	1
+3519422	Cleopatra sp.	2	1
+57098	Cyclura cornuta	2	1
+9361	Dasypus novemcinctus	2	1
+34667	Cerambycidae	2	1
+9400	Cynopterus sphinx	2	1
+234634	Dremomys pernyi	2	1
+99487	Elephas maximus indicus	2	1
+336262	Dorosoma cepedianum	2	1
+248811	Niviventer confucianus	2	1
+2546160		2	1
+7135	Pyralidae	2	1
+2759559	Marphysa madrasi	2	1
+9589	Hylobates pileatus	2	1
+9611	Canis	2	1
+192603	Equus quagga chapmani	2	1
+34871	Naemorhedus goral	2	1
+9627	Vulpes vulpes	2	1
+51300	Nyctalus noctula	2	1
+9894	Giraffa camelopardalis	2	1
+3733726	Bos taurus taurus	2	1
+98922	Myotis daubentonii	2	1
+1392986	Namalycastis jaya	2	1
+1235509	synthetic metagenome	2	1
+60588	Odontotermes formosanus	2	1
+100784	Balearica regulorum gibbericeps	1	1
+96888	Sardinella longiceps	1	1
+258863	Mops condylurus	1	1
+258952	Scotophilus dinganii	1	1
+129246	Apodemus chevrieri	1	1
+268758	Nectogale elegans	1	1
+9668	Mustela putorius	1	1
+271028	Anisus	1	1
+9690	Panthera onca	1	1
+274074	Cacatua sanguinea	1	1
+9654	Procyon lotor	1	1
+123880	Petrolisthes haigae	1	1
+27679	Saimiri boliviensis	1	1
+2772041	Chroicocephalus brunnicephalus	1	1
+279953	Sterna paradisaea	1	1
+286003	Gopherus berlandieri	1	1
+9906	Bos javanicus	1	1
+1343854	Sorex thibetanus	1	1
+175843	Bycanistes brevis	1	1
+1036988	Geograpsus grayi	1	1
+176013	Ara chloropterus	1	1
+176057	Nestor notabilis	1	1
+29061	Bos sp.	1	1
+159324	Myotis dasycneme	1	1
+1960652	Notamacropus rufogriseus	1	1
+109478	Myotis brandtii	1	1
+196769	Moxostoma erythrurum	1	1
+196770	Moxostoma macrolepidotum	1	1
+9840	Lama guanicoe	1	1
+1985288	Cebus unicolor	1	1
+154811	Carpiodes carpio	1	1
+9945	Tragelaphus oryx	1	1
+2021950	Sundamys annandalei	1	1
+111821	Strix aluco	1	1
+208451	Spilornis cheela	1	1
+225389	Aplodinotus grunniens	1	1
+1215604	Eulemur albifrons	1	1
+242384	Mops pumilus	1	1
+244777	Carpiodes cyprinus	1	1
+81630	Dasypus kappleri	1	1
+29080	Chaetophractus villosus	1	1
+9238	Pygoscelis adeliae	1	1
+3625047	Pila sp.	1	1
+36288	Zoothera dauma	1	1
+364883	Gecarcoidea lalandii	1	1
+371907	Bubo scandiacus	1	1
+9054	Phasianus colchicus	1	1
+373423	Ocypode ceratophthalmus	1	1
+376772	Petrolisthes bolivarensis	1	1
+9049	Pavo cristatus	1	1
+395889	Stercorarius maccormicki	1	1
+435155	Harpadon nehereus	1	1
+459285	Johnius elongatus	1	1
+459287	Otolithoides biauritus	1	1
+46259	Morone chrysops	1	1
+481574	Euroscaptor longirostris	1	1
+8930	Columbidae	1	1
+494514	Vulpes lagopus	1	1
+8868	Cygnus atratus	1	1
+58083	Rousettus amplexicaudatus	1	1
+59450	Epomophorus crypturus	1	1
+61294	Capra sp.	1	1
+61400	Galidia elegans	1	1
+61405	Leptailurus serval	1	1
+64678	Callosciurus notatus	1	1
+66190	Astrochelys radiata	1	1
+69077	Rattus andamanensis	1	1
+693984	Nomascus hainanus	1	1
+78454	Saguinus labiatus	1	1
+9226	Ara ararauna	1	1
+9240	Spheniscus humboldti	1	1
+29086	Hydrurga leptonyx	1	1
+925459	Balearica regulorum	1	1
+30520		1	1
+30538	Vicugna pacos	1	1
+9593	Gorilla gorilla	1	1
+30602	Eulemur macaco	1	1
+30608	Microcebus murinus	1	1
+9561	Mandrillus sphinx	1	1
+3062786	Lanistes sp.	1	1
+9557	Papio hamadryas	1	1
+8467	Caretta caretta	1	1
+309913	Sus scrofa cristatus	1	1
+311895	Pyrrhura molinae	1	1
+3134067	Biomphalaria sp.	1	1
+9517	Cebus sp.	1	1
+32536	Acinonyx jubatus	1	1
+9505	Aotus trivirgatus	1	1
+3348912	Lymnaea sp.	1	1
+9495	Callimico goeldii	1	1
+9493	Cebuella pygmaea	1	1
+9488	Saguinus mystax	1	1
+9455	Varecia variegata	1	1
+3420085	Physella sp.	1	1
+9408	Rousettus leschenaultii	1	1
+9407	Rousettus aegyptiacus	1	1
+34829	Eulemur rubriventer	1	1
+34886	Eumetopias jubatus	1	1
+9317	Macropus giganteus	1	1
+3538334	Elephas sp.	1	1
+9984	Oryctolagus	1	1

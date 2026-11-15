@@ -1,0 +1,11 @@
+stage	n_before	n_after	excluded	note
+identified: ENA WGS/METAGENOMIC/ILLUMINA runs, 7 gut taxa	136708	136708	0	duplicates across taxa removed
+host_tax_id present (free-text-only hosts: mostly domestic pig/cattle/chicken/dog, not recovered)	136708	88602	48106	
+vertebrate host other than human/mouse/rat (ENA lineage)	88602	51214	37388	
+no exclusion keywords (treatment/in-vitro/non-WGS/controls)	51214	50740	474	
+read_count >= 5,000,000	50740	29286	21454	
+mean read length >= 100 bp	29286	20135	9151	
+one run per BioSample (deepest kept)	20135	19385	750	
+P2: faecal samples	19385	8293	11092	
+P2: cap 10 runs/host species, round-robin across studies	8293	930	7363	
+P1: seed paired-compartment runs (Li 2025 + Xie 2021); fermentation chambers only (abomasum + small intestine excluded)	402	254	148	seed studies, added directly

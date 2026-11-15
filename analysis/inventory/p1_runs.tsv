@@ -1,0 +1,255 @@
+run_accession	study	host_species	compartment	animal	sample_alias	chamber
+SRR28204437	Li2025_PRJNA1068803	Capra hircus	cecum	goat16	Ce16	hindgut
+SRR28204439	Li2025_PRJNA1068803	Capra hircus	cecum	goat14	Ce14	hindgut
+SRR28204441	Li2025_PRJNA1068803	Capra hircus	rumen	goat30	Rum30	foregut
+SRR28204451	Li2025_PRJNA1068803	Capra hircus	rumen	goat15	Rum15	foregut
+SRR28204458	Li2025_PRJNA1068803	Capra hircus	rumen	goat7	Rum7	foregut
+SRR28204462	Li2025_PRJNA1068803	Capra hircus	cecum	goat27	Ce27	hindgut
+SRR28204435	Li2025_PRJNA1068803	Capra hircus	cecum	goat24	Ce24	hindgut
+SRR28204436	Li2025_PRJNA1068803	Capra hircus	cecum	goat23	Ce23	hindgut
+SRR28204440	Li2025_PRJNA1068803	Capra hircus	cecum	goat13	Ce13	hindgut
+SRR28204452	Li2025_PRJNA1068803	Capra hircus	rumen	goat14	Rum14	foregut
+SRR28204454	Li2025_PRJNA1068803	Capra hircus	cecum	goat9	Ce9	hindgut
+SRR28204460	Li2025_PRJNA1068803	Capra hircus	cecum	goat29	Ce29	hindgut
+SRR28204455	Li2025_PRJNA1068803	Capra hircus	rumen	goat10	Rum10	foregut
+SRR28204457	Li2025_PRJNA1068803	Capra hircus	rumen	goat8	Rum8	foregut
+SRR28204459	Li2025_PRJNA1068803	Capra hircus	cecum	goat30	Ce30	hindgut
+SRR28204463	Li2025_PRJNA1068803	Capra hircus	cecum	goat26	Ce26	hindgut
+SRR28204464	Li2025_PRJNA1068803	Capra hircus	cecum	goat25	Ce25	hindgut
+SRR28204438	Li2025_PRJNA1068803	Capra hircus	cecum	goat15	Ce15	hindgut
+SRR28204442	Li2025_PRJNA1068803	Capra hircus	rumen	goat29	Rum29	foregut
+SRR28204443	Li2025_PRJNA1068803	Capra hircus	cecum	goat10	Ce10	hindgut
+SRR28204447	Li2025_PRJNA1068803	Capra hircus	rumen	goat25	Rum25	foregut
+SRR28204448	Li2025_PRJNA1068803	Capra hircus	rumen	goat24	Rum24	foregut
+SRR28204456	Li2025_PRJNA1068803	Capra hircus	rumen	goat9	Rum9	foregut
+SRR28204444	Li2025_PRJNA1068803	Capra hircus	rumen	goat28	Rum28	foregut
+SRR28204445	Li2025_PRJNA1068803	Capra hircus	rumen	goat27	Rum27	foregut
+SRR28204446	Li2025_PRJNA1068803	Capra hircus	rumen	goat26	Rum26	foregut
+SRR28204449	Li2025_PRJNA1068803	Capra hircus	rumen	goat23	Rum23	foregut
+SRR28204450	Li2025_PRJNA1068803	Capra hircus	rumen	goat16	Rum16	foregut
+SRR28204453	Li2025_PRJNA1068803	Capra hircus	rumen	goat13	Rum13	foregut
+SRR28204461	Li2025_PRJNA1068803	Capra hircus	cecum	goat28	Ce28	hindgut
+SRR28204465	Li2025_PRJNA1068803	Capra hircus	cecum	goat8	Ce8	hindgut
+SRR28204466	Li2025_PRJNA1068803	Capra hircus	cecum	goat7	Ce7	hindgut
+SRR12529058	Xie2021_PRJNA657455	Capra hircus	colon	Goat_2	Goat_Colon-2	hindgut
+SRR12529061	Xie2021_PRJNA657455	Capra hircus	cecum	Goat_5	Goat_Cecum-5	hindgut
+SRR12529062	Xie2021_PRJNA657455	Dairy cattle	cecum	Dairy_cattle_2	Dairy_cattle_Cecum-2	hindgut
+SRR12529063	Xie2021_PRJNA657455	Capra hircus	cecum	Goat_4	Goat_Cecum-4	hindgut
+SRR12529064	Xie2021_PRJNA657455	Capra hircus	cecum	Goat_3	Goat_Cecum-3	hindgut
+SRR12529073	Xie2021_PRJNA657455	Dairy cattle	cecum	Dairy_cattle_1	Dairy_cattle_Cecum-1	hindgut
+SRR12529086	Xie2021_PRJNA657455	Dairy cattle	reticulum	Dairy_cattle_1	Dairy_cattle_Reticulum-1	foregut
+SRR12529087	Xie2021_PRJNA657455	Dairy cattle	rectum	Dairy_cattle_6	Dairy_cattle_Rectum-6	hindgut
+SRR12529112	Xie2021_PRJNA657455	Yak	rectum	Yak_3	Yak_Rectum-3	hindgut
+SRR12529138	Xie2021_PRJNA657455	Yak	colon	Yak_4	Yak_Colon-4	hindgut
+SRR12529139	Xie2021_PRJNA657455	Yak	colon	Yak_3	Yak_Colon-3	hindgut
+SRR12529140	Xie2021_PRJNA657455	Yak	colon	Yak_2	Yak_Colon-2	hindgut
+SRR12529145	Xie2021_PRJNA657455	Yak	cecum	Yak_3	Yak_Cecum-3	hindgut
+SRR12529154	Xie2021_PRJNA657455	Water deer	rumen	Water_deer_5	Water_deer_Rumen-5	foregut
+SRR12529160	Xie2021_PRJNA657455	Water deer	reticulum	Water_deer_4	Water_deer_Reticulum-4	foregut
+SRR12529162	Xie2021_PRJNA657455	Water deer	reticulum	Water_deer_2	Water_deer_Reticulum-2	foregut
+SRR12529163	Xie2021_PRJNA657455	Water deer	reticulum	Water_deer_1	Water_deer_Reticulum-1	foregut
+SRR12529195	Xie2021_PRJNA657455	Water deer	colon	Water_deer_3	Water_deer_Colon-3	hindgut
+SRR12529216	Xie2021_PRJNA657455	Bubalus bubalis	reticulum	Water_buffalos_4	Water_buffalos_Reticulum-4	foregut
+SRR12529219	Xie2021_PRJNA657455	Bubalus bubalis	reticulum	Water_buffalos_1	Water_buffalos_Reticulum-1	foregut
+SRR12529221	Xie2021_PRJNA657455	Bubalus bubalis	rectum	Water_buffalos_5	Water_buffalos_Rectum-5	hindgut
+SRR12529226	Xie2021_PRJNA657455	Bubalus bubalis	omasum	Water_buffalos_5	Water_buffalos_Omasum-5	foregut
+SRR12529230	Xie2021_PRJNA657455	Bubalus bubalis	omasum	Water_buffalos_1	Water_buffalos_Omasum-1	foregut
+SRR12529256	Xie2021_PRJNA657455	Bubalus bubalis	cecum	Water_buffalos_3	Water_buffalos_Cecum-3	hindgut
+SRR12529266	Xie2021_PRJNA657455	Ovis aries	rumen	Sheep_4	Sheep_Rumen-4	foregut
+SRR12529271	Xie2021_PRJNA657455	Ovis aries	reticulum	Sheep_4	Sheep_Reticulum-4	foregut
+SRR12529273	Xie2021_PRJNA657455	Ovis aries	reticulum	Sheep_2	Sheep_Reticulum-2	foregut
+SRR12529274	Xie2021_PRJNA657455	Ovis aries	reticulum	Sheep_1	Sheep_Reticulum-1	foregut
+SRR12529278	Xie2021_PRJNA657455	Ovis aries	rectum	Sheep_3	Sheep_Rectum-3	hindgut
+SRR12529281	Xie2021_PRJNA657455	Ovis aries	omasum	Sheep_5	Sheep_Omasum-5	foregut
+SRR12529283	Xie2021_PRJNA657455	Ovis aries	omasum	Sheep_3	Sheep_Omasum-3	foregut
+SRR12529313	Xie2021_PRJNA657455	Ovis aries	cecum	Sheep_2	Sheep_Cecum-2	hindgut
+SRR12529326	Xie2021_PRJNA657455	Roe deer	reticulum	Roe_deer_5	Roe_deer_Reticulum-5	foregut
+SRR12529330	Xie2021_PRJNA657455	Roe deer	reticulum	Roe_deer_1	Roe_deer_Reticulum-1	foregut
+SRR12529353	Xie2021_PRJNA657455	Dairy cattle	colon	Dairy_cattle_3	Dairy_cattle_Colon-3	hindgut
+SRR12529361	Xie2021_PRJNA657455	Roe deer	colon	Roe_deer_3	Roe_deer_Colon-3	hindgut
+SRR12529363	Xie2021_PRJNA657455	Roe deer	colon	Roe_deer_1	Roe_deer_Colon-1	hindgut
+SRR12529377	Xie2021_PRJNA657455	Capra hircus	rumen	Goat_5	Goat_Rumen-5	foregut
+SRR12529378	Xie2021_PRJNA657455	Capra hircus	rumen	Goat_4	Goat_Rumen-4	foregut
+SRR12529391	Xie2021_PRJNA657455	Capra hircus	rectum	Goat_4	Goat_Rectum-4	hindgut
+SRR12529395	Xie2021_PRJNA657455	Capra hircus	omasum	Goat_6	Goat_Omasum-6	foregut
+SRR12529031	Xie2021_PRJNA657455	Capra hircus	omasum	Goat_3	Goat_Omasum-3	foregut
+SRR12529056	Xie2021_PRJNA657455	Capra hircus	colon	Goat_4	Goat_Colon-4	hindgut
+SRR12529059	Xie2021_PRJNA657455	Capra hircus	colon	Goat_1	Goat_Colon-1	hindgut
+SRR12529065	Xie2021_PRJNA657455	Capra hircus	cecum	Goat_2	Goat_Cecum-2	hindgut
+SRR12529066	Xie2021_PRJNA657455	Capra hircus	cecum	Goat_1	Goat_Cecum-1	hindgut
+SRR12529076	Xie2021_PRJNA657455	Dairy cattle	rumen	Dairy_cattle_4	Dairy_cattle_Rumen-4	foregut
+SRR12529077	Xie2021_PRJNA657455	Dairy cattle	rumen	Dairy_cattle_3	Dairy_cattle_Rumen-3	foregut
+SRR12529093	Xie2021_PRJNA657455	Dairy cattle	omasum	Dairy_cattle_6	Dairy_cattle_Omasum-6	foregut
+SRR12529096	Xie2021_PRJNA657455	Dairy cattle	omasum	Dairy_cattle_4	Dairy_cattle_Omasum-4	foregut
+SRR12529102	Xie2021_PRJNA657455	Yak	rumen	Yak_2	Yak_Rumen-2	foregut
+SRR12529106	Xie2021_PRJNA657455	Yak	reticulum	Yak_3	Yak_Reticulum-3	foregut
+SRR12529117	Xie2021_PRJNA657455	Yak	omasum	Yak_3	Yak_Omasum-3	foregut
+SRR12529143	Xie2021_PRJNA657455	Yak	cecum	Yak_5	Yak_Cecum-5	hindgut
+SRR12529161	Xie2021_PRJNA657455	Water deer	reticulum	Water_deer_3	Water_deer_Reticulum-3	foregut
+SRR12529166	Xie2021_PRJNA657455	Water deer	rectum	Water_deer_4	Water_deer_Rectum-4	hindgut
+SRR12529172	Xie2021_PRJNA657455	Water deer	omasum	Water_deer_3	Water_deer_Omasum-3	foregut
+SRR12529193	Xie2021_PRJNA657455	Water deer	colon	Water_deer_5	Water_deer_Colon-5	hindgut
+SRR12529196	Xie2021_PRJNA657455	Water deer	colon	Water_deer_2	Water_deer_Colon-2	hindgut
+SRR12529199	Xie2021_PRJNA657455	Water deer	cecum	Water_deer_5	Water_deer_Cecum-5	hindgut
+SRR12529211	Xie2021_PRJNA657455	Bubalus bubalis	rumen	Water_buffalos_4	Water_buffalos_Rumen-4	foregut
+SRR12529214	Xie2021_PRJNA657455	Bubalus bubalis	rumen	Water_buffalos_1	Water_buffalos_Rumen-1	foregut
+SRR12529217	Xie2021_PRJNA657455	Bubalus bubalis	reticulum	Water_buffalos_3	Water_buffalos_Reticulum-3	foregut
+SRR12529218	Xie2021_PRJNA657455	Bubalus bubalis	reticulum	Water_buffalos_2	Water_buffalos_Reticulum-2	foregut
+SRR12529224	Xie2021_PRJNA657455	Bubalus bubalis	rectum	Water_buffalos_2	Water_buffalos_Rectum-2	hindgut
+SRR12529250	Xie2021_PRJNA657455	Bubalus bubalis	colon	Water_buffalos_3	Water_buffalos_Colon-3	hindgut
+SRR12529255	Xie2021_PRJNA657455	Bubalus bubalis	cecum	Water_buffalos_4	Water_buffalos_Cecum-4	hindgut
+SRR12529257	Xie2021_PRJNA657455	Bubalus bubalis	cecum	Water_buffalos_2	Water_buffalos_Cecum-2	hindgut
+SRR12529258	Xie2021_PRJNA657455	Bubalus bubalis	cecum	Water_buffalos_1	Water_buffalos_Cecum-1	hindgut
+SRR12529265	Xie2021_PRJNA657455	Ovis aries	rumen	Sheep_5	Sheep_Rumen-5	foregut
+SRR12529269	Xie2021_PRJNA657455	Ovis aries	rumen	Sheep_1	Sheep_Rumen-1	foregut
+SRR12529285	Xie2021_PRJNA657455	Ovis aries	omasum	Sheep_1	Sheep_Omasum-1	foregut
+SRR12529314	Xie2021_PRJNA657455	Ovis aries	cecum	Sheep_1	Sheep_Cecum-1	hindgut
+SRR12529327	Xie2021_PRJNA657455	Roe deer	reticulum	Roe_deer_4	Roe_deer_Reticulum-4	foregut
+SRR12529333	Xie2021_PRJNA657455	Roe deer	rectum	Roe_deer_4	Roe_deer_Rectum-4	hindgut
+SRR12529336	Xie2021_PRJNA657455	Roe deer	rectum	Roe_deer_1	Roe_deer_Rectum-1	hindgut
+SRR12529340	Xie2021_PRJNA657455	Roe deer	omasum	Roe_deer_2	Roe_deer_Omasum-2	foregut
+SRR12529341	Xie2021_PRJNA657455	Roe deer	omasum	Roe_deer_1	Roe_deer_Omasum-1	foregut
+SRR12529359	Xie2021_PRJNA657455	Roe deer	colon	Roe_deer_5	Roe_deer_Colon-5	hindgut
+SRR12529360	Xie2021_PRJNA657455	Roe deer	colon	Roe_deer_4	Roe_deer_Colon-4	hindgut
+SRR12529365	Xie2021_PRJNA657455	Roe deer	cecum	Roe_deer_5	Roe_deer_Cecum-5	hindgut
+SRR12529367	Xie2021_PRJNA657455	Roe deer	cecum	Roe_deer_3	Roe_deer_Cecum-3	hindgut
+SRR12529376	Xie2021_PRJNA657455	Capra hircus	rumen	Goat_6	Goat_Rumen-6	foregut
+SRR12529380	Xie2021_PRJNA657455	Capra hircus	rumen	Goat_2	Goat_Rumen-2	foregut
+SRR12529386	Xie2021_PRJNA657455	Dairy cattle	cecum	Dairy_cattle_6	Dairy_cattle_Cecum-6	hindgut
+SRR12529051	Xie2021_PRJNA657455	Dairy cattle	cecum	Dairy_cattle_3	Dairy_cattle_Cecum-3	hindgut
+SRR12529387	Xie2021_PRJNA657455	Capra hircus	reticulum	Goat_2	Goat_Reticulum-2	foregut
+SRR12529392	Xie2021_PRJNA657455	Capra hircus	rectum	Goat_3	Goat_Rectum-3	hindgut
+SRR12529054	Xie2021_PRJNA657455	Capra hircus	colon	Goat_6	Goat_Colon-6	hindgut
+SRR12529075	Xie2021_PRJNA657455	Dairy cattle	rumen	Dairy_cattle_5	Dairy_cattle_Rumen-5	foregut
+SRR12529080	Xie2021_PRJNA657455	Dairy cattle	reticulum	Dairy_cattle_6	Dairy_cattle_Reticulum-6	foregut
+SRR12529082	Xie2021_PRJNA657455	Dairy cattle	reticulum	Dairy_cattle_4	Dairy_cattle_Reticulum-4	foregut
+SRR12529083	Xie2021_PRJNA657455	Dairy cattle	reticulum	Dairy_cattle_3	Dairy_cattle_Reticulum-3	foregut
+SRR12529085	Xie2021_PRJNA657455	Dairy cattle	reticulum	Dairy_cattle_2	Dairy_cattle_Reticulum-2	foregut
+SRR12529089	Xie2021_PRJNA657455	Dairy cattle	rectum	Dairy_cattle_4	Dairy_cattle_Rectum-4	hindgut
+SRR12529094	Xie2021_PRJNA657455	Dairy cattle	omasum	Dairy_cattle_5	Dairy_cattle_Omasum-5	foregut
+SRR12529097	Xie2021_PRJNA657455	Dairy cattle	omasum	Dairy_cattle_3	Dairy_cattle_Omasum-3	foregut
+SRR12529103	Xie2021_PRJNA657455	Yak	rumen	Yak_1	Yak_Rumen-1	foregut
+SRR12529114	Xie2021_PRJNA657455	Yak	rectum	Yak_1	Yak_Rectum-1	hindgut
+SRR12529119	Xie2021_PRJNA657455	Yak	omasum	Yak_1	Yak_Omasum-1	foregut
+SRR12529146	Xie2021_PRJNA657455	Yak	cecum	Yak_2	Yak_Cecum-2	hindgut
+SRR12529155	Xie2021_PRJNA657455	Water deer	rumen	Water_deer_4	Water_deer_Rumen-4	foregut
+SRR12529158	Xie2021_PRJNA657455	Water deer	rumen	Water_deer_1	Water_deer_Rumen-1	foregut
+SRR12529165	Xie2021_PRJNA657455	Water deer	rectum	Water_deer_5	Water_deer_Rectum-5	hindgut
+SRR12529173	Xie2021_PRJNA657455	Water deer	omasum	Water_deer_2	Water_deer_Omasum-2	foregut
+SRR12529200	Xie2021_PRJNA657455	Water deer	cecum	Water_deer_4	Water_deer_Cecum-4	hindgut
+SRR12529210	Xie2021_PRJNA657455	Bubalus bubalis	rumen	Water_buffalos_5	Water_buffalos_Rumen-5	foregut
+SRR12529213	Xie2021_PRJNA657455	Bubalus bubalis	rumen	Water_buffalos_2	Water_buffalos_Rumen-2	foregut
+SRR12529215	Xie2021_PRJNA657455	Bubalus bubalis	reticulum	Water_buffalos_5	Water_buffalos_Reticulum-5	foregut
+SRR12529228	Xie2021_PRJNA657455	Bubalus bubalis	omasum	Water_buffalos_3	Water_buffalos_Omasum-3	foregut
+SRR12529229	Xie2021_PRJNA657455	Bubalus bubalis	omasum	Water_buffalos_2	Water_buffalos_Omasum-2	foregut
+SRR12529267	Xie2021_PRJNA657455	Ovis aries	rumen	Sheep_3	Sheep_Rumen-3	foregut
+SRR12529270	Xie2021_PRJNA657455	Ovis aries	reticulum	Sheep_5	Sheep_Reticulum-5	foregut
+SRR12529272	Xie2021_PRJNA657455	Ovis aries	reticulum	Sheep_3	Sheep_Reticulum-3	foregut
+SRR12529279	Xie2021_PRJNA657455	Ovis aries	rectum	Sheep_2	Sheep_Rectum-2	hindgut
+SRR12529304	Xie2021_PRJNA657455	Ovis aries	colon	Sheep_5	Sheep_Colon-5	hindgut
+SRR12529306	Xie2021_PRJNA657455	Ovis aries	colon	Sheep_3	Sheep_Colon-3	hindgut
+SRR12529310	Xie2021_PRJNA657455	Ovis aries	cecum	Sheep_5	Sheep_Cecum-5	hindgut
+SRR12529311	Xie2021_PRJNA657455	Ovis aries	cecum	Sheep_4	Sheep_Cecum-4	hindgut
+SRR12529312	Xie2021_PRJNA657455	Ovis aries	cecum	Sheep_3	Sheep_Cecum-3	hindgut
+SRR12529323	Xie2021_PRJNA657455	Roe deer	rumen	Roe_deer_3	Roe_deer_Rumen-3	foregut
+SRR12529328	Xie2021_PRJNA657455	Roe deer	reticulum	Roe_deer_3	Roe_deer_Reticulum-3	foregut
+SRR12529331	Xie2021_PRJNA657455	Dairy cattle	colon	Dairy_cattle_5	Dairy_cattle_Colon-5	hindgut
+SRR12529339	Xie2021_PRJNA657455	Roe deer	omasum	Roe_deer_3	Roe_deer_Omasum-3	foregut
+SRR12529375	Xie2021_PRJNA657455	Dairy cattle	colon	Dairy_cattle_1	Dairy_cattle_Colon-1	hindgut
+SRR12529381	Xie2021_PRJNA657455	Capra hircus	rumen	Goat_1	Goat_Rumen-1	foregut
+SRR12529382	Xie2021_PRJNA657455	Capra hircus	reticulum	Goat_6	Goat_Reticulum-6	foregut
+SRR12529383	Xie2021_PRJNA657455	Capra hircus	reticulum	Goat_5	Goat_Reticulum-5	foregut
+SRR12529393	Xie2021_PRJNA657455	Capra hircus	rectum	Goat_2	Goat_Rectum-2	hindgut
+SRR12529394	Xie2021_PRJNA657455	Capra hircus	rectum	Goat_1	Goat_Rectum-1	hindgut
+SRR12529074	Xie2021_PRJNA657455	Dairy cattle	rumen	Dairy_cattle_6	Dairy_cattle_Rumen-6	foregut
+SRR12529081	Xie2021_PRJNA657455	Dairy cattle	reticulum	Dairy_cattle_5	Dairy_cattle_Reticulum-5	foregut
+SRR12529092	Xie2021_PRJNA657455	Dairy cattle	rectum	Dairy_cattle_1	Dairy_cattle_Rectum-1	hindgut
+SRR12529098	Xie2021_PRJNA657455	Dairy cattle	omasum	Dairy_cattle_2	Dairy_cattle_Omasum-2	foregut
+SRR12529099	Xie2021_PRJNA657455	Yak	rumen	Yak_5	Yak_Rumen-5	foregut
+SRR12529104	Xie2021_PRJNA657455	Yak	reticulum	Yak_5	Yak_Reticulum-5	foregut
+SRR12529105	Xie2021_PRJNA657455	Yak	reticulum	Yak_4	Yak_Reticulum-4	foregut
+SRR12529110	Xie2021_PRJNA657455	Yak	rectum	Yak_5	Yak_Rectum-5	hindgut
+SRR12529111	Xie2021_PRJNA657455	Yak	rectum	Yak_4	Yak_Rectum-4	hindgut
+SRR12529115	Xie2021_PRJNA657455	Yak	omasum	Yak_5	Yak_Omasum-5	foregut
+SRR12529137	Xie2021_PRJNA657455	Yak	colon	Yak_5	Yak_Colon-5	hindgut
+SRR12529147	Xie2021_PRJNA657455	Yak	cecum	Yak_1	Yak_Cecum-1	hindgut
+SRR12529157	Xie2021_PRJNA657455	Water deer	rumen	Water_deer_2	Water_deer_Rumen-2	foregut
+SRR12529159	Xie2021_PRJNA657455	Water deer	reticulum	Water_deer_5	Water_deer_Reticulum-5	foregut
+SRR12529167	Xie2021_PRJNA657455	Water deer	rectum	Water_deer_3	Water_deer_Rectum-3	hindgut
+SRR12529170	Xie2021_PRJNA657455	Water deer	omasum	Water_deer_5	Water_deer_Omasum-5	foregut
+SRR12529171	Xie2021_PRJNA657455	Water deer	omasum	Water_deer_4	Water_deer_Omasum-4	foregut
+SRR12529194	Xie2021_PRJNA657455	Water deer	colon	Water_deer_4	Water_deer_Colon-4	hindgut
+SRR12529201	Xie2021_PRJNA657455	Water deer	cecum	Water_deer_3	Water_deer_Cecum-3	hindgut
+SRR12529203	Xie2021_PRJNA657455	Water deer	cecum	Water_deer_1	Water_deer_Cecum-1	hindgut
+SRR12529212	Xie2021_PRJNA657455	Bubalus bubalis	rumen	Water_buffalos_3	Water_buffalos_Rumen-3	foregut
+SRR12529223	Xie2021_PRJNA657455	Bubalus bubalis	rectum	Water_buffalos_3	Water_buffalos_Rectum-3	hindgut
+SRR12529248	Xie2021_PRJNA657455	Bubalus bubalis	colon	Water_buffalos_5	Water_buffalos_Colon-5	hindgut
+SRR12529249	Xie2021_PRJNA657455	Bubalus bubalis	colon	Water_buffalos_4	Water_buffalos_Colon-4	hindgut
+SRR12529251	Xie2021_PRJNA657455	Bubalus bubalis	colon	Water_buffalos_2	Water_buffalos_Colon-2	hindgut
+SRR12529268	Xie2021_PRJNA657455	Ovis aries	rumen	Sheep_2	Sheep_Rumen-2	foregut
+SRR12529280	Xie2021_PRJNA657455	Ovis aries	rectum	Sheep_1	Sheep_Rectum-1	hindgut
+SRR12529282	Xie2021_PRJNA657455	Ovis aries	omasum	Sheep_4	Sheep_Omasum-4	foregut
+SRR12529284	Xie2021_PRJNA657455	Ovis aries	omasum	Sheep_2	Sheep_Omasum-2	foregut
+SRR12529305	Xie2021_PRJNA657455	Ovis aries	colon	Sheep_4	Sheep_Colon-4	hindgut
+SRR12529308	Xie2021_PRJNA657455	Ovis aries	colon	Sheep_1	Sheep_Colon-1	hindgut
+SRR12529320	Xie2021_PRJNA657455	Dairy cattle	colon	Dairy_cattle_6	Dairy_cattle_Colon-6	hindgut
+SRR12529321	Xie2021_PRJNA657455	Roe deer	rumen	Roe_deer_5	Roe_deer_Rumen-5	foregut
+SRR12529322	Xie2021_PRJNA657455	Roe deer	rumen	Roe_deer_4	Roe_deer_Rumen-4	foregut
+SRR12529325	Xie2021_PRJNA657455	Roe deer	rumen	Roe_deer_1	Roe_deer_Rumen-1	foregut
+SRR12529332	Xie2021_PRJNA657455	Roe deer	rectum	Roe_deer_5	Roe_deer_Rectum-5	hindgut
+SRR12529334	Xie2021_PRJNA657455	Roe deer	rectum	Roe_deer_3	Roe_deer_Rectum-3	hindgut
+SRR12529337	Xie2021_PRJNA657455	Roe deer	omasum	Roe_deer_5	Roe_deer_Omasum-5	foregut
+SRR12529342	Xie2021_PRJNA657455	Dairy cattle	colon	Dairy_cattle_4	Dairy_cattle_Colon-4	hindgut
+SRR12529362	Xie2021_PRJNA657455	Roe deer	colon	Roe_deer_2	Roe_deer_Colon-2	hindgut
+SRR12529364	Xie2021_PRJNA657455	Dairy cattle	colon	Dairy_cattle_2	Dairy_cattle_Colon-2	hindgut
+SRR12529366	Xie2021_PRJNA657455	Roe deer	cecum	Roe_deer_4	Roe_deer_Cecum-4	hindgut
+SRR12529368	Xie2021_PRJNA657455	Roe deer	cecum	Roe_deer_2	Roe_deer_Cecum-2	hindgut
+SRR12529379	Xie2021_PRJNA657455	Capra hircus	rumen	Goat_3	Goat_Rumen-3	foregut
+SRR12529385	Xie2021_PRJNA657455	Capra hircus	reticulum	Goat_3	Goat_Reticulum-3	foregut
+SRR12529389	Xie2021_PRJNA657455	Capra hircus	rectum	Goat_6	Goat_Rectum-6	hindgut
+SRR12529390	Xie2021_PRJNA657455	Capra hircus	rectum	Goat_5	Goat_Rectum-5	hindgut
+SRR12529030	Xie2021_PRJNA657455	Capra hircus	omasum	Goat_4	Goat_Omasum-4	foregut
+SRR12529032	Xie2021_PRJNA657455	Capra hircus	omasum	Goat_2	Goat_Omasum-2	foregut
+SRR12529033	Xie2021_PRJNA657455	Capra hircus	omasum	Goat_1	Goat_Omasum-1	foregut
+SRR12529040	Xie2021_PRJNA657455	Dairy cattle	cecum	Dairy_cattle_4	Dairy_cattle_Cecum-4	hindgut
+SRR12529055	Xie2021_PRJNA657455	Capra hircus	colon	Goat_5	Goat_Colon-5	hindgut
+SRR12529057	Xie2021_PRJNA657455	Capra hircus	colon	Goat_3	Goat_Colon-3	hindgut
+SRR12529060	Xie2021_PRJNA657455	Capra hircus	cecum	Goat_6	Goat_Cecum-6	hindgut
+SRR12529078	Xie2021_PRJNA657455	Dairy cattle	rumen	Dairy_cattle_2	Dairy_cattle_Rumen-2	foregut
+SRR12529079	Xie2021_PRJNA657455	Dairy cattle	rumen	Dairy_cattle_1	Dairy_cattle_Rumen-1	foregut
+SRR12529088	Xie2021_PRJNA657455	Dairy cattle	rectum	Dairy_cattle_5	Dairy_cattle_Rectum-5	hindgut
+SRR12529090	Xie2021_PRJNA657455	Dairy cattle	rectum	Dairy_cattle_3	Dairy_cattle_Rectum-3	hindgut
+SRR12529091	Xie2021_PRJNA657455	Dairy cattle	rectum	Dairy_cattle_2	Dairy_cattle_Rectum-2	hindgut
+SRR12529100	Xie2021_PRJNA657455	Yak	rumen	Yak_4	Yak_Rumen-4	foregut
+SRR12529101	Xie2021_PRJNA657455	Yak	rumen	Yak_3	Yak_Rumen-3	foregut
+SRR12529107	Xie2021_PRJNA657455	Yak	reticulum	Yak_2	Yak_Reticulum-2	foregut
+SRR12529108	Xie2021_PRJNA657455	Yak	reticulum	Yak_1	Yak_Reticulum-1	foregut
+SRR12529109	Xie2021_PRJNA657455	Dairy cattle	omasum	Dairy_cattle_1	Dairy_cattle_Omasum-1	foregut
+SRR12529113	Xie2021_PRJNA657455	Yak	rectum	Yak_2	Yak_Rectum-2	hindgut
+SRR12529116	Xie2021_PRJNA657455	Yak	omasum	Yak_4	Yak_Omasum-4	foregut
+SRR12529118	Xie2021_PRJNA657455	Yak	omasum	Yak_2	Yak_Omasum-2	foregut
+SRR12529141	Xie2021_PRJNA657455	Yak	colon	Yak_1	Yak_Colon-1	hindgut
+SRR12529144	Xie2021_PRJNA657455	Yak	cecum	Yak_4	Yak_Cecum-4	hindgut
+SRR12529156	Xie2021_PRJNA657455	Water deer	rumen	Water_deer_3	Water_deer_Rumen-3	foregut
+SRR12529168	Xie2021_PRJNA657455	Water deer	rectum	Water_deer_2	Water_deer_Rectum-2	hindgut
+SRR12529169	Xie2021_PRJNA657455	Water deer	rectum	Water_deer_1	Water_deer_Rectum-1	hindgut
+SRR12529174	Xie2021_PRJNA657455	Water deer	omasum	Water_deer_1	Water_deer_Omasum-1	foregut
+SRR12529197	Xie2021_PRJNA657455	Water deer	colon	Water_deer_1	Water_deer_Colon-1	hindgut
+SRR12529202	Xie2021_PRJNA657455	Water deer	cecum	Water_deer_2	Water_deer_Cecum-2	hindgut
+SRR12529222	Xie2021_PRJNA657455	Bubalus bubalis	rectum	Water_buffalos_4	Water_buffalos_Rectum-4	hindgut
+SRR12529225	Xie2021_PRJNA657455	Bubalus bubalis	rectum	Water_buffalos_1	Water_buffalos_Rectum-1	hindgut
+SRR12529227	Xie2021_PRJNA657455	Bubalus bubalis	omasum	Water_buffalos_4	Water_buffalos_Omasum-4	foregut
+SRR12529252	Xie2021_PRJNA657455	Bubalus bubalis	colon	Water_buffalos_1	Water_buffalos_Colon-1	hindgut
+SRR12529254	Xie2021_PRJNA657455	Bubalus bubalis	cecum	Water_buffalos_5	Water_buffalos_Cecum-5	hindgut
+SRR12529276	Xie2021_PRJNA657455	Ovis aries	rectum	Sheep_5	Sheep_Rectum-5	hindgut
+SRR12529277	Xie2021_PRJNA657455	Ovis aries	rectum	Sheep_4	Sheep_Rectum-4	hindgut
+SRR12529307	Xie2021_PRJNA657455	Ovis aries	colon	Sheep_2	Sheep_Colon-2	hindgut
+SRR12529324	Xie2021_PRJNA657455	Roe deer	rumen	Roe_deer_2	Roe_deer_Rumen-2	foregut
+SRR12529329	Xie2021_PRJNA657455	Roe deer	reticulum	Roe_deer_2	Roe_deer_Reticulum-2	foregut
+SRR12529335	Xie2021_PRJNA657455	Roe deer	rectum	Roe_deer_2	Roe_deer_Rectum-2	hindgut
+SRR12529338	Xie2021_PRJNA657455	Roe deer	omasum	Roe_deer_4	Roe_deer_Omasum-4	foregut
+SRR12529369	Xie2021_PRJNA657455	Roe deer	cecum	Roe_deer_1	Roe_deer_Cecum-1	hindgut
+SRR12529384	Xie2021_PRJNA657455	Capra hircus	reticulum	Goat_4	Goat_Reticulum-4	foregut
+SRR12529388	Xie2021_PRJNA657455	Capra hircus	reticulum	Goat_1	Goat_Reticulum-1	foregut
+SRR12529396	Xie2021_PRJNA657455	Capra hircus	omasum	Goat_5	Goat_Omasum-5	foregut
+SRR12529397	Xie2021_PRJNA657455	Dairy cattle	cecum	Dairy_cattle_5	Dairy_cattle_Cecum-5	hindgut
