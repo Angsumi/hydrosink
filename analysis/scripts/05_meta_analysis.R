@@ -1,106 +1,210 @@
 #!/usr/bin/env Rscript
-# HydroSink - primary and secondary models. Not executed in the authoring environment (no R available).
-# Inputs: analysis/markers_merged.tsv (one row per sample x marker, copies_per_GE)
-#         analysis/inventory.tsv (sample metadata incl. host_species, study, animal_id, site,
-#                                 fermentation_site, diet_class, captivity, sample_type, read_len, depth)
-#         analysis/host_tree.nwk (time-calibrated host phylogeny; TimeTree/VertLife)
-suppressPackageStartupMessages({
-  library(data.table); library(brms); library(ape); library(metafor); library(loo); library(propr)
-})
+# HydroSink — pre-specified statistical analyses (written before P1/P2 marker data were inspected).
+# Inputs : analysis/results/p1_matrix.tsv, p2_matrix.tsv (05a_assemble.py); analysis/inventory/host_tree.nwk,
+#          host_ott_map.tsv, host_traits.tsv (lineage for vclass/order)
+# Outputs: analysis/results/*.tsv (every number quoted in the manuscript comes from these files)
+# Usage  : Rscript 05_meta_analysis.R [p1|p2|p3|all]  (default all)
+suppressPackageStartupMessages({library(data.table); library(metafor); library(lme4); library(MCMCglmm); library(ape)})
 set.seed(20261115)
-dir.create("analysis/results", showWarnings = FALSE)
+args <- commandArgs(TRUE); what <- if (length(args)) args[1] else "all"
+R <- "analysis/results"
+hm <- function(x) 0.5 * min(x[x > 0], na.rm = TRUE)          # pseudocount: half min non-zero
+MK <- c("mcrA", "acsB", "dsrA", "asrA", "nrfA", "narG", "napA", "frdA", "NiFe", "FeFe", "rpoB")
+add_ratios <- function(d) {
+  cA <- hm(d$acsB_cpg); cM <- hm(d$mcrA_cpg); cR <- hm(d$resp_cpg)
+  d[, alr_acet := log((acsB_cpg + cA) / (mcrA_cpg + cM))]
+  d[, alr_resp := log((resp_cpg + cR) / (mcrA_cpg + cM))]
+  d[, l_acsB := log(acsB_cpg + cA)][, l_mcrA := log(mcrA_cpg + cM)][, l_resp := log(resp_cpg + cR)]
+  for (g in c("dsrA", "asrA", "nrfA", "narG", "napA", "frdA", "NiFe1", "FeFeB")) {
+    cg <- hm(d[[paste0(g, "_cpg")]]); if (!is.finite(cg)) cg <- 1e-6
+    d[, (paste0("l_", g)) := log(get(paste0(g, "_cpg")) + cg)]
+  }
+  d[, mcrA_present := as.integer(mcrA_n >= 2)]
+  d[]
+}
+pool_tab <- function(r, label) data.table(analysis = label, k = r$k, estimate = r$b[1], se = r$se, ci_lb = r$ci.lb,
+  ci_ub = r$ci.ub, pi_lb = predict(r)$pi.lb, pi_ub = predict(r)$pi.ub, p = r$pval, tau2 = r$tau2, I2 = r$I2, QEp = r$QEp)
 
-m   <- fread("analysis/markers_merged.tsv")
-inv <- fread("analysis/inventory.tsv")
-wide <- dcast(m, run_accession ~ marker, value.var = "copies_per_GE", fill = 0, fun.aggregate = sum)
-d <- merge(inv, wide, by = "run_accession")
-hm <- function(x) 0.5 * min(x[x > 0])
-d[, alr_acet := log((acsB + hm(acsB)) / (mcrA + hm(mcrA)))]
-d[, resp := rowSums(.SD), .SDcols = intersect(c("nrfA", "dsrA", "frdA", "narG", "napA"), names(d))]
-d[, alr_resp := log((resp + hm(resp)) / (mcrA + hm(mcrA)))]
-d[, mcrA_present := as.integer(mcrA > 0)]
-d[, log_depth := log10(depth)]
+# ============================ P1: within-animal foregut vs hindgut ============================
+run_p1 <- function() {
+  d <- fread(file.path(R, "p1_matrix.tsv"))[qc_pass == TRUE]
+  d <- add_ratios(d)
+  d[, stratum := paste(study, host_species, sep = "|")]
+  d[, chamber := factor(chamber, levels = c("foregut", "hindgut"))]
+  outcomes <- c(alr_acet = "alr_acet", alr_resp = "alr_resp", acsB = "l_acsB", mcrA = "l_mcrA", resp = "l_resp",
+                dsrA = "l_dsrA", asrA = "l_asrA", nrfA = "l_nrfA", narG = "l_narG", napA = "l_napA", frdA = "l_frdA",
+                NiFe1 = "l_NiFe1", FeFeB = "l_FeFeB")
+  # stage 1: per animal mean(hindgut) - mean(foregut); per stratum mean and variance
+  per_animal <- rbindlist(lapply(names(outcomes), function(o) {
+    v <- outcomes[[o]]
+    a <- d[, .(fg = mean(get(v)[chamber == "foregut"]), hg = mean(get(v)[chamber == "hindgut"])), by = .(stratum, animal)]
+    a[is.finite(fg) & is.finite(hg)][, `:=`(outcome = o, diff = hg - fg)]
+  }))
+  fwrite(per_animal, file.path(R, "p1_per_animal.tsv"), sep = "\t")
+  es <- per_animal[, .(yi = mean(diff), vi = var(diff) / .N, n = .N, n_pos = sum(diff > 0)), by = .(outcome, stratum)]
+  fwrite(es, file.path(R, "p1_stratum_effects.tsv"), sep = "\t")
+  # stage 2: REML + Hartung-Knapp; prediction interval; BH across marker outcomes (not the primary)
+  tab <- rbindlist(lapply(unique(es$outcome), function(o) {
+    e <- es[outcome == o]; r <- rma(yi, vi, data = e, method = "REML", test = "knha")
+    cbind(pool_tab(r, o), n_animals = sum(e$n), animals_positive = sum(e$n_pos))
+  }))
+  tab[, role := fifelse(analysis == "alr_acet", "primary", "secondary")]
+  tab[role == "secondary", q_BH := p.adjust(p, "BH")]
+  fwrite(tab, file.path(R, "p1_pooled.tsv"), sep = "\t")
+  # leave-one-stratum-out for the primary outcome
+  e <- es[outcome == "alr_acet"]; r <- rma(yi, vi, data = e, method = "REML", test = "knha")
+  l1 <- as.data.table(leave1out(r)); l1[, left_out := e$stratum]
+  fwrite(l1, file.path(R, "p1_leave1out.tsv"), sep = "\t")
+  # one-stage mixed model cross-check
+  m <- lmer(alr_acet ~ chamber + (1 | animal) + (1 + chamber | stratum), data = d,
+            control = lmerControl(optimizer = "bobyqa"))
+  cf <- summary(m)$coefficients
+  ci <- confint(m, parm = "chamberhindgut", method = "Wald")
+  fwrite(data.table(term = rownames(cf), cf, ci_lb = c(NA, ci[1]), ci_ub = c(NA, ci[2])),
+         file.path(R, "p1_mixed_model.tsv"), sep = "\t")
+  # sensitivity: rumen-vs-cecum only; rumen-vs-rectum (faecal proxy)
+  sens <- rbindlist(lapply(list(rumen_cecum = c("rumen", "cecum"), rumen_rectum = c("rumen", "rectum")), function(cc) {
+    dd <- d[compartment %in% cc]
+    a <- dd[, .(diff = mean(alr_acet[compartment == cc[2]]) - mean(alr_acet[compartment == cc[1]])), by = .(stratum, animal)][is.finite(diff)]
+    e <- a[, .(yi = mean(diff), vi = var(diff) / .N), by = stratum]
+    pool_tab(rma(yi, vi, data = e, method = "REML", test = "knha"), paste(cc, collapse = "_vs_"))
+  }))
+  fwrite(sens, file.path(R, "p1_sensitivity.tsv"), sep = "\t")
+  print(tab[, .(analysis, k, estimate, ci_lb, ci_ub, pi_lb, pi_ub, p, I2, animals_positive, n_animals)])
+}
 
-# ---- Host phylogeny: correlation matrix (Brownian) ----
-tr <- read.tree("analysis/host_tree.nwk")
-tr <- keep.tip(tr, intersect(tr$tip.label, unique(d$host_species)))
-A  <- vcv.phylo(tr, corr = TRUE)
-d  <- d[host_species %in% rownames(A)]
-d[, phylo := host_species]
+# ============================ P2: across hosts (faeces), phylogenetic GLMM ============================
+prep_tree <- function(d) {
+  tr <- read.tree("analysis/inventory/host_tree.nwk")
+  mp <- fread("analysis/inventory/host_ott_map.tsv")
+  mp[, tip := paste0("ott", ott_id)]
+  # genus-level / internal-node matches: tips labelled 'mrcaottX...ottY' are matched by suffix search
+  miss <- setdiff(mp$tip, tr$tip.label)
+  for (t in miss) { hit <- grep(paste0(t, "($|[^0-9])"), tr$tip.label, value = TRUE); if (length(hit)) mp[tip == t, tip := hit[1]] }
+  tr$node.label <- NULL
+  tr <- collapse.singles(tr); tr <- multi2di(tr, random = FALSE)
+  tr <- compute.brlen(tr, method = "Grafen")
+  d <- merge(d, mp[, .(species, phylo = tip)], by = "species")
+  d <- d[phylo %in% tr$tip.label]
+  tr <- keep.tip(tr, unique(d$phylo))
+  list(d = d, tree = tr)
+}
+pri3 <- list(R = list(V = 1, nu = 0.002), G = list(G1 = list(V = 1, nu = 1, alpha.mu = 0, alpha.V = 1000),
+  G2 = list(V = 1, nu = 1, alpha.mu = 0, alpha.V = 1000), G3 = list(V = 1, nu = 1, alpha.mu = 0, alpha.V = 1000)))
+fit_mcmc <- function(fx, d, Ainv, family = "gaussian", nitt = 130000, burnin = 30000, thin = 100) {
+  pr <- pri3; if (family == "categorical") pr$R <- list(V = 1, fix = 1)
+  MCMCglmm(fx, random = ~ phylo + species + study_accession, ginverse = list(phylo = Ainv), family = family,
+           data = as.data.frame(d), prior = pr, nitt = nitt, burnin = burnin, thin = thin, verbose = FALSE, pr = FALSE)
+}
+summ_fixed <- function(m, label) {
+  s <- summary(m)$solutions
+  data.table(model = label, term = rownames(s), post_mean = s[, 1], l95 = s[, 2], u95 = s[, 3], pMCMC = s[, 5])
+}
+phylo_signal <- function(m) {
+  V <- m$VCV; tot <- rowSums(V)
+  h <- V[, "phylo"] / tot
+  data.table(component = c("phylo_H2", "species", "study"),
+             post_mode = c(posterior.mode(mcmc(h)), posterior.mode(mcmc(V[, "species"] / tot)), posterior.mode(mcmc(V[, "study_accession"] / tot))),
+             l95 = c(HPDinterval(mcmc(h))[1], HPDinterval(mcmc(V[, "species"] / tot))[1], HPDinterval(mcmc(V[, "study_accession"] / tot))[1]),
+             u95 = c(HPDinterval(mcmc(h))[2], HPDinterval(mcmc(V[, "species"] / tot))[2], HPDinterval(mcmc(V[, "study_accession"] / tot))[2]))
+}
+contrast <- function(m, a, b, label) {   # posterior of level a minus level b (reference = simple)
+  S <- m$Sol; get <- function(l) if (l == "simple") 0 else S[, paste0("fermentation_site", l)]
+  x <- get(a) - get(b)
+  data.table(contrast = label, post_mean = mean(x), l95 = HPDinterval(mcmc(x))[1], u95 = HPDinterval(mcmc(x))[2],
+             pMCMC = 2 * min(mean(x > 0), mean(x < 0)))
+}
+run_p2 <- function() {
+  d <- fread(file.path(R, "p2_matrix.tsv"))[qc_pass == TRUE]
+  d <- add_ratios(d)
+  d[is.na(diet_class) | diet_class == "NA", diet_class := "unknown"]
+  d[, fermentation_site := relevel(factor(fermentation_site), ref = "simple")]
+  d[, diet_class := relevel(factor(diet_class), ref = "omnivore")]
+  d[, captivity := relevel(factor(captivity), ref = "unknown")]
+  d[, log_rpoB := log10(rpoB_n)]; d[, read_len_c := as.numeric(read_len) - 150]
+  pt <- prep_tree(d); d <- pt$d; Ainv <- inverseA(pt$tree, nodes = "TIPS")$Ainv
+  fwrite(d, file.path(R, "p2_analysis_set.tsv"), sep = "\t")
+  cov_null <- "diet_class + captivity + log_rpoB + read_len_c"
+  res <- list(); sig <- list(); dic <- list(); con <- list()
+  for (y in c("alr_acet", "alr_resp", "l_acsB", "l_mcrA")) {
+    m0 <- fit_mcmc(as.formula(paste(y, "~", cov_null)), d, Ainv)
+    m1 <- fit_mcmc(as.formula(paste(y, "~ fermentation_site +", cov_null)), d, Ainv)
+    res[[y]] <- summ_fixed(m1, y)
+    sig[[y]] <- cbind(outcome = y, phylo_signal(m1))
+    dic[[y]] <- data.table(outcome = y, DIC_null = m0$DIC, DIC_full = m1$DIC, dDIC = m0$DIC - m1$DIC)
+    con[[y]] <- cbind(outcome = y, rbind(contrast(m1, "foregut", "hindgut", "foregut - hindgut"),
+                                          contrast(m1, "hindgut", "simple", "hindgut - simple"),
+                                          contrast(m1, "foregut", "simple", "foregut - simple"),
+                                          contrast(m1, "avian_caecal", "simple", "avian_caecal - simple")))
+    if (y == "alr_acet") saveRDS(m1, file.path(R, "p2_alr_acet_full.rds"))
+  }
+  # hurdle component: mcrA detected (>=2 reads)
+  mh <- fit_mcmc(as.formula(paste("mcrA_present ~ fermentation_site +", cov_null)), d, Ainv, family = "categorical")
+  res[["mcrA_present"]] <- summ_fixed(mh, "mcrA_present")
+  fwrite(rbindlist(res), file.path(R, "p2_fixed_effects.tsv"), sep = "\t")
+  fwrite(rbindlist(sig), file.path(R, "p2_variance_partition.tsv"), sep = "\t")
+  fwrite(rbindlist(dic), file.path(R, "p2_model_comparison.tsv"), sep = "\t")
+  fwrite(rbindlist(con), file.path(R, "p2_contrasts.tsv"), sep = "\t")
+  # descriptive: per-species means (for figures)
+  sp <- d[, .(n = .N, alr_acet = mean(alr_acet), alr_resp = mean(alr_resp), mcrA_det = mean(mcrA_present)),
+          by = .(species, phylo, vclass, fermentation_site, diet_class)]
+  fwrite(sp, file.path(R, "p2_species_means.tsv"), sep = "\t")
+  # sensitivity analyses on the primary outcome
+  sets <- list(mammals_only = d[vclass == "Mammalia"], non_domestic = d[captivity != "domestic"],
+               cap3_per_species = d[, .SD[sample(.N, min(.N, 3))], by = species],
+               rpoB_ge_1000 = d[rpoB_n >= 1000], herbivores_only = d[diet_class == "herbivore"])
+  sens <- rbindlist(lapply(names(sets), function(nm) {
+    s <- copy(sets[[nm]]); s[, fermentation_site := droplevels(fermentation_site)]
+    s[, diet_class := droplevels(diet_class)]; s[, captivity := droplevels(captivity)]
+    tr <- keep.tip(pt$tree, unique(s$phylo)); Ai <- inverseA(tr, nodes = "TIPS")$Ainv
+    cv <- if (nm == "herbivores_only") "captivity + log_rpoB + read_len_c" else cov_null
+    if (nm == "non_domestic") cv <- "diet_class + log_rpoB + read_len_c"
+    m <- fit_mcmc(as.formula(paste("alr_acet ~ fermentation_site +", cv)), s, Ai)
+    lv <- levels(s$fermentation_site)
+    out <- list(); if (all(c("foregut", "hindgut") %in% lv)) out[[1]] <- contrast(m, "foregut", "hindgut", "foregut - hindgut")
+    if ("hindgut" %in% lv) out[[2]] <- contrast(m, "hindgut", "simple", "hindgut - simple")
+    cbind(set = nm, n = nrow(s), species = uniqueN(s$species), rbindlist(out))
+  }), fill = TRUE)
+  fwrite(sens, file.path(R, "p2_sensitivity.tsv"), sep = "\t")
+  print(rbindlist(dic)); print(rbindlist(con)); print(rbindlist(sig))
+}
 
-pri <- c(prior(normal(0, 1.5), class = "b"), prior(student_t(3, 0, 1), class = "sd"))
+# ============================ P3: methanogen-acetogen trade-off (proportionality) ============================
+rho_p <- function(X, a, b) {          # proportionality rho on CLR-transformed composition (Erb & Notredame 2016)
+  L <- log(X); C <- L - rowMeans(L)
+  1 - var(C[, a] - C[, b]) / (var(C[, a]) + var(C[, b]))
+}
+run_p3 <- function() {
+  units <- list()
+  p2 <- fread(file.path(R, "p2_matrix.tsv"))[qc_pass == TRUE]
+  for (s in p2[, .N, by = study_accession][N >= 10]$study_accession) units[[paste0("P2:", s)]] <- p2[study_accession == s]
+  p1 <- fread(file.path(R, "p1_matrix.tsv"))[qc_pass == TRUE]
+  for (st in unique(p1$study)) for (ch in c("foregut", "hindgut")) {   # within chamber: avoids compartment-driven correlation
+    x <- p1[study == st & chamber == ch]; if (nrow(x) >= 10) units[[paste0("P1:", st, ":", ch)]] <- x }
+  tab <- rbindlist(lapply(names(units), function(u) {
+    x <- units[[u]]; X <- as.matrix(x[, paste0(MK, "_cpg"), with = FALSE]); colnames(X) <- MK
+    for (j in seq_len(ncol(X))) { c0 <- hm(X[, j]); if (!is.finite(c0)) c0 <- 1e-6; X[, j] <- X[, j] + c0 }
+    r <- rho_p(X, "mcrA", "acsB")
+    bs <- replicate(1000, { i <- sample(nrow(X), replace = TRUE); rho_p(X[i, ], "mcrA", "acsB") })
+    sp <- cor(log(X[, "mcrA"]), log(X[, "acsB"]), method = "spearman")
+    data.table(unit = u, n = nrow(X), mcrA_detect = mean(x$mcrA_n >= 2), rho_p = r,
+               z = atanh(pmin(pmax(r, -0.999), 0.999)), vz = var(atanh(pmin(pmax(bs, -0.999), 0.999))), spearman_logcpg = sp)
+  }))
+  tab <- tab[is.finite(vz) & vz > 0]
+  fwrite(tab, file.path(R, "p3_units.tsv"), sep = "\t")
+  r <- rma(z, vz, data = tab, method = "REML", test = "knha")
+  out <- pool_tab(r, "rho_p(mcrA,acsB) Fisher-z")
+  out[, `:=`(rho_pooled = tanh(estimate), rho_ci_lb = tanh(ci_lb), rho_ci_ub = tanh(ci_ub))]
+  # restricted to units where mcrA is detected in >= 50 % of samples (avoids pseudocount-dominated units)
+  t2 <- tab[mcrA_detect >= 0.5]
+  if (nrow(t2) >= 3) { r2 <- rma(z, vz, data = t2, method = "REML", test = "knha")
+    o2 <- pool_tab(r2, "rho_p, units with mcrA detected >=50%"); o2[, `:=`(rho_pooled = tanh(estimate), rho_ci_lb = tanh(ci_lb), rho_ci_ub = tanh(ci_ub))]
+    out <- rbind(out, o2) }
+  fwrite(out, file.path(R, "p3_pooled.tsv"), sep = "\t")
+  print(out)
+}
 
-# ---- P1: within-host compartment contrast (paired; ruminant studies) ----
-p1 <- d[!is.na(animal_id) & site_class %in% c("foregut", "hindgut")]
-p1[, site_class := factor(site_class, levels = c("foregut", "hindgut"))]
-fit_p1 <- brm(alr_acet ~ site_class + log_depth + (1 + site_class | study) + (1 | animal_id) + (1 | host_species),
-              data = p1, prior = pri, chains = 4, iter = 4000, cores = 4, backend = "cmdstanr",
-              control = list(adapt_delta = 0.95), file = "analysis/results/fit_p1")
-# Two-stage cross-check (mirrors random_effects.py)
-es <- p1[, .(diff = alr_acet[site_class == "hindgut"] - alr_acet[site_class == "foregut"]), by = .(study, animal_id)][
-  , .(yi = mean(diff), vi = var(diff) / .N, n = .N), by = study]
-rma_p1 <- rma(yi, vi, data = es, method = "REML", test = "knha")
-saveRDS(list(rma = rma_p1, loo = leave1out(rma_p1)), "analysis/results/p1_two_stage.rds")
-
-# ---- P2: across hosts, fermentation site beyond phylogeny ----
-f_null <- bf(alr_acet ~ diet_class + captivity + sample_type + log_depth + read_len +
-               (1 | gr(phylo, cov = A)) + (1 | host_species) + (1 | study))
-f_full <- bf(alr_acet ~ fermentation_site + diet_class + captivity + sample_type + log_depth + read_len +
-               (1 | gr(phylo, cov = A)) + (1 | host_species) + (1 | study))
-fit0 <- brm(f_null, data = d, data2 = list(A = A), prior = pri, chains = 4, iter = 4000, cores = 4,
-            backend = "cmdstanr", file = "analysis/results/fit_p2_null")
-fit1 <- brm(f_full, data = d, data2 = list(A = A), prior = pri, chains = 4, iter = 4000, cores = 4,
-            backend = "cmdstanr", file = "analysis/results/fit_p2_full")
-cmp <- loo_compare(loo(fit0), loo(fit1))
-lambda <- hypothesis(fit1, "sd_phylo__Intercept^2 / (sd_phylo__Intercept^2 + sd_host_species__Intercept^2 + sd_study__Intercept^2 + sigma^2) = 0", class = NULL)
-# Zero-inflation of mcrA: hurdle component
-fit_h <- brm(bf(mcrA_present ~ fermentation_site + diet_class + log_depth + (1 | gr(phylo, cov = A)) + (1 | study)),
-             family = bernoulli(), data = d, data2 = list(A = A), prior = pri, chains = 4, iter = 3000,
-             cores = 4, backend = "cmdstanr", file = "analysis/results/fit_p2_hurdle")
-saveRDS(list(loo_compare = cmp, lambda = lambda), "analysis/results/p2_summary.rds")
-
-# ---- P3: trade-off (proportionality on CLR within study after host centring) ----
-mk <- intersect(c("mcrA", "acsB", "nrfA", "dsrA", "frdA", "narG", "napA"), names(d))
-rho_by_study <- d[, {
-  X <- as.matrix(.SD) + 1e-6
-  pr <- propr(X, metric = "rho", ivar = "clr")
-  R <- getMatrix(pr); .(rho_mcrA_acsB = R["mcrA", "acsB"], n = .N)
-}, by = study, .SDcols = mk][n >= 10]
-rho_by_study[, `:=`(zi = atanh(rho_mcrA_acsB), vi = 1 / (n - 3))]
-rma_p3 <- rma(zi, vi, data = rho_by_study, method = "REML", test = "knha")
-saveRDS(rma_p3, "analysis/results/p3_rho_meta.rds")
-
-# ---- Multiplicity across marker families ----
-fams <- intersect(c("acsB", "nrfA", "dsrA", "frdA", "narG", "napA"), names(p1))
-fam_tab <- rbindlist(lapply(fams, function(g) {
-  q <- copy(p1)[, y := log((get(g) + hm(get(g))) / (mcrA + hm(mcrA)))]
-  e <- q[, .(diff = y[site_class == "hindgut"] - y[site_class == "foregut"]), by = .(study, animal_id)][
-    , .(yi = mean(diff), vi = var(diff) / .N), by = study]
-  r <- rma(yi, vi, data = e, method = "REML", test = "knha")
-  data.table(marker = g, k = r$k, est = r$b[1], ci_lb = r$ci.lb, ci_ub = r$ci.ub, p = r$pval, I2 = r$I2)
-}))
-fam_tab[, q_BH := p.adjust(p, "BH")]
-fwrite(fam_tab, "analysis/results/p1_by_marker_family.tsv", sep = "\t")
-
-# ---- Sensitivity analyses ----
-sens <- list(
-  contents_only = d[sample_type == "contents"],
-  wild_only     = d[captivity == "wild"],
-  no_aves       = d[host_class != "Aves"],
-  depth_2M      = d[subsampled_pairs == 2e6]
-)
-sens_fits <- lapply(names(sens), function(nm)
-  update(fit1, newdata = sens[[nm]], file = paste0("analysis/results/fit_p2_", nm), recompile = FALSE))
-names(sens_fits) <- names(sens)
-loso <- lapply(unique(d$study), function(s)
-  update(fit1, newdata = d[study != s], file = paste0("analysis/results/loso_", s), recompile = FALSE))
-
-# ---- Out-of-sample validation: marsupial hold-out ----
-train <- d[host_order != "Diprotodontia" & host_infraclass != "Marsupialia"]
-test  <- d[host_infraclass == "Marsupialia"]
-fit_tr <- update(fit1, newdata = train, file = "analysis/results/fit_p2_train", recompile = FALSE)
-pred <- posterior_predict(fit_tr, newdata = test, allow_new_levels = TRUE)
-val <- data.table(obs = test$alr_acet, pred = colMeans(pred))
-saveRDS(list(cor = cor.test(val$obs, val$pred, method = "spearman"), rmse = sqrt(mean((val$obs - val$pred)^2))),
-        "analysis/results/validation_marsupial.rds")
-writeLines(capture.output(sessionInfo()), "analysis/results/sessionInfo.txt")
+if (what %in% c("p1", "all")) run_p1()
+if (what %in% c("p2", "all")) run_p2()
+if (what %in% c("p3", "all")) run_p3()
+writeLines(capture.output(sessionInfo()), file.path(R, "sessionInfo.txt"))

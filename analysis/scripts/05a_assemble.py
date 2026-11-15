@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+"""Assemble per-sample marker tables + metadata into analysis-ready matrices.
+
+Outputs:
+  analysis/results/p1_matrix.tsv  one row per P1 run (study, host_species, animal, compartment, chamber, markers)
+  analysis/results/p2_matrix.tsv  one row per P2 run (host traits, study, markers)
+Marker columns: <gene>_cpg (copies per genome) and <gene>_n (reads) for the H2 markers below,
+plus derived sums: resp_cpg (dsrA+asrA+nrfA+narG+napA+frdA), NiFe1_cpg (group-1 uptake [NiFe]),
+FeFeB_cpg, rpoB_n. Pseudocounts and log-ratios are computed in R (05_meta_analysis.R) so that
+c = half-min-nonzero is defined on the analysed set.
+QC flag: rpoB_n >= 200 (enough single-copy reads for a stable normaliser); others kept but flagged.
+"""
+import pandas as pd, numpy as np, pathlib
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+PS = ROOT / "analysis/results/per_sample"
+GENES = ["mcrA", "acsB", "dsrA", "asrA", "nrfA", "narG", "napA", "frdA", "sdhA", "cooS", "fdhA", "NiFe", "FeFe", "rpoB"]
+RESP = ["dsrA", "asrA", "nrfA", "narG", "napA", "frdA"]
+MIN_RPOB = 200
+
+
+def load(run):
+    f = PS / f"{run}.markers.tsv"
+    if not f.exists():
+        return None
+    m = pd.read_csv(f, sep="\t")
+    g = m[m.level == "gene"].set_index("feature"); s = m[m.level == "subgroup"].set_index("feature")
+    row = {"run_accession": run, "qc_reads": int(m.qc_reads.iloc[0]), "n_streamed": int(m.n_streamed.iloc[0])}
+    for k in GENES:
+        row[f"{k}_cpg"] = float(g.loc[k, "cpg"]) if k in g.index else 0.0
+        row[f"{k}_n"] = int(g.loc[k, "reads"]) if k in g.index else 0
+    row["resp_cpg"] = sum(row[f"{k}_cpg"] for k in RESP)
+    row["resp_n"] = sum(row[f"{k}_n"] for k in RESP)
+    row["NiFe1_cpg"] = float(s[s.index.str.match(r"NiFe_1")].cpg.sum()) if len(s) else 0.0
+    row["FeFeB_cpg"] = float(s.loc["FeFe_B", "cpg"]) if "FeFe_B" in s.index else 0.0
+    return row
+
+
+def build(inv_path, out_path, keep_cols):
+    inv = pd.read_csv(inv_path, sep="\t", dtype=str)
+    rows = [r for r in (load(x) for x in inv.run_accession) if r]
+    if not rows:
+        print(f"{out_path.name}: no quantified runs yet"); return
+    M = pd.DataFrame(rows)
+    d = inv[keep_cols].merge(M, on="run_accession", how="inner")
+    d["qc_pass"] = d.rpoB_n >= MIN_RPOB
+    d.to_csv(out_path, sep="\t", index=False)
+    print(f"{out_path.name}: {len(d)} quantified / {len(inv)} planned; qc_pass {d.qc_pass.sum()}")
+
+
+build(ROOT / "analysis/inventory/p1_runs.tsv", ROOT / "analysis/results/p1_matrix.tsv",
+      ["run_accession", "study", "host_species", "animal", "compartment", "chamber", "sample_alias"])
+build(ROOT / "analysis/inventory/p2_runs.tsv", ROOT / "analysis/results/p2_matrix.tsv",
+      ["run_accession", "study_accession", "sample_accession", "species", "host_tax_id", "vclass",
+       "fermentation_site", "diet_class", "plant_pct", "captivity", "sample_type", "read_len",
+       "instrument_model", "country"])
