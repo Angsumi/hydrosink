@@ -1,0 +1,6 @@
+analysis/work/
+analysis/db/*.dmnd
+analysis/db/raw/
+*.fq.gz
+*.fastq*
+__pycache__/

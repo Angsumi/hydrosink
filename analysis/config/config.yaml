@@ -1,0 +1,31 @@
+# HydroSink analysis configuration. All thresholds are pre-registered here; change only with a decision-log entry.
+inclusion:
+  library_strategy: WGS
+  library_source: METAGENOMIC
+  platforms: [ILLUMINA]
+  min_read_length: 100
+  min_read_pairs_after_qc: 1000000
+  max_host_fraction: 0.5
+  exclude_host_taxids: [9606, 10090, 10116]   # human, mouse, rat
+  exclude_keywords: [amplicon, 16S, metatranscriptom, virome, "in vitro", enrichment, monensin, bromochloromethane, "3-NOP", nitrate supplement]
+subsample_pairs: 5000000
+depth_sensitivity_pairs: 2000000
+diamond:
+  min_identity: 50
+  min_query_cover: 80
+  max_evalue: 1.0e-10
+  sensitivity: --fast
+  id_sensitivity_grid: [40, 50, 60]
+markers:            # KEGG orthologs used to seed reference sets; hydrogenases via HydDB classes
+  methanogenesis: {mcrA: K00399}
+  acetogenesis:   {acsB: K14138}
+  sulfate_red:    {dsrA: K11180, dsrB: K11181}
+  nitrite_amm:    {nrfA: K03385}
+  nitrate_red:    {narG: K00370, napA: K02567}
+  fumarate_red:   {frdA: K00244}
+  hydrogenases:   [NiFe_1, NiFe_3, NiFe_4, FeFe_A1, FeFe_A3, FeFe_B, FeFe_C]
+normalisation: genome_equivalents_singlem
+pseudocount_rule: half_min_nonzero_per_marker
+fermentation_site_levels: [foregut, hindgut, simple, avian_caecal]
+fdr_q: 0.05
+seed: 20261115
