@@ -37,9 +37,14 @@ if [ "$L" -lt 8000000 ]; then
 
 "$ENV/fastp" -i "$WORK/r1.fq" -o "$WORK/r1.qc.fq" -q 20 -l 100 --trim_poly_g --cut_tail \
    -w "$T" -j "$OUT/$RUN.fastp.json" -h /dev/null 2> "$WORK/fastp.log"
+# RAM guard: at most HS_DMND_SLOTS (default 3) DIAMOND jobs at once; smaller blocks (-b 1 -c 4).
+# Search parameters (sensitivity, thresholds) are unchanged, so results are identical.
+SLOTS=${HS_DMND_SLOTS:-3}; mkdir -p "$ROOT/analysis/locks"
+while :; do for s in $(seq 1 "$SLOTS"); do exec 9>"$ROOT/analysis/locks/dmnd.$s"; flock -n 9 && break 2; done; sleep 15; done
 "$ENV/diamond" blastx -q "$WORK/r1.qc.fq" -d "$DB" -o "$WORK/hits.m8" --fast \
-   --id 40 --query-cover 80 --evalue 1e-5 --max-target-seqs 1 --max-hsps 1 -p "$T" \
-   --outfmt 6 qseqid sseqid pident length qlen slen evalue bitscore --quiet
+   --id 40 --query-cover 80 --evalue 1e-5 --max-target-seqs 1 --max-hsps 1 -p "$T" -b 1 -c 4 \
+   --tmpdir "$WORK" --outfmt 6 qseqid sseqid pident length qlen slen evalue bitscore --quiet
+exec 9>&-
 "$ENV/python3.11" -I "$ROOT/analysis/scripts/aggregate_markers.py" --m8 "$WORK/hits.m8" \
    --labels "$DB.labels.tsv" --fastp "$OUT/$RUN.fastp.json" --run "$RUN" --n_streamed $((L/4)) \
    --out "$OUT/$RUN.markers.tsv"
