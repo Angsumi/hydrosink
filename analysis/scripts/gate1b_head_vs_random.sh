@@ -15,17 +15,26 @@ G=$ROOT/analysis/results/gate1b; W=$ROOT/analysis/work/gate1b; mkdir -p "$G" "$W
 
 for RUN in SRR28204439 SRR28204452; do
   [ -s "$G/$RUN.random.markers.tsv" ] && continue
-  REP=$(curl -s -m 60 --retry 5 "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=$RUN&result=read_run&fields=fastq_ftp,fastq_bytes,read_count&format=tsv" | tail -n1)
+  REP=$(curl -s -m 60 --retry 5 "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=$RUN&result=read_run&fields=fastq_ftp,fastq_bytes,read_count,fastq_md5&format=tsv" | tail -n1)
   URL=$(echo "$REP" | cut -f2 | cut -d';' -f1); SIZE=$(echo "$REP" | cut -f3 | cut -d';' -f1)
+  MD5=$(echo "$REP" | cut -f5 | cut -d';' -f1)
   F=$W/$RUN.R1.fastq.gz
-  until [ -f "$F" ] && [ ! -f "$F.aria2" ] && [ "$(stat -c %s "$F")" -eq "$SIZE" ]; do
-    aria2c -q -c --file-allocation=none -x 16 -s 16 -k 20M --max-tries=0 --retry-wait=20 --lowest-speed-limit=2K -d "$W" -o "$(basename "$F")" "https://$URL"; sleep 20
+  complete() { [ -f "$F" ] && [ ! -f "$F.aria2" ] && [ "$(stat -c %s "$F")" -eq "$SIZE" ]; }
+  # integrity: ENA MD5 (added after a size-correct but CRC-corrupt aria2c download of SRR28204452)
+  verified() { complete || return 1; [ -z "$MD5" ] && return 0
+    [ "$(md5sum < "$F" | cut -d' ' -f1)" = "$MD5" ] && return 0
+    echo "$RUN MD5 mismatch, re-downloading $(date -Is)"; rm -f "$F" "$F.aria2"; return 1; }
+  until verified; do
+    until complete; do
+      aria2c -q -c --file-allocation=none -x 16 -s 16 -k 20M --max-tries=0 --retry-wait=20 --lowest-speed-limit=2K -d "$W" -o "$(basename "$F")" "https://$URL"; sleep 20
+    done
   done
-  echo "$RUN downloaded $(date -Is)"
+  echo "$RUN downloaded, MD5 ok $(date -Is)"
   TOTAL=$("$ENV/pigz" -dc "$F" | awk 'END{print NR/4}')
   P=$(awk -v n=$N -v t="$TOTAL" 'BEGIN{printf "%.6f", 1.05*n/t}')
   "$ENV/pigz" -dc "$F" | "$ENV/seqkit" sample -p "$P" -s $SEED -j 2 2>/dev/null | head -n $((4*N)) > "$W/$RUN.r1.fq"
   L=$(wc -l < "$W/$RUN.r1.fq")
+  [ "$L" -eq $((4*N)) ] || { echo "$RUN sampled $((L/4)) != $N, aborting (full file kept)"; exit 1; }
   "$ENV/fastp" -i "$W/$RUN.r1.fq" -o "$W/$RUN.qc.fq" -q 20 -l 100 --trim_poly_g --cut_tail \
      -w $T -j "$G/$RUN.random.fastp.json" -h /dev/null 2> /dev/null
   "$ENV/diamond" blastx -q "$W/$RUN.qc.fq" -d "$DB" -o "$W/$RUN.m8" --fast \
