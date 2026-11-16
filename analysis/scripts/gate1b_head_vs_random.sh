@@ -18,8 +18,8 @@ for RUN in SRR28204439 SRR28204452; do
   REP=$(curl -s -m 60 --retry 5 "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=$RUN&result=read_run&fields=fastq_ftp,fastq_bytes,read_count&format=tsv" | tail -n1)
   URL=$(echo "$REP" | cut -f2 | cut -d';' -f1); SIZE=$(echo "$REP" | cut -f3 | cut -d';' -f1)
   F=$W/$RUN.R1.fastq.gz
-  until [ -f "$F" ] && [ "$(stat -c %s "$F")" -eq "$SIZE" ]; do
-    curl -s -C - --retry 10 --speed-limit 2000 --speed-time 120 -o "$F" "https://$URL"; sleep 20
+  until [ -f "$F" ] && [ ! -f "$F.aria2" ] && [ "$(stat -c %s "$F")" -eq "$SIZE" ]; do
+    aria2c -q -c --file-allocation=none -x 16 -s 16 -k 20M --max-tries=0 --retry-wait=20 --lowest-speed-limit=2K -d "$W" -o "$(basename "$F")" "https://$URL"; sleep 20
   done
   echo "$RUN downloaded $(date -Is)"
   TOTAL=$("$ENV/pigz" -dc "$F" | awk 'END{print NR/4}')
