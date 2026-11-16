@@ -6,7 +6,7 @@
 # only, so only R1 is streamed. Head-of-file sampling is validated against random subsampling
 # in Gate 1b (analysis/results/gate1b_head_vs_random.tsv).
 set -uo pipefail
-RUN=$1; N=${2:-5000000}
+RUN=$1; N=${2:-5000000}; MINR=${HS_MIN_READS:-2000000}
 ROOT=${HS_ROOT:-"$(cd "$(dirname "$0")/../.." && pwd)"}
 ENV=/home/angsuman/extra_spac/software_libs/conda_envs/hydrosink/bin
 DB=${HS_DB:-$ROOT/analysis/db/hydrosink}
@@ -14,26 +14,38 @@ T=${THREADS:-4}
 WORK=$ROOT/analysis/work/$RUN; OUT=$ROOT/analysis/results/per_sample; LOG=$ROOT/analysis/logs
 mkdir -p "$OUT" "$LOG" "$OUT/../hits"
 [ -s "$OUT/$RUN.markers.tsv" ] && { echo "$RUN already done"; exit 0; }
-rm -rf "$WORK"; mkdir -p "$WORK"
-
-URL=$(curl -s -m 60 --retry 5 "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=$RUN&result=read_run&fields=fastq_ftp&format=tsv" | tail -n1 | cut -f2 | tr ';' '\n' | grep -E '(_1\.fastq\.gz|[^_][0-9]\.fastq\.gz)$' | head -n1)
-[ -z "$URL" ] && { echo -e "$RUN\tNO_URL\t$(date -Is)" >> "$LOG/failures.tsv"; exit 1; }
-
-# stream: curl gets SIGPIPE when head closes -> expected; check line count instead
-# complete = exactly N reads; after 4 failed attempts the longest stream is kept if >= 2 M reads (flagged)
-BEST=0
-for attempt in 1 2 3 4; do
-  curl -s --retry 5 --speed-limit 2000 --speed-time 60 "https://$URL" 2>/dev/null | "$ENV/pigz" -dc 2>/dev/null | head -n $((4*N)) > "$WORK/try.fq"
-  L=$(wc -l < "$WORK/try.fq"); L=$((L - L % 4))
-  if [ "$L" -gt "$BEST" ]; then head -n "$L" "$WORK/try.fq" > "$WORK/r1.fq"; BEST=$L; fi
-  rm -f "$WORK/try.fq"
-  [ "$BEST" -eq $((4*N)) ] && break
-  sleep 30
-done
-L=$BEST
-[ "$L" -lt $((4*N)) ] && [ "$L" -ge 8000000 ] && echo -e "$RUN\tPARTIAL_$((L/4))\t$(date -Is)" >> "$LOG/flags.tsv"
-if [ "$L" -lt 8000000 ]; then
-  echo -e "$RUN\tSHORT_STREAM_$L\t$(date -Is)" >> "$LOG/failures.tsv"; rm -rf "$WORK"; exit 1; fi
+mkdir -p "$WORK"
+# Resumable download (v2, 2026-11-16): the compressed head of R1 is saved on the SSD (raw.gz) and
+# extended with HTTP byte ranges, so an interrupted run continues where it stopped instead of
+# restarting. Reads used are still exactly the first N R1 reads, i.e. identical to v1.
+if [ ! -f "$WORK/r1.ok" ]; then
+  rm -f "$WORK/try.fq" "$WORK/r1.fq"
+  REP=$(curl -s -m 60 --retry 5 "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=$RUN&result=read_run&fields=fastq_ftp,fastq_bytes,read_count&format=tsv" | tail -n1)
+  read -r URL BYTES RC < <(echo "$REP" | awk -F'\t' '{n=split($2,u,";"); split($3,b,";"); for(i=1;i<=n;i++) if(u[i]~/(_1\.fastq\.gz|[^_][0-9]\.fastq\.gz)$/){print u[i], b[i], $4; exit}}')
+  [ -z "${URL:-}" ] && { echo -e "$RUN\tNO_URL\t$(date -Is)" >> "$LOG/failures.tsv"; exit 1; }
+  if [ "$RC" -gt "$N" ]; then TGT=$(( BYTES / RC * N * 103 / 100 + 2000000 )); else TGT=$BYTES; fi
+  [ "$TGT" -gt "$BYTES" ] && TGT=$BYTES
+  STALL=0
+  while :; do
+    HAVE=$(stat -c %s "$WORK/raw.gz" 2>/dev/null || echo 0)
+    if [ "$HAVE" -lt "$TGT" ]; then
+      curl -sf --retry 5 --speed-limit 2000 --speed-time 60 -r "$HAVE-$((TGT-1))" "https://$URL" >> "$WORK/raw.gz"
+      NOW=$(stat -c %s "$WORK/raw.gz" 2>/dev/null || echo 0)
+      if [ "$NOW" -lt "$TGT" ]; then [ "$NOW" -eq "$HAVE" ] && STALL=$((STALL+1)); [ "$STALL" -ge 20 ] && break; sleep 30; continue; fi
+    fi
+    LN=$("$ENV/pigz" -dc "$WORK/raw.gz" 2>/dev/null | head -n $((4*N)) | wc -l)
+    [ "$LN" -ge $((4*N)) ] && break
+    [ "$TGT" -ge "$BYTES" ] && break
+    TGT=$(( TGT * 115 / 100 )); [ "$TGT" -gt "$BYTES" ] && TGT=$BYTES
+  done
+  "$ENV/pigz" -dc "$WORK/raw.gz" 2>/dev/null | head -n $((4*N)) > "$WORK/r1.fq"
+  L=$(wc -l < "$WORK/r1.fq"); L=$((L - L % 4)); head -n "$L" "$WORK/r1.fq" > "$WORK/r1.tmp" && mv "$WORK/r1.tmp" "$WORK/r1.fq"
+  if [ "$L" -eq $((4*N)) ] || [ "$TGT" -ge "$BYTES" ]; then touch "$WORK/r1.ok"; rm -f "$WORK/raw.gz"; fi
+fi
+L=$(wc -l < "$WORK/r1.fq"); L=$((L - L % 4))
+[ "$L" -lt $((4*N)) ] && [ "$L" -ge $((4*MINR)) ] && echo -e "$RUN\tPARTIAL_$((L/4))\t$(date -Is)" >> "$LOG/flags.tsv"
+if [ "$L" -lt $((4*MINR)) ]; then
+  echo -e "$RUN\tSHORT_STREAM_$L\t$(date -Is)" >> "$LOG/failures.tsv"; exit 1; fi
 
 "$ENV/fastp" -i "$WORK/r1.fq" -o "$WORK/r1.qc.fq" -q 20 -l 100 --trim_poly_g --cut_tail \
    -w "$T" -j "$OUT/$RUN.fastp.json" -h /dev/null 2> "$WORK/fastp.log"
