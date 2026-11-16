@@ -12,21 +12,27 @@ ENV=/home/angsuman/extra_spac/software_libs/conda_envs/hydrosink/bin
 DB=${HS_DB:-$ROOT/analysis/db/hydrosink}
 T=${THREADS:-4}
 WORK=$ROOT/analysis/work/$RUN; OUT=$ROOT/analysis/results/per_sample; LOG=$ROOT/analysis/logs
-mkdir -p "$WORK" "$OUT" "$LOG"
+mkdir -p "$OUT" "$LOG" "$OUT/../hits"
 [ -s "$OUT/$RUN.markers.tsv" ] && { echo "$RUN already done"; exit 0; }
+rm -rf "$WORK"; mkdir -p "$WORK"
 
 URL=$(curl -s -m 60 --retry 5 "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=$RUN&result=read_run&fields=fastq_ftp&format=tsv" | tail -n1 | cut -f2 | tr ';' '\n' | grep -E '(_1\.fastq\.gz|[^_][0-9]\.fastq\.gz)$' | head -n1)
 [ -z "$URL" ] && { echo -e "$RUN\tNO_URL\t$(date -Is)" >> "$LOG/failures.tsv"; exit 1; }
 
 # stream: curl gets SIGPIPE when head closes -> expected; check line count instead
-for attempt in 1 2 3; do
-  curl -s --retry 5 --speed-limit 2000 --speed-time 60 "https://$URL" 2>/dev/null | "$ENV/pigz" -dc 2>/dev/null | head -n $((4*N)) > "$WORK/r1.fq"
-  L=$(wc -l < "$WORK/r1.fq")
-  { [ "$L" -eq $((4*N)) ] || [ "$L" -gt 4000000 ]; } && [ $((L % 4)) -eq 0 ] && break
-  sleep 20
+# complete = exactly N reads; after 4 failed attempts the longest stream is kept if >= 2 M reads (flagged)
+BEST=0
+for attempt in 1 2 3 4; do
+  curl -s --retry 5 --speed-limit 2000 --speed-time 60 "https://$URL" 2>/dev/null | "$ENV/pigz" -dc 2>/dev/null | head -n $((4*N)) > "$WORK/try.fq"
+  L=$(wc -l < "$WORK/try.fq"); L=$((L - L % 4))
+  if [ "$L" -gt "$BEST" ]; then head -n "$L" "$WORK/try.fq" > "$WORK/r1.fq"; BEST=$L; fi
+  rm -f "$WORK/try.fq"
+  [ "$BEST" -eq $((4*N)) ] && break
+  sleep 30
 done
-L=$(wc -l < "$WORK/r1.fq")
-if [ $((L % 4)) -ne 0 ] || [ "$L" -lt 4000000 ]; then
+L=$BEST
+[ "$L" -lt $((4*N)) ] && [ "$L" -ge 8000000 ] && echo -e "$RUN\tPARTIAL_$((L/4))\t$(date -Is)" >> "$LOG/flags.tsv"
+if [ "$L" -lt 8000000 ]; then
   echo -e "$RUN\tSHORT_STREAM_$L\t$(date -Is)" >> "$LOG/failures.tsv"; rm -rf "$WORK"; exit 1; fi
 
 "$ENV/fastp" -i "$WORK/r1.fq" -o "$WORK/r1.qc.fq" -q 20 -l 100 --trim_poly_g --cut_tail \
@@ -38,6 +44,7 @@ if [ $((L % 4)) -ne 0 ] || [ "$L" -lt 4000000 ]; then
    --labels "$DB.labels.tsv" --fastp "$OUT/$RUN.fastp.json" --run "$RUN" --n_streamed $((L/4)) \
    --out "$OUT/$RUN.markers.tsv"
 rc=$?
+gzip -c "$WORK/hits.m8" > "$OUT/../hits/$RUN.m8.gz"
 [ $rc -eq 0 ] && echo -e "$RUN\t$(date -Is)\t$((L/4))" >> "$LOG/done.tsv"
 rm -rf "$WORK"
 exit $rc
