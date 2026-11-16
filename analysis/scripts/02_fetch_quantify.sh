@@ -23,6 +23,22 @@ if [ ! -f "$WORK/r1.ok" ]; then
   REP=$(curl -s -m 60 --retry 5 "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=$RUN&result=read_run&fields=fastq_ftp,fastq_bytes,read_count&format=tsv" | tail -n1)
   read -r URL BYTES RC < <(echo "$REP" | awk -F'\t' '{n=split($2,u,";"); split($3,b,";"); for(i=1;i<=n;i++) if(u[i]~/(_1\.fastq\.gz|[^_][0-9]\.fastq\.gz)$/){print u[i], b[i], $4; exit}}')
   [ -z "${URL:-}" ] && { echo -e "$RUN\tNO_URL\t$(date -Is)" >> "$LOG/failures.tsv"; exit 1; }
+  # v3 (2026-11-16): default source is the NCBI SRA copy on AWS, fetched as 10 parallel blocks
+  # (fetch_aws_blocks.sh). HS_SAMPLING=head -> first N spots (P1; same reads as the ENA head, verified
+  # identical marker counts on SRR12529199); HS_SAMPLING=offsets -> 10 evenly spaced blocks (P2, v1.2).
+  SRC=${HS_SOURCE:-aws}; MODE=${HS_SAMPLING:-head}
+  if [ "$SRC" = aws ]; then
+    rm -f "$WORK/raw.gz" "$WORK/part"
+    if bash "$ROOT/analysis/scripts/fetch_aws_blocks.sh" "$RUN" "$N" "$MODE" "$WORK/r1.fq" "$RC" > "$WORK/aws.log" 2>&1; then
+      touch "$WORK/r1.ok"; echo -e "$RUN\tAWS_SRA\t$MODE\t$(date -Is)" >> "$LOG/source.tsv"
+    elif [ "$MODE" != head ]; then
+      echo -e "$RUN\tAWS_FAIL_$MODE\t$(date -Is)" >> "$LOG/failures.tsv"; exit 1
+    else
+      echo -e "$RUN\tAWS_FAIL_ENA_FALLBACK\t$(date -Is)" >> "$LOG/flags.tsv"; rm -f "$WORK/r1.fq"
+    fi
+  fi
+  [ "$MODE" != head ] && [ ! -f "$WORK/r1.ok" ] && exit 1
+  if [ ! -f "$WORK/r1.ok" ]; then  # ENA head download (fallback, or HS_SOURCE=ena)
   if [ "$RC" -gt "$N" ]; then TGT=$(( BYTES / RC * N * 103 / 100 + 2000000 )); else TGT=$BYTES; fi
   [ "$TGT" -gt "$BYTES" ] && TGT=$BYTES
   STALL=0
@@ -48,6 +64,7 @@ if [ ! -f "$WORK/r1.ok" ]; then
   "$ENV/pigz" -dc "$WORK/raw.gz" 2>/dev/null | head -n $((4*N)) > "$WORK/r1.fq"
   L=$(wc -l < "$WORK/r1.fq"); L=$((L - L % 4)); head -n "$L" "$WORK/r1.fq" > "$WORK/r1.tmp" && mv "$WORK/r1.tmp" "$WORK/r1.fq"
   if [ "$L" -eq $((4*N)) ] || [ "$TGT" -ge "$BYTES" ]; then touch "$WORK/r1.ok"; rm -f "$WORK/raw.gz"; fi
+  fi
 fi
 L=$(wc -l < "$WORK/r1.fq"); L=$((L - L % 4))
 [ "$L" -lt $((4*N)) ] && [ "$L" -ge $((4*MINR)) ] && echo -e "$RUN\tPARTIAL_$((L/4))\t$(date -Is)" >> "$LOG/flags.tsv"
