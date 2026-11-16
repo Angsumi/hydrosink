@@ -14,6 +14,11 @@ since10=$(date -d '-10 min' -Is); n10=$(awk -F'\t' -v s="$since10" '$2>=s' "$ROO
 left=$(( $(grep -c . "$ROOT/analysis/inventory/main_queue.txt") - $(ls "$P"/*.markers.tsv 2>/dev/null | wc -l) ))
 rate=$(awk -F'\t' -v s="$since" '$2>=s' "$ROOT/analysis/logs/done.tsv" | wc -l)
 echo "last 10m : $n10 samples   remaining: $left   ETA at last-hour rate: $( [ "$rate" -gt 0 ] && echo "$((left/rate)) h" || echo n/a)"
-G=$ROOT/analysis/work/gate1b; A=$(pgrep -x aria2c | head -1)
-if [ -n "$A" ]; then echo "gate1b   : downloading $(for f in "$G"/*.aria2; do b=${f##*/}; printf "%s " "${b%%.*}"; done) (written this session $(( $(awk '/^write_bytes/{print $2}' /proc/$A/io)/1000000 )) MB of ~8800)";
-else echo "gate1b   : $(tail -n1 "$ROOT/analysis/logs/gate1b.log" 2>/dev/null)"; fi
+G=$ROOT/analysis/work/gate1b; GR=$ROOT/analysis/results/gate1b
+for pair in SRR28204439:Ce14 SRR28204452:Rum14; do r=${pair%%:*}; a=${pair##*:}
+  if [ -s "$GR/$r.random.markers.tsv" ]; then st="done";
+  elif [ -f "$G/$r.R1.fastq.gz.aria2" ]; then st="downloading $(python3 "$ROOT/analysis/scripts/aria2_progress.py" "$G/$r.R1.fastq.gz.aria2")";
+  elif [ -f "$G/$r.R1.fastq.gz" ] || [ -f "$G/$r.r1.fq" ]; then st="processing (subsample/QC/DIAMOND)";
+  else st="waiting"; fi
+  echo "gate1b   : $a $r  $st"; done
+[ -s "$ROOT/analysis/results/gate1b_head_vs_random.tsv" ] && echo "gate1b   : RESULT -> $(grep -c True "$ROOT/analysis/results/gate1b_head_vs_random.tsv")/10 checks pass"
