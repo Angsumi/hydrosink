@@ -44,6 +44,16 @@ def build(inv_path, out_path, keep_cols):
     M = pd.DataFrame(rows)
     d = inv[keep_cols].merge(M, on="run_accession", how="inner")
     d["qc_pass"] = d.rpoB_n >= MIN_RPOB
+    cur = ROOT / "analysis/inventory/p2_curation.tsv"
+    if "captivity" in d.columns and cur.exists():   # [prereg-v1.1] outcome-blind curated metadata (01d_curate_metadata.py)
+        c = pd.read_csv(cur, sep="\t", dtype=str)[["run_accession", "captivity_v11", "captivity_basis", "species_v11", "species_basis"]]
+        ott = set(pd.read_csv(ROOT / "analysis/inventory/host_ott_map.tsv", sep="\t", dtype=str).species)
+        d = d.merge(c, on="run_accession", how="left")
+        d["captivity_v1"] = d.captivity; d["captivity"] = d.captivity_v11.fillna(d.captivity)
+        swap = d.species_v11.notna() & (d.species_v11 != d.species) & d.species_v11.isin(ott)
+        d["species_v1"] = d.species; d.loc[swap, "species"] = d.loc[swap, "species_v11"]
+        d["genus_only"] = d.species_basis.eq("genus_only_unresolved") | (~swap & d.species_basis.str.startswith("manual", na=False))
+        d = d.drop(columns=["captivity_v11", "species_v11"])
     d.to_csv(out_path, sep="\t", index=False)
     print(f"{out_path.name}: {len(d)} quantified / {len(inv)} planned; qc_pass {d.qc_pass.sum()}")
 

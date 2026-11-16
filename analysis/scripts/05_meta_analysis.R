@@ -7,7 +7,8 @@
 suppressPackageStartupMessages({library(data.table); library(metafor); library(lme4); library(MCMCglmm); library(ape)})
 set.seed(20261115)
 args <- commandArgs(TRUE); what <- if (length(args)) args[1] else "all"
-R <- "analysis/results"
+R <- Sys.getenv("HS_RESULTS", "analysis/results")      # override only for code testing on synthetic data
+NITT <- as.integer(Sys.getenv("HS_NITT", "130000"))    # override only for code testing
 hm <- function(x) 0.5 * min(x[x > 0], na.rm = TRUE)          # pseudocount: half min non-zero
 MK <- c("mcrA", "acsB", "dsrA", "asrA", "nrfA", "narG", "napA", "frdA", "NiFe", "FeFe", "rpoB")
 add_ratios <- function(d) {
@@ -70,7 +71,23 @@ run_p1 <- function() {
     pool_tab(rma(yi, vi, data = e, method = "REML", test = "knha"), paste(cc, collapse = "_vs_"))
   }))
   fwrite(sens, file.path(R, "p1_sensitivity.tsv"), sep = "\t")
+  # [prereg-v1.1] P1 has only TWO source studies (Li 2025, Xie 2021). Strata (study x host species) are not
+  # independent replication. Report (i) each study separately and (ii) a three-level model with strata nested
+  # in study; the stratum-level pooling above is descriptive only.
+  e <- es[outcome == "alr_acet"]; e[, study := sub("\\|.*", "", stratum)]
+  per_study <- rbindlist(lapply(unique(e$study), function(s) {
+    x <- e[study == s]
+    if (nrow(x) == 1) data.table(analysis = paste0("study:", s), k = 1, estimate = x$yi, se = sqrt(x$vi),
+      ci_lb = x$yi - 1.96 * sqrt(x$vi), ci_ub = x$yi + 1.96 * sqrt(x$vi), p = 2 * pnorm(-abs(x$yi / sqrt(x$vi))))
+    else { r <- rma(yi, vi, data = x, method = "REML", test = "knha")
+      data.table(analysis = paste0("study:", s), k = r$k, estimate = r$b[1], se = r$se, ci_lb = r$ci.lb, ci_ub = r$ci.ub, p = r$pval) }
+  }), fill = TRUE)
+  m3 <- rma.mv(yi, vi, random = ~ 1 | study / stratum, data = e, method = "REML", test = "t")
+  per_study <- rbind(per_study, data.table(analysis = "three-level (stratum in study)", k = m3$k, estimate = m3$b[1],
+    se = m3$se, ci_lb = m3$ci.lb, ci_ub = m3$ci.ub, p = m3$pval, sigma2_study = m3$sigma2[1], sigma2_stratum = m3$sigma2[2]), fill = TRUE)
+  fwrite(per_study, file.path(R, "p1_per_study.tsv"), sep = "\t")
   print(tab[, .(analysis, k, estimate, ci_lb, ci_ub, pi_lb, pi_ub, p, I2, animals_positive, n_animals)])
+  print(per_study)
 }
 
 # ============================ P2: across hosts (faeces), phylogenetic GLMM ============================
@@ -91,7 +108,7 @@ prep_tree <- function(d) {
 }
 pri3 <- list(R = list(V = 1, nu = 0.002), G = list(G1 = list(V = 1, nu = 1, alpha.mu = 0, alpha.V = 1000),
   G2 = list(V = 1, nu = 1, alpha.mu = 0, alpha.V = 1000), G3 = list(V = 1, nu = 1, alpha.mu = 0, alpha.V = 1000)))
-fit_mcmc <- function(fx, d, Ainv, family = "gaussian", nitt = 130000, burnin = 30000, thin = 100) {
+fit_mcmc <- function(fx, d, Ainv, family = "gaussian", nitt = NITT, burnin = round(NITT * 3 / 13), thin = max(1, round(NITT / 1300))) {
   pr <- pri3; if (family == "categorical") pr$R <- list(V = 1, fix = 1)
   MCMCglmm(fx, random = ~ phylo + species + study_accession, ginverse = list(phylo = Ainv), family = family,
            data = as.data.frame(d), prior = pr, nitt = nitt, burnin = burnin, thin = thin, verbose = FALSE, pr = FALSE)
@@ -166,7 +183,63 @@ run_p2 <- function() {
     cbind(set = nm, n = nrow(s), species = uniqueN(s$species), rbindlist(out))
   }), fill = TRUE)
   fwrite(sens, file.path(R, "p2_sensitivity.tsv"), sep = "\t")
-  print(rbindlist(dic)); print(rbindlist(con)); print(rbindlist(sig))
+
+  # ---------------- [prereg-v1.1] additional pre-specified analyses (added before any P2 data were analysed) ----------------
+  # (a) known-captivity subset and platform covariate (study-level technical confounding)
+  d[, platform := fcase(grepl("NovaSeq", instrument_model), "NovaSeq", grepl("HiSeq", instrument_model), "HiSeq",
+                        grepl("BGI|DNBSEQ|MGISEQ", instrument_model), "DNBSEQ", default = "other")]
+  extra <- list(captivity_known = list(s = d[captivity != "unknown"], cv = cov_null),
+                platform_cov = list(s = d, cv = paste(cov_null, "+ platform")))
+  sens2 <- rbindlist(lapply(names(extra), function(nm) {
+    s <- copy(extra[[nm]]$s); for (f in c("fermentation_site", "diet_class", "captivity")) s[, (f) := droplevels(get(f))]
+    tr <- keep.tip(pt$tree, unique(s$phylo)); Ai <- inverseA(tr, nodes = "TIPS")$Ainv
+    m <- fit_mcmc(as.formula(paste("alr_acet ~ fermentation_site +", extra[[nm]]$cv)), s, Ai)
+    lv <- levels(s$fermentation_site); out <- list()
+    if (all(c("foregut", "hindgut") %in% lv)) out[[1]] <- contrast(m, "foregut", "hindgut", "foregut - hindgut")
+    if ("hindgut" %in% lv) out[[2]] <- contrast(m, "hindgut", "simple", "hindgut - simple")
+    cbind(set = nm, n = nrow(s), species = uniqueN(s$species), studies = uniqueN(s$study_accession), rbindlist(out))
+  }), fill = TRUE)
+  fwrite(sens2, file.path(R, "p2_sensitivity_v1_1.tsv"), sep = "\t")
+
+  # (b) within-study design check: only studies sampling >= 2 fermentation categories; study as FIXED effect,
+  #     so the category contrast is estimated purely within studies (no between-study comparison).
+  ms <- d[, .(nc = uniqueN(fermentation_site)), by = study_accession][nc >= 2]$study_accession
+  w <- copy(d[study_accession %in% ms]); w[, fermentation_site := droplevels(fermentation_site)]
+  ws <- data.table(n_studies = length(ms), n_samples = nrow(w), n_species = uniqueN(w$species))
+  if (length(ms) >= 2 && nrow(w) >= 10) {
+    lmw <- lmer(alr_acet ~ fermentation_site + log_rpoB + factor(study_accession) + (1 | species), data = w)
+    cf <- summary(lmw)$coefficients; cf <- cf[grepl("fermentation_site", rownames(cf)), , drop = FALSE]
+    ws <- cbind(ws, data.table(term = rownames(cf), estimate = cf[, 1], se = cf[, 2], t = cf[, 3]))
+  }
+  fwrite(ws, file.path(R, "p2_within_study.tsv"), sep = "\t")
+
+  # (c) marsupial holdout (out-of-sample validation): fit on non-marsupial hosts; predict marsupial samples from the
+  #     fixed effects only (phylogeny contributes nothing for an unseen clade); compare with observed values.
+  lin <- fread("analysis/inventory/raw/host_taxa_lineage.tsv", select = c("host_tax_id", "lineage"))
+  d[, marsupial := host_tax_id %in% lin[grepl("Metatheria", lineage)]$host_tax_id]
+  ho <- d[marsupial == TRUE]; tr0 <- d[marsupial == FALSE]
+  if (nrow(ho) >= 5 && uniqueN(ho$fermentation_site) >= 2) {
+    for (f in c("fermentation_site", "diet_class", "captivity")) tr0[, (f) := droplevels(get(f))]
+    Ai <- inverseA(keep.tip(pt$tree, unique(tr0$phylo)), nodes = "TIPS")$Ainv
+    fx <- as.formula(paste("alr_acet ~ fermentation_site +", cov_null))
+    m <- fit_mcmc(fx, tr0, Ai)
+    hd <- copy(ho); for (f in c("fermentation_site", "diet_class", "captivity")) hd[, (f) := factor(as.character(get(f)), levels = levels(tr0[[f]]))]
+    hd <- hd[complete.cases(hd[, .(fermentation_site, diet_class, captivity)])]
+    X <- model.matrix(update(fx, NULL ~ .), data = hd)
+    B <- m$Sol[, colnames(X), drop = FALSE]; P <- X %*% t(B)
+    # predictive draws for a new clade/species/study: add phylo + species + study + residual variance
+    Pn <- P + matrix(rnorm(length(P), 0, rep(sqrt(rowSums(m$VCV)), each = nrow(P))), nrow(P))
+    hd[, `:=`(pred = rowMeans(P), pred_l95 = apply(Pn, 1, quantile, 0.025), pred_u95 = apply(Pn, 1, quantile, 0.975))]
+    hs <- hd[, .(n = .N, observed = mean(alr_acet), predicted = mean(pred)), by = .(species, fermentation_site)]
+    fwrite(hs, file.path(R, "p2_holdout_marsupial_species.tsv"), sep = "\t")
+    fwrite(data.table(n_samples = nrow(hd), n_species = nrow(hs),
+                      spearman_species = if (nrow(hs) >= 3) cor(hs$observed, hs$predicted, method = "spearman") else NA,
+                      mae = mean(abs(hd$alr_acet - hd$pred)), coverage95 = mean(hd$alr_acet >= hd$pred_l95 & hd$alr_acet <= hd$pred_u95),
+                      obs_hind_minus_fore = hd[fermentation_site == "hindgut", mean(alr_acet)] - hd[fermentation_site == "foregut", mean(alr_acet)],
+                      pred_hind_minus_fore = hd[fermentation_site == "hindgut", mean(pred)] - hd[fermentation_site == "foregut", mean(pred)]),
+           file.path(R, "p2_holdout_marsupial.tsv"), sep = "\t")
+  }
+  print(rbindlist(dic)); print(rbindlist(con)); print(rbindlist(sig)); print(sens2); print(ws)
 }
 
 # ============================ P3: methanogen-acetogen trade-off (proportionality) ============================
