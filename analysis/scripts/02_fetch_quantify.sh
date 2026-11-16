@@ -75,10 +75,11 @@ if [ "$L" -lt $((4*MINR)) ]; then
    -w "$T" -j "$OUT/$RUN.fastp.json" -h /dev/null 2> "$WORK/fastp.log"
 # RAM guard: at most HS_DMND_SLOTS (default 3) DIAMOND jobs at once; smaller blocks (-b 1 -c 4).
 # Search parameters (sensitivity, thresholds) are unchanged, so results are identical.
+# DIAMOND threads: HS_DMND_THREADS (default 5; 3 slots x 5 = 15 of 16 cores). Thread count does not change hits.
 SLOTS=${HS_DMND_SLOTS:-3}; mkdir -p "$ROOT/analysis/locks"
 while :; do for s in $(seq 1 "$SLOTS"); do exec 9>"$ROOT/analysis/locks/dmnd.$s"; flock -n 9 && break 2; done; sleep 15; done
 "$ENV/diamond" blastx -q "$WORK/r1.qc.fq" -d "$DB" -o "$WORK/hits.m8" --fast \
-   --id 40 --query-cover 80 --evalue 1e-5 --max-target-seqs 1 --max-hsps 1 -p "$T" -b 1 -c 4 \
+   --id 40 --query-cover 80 --evalue 1e-5 --max-target-seqs 1 --max-hsps 1 -p "${HS_DMND_THREADS:-5}" -b 1 -c 4 \
    --tmpdir "$WORK" --outfmt 6 qseqid sseqid pident length qlen slen evalue bitscore --quiet
 exec 9>&-
 "$ENV/python3.11" -I "$ROOT/analysis/scripts/aggregate_markers.py" --m8 "$WORK/hits.m8" \
