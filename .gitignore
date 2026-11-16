@@ -4,3 +4,4 @@ analysis/db/raw/
 *.fq.gz
 *.fastq*
 __pycache__/
+analysis/locks/
