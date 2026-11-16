@@ -8,7 +8,7 @@
 set -uo pipefail
 RUN=$1; N=${2:-5000000}; MINR=${HS_MIN_READS:-2000000}
 ROOT=${HS_ROOT:-"$(cd "$(dirname "$0")/../.." && pwd)"}
-ENV=/home/angsuman/extra_spac/software_libs/conda_envs/hydrosink/bin
+ENV=${HS_ENV:-/home/angsuman/extra_spac/software_libs/conda_envs/hydrosink/bin}
 DB=${HS_DB:-$ROOT/analysis/db/hydrosink}
 T=${THREADS:-4}
 WORK=$ROOT/analysis/work/$RUN; OUT=$ROOT/analysis/results/per_sample; LOG=$ROOT/analysis/logs
@@ -29,10 +29,17 @@ if [ ! -f "$WORK/r1.ok" ]; then
   while :; do
     HAVE=$(stat -c %s "$WORK/raw.gz" 2>/dev/null || echo 0)
     if [ "$HAVE" -lt "$TGT" ]; then
-      curl -sf --retry 5 --speed-limit 2000 --speed-time 60 -r "$HAVE-$((TGT-1))" "https://$URL" >> "$WORK/raw.gz"
+      # One attempt per call, written to a part file and appended only on HTTP 206 (no curl --retry:
+      # it restarts the range after a drop and duplicated bytes, corrupting raw.gz). Retries = this loop.
+      CODE=$(curl -s --speed-limit 2000 --speed-time 60 -r "$HAVE-$((TGT-1))" -o "$WORK/part" -w '%{http_code}' "https://$URL")
+      [ "$CODE" = "206" ] && [ -s "$WORK/part" ] && cat "$WORK/part" >> "$WORK/raw.gz"
+      rm -f "$WORK/part"
       NOW=$(stat -c %s "$WORK/raw.gz" 2>/dev/null || echo 0)
       if [ "$NOW" -lt "$TGT" ]; then [ "$NOW" -eq "$HAVE" ] && STALL=$((STALL+1)); [ "$STALL" -ge 20 ] && break; sleep 30; continue; fi
     fi
+    # corrupt (not merely truncated) gzip -> discard and start over
+    if "$ENV/pigz" -dc "$WORK/raw.gz" 2>&1 >/dev/null | grep -q "invalid"; then
+      echo -e "$RUN\tCORRUPT_RESTART\t$(date -Is)" >> "$LOG/flags.tsv"; rm -f "$WORK/raw.gz"; continue; fi
     LN=$("$ENV/pigz" -dc "$WORK/raw.gz" 2>/dev/null | head -n $((4*N)) | wc -l)
     [ "$LN" -ge $((4*N)) ] && break
     [ "$TGT" -ge "$BYTES" ] && break
