@@ -1,0 +1,931 @@
+run_accession	study_accession	species	captivity	captivity_v11	captivity_basis	species_v11	species_basis
+SRR24915848	PRJNA983076	Acinonyx jubatus	captive	captive	sample:'Zoo'	Acinonyx jubatus	binomial
+SRR29338649	PRJNA1120402	Ailuropoda melanoleuca	unknown	unknown	none	Ailuropoda melanoleuca	binomial
+DRR771929	PRJDB36534	Ailuropoda melanoleuca	unknown	unknown	none	Ailuropoda melanoleuca	binomial
+DRR1008264	PRJDB41802	Ailuropoda melanoleuca	unknown	captive	study:'Captiv'	Ailuropoda melanoleuca	binomial
+SRR35813694	PRJNA1338869	Ailuropoda melanoleuca	unknown	unknown	none	Ailuropoda melanoleuca	binomial
+SRR21291474	PRJNA872265	Ailuropoda melanoleuca	unknown	unknown	none	Ailuropoda melanoleuca	binomial
+SRR7340314	PRJNA475184	Ailuropoda melanoleuca	unknown	unknown	none	Ailuropoda melanoleuca	binomial
+SRR40996940	PRJNA1538486	Ailuropoda melanoleuca	unknown	captive	study:'captiv'	Ailuropoda melanoleuca	binomial
+SRR25644131	PRJNA1004900	Ailuropoda melanoleuca	unknown	unknown	none	Ailuropoda melanoleuca	binomial
+SRR29338647	PRJNA1120402	Ailuropoda melanoleuca	unknown	unknown	none	Ailuropoda melanoleuca	binomial
+DRR771904	PRJDB36534	Ailuropoda melanoleuca	unknown	unknown	none	Ailuropoda melanoleuca	binomial
+SRR36927266	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR24915852	PRJNA983076	Ailurus fulgens	captive	captive	sample:'Zoo'	Ailurus fulgens	binomial
+SRR36927270	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR36927267	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR36927264	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR36927265	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR36927262	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR36927272	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR36927268	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR36927263	PRJNA1405957	Ailurus fulgens	unknown	unknown	none	Ailurus fulgens	binomial
+SRR24915786	PRJNA983076	Aldabrachelys gigantea	captive	captive	sample:'Zoo'	Aldabrachelys gigantea	binomial
+SRR17156246	PRJNA786879	Aldabrachelys gigantea	unknown	captive	study:'captiv'	Aldabrachelys gigantea	binomial
+SRR17156247	PRJNA786879	Aldabrachelys gigantea	unknown	captive	sample:'zoological'	Aldabrachelys gigantea	binomial
+SRR14411316	PRJNA725899	Alexandromys oeconomus	unknown	wild	study:'wild'	Alexandromys oeconomus	binomial
+SRR27603325	PRJNA1065468	Alouatta seniculus	unknown	unknown	none	Alouatta seniculus	binomial
+SRR36115479	PRJNA1353588	Ammotragus lervia	unknown	unknown	none	Ammotragus lervia	binomial
+SRR25909051	PRJNA858822	Anas platyrhynchos	domestic	unknown	manual:Public Health Laboratory is the submitting lab, not housing	Anas platyrhynchos	binomial
+SRR25909052	PRJNA858822	Anas platyrhynchos	domestic	unknown	manual:Public Health Laboratory is the submitting lab, not housing	Anas platyrhynchos	binomial
+DRR279222	PRJDB11394	Anas sp.	unknown	unknown	none	Anas sp.	genus_only_unresolved
+DRR279221	PRJDB11394	Anas sp.	unknown	unknown	none	Anas sp.	genus_only_unresolved
+DRR279219	PRJDB11394	Anas sp.	unknown	unknown	none	Anas sp.	genus_only_unresolved
+DRR279220	PRJDB11394	Anas sp.	unknown	unknown	none	Anas sp.	genus_only_unresolved
+SRR25820366	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820357	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820359	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820356	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820353	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820363	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820364	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820354	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820360	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR25820367	PRJNA1005433	Andrias davidianus	unknown	unknown	none	Andrias davidianus	binomial
+SRR32583993	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32583992	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32583994	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32584016	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32584038	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32584039	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32583990	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32583991	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32584027	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32584005	PRJNA1229141	Anser fabalis	unknown	wild	study:'wild'	Anser fabalis	binomial
+SRR32584025	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32584029	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32583996	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32584023	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32584026	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32584022	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32584030	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32584000	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32584035	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR32584002	PRJNA1229141	Anser indicus	unknown	wild	study:'wild'	Anser indicus	binomial
+SRR24915828	PRJNA983076	Aotus trivirgatus	captive	captive	sample:'Zoo'	Aotus trivirgatus	binomial
+SRR10800390	PRJNA590085	Ara ararauna	unknown	unknown	none	Ara ararauna	binomial
+SRR10800389	PRJNA590085	Ara chloropterus	unknown	unknown	none	Ara chloropterus	binomial
+SRR24915789	PRJNA983076	Astrochelys radiata	captive	captive	sample:'Zoo'	Astrochelys radiata	binomial
+SRR27603324	PRJNA1065468	Ateles chamek	unknown	unknown	none	Ateles chamek	binomial
+SRR27603318	PRJNA1065468	Ateles chamek	unknown	unknown	none	Ateles chamek	binomial
+SRR19580881	PRJNA847183	Balaenoptera borealis	unknown	wild	"manual:free-living cetacean (""cetacean faecal samples"")"	Balaenoptera borealis	binomial
+SRR19580880	PRJNA847183	Balaenoptera borealis	unknown	wild	"manual:free-living cetacean (""cetacean faecal samples"")"	Balaenoptera borealis	binomial
+SRR24915822	PRJNA983076	Balearica regulorum	captive	captive	sample:'Zoo'	Balearica regulorum	binomial
+SRR10800400	PRJNA590085	Balearica regulorum	unknown	unknown	none	Balearica regulorum	binomial
+SRR24145987	PRJNA887424	Bison bison	unknown	unknown	none	Bison bison	binomial
+SRR2329984	PRJNA293646	Bos	unknown	domestic	manual:food animal gut microbiomes (study description)	Bos	genus_only_unresolved
+SRR40008832	PRJNA1506122	Bos	unknown	domestic	study:'Livestock'	Bos	genus_only_unresolved
+SRR2329962	PRJNA293646	Bos	unknown	domestic	manual:food animal gut microbiomes (study description)	Bos	genus_only_unresolved
+SRR40008713	PRJNA1506122	Bos	unknown	domestic	study:'Livestock'	Bos	genus_only_unresolved
+SRR2329939	PRJNA293646	Bos	unknown	domestic	manual:food animal gut microbiomes (study description)	Bos	genus_only_unresolved
+SRR40008674	PRJNA1506122	Bos	unknown	domestic	study:'Livestock'	Bos	genus_only_unresolved
+SRR2329910	PRJNA293646	Bos	unknown	domestic	manual:food animal gut microbiomes (study description)	Bos	genus_only_unresolved
+SRR40008803	PRJNA1506122	Bos	unknown	domestic	study:'Livestock'	Bos	genus_only_unresolved
+SRR2329878	PRJNA293646	Bos	unknown	domestic	manual:food animal gut microbiomes (study description)	Bos	genus_only_unresolved
+SRR40008780	PRJNA1506122	Bos	unknown	domestic	study:'Livestock'	Bos	genus_only_unresolved
+SRR41455579	PRJNA1553294	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR11528974	PRJNA624740	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR41455576	PRJNA1553294	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR11528971	PRJNA624740	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR41455588	PRJNA1553294	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR11528973	PRJNA624740	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR41455573	PRJNA1553294	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR11528972	PRJNA624740	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR41455583	PRJNA1553294	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR11528975	PRJNA624740	Bos grunniens	domestic	domestic	v1:domestic species list	Bos grunniens	binomial
+SRR25030039	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030077	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030061	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030050	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030053	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030058	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030067	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030036	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030055	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR25030064	PRJNA987743	Bos indicus	domestic	domestic	v1:domestic species list	Bos indicus	binomial
+SRR7949672	PRJNA494387	Bos javanicus	unknown	unknown	none	Bos javanicus	binomial
+SRR27599573	PRJNA1062615	Bos sp.	unknown	unknown	none	Bos sp.	genus_only_unresolved
+SRR34902447	PRJNA1041350	Bos taurus	domestic	domestic	sample:'farm'	Bos taurus	binomial
+ERR4398767	PRJEB39685	Bos taurus	domestic	domestic	v1:domestic species list	Bos taurus	binomial
+SRR24260317	PRJNA956982	Bos taurus	domestic	domestic	v1:domestic species list	Bos taurus	binomial
+SRR32496781	PRJNA1227551	Bos taurus	domestic	domestic	v1:domestic species list	Bos taurus	binomial
+SRR25542781	PRJNA1002411	Bos taurus	domestic	domestic	study:'dairy'	Bos taurus	binomial
+SRR5663657	PRJNA389792	Bos taurus	domestic	domestic	v1:domestic species list	Bos taurus	binomial
+SRR39316896	PRJNA1478476	Bos taurus	domestic	domestic	v1:domestic species list	Bos taurus	binomial
+SRR30724631	PRJNA1162843	Bos taurus	domestic	domestic	v1:domestic species list	Bos taurus	binomial
+SRR8083635	PRJNA497801	Bos taurus	domestic	domestic	v1:domestic species list	Bos taurus	binomial
+SRR40409326	PRJNA1520368	Bos taurus	domestic	domestic	sample:'Dairy'	Bos taurus	binomial
+SRR24145988	PRJNA887424	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12710974	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12711156	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12711209	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12710936	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12711059	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12711124	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12711247	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12710973	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR12710907	PRJNA656389	Bubalus bubalis	domestic	domestic	v1:domestic species list	Bubalus bubalis	binomial
+SRR24915791	PRJNA983076	Bubo scandiacus	captive	captive	sample:'Zoo'	Bubo scandiacus	binomial
+SRR10800395	PRJNA590085	Bycanistes brevis	unknown	unknown	none	Bycanistes brevis	binomial
+SRR23925011	PRJNA942254	Cabassous unicinctus	unknown	unknown	none	Cabassous unicinctus	binomial
+SRR23925023	PRJNA942254	Cabassous unicinctus	unknown	unknown	none	Cabassous unicinctus	binomial
+SRR23924989	PRJNA942254	Cabassous unicinctus	unknown	unknown	none	Cabassous unicinctus	binomial
+SRR7949673	PRJNA494387	Callimico goeldii	unknown	unknown	none	Callimico goeldii	binomial
+SRR10097273	PRJNA564888	Callosciurus notatus	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Callosciurus notatus	binomial
+SRR24915837	PRJNA983076	Camelus bactrianus	domestic	captive	sample:'Zoo'	Camelus bactrianus	binomial
+SRR24915851	PRJNA983076	Camelus bactrianus	domestic	captive	sample:'Zoo'	Camelus bactrianus	binomial
+SRR24915847	PRJNA983076	Camelus bactrianus	domestic	captive	sample:'Zoo'	Camelus bactrianus	binomial
+SRR24145989	PRJNA887424	Camelus dromedarius	domestic	domestic	v1:domestic species list	Camelus dromedarius	binomial
+SRR8164848	PRJNA504009	Canis	unknown	unknown	none	Canis	genus_only_unresolved
+SRR8164850	PRJNA504009	Canis	unknown	unknown	none	Canis	genus_only_unresolved
+SRR14842357	PRJNA738608	Canis lupus	domestic	domestic	v1:domestic species list	Canis lupus	binomial
+SRR28497686	PRJNA1092107	Canis lupus	unknown	unknown	none	Canis lupus	binomial
+SRR31760338	PRJNA1199800	Canis lupus	domestic	domestic	v1:domestic species list	Canis lupus	binomial
+SRR25508156	PRJNA1000750	Canis lupus	domestic	domestic	v1:domestic species list	Canis lupus	binomial
+SRR28513846	PRJNA1092791	Canis lupus	domestic	domestic	v1:domestic species list	Canis lupus	binomial
+SRR23559875	PRJNA936782	Canis lupus	domestic	domestic	v1:domestic species list	Canis lupus	binomial
+SRR37916292	PRJNA1447779	Canis lupus	domestic	domestic	v1:domestic species list	Canis lupus	binomial
+SRR24915798	PRJNA983076	Canis lupus	domestic	captive	sample:'Zoo'	Canis lupus	binomial
+SRR12959988	PRJNA672826	Canis lupus	unknown	unknown	none	Canis lupus	binomial
+SRR11450215	PRJNA616045	Canis lupus	domestic	domestic	v1:domestic species list	Canis lupus	binomial
+SRR7110574	PRJNA441068	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR8858073	PRJNA466986	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR7110580	PRJNA441073	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR7110576	PRJNA441069	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR7110579	PRJNA441070	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR7109975	PRJNA441061	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR8857977	PRJNA466981	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR7109575	PRJNA441060	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR26328485	PRJNA1023249	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+SRR35742070	PRJNA1338053	Capra hircus	domestic	domestic	v1:domestic species list	Capra hircus	binomial
+DRR859195	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859188	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859191	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859187	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859189	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859197	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859193	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859192	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859194	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+DRR859196	PRJDB39464	Capra sibirica	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Capra sibirica	binomial
+SRR28063075	PRJNA1062615	Capra sp.	unknown	unknown	none	Capra sp.	genus_only_unresolved
+SRR16642499	PRJNA773861	Capreolus pygargus	unknown	wild	sample:'Nature Reserve'	Capreolus pygargus	binomial
+DRR773952	PRJDB36334	Capreolus pygargus	unknown	unknown	none	Capreolus pygargus	binomial
+SRR16642496	PRJNA773861	Capreolus pygargus	unknown	wild	sample:'Nature Reserve'	Capreolus pygargus	binomial
+DRR773962	PRJDB36334	Capreolus pygargus	unknown	unknown	none	Capreolus pygargus	binomial
+SRR16642521	PRJNA773861	Capreolus pygargus	unknown	wild	sample:'Nature Reserve'	Capreolus pygargus	binomial
+DRR773953	PRJDB36334	Capreolus pygargus	unknown	unknown	none	Capreolus pygargus	binomial
+SRR16642510	PRJNA773861	Capreolus pygargus	unknown	wild	sample:'Nature Reserve'	Capreolus pygargus	binomial
+DRR773972	PRJDB36334	Capreolus pygargus	unknown	unknown	none	Capreolus pygargus	binomial
+SRR16642554	PRJNA773861	Capreolus pygargus	unknown	wild	sample:'Nature Reserve'	Capreolus pygargus	binomial
+DRR773976	PRJDB36334	Capreolus pygargus	unknown	unknown	none	Capreolus pygargus	binomial
+SRR24915817	PRJNA983076	Casuarius casuarius	captive	captive	sample:'Zoo'	Casuarius casuarius	binomial
+SRR24915853	PRJNA983076	Casuarius casuarius	captive	captive	sample:'Zoo'	Casuarius casuarius	binomial
+SRR7949671	PRJNA494387	Cebuella pygmaea	unknown	unknown	none	Cebuella pygmaea	binomial
+DRR773884	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773900	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773887	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773863	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773889	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773894	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773901	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773864	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773874	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+DRR773873	PRJDB36334	Cervus albirostris	unknown	unknown	none	Cervus albirostris	binomial
+SRR7549221	PRJNA468202	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR8278100	PRJNA502438	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR7549197	PRJNA468190	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR7549218	PRJNA468201	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR8275896	PRJNA502429	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR7549222	PRJNA468203	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR7549216	PRJNA468199	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR7549214	PRJNA468196	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR7549213	PRJNA468197	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+SRR8278088	PRJNA502433	Cervus canadensis	unknown	unknown	none	Cervus canadensis	binomial
+DRR773910	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773921	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773918	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773932	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773939	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773906	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773920	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773938	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773905	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+DRR773912	PRJDB36334	Cervus nippon	unknown	unknown	none	Cervus nippon	binomial
+SRR24915796	PRJNA983076	Chaetophractus villosus	captive	captive	sample:'Zoo'	Chaetophractus villosus	binomial
+SRR27180764	PRJNA1050657	Chroicocephalus ridibundus	unknown	unknown	none	Chroicocephalus ridibundus	binomial
+SRR27180767	PRJNA1050657	Chroicocephalus ridibundus	unknown	unknown	none	Chroicocephalus ridibundus	binomial
+SRR27180766	PRJNA1050657	Chroicocephalus ridibundus	unknown	unknown	none	Chroicocephalus ridibundus	binomial
+SRR27180765	PRJNA1050657	Chroicocephalus ridibundus	unknown	unknown	none	Chroicocephalus ridibundus	binomial
+SRR38145906	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145859	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145898	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145869	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145878	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145864	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145902	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145891	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145917	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+SRR38145874	PRJNA1454703	Ciconia boyciana	unknown	wild	"manual:storks sampled ""across migration sites"" (study title)"	Ciconia boyciana	binomial
+DRR771760	PRJDB36556	Corvus corax	unknown	wild	study:'wild'	Corvus corax	binomial
+DRR771768	PRJDB36557	Corvus corax	unknown	wild	study:'wild'	Corvus corax	binomial
+DRR771761	PRJDB36556	Corvus corax	unknown	wild	study:'wild'	Corvus corax	binomial
+DRR771769	PRJDB36557	Corvus corax	unknown	wild	study:'wild'	Corvus corax	binomial
+DRR771762	PRJDB36556	Corvus corax	unknown	wild	study:'wild'	Corvus corax	binomial
+DRR771767	PRJDB36557	Corvus corax	unknown	wild	study:'wild'	Corvus corax	binomial
+DRR848366	PRJDB38851	Corvus dauuricus	unknown	wild	study:'wild'	Corvus dauuricus	binomial
+DRR818159	PRJDB38848	Corvus dauuricus	unknown	wild	study:'wild'	Corvus dauuricus	binomial
+DRR848367	PRJDB38851	Corvus dauuricus	unknown	wild	study:'wild'	Corvus dauuricus	binomial
+DRR818157	PRJDB38848	Corvus dauuricus	unknown	wild	study:'wild'	Corvus dauuricus	binomial
+DRR848368	PRJDB38851	Corvus dauuricus	unknown	wild	study:'wild'	Corvus dauuricus	binomial
+DRR818156	PRJDB38848	Corvus dauuricus	unknown	wild	study:'wild'	Corvus dauuricus	binomial
+DRR848369	PRJDB38851	Corvus dauuricus	unknown	wild	study:'wild'	Corvus dauuricus	binomial
+DRR818158	PRJDB38848	Corvus dauuricus	unknown	wild	study:'wild'	Corvus dauuricus	binomial
+DRR848358	PRJDB38851	Corvus frugilegus	unknown	wild	study:'wild'	Corvus frugilegus	binomial
+DRR818151	PRJDB38848	Corvus frugilegus	unknown	wild	study:'wild'	Corvus frugilegus	binomial
+DRR848359	PRJDB38851	Corvus frugilegus	unknown	wild	study:'wild'	Corvus frugilegus	binomial
+DRR818150	PRJDB38848	Corvus frugilegus	unknown	wild	study:'wild'	Corvus frugilegus	binomial
+DRR848361	PRJDB38851	Corvus frugilegus	unknown	wild	study:'wild'	Corvus frugilegus	binomial
+DRR818148	PRJDB38848	Corvus frugilegus	unknown	wild	study:'wild'	Corvus frugilegus	binomial
+DRR848360	PRJDB38851	Corvus frugilegus	unknown	wild	study:'wild'	Corvus frugilegus	binomial
+DRR818149	PRJDB38848	Corvus frugilegus	unknown	wild	study:'wild'	Corvus frugilegus	binomial
+DRR771765	PRJDB36557	Corvus macrorhynchos	unknown	wild	study:'wild'	Corvus macrorhynchos	binomial
+DRR771756	PRJDB36556	Corvus macrorhynchos	unknown	wild	study:'wild'	Corvus macrorhynchos	binomial
+DRR771764	PRJDB36557	Corvus macrorhynchos	unknown	wild	study:'wild'	Corvus macrorhynchos	binomial
+DRR771757	PRJDB36556	Corvus macrorhynchos	unknown	wild	study:'wild'	Corvus macrorhynchos	binomial
+DRR771766	PRJDB36557	Corvus macrorhynchos	unknown	wild	study:'wild'	Corvus macrorhynchos	binomial
+DRR771758	PRJDB36556	Corvus macrorhynchos	unknown	wild	study:'wild'	Corvus macrorhynchos	binomial
+DRR771763	PRJDB36557	Corvus macrorhynchos	unknown	wild	study:'wild'	Corvus macrorhynchos	binomial
+DRR771759	PRJDB36556	Corvus macrorhynchos	unknown	wild	study:'wild'	Corvus macrorhynchos	binomial
+SRR20661432	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661425	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661427	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661409	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661404	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661430	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661405	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661428	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661431	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR20661407	PRJNA861719	Coturnix	unknown	unknown	none	Coturnix	genus_only_unresolved
+SRR34587778	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR3036329	PRJNA305465	Ctenopharyngodon idella	unknown	unknown	none	Ctenopharyngodon idella	binomial
+SRR34587781	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR34587779	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR34587782	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR34587773	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR34587774	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR34587776	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR34587772	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR34587777	PRJNA1293113	Ctenopharyngodon idella	unknown	captive	manual:effects of dietary macroalgae feeding trial (study description)	Ctenopharyngodon idella	binomial
+SRR41232686	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232682	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232691	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232667	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232666	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232669	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232657	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232683	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232690	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR41232679	PRJNA1545336	Cuon alpinus	unknown	unknown	none	Cuon alpinus	binomial
+SRR24915838	PRJNA983076	Cyclura cornuta	captive	captive	sample:'Zoo'	Cyclura cornuta	binomial
+SRR24915808	PRJNA983076	Cyclura cornuta	captive	captive	sample:'Zoo'	Cyclura cornuta	binomial
+SRR10800388	PRJNA590085	Cygnus atratus	unknown	unknown	none	Cygnus atratus	binomial
+SRR32584014	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584008	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584007	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584015	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584013	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584021	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584011	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584018	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584009	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR32584012	PRJNA1229141	Cygnus cygnus	unknown	wild	study:'wild'	Cygnus cygnus	binomial
+SRR10800387	PRJNA590085	Cygnus olor	unknown	unknown	none	Cygnus olor	binomial
+SRR25891147	PRJNA1011357	Cyprinus carpio	unknown	wild	"manual:carp ""in a naturally preserved wetland"" (study description)"	Cyprinus carpio	binomial
+SRR25891148	PRJNA1011357	Cyprinus carpio	unknown	wild	"manual:carp ""in a naturally preserved wetland"" (study description)"	Cyprinus carpio	binomial
+SRR25891149	PRJNA1011357	Cyprinus carpio	unknown	wild	"manual:carp ""in a naturally preserved wetland"" (study description)"	Cyprinus carpio	binomial
+SRR25891146	PRJNA1011357	Cyprinus carpio	unknown	wild	"manual:carp ""in a naturally preserved wetland"" (study description)"	Cyprinus carpio	binomial
+SRR25891150	PRJNA1011357	Cyprinus carpio	unknown	wild	"manual:carp ""in a naturally preserved wetland"" (study description)"	Cyprinus carpio	binomial
+SRR9109403	PRJNA544171	Danio rerio	unknown	laboratory	"manual:zebrafish ""raised under antibiotic stress"" (study description)"	Danio rerio	binomial
+SRR12456167	PRJNA656314	Danio rerio	unknown	unknown	none	Danio rerio	binomial
+SRR30227218	PRJNA1147314	Danio rerio	unknown	unknown	none	Danio rerio	binomial
+SRR9109400	PRJNA544171	Danio rerio	unknown	laboratory	"manual:zebrafish ""raised under antibiotic stress"" (study description)"	Danio rerio	binomial
+SRR12456173	PRJNA656314	Danio rerio	unknown	unknown	none	Danio rerio	binomial
+SRR30227147	PRJNA1147314	Danio rerio	unknown	unknown	none	Danio rerio	binomial
+SRR9109406	PRJNA544171	Danio rerio	unknown	laboratory	"manual:zebrafish ""raised under antibiotic stress"" (study description)"	Danio rerio	binomial
+SRR12456161	PRJNA656314	Danio rerio	unknown	unknown	none	Danio rerio	binomial
+SRR30227032	PRJNA1147314	Danio rerio	unknown	unknown	none	Danio rerio	binomial
+SRR9109402	PRJNA544171	Danio rerio	unknown	laboratory	"manual:zebrafish ""raised under antibiotic stress"" (study description)"	Danio rerio	binomial
+SRR23925010	PRJNA942254	Dasypus kappleri	unknown	unknown	none	Dasypus kappleri	binomial
+SRR23925016	PRJNA942254	Dasypus novemcinctus	unknown	unknown	none	Dasypus novemcinctus	binomial
+SRR23925013	PRJNA942254	Dasypus novemcinctus	unknown	unknown	none	Dasypus novemcinctus	binomial
+SRR23924960	PRJNA942254	Dasypus sp.	unknown	unknown	none	Dasypus sp.	genus_only_unresolved
+SRR23925018	PRJNA942254	Dasypus sp.	unknown	unknown	none	Dasypus sp.	genus_only_unresolved
+SRR23924962	PRJNA942254	Dasypus sp.	unknown	unknown	none	Dasypus sp.	genus_only_unresolved
+SRR23925020	PRJNA942254	Dasypus sp.	unknown	unknown	none	Dasypus sp.	genus_only_unresolved
+SRR14860696	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860679	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860638	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860612	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860640	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860697	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860643	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860651	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860586	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR14860635	PRJNA739024	Desmodus rotundus	unknown	unknown	none	Desmodus rotundus	binomial
+SRR10800393	PRJNA590085	Dromaius novaehollandiae	unknown	unknown	none	Dromaius novaehollandiae	binomial
+SRR24915788	PRJNA983076	Dromaius novaehollandiae	captive	captive	sample:'Zoo'	Dromaius novaehollandiae	binomial
+SRR5040907	PRJNA344863	Eidolon helvum	unknown	wild	manual:Cameroonian fruit bats, zoonotic virus surveillance (study description)	Eidolon helvum	binomial
+SRR5040916	PRJNA344863	Eidolon helvum	unknown	wild	manual:Cameroonian fruit bats, zoonotic virus surveillance (study description)	Eidolon helvum	binomial
+SRR5040920	PRJNA344863	Eidolon helvum	unknown	wild	manual:Cameroonian fruit bats, zoonotic virus surveillance (study description)	Eidolon helvum	binomial
+SRR5040910	PRJNA344863	Eidolon helvum	unknown	wild	manual:Cameroonian fruit bats, zoonotic virus surveillance (study description)	Eidolon helvum	binomial
+SRR5040921	PRJNA344863	Eidolon helvum	unknown	wild	manual:Cameroonian fruit bats, zoonotic virus surveillance (study description)	Eidolon helvum	binomial
+SRR5040911	PRJNA344863	Eidolon helvum	unknown	wild	manual:Cameroonian fruit bats, zoonotic virus surveillance (study description)	Eidolon helvum	binomial
+SRR5040919	PRJNA344863	Eidolon helvum	unknown	wild	manual:Cameroonian fruit bats, zoonotic virus surveillance (study description)	Eidolon helvum	binomial
+SRR7340311	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340322	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340321	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340324	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340301	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340304	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340305	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340306	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340300	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR7340302	PRJNA475184	Elaphurus davidianus	unknown	unknown	none	Elaphurus davidianus	binomial
+SRR24145991	PRJNA887424	Elephas maximus	unknown	unknown	none	Elephas maximus	binomial
+SRR1221442	PRJNA240141	Elephas maximus	unknown	unknown	none	Elephas maximus	binomial
+SRR1201870	PRJNA240141	Elephas maximus	unknown	unknown	none	Elephas maximus	binomial
+SRR28047936	PRJNA1062615	Elephas sp.	unknown	unknown	none	Elephas maximus	manual:only extant species of the genus
+SRR14722432	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14719077	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14719074	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14722439	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14719069	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14722430	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14722435	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14722434	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14719079	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR14719070	PRJNA726636	Enhydra lutris	unknown	wild	study:'wild'	Enhydra lutris	binomial
+SRR17257197	PRJNA789782	Epomophorus wahlbergi	unknown	wild	manual:bat coronavirus surveillance in Eswatini (study description)	Epomophorus wahlbergi	binomial
+SRR17257196	PRJNA789782	Epomophorus wahlbergi	unknown	wild	manual:bat coronavirus surveillance in Eswatini (study description)	Epomophorus wahlbergi	binomial
+SRR38919760	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919785	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919767	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919766	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919782	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919779	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919768	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919765	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919776	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR38919784	PRJNA1472844	Equus asinus	domestic	domestic	study:'farm'	Equus asinus	binomial
+SRR24915813	PRJNA983076	Equus caballus	domestic	captive	sample:'Zoo'	Equus caballus	binomial
+SRR28795383	PRJNA1102860	Equus caballus	domestic	wild	manual:Sable Island horses are feral, free-living (study title)	Equus caballus	binomial
+SRR35958914	PRJNA1356469	Equus caballus	domestic	domestic	v1:domestic species list	Equus caballus	binomial
+SRR24145990	PRJNA887424	Equus caballus	domestic	domestic	v1:domestic species list	Equus caballus	binomial
+SRR26714002	PRJNA785979	Equus caballus	domestic	domestic	study:'farm'	Equus caballus	binomial
+SRR21576147	PRJNA880353	Equus caballus	domestic	domestic	v1:domestic species list	Equus caballus	binomial
+SRR26486650	PRJNA688310	Equus caballus	domestic	domestic	v1:domestic species list	Equus caballus	binomial
+SRR28795341	PRJNA1102860	Equus caballus	domestic	wild	manual:Sable Island horses are feral, free-living (study title)	Equus caballus	binomial
+SRR35958938	PRJNA1356469	Equus caballus	domestic	domestic	v1:domestic species list	Equus caballus	binomial
+SRR26714003	PRJNA785979	Equus caballus	domestic	domestic	study:'farm'	Equus caballus	binomial
+DRR858112	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858102	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858115	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858113	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858105	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858110	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858103	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858109	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858107	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+DRR858104	PRJDB39423	Equus ferus	unknown	wild	manual:reintroduced Przewalski horses, feralization study (study description)	Equus ferus	binomial
+SRR35958910	PRJNA1356469	Equus hemionus	unknown	wild	study:'wild'	Equus hemionus	binomial
+SRR19135265	PRJNA784453	Equus hemionus	unknown	captive	study:'captiv'	Equus hemionus	binomial
+SRR18314294	PRJNA814825	Equus hemionus	unknown	wild	study:'wild'	Equus hemionus	binomial
+DRR851212	PRJDB39230	Equus hemionus	unknown	wild	study:'Wild'	Equus hemionus	binomial
+DRR858121	PRJDB39423	Equus hemionus	unknown	wild	study:'wild'	Equus hemionus	binomial
+SRR35958912	PRJNA1356469	Equus hemionus	unknown	wild	study:'wild'	Equus hemionus	binomial
+SRR19135261	PRJNA784453	Equus hemionus	unknown	captive	study:'captiv'	Equus hemionus	binomial
+SRR18314293	PRJNA814825	Equus hemionus	unknown	wild	study:'wild'	Equus hemionus	binomial
+DRR857713	PRJDB39230	Equus hemionus	unknown	wild	study:'Wild'	Equus hemionus	binomial
+DRR858120	PRJDB39423	Equus hemionus	unknown	wild	study:'wild'	Equus hemionus	binomial
+SRR35958929	PRJNA1356469	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR18314301	PRJNA814825	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR35958921	PRJNA1356469	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR18314300	PRJNA814825	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR35958928	PRJNA1356469	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR18314298	PRJNA814825	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR35958924	PRJNA1356469	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR18314291	PRJNA814825	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR35958934	PRJNA1356469	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR18314290	PRJNA814825	Equus przewalskii	unknown	wild	study:'wild'	Equus przewalskii	binomial
+SRR24915801	PRJNA983076	Equus quagga	captive	captive	sample:'Zoo'	Equus quagga	binomial
+SRR24915793	PRJNA983076	Equus quagga	captive	captive	sample:'Zoo'	Equus quagga	binomial
+SRR24915811	PRJNA983076	Eulemur albifrons	captive	captive	sample:'Zoo'	Eulemur albifrons	binomial
+SRR24915800	PRJNA983076	Eulemur macaco	captive	captive	sample:'Zoo'	Eulemur macaco	binomial
+SRR24915787	PRJNA983076	Eulemur rubriventer	captive	captive	sample:'Zoo'	Eulemur rubriventer	binomial
+SRR35513416	PRJNA1328924	Fejervarya multistriata	unknown	unknown	none	Fejervarya multistriata	binomial
+SRR35513414	PRJNA1328924	Fejervarya multistriata	unknown	unknown	none	Fejervarya multistriata	binomial
+SRR35513415	PRJNA1328924	Fejervarya multistriata	unknown	unknown	none	Fejervarya multistriata	binomial
+SRR23092418	PRJNA923753	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR30801691	PRJNA1159900	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR35428322	PRJNA1328827	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR18550140	PRJNA821230	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR19348660	PRJNA841246	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR23911019	PRJNA946412	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR20642307	PRJNA861020	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR16235400	PRJNA758898	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR28497689	PRJNA1092107	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR26592438	PRJNA1032714	Felis catus	domestic	domestic	v1:domestic species list	Felis catus	binomial
+SRR24915834	PRJNA983076	Galidia elegans	captive	captive	sample:'Zoo'	Galidia elegans	binomial
+SRR12516177	PRJNA658643	Gallus gallus	domestic	domestic	study:'Broiler'	Gallus gallus	binomial
+SRR10800398	PRJNA590085	Gallus gallus	domestic	domestic	v1:domestic species list	Gallus gallus	binomial
+SRR22464976	PRJNA906507	Gallus gallus	domestic	domestic	v1:domestic species list	Gallus gallus	binomial
+SRR36769647	PRJNA1401269	Gallus gallus	domestic	domestic	study:'broiler'	Gallus gallus	binomial
+SRR38843883	PRJNA1457050	Gallus gallus	domestic	domestic	v1:domestic species list	Gallus gallus	binomial
+SRR14301311	PRJNA723631	Gallus gallus	domestic	domestic	v1:domestic species list	Gallus gallus	binomial
+SRR9113727	PRJNA543206	Gallus gallus	domestic	domestic	v1:domestic species list	Gallus gallus	binomial
+SRR24915840	PRJNA983076	Gallus gallus	domestic	captive	sample:'Zoo'	Gallus gallus	binomial
+SRR27748168	PRJNA1069780	Gallus gallus	domestic	domestic	v1:domestic species list	Gallus gallus	binomial
+SRR18707517	PRJNA825133	Gallus gallus	domestic	domestic	study:'poultry'	Gallus gallus	binomial
+SRR24915794	PRJNA983076	Giraffa camelopardalis	captive	captive	sample:'Zoo'	Giraffa camelopardalis	binomial
+SRR24915821	PRJNA983076	Giraffa camelopardalis	captive	captive	sample:'Zoo'	Giraffa camelopardalis	binomial
+SRR8986148	PRJNA540280	Gopherus berlandieri	unknown	unknown	none	Gopherus berlandieri	binomial
+SRR24915815	PRJNA983076	Gorilla gorilla	captive	captive	sample:'Zoo'	Gorilla gorilla	binomial
+SRR8978319	PRJNA539933	Gorilla gorilla	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Gorilla gorilla	binomial
+SRR6460889	PRJNA419744	Gorilla gorilla	unknown	unknown	none	Gorilla gorilla	binomial
+SRR18969886	PRJNA827108	Gorilla gorilla	unknown	captive	study:'zoo'	Gorilla gorilla	binomial
+SRR8978363	PRJNA539933	Gorilla gorilla	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Gorilla gorilla	binomial
+SRR6460871	PRJNA419744	Gorilla gorilla	unknown	unknown	none	Gorilla gorilla	binomial
+SRR18969890	PRJNA827108	Gorilla gorilla	unknown	captive	study:'zoo'	Gorilla gorilla	binomial
+SRR8978421	PRJNA539933	Gorilla gorilla	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Gorilla gorilla	binomial
+SRR18969902	PRJNA827108	Gorilla gorilla	unknown	captive	study:'zoo'	Gorilla gorilla	binomial
+SRR8978373	PRJNA539933	Gorilla gorilla	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Gorilla gorilla	binomial
+SRR10800399	PRJNA590085	Grus japonensis	unknown	unknown	none	Grus japonensis	binomial
+DRR857944	PRJDB39414	Gyps himalayensis	unknown	unknown	"manual:study mixes ""wild and zoo"" vultures; per-sample status not in metadata"	Gyps himalayensis	binomial
+DRR857948	PRJDB39414	Gyps himalayensis	unknown	unknown	"manual:study mixes ""wild and zoo"" vultures; per-sample status not in metadata"	Gyps himalayensis	binomial
+DRR857946	PRJDB39414	Gyps himalayensis	unknown	unknown	"manual:study mixes ""wild and zoo"" vultures; per-sample status not in metadata"	Gyps himalayensis	binomial
+DRR857943	PRJDB39414	Gyps himalayensis	unknown	unknown	"manual:study mixes ""wild and zoo"" vultures; per-sample status not in metadata"	Gyps himalayensis	binomial
+DRR857945	PRJDB39414	Gyps himalayensis	unknown	unknown	"manual:study mixes ""wild and zoo"" vultures; per-sample status not in metadata"	Gyps himalayensis	binomial
+DRR857947	PRJDB39414	Gyps himalayensis	unknown	unknown	"manual:study mixes ""wild and zoo"" vultures; per-sample status not in metadata"	Gyps himalayensis	binomial
+SRR19859305	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR27067343	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR19792037	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR27067320	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR19792041	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR19792040	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR26902769	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR19859300	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR26902784	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR19897629	PRJNA831632	Hoolock tianxing	unknown	wild	study:'wild'	Hoolock tianxing	binomial
+SRR29952138	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952119	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952143	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952144	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952125	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952132	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952134	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952129	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952142	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR29952139	PRJNA1139332	Hydropotes inermis	unknown	wild	manual:spatio-temporal distribution of water deer feces (study description)	Hydropotes inermis	binomial
+SRR7614713	PRJNA481090	Hydrurga leptonyx	unknown	unknown	none	Hydrurga leptonyx	binomial
+SRR11106682	PRJNA606765	Indri indri	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Indri indri	binomial
+SRR11106678	PRJNA606765	Indri indri	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Indri indri	binomial
+SRR11106687	PRJNA606765	Indri indri	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Indri indri	binomial
+SRR11106683	PRJNA606765	Indri indri	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Indri indri	binomial
+DRR783477	PRJDB37067	Kobus leche	unknown	captive	study:'Captiv'	Kobus leche	binomial
+DRR783476	PRJDB37067	Kobus leche	unknown	captive	study:'Captiv'	Kobus leche	binomial
+DRR783478	PRJDB37067	Kobus leche	unknown	captive	study:'Captiv'	Kobus leche	binomial
+SRR24915790	PRJNA983076	Lama guanicoe	captive	captive	sample:'Zoo'	Lama guanicoe	binomial
+SRR22536473	PRJNA907943	Lasiorhinus latifrons	unknown	unknown	none	Lasiorhinus latifrons	binomial
+SRR22536472	PRJNA907943	Lasiorhinus latifrons	unknown	unknown	none	Lasiorhinus latifrons	binomial
+SRR22536474	PRJNA907943	Lasiorhinus latifrons	unknown	unknown	none	Lasiorhinus latifrons	binomial
+SRR22536470	PRJNA907943	Lasiorhinus latifrons	unknown	unknown	none	Lasiorhinus latifrons	binomial
+SRR22536471	PRJNA907943	Lasiorhinus latifrons	unknown	unknown	none	Lasiorhinus latifrons	binomial
+SRR24915819	PRJNA983076	Lemur catta	captive	captive	sample:'Zoo'	Lemur catta	binomial
+SRR24915845	PRJNA983076	Leptailurus serval	captive	captive	sample:'Zoo'	Leptailurus serval	binomial
+SRR14298101	PRJNA665590	Leptonychotes weddellii	unknown	wild	manual:Antarctic seals (study title)	Leptonychotes weddellii	binomial
+SRR7614710	PRJNA481090	Leptonychotes weddellii	unknown	unknown	none	Leptonychotes weddellii	binomial
+SRR14298102	PRJNA665590	Leptonychotes weddellii	unknown	wild	manual:Antarctic seals (study title)	Leptonychotes weddellii	binomial
+SRR14298103	PRJNA665590	Leptonychotes weddellii	unknown	wild	manual:Antarctic seals (study title)	Leptonychotes weddellii	binomial
+SRR14298095	PRJNA665590	Leptonychotes weddellii	unknown	wild	manual:Antarctic seals (study title)	Leptonychotes weddellii	binomial
+SRR14298104	PRJNA665590	Leptonychotes weddellii	unknown	wild	manual:Antarctic seals (study title)	Leptonychotes weddellii	binomial
+SRR27987836	PRJNA1076814	Loxodonta africana	unknown	unknown	none	Loxodonta africana	binomial
+SRR34857696	PRJNA1301358	Lutra lutra	unknown	wild	manual:Welsh otters (study title); free-living population	Lutra lutra	binomial
+SRR16510772	PRJNA772888	Lutra lutra	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Lutra lutra	binomial
+SRR34857702	PRJNA1301358	Lutra lutra	unknown	wild	manual:Welsh otters (study title); free-living population	Lutra lutra	binomial
+SRR16510776	PRJNA772888	Lutra lutra	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Lutra lutra	binomial
+SRR34857713	PRJNA1301358	Lutra lutra	unknown	wild	manual:Welsh otters (study title); free-living population	Lutra lutra	binomial
+SRR16510774	PRJNA772888	Lutra lutra	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Lutra lutra	binomial
+SRR34857701	PRJNA1301358	Lutra lutra	unknown	wild	manual:Welsh otters (study title); free-living population	Lutra lutra	binomial
+SRR16510775	PRJNA772888	Lutra lutra	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Lutra lutra	binomial
+SRR34857706	PRJNA1301358	Lutra lutra	unknown	wild	manual:Welsh otters (study title); free-living population	Lutra lutra	binomial
+SRR16510786	PRJNA772888	Lutra lutra	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Lutra lutra	binomial
+SRR24915829	PRJNA983076	Macaca fascicularis	captive	captive	sample:'Zoo'	Macaca fascicularis	binomial
+SRR11450185	PRJNA616045	Macaca fascicularis	unknown	laboratory	manual:various animal models (study description)	Macaca fascicularis	binomial
+SRR19668121	PRJNA849338	Macaca fascicularis	unknown	captive	study:'Captiv'	Macaca fascicularis	binomial
+SRR37213787	PRJNA1423007	Macaca fascicularis	unknown	unknown	none	Macaca fascicularis	binomial
+SRR28513884	PRJNA1092791	Macaca fascicularis	unknown	unknown	none	Macaca fascicularis	binomial
+SRR11450206	PRJNA616045	Macaca fascicularis	unknown	laboratory	manual:various animal models (study description)	Macaca fascicularis	binomial
+SRR19668095	PRJNA849338	Macaca fascicularis	unknown	captive	study:'Captiv'	Macaca fascicularis	binomial
+SRR37213780	PRJNA1423007	Macaca fascicularis	unknown	unknown	none	Macaca fascicularis	binomial
+SRR28513872	PRJNA1092791	Macaca fascicularis	unknown	unknown	none	Macaca fascicularis	binomial
+SRR11450207	PRJNA616045	Macaca fascicularis	unknown	laboratory	manual:various animal models (study description)	Macaca fascicularis	binomial
+DRR198890	PRJDB8987	Macaca fuscata	unknown	wild	"manual:Japanese macaques ""in the highland and lowland Yakushima"" (study title)"	Macaca fuscata	binomial
+SRR11450250	PRJNA616045	Macaca fuscata	unknown	laboratory	manual:various animal models (study description)	Macaca fuscata	binomial
+DRR198867	PRJDB8987	Macaca fuscata	unknown	wild	"manual:Japanese macaques ""in the highland and lowland Yakushima"" (study title)"	Macaca fuscata	binomial
+SRR11450246	PRJNA616045	Macaca fuscata	unknown	laboratory	manual:various animal models (study description)	Macaca fuscata	binomial
+DRR198871	PRJDB8987	Macaca fuscata	unknown	wild	"manual:Japanese macaques ""in the highland and lowland Yakushima"" (study title)"	Macaca fuscata	binomial
+SRR11450247	PRJNA616045	Macaca fuscata	unknown	laboratory	manual:various animal models (study description)	Macaca fuscata	binomial
+DRR198866	PRJDB8987	Macaca fuscata	unknown	wild	"manual:Japanese macaques ""in the highland and lowland Yakushima"" (study title)"	Macaca fuscata	binomial
+SRR11450249	PRJNA616045	Macaca fuscata	unknown	laboratory	manual:various animal models (study description)	Macaca fuscata	binomial
+DRR198884	PRJDB8987	Macaca fuscata	unknown	wild	"manual:Japanese macaques ""in the highland and lowland Yakushima"" (study title)"	Macaca fuscata	binomial
+SRR11450248	PRJNA616045	Macaca fuscata	unknown	laboratory	manual:various animal models (study description)	Macaca fuscata	binomial
+SRR30347321	PRJNA1151203	Macaca mulatta	unknown	unknown	none	Macaca mulatta	binomial
+SRR11450229	PRJNA616045	Macaca mulatta	unknown	laboratory	manual:various animal models (study description)	Macaca mulatta	binomial
+SRR10203111	PRJNA574851	Macaca mulatta	unknown	laboratory	manual:transgenic macaque disease model (study title)	Macaca mulatta	binomial
+SRR30347320	PRJNA1151203	Macaca mulatta	unknown	unknown	none	Macaca mulatta	binomial
+SRR11450244	PRJNA616045	Macaca mulatta	unknown	laboratory	manual:various animal models (study description)	Macaca mulatta	binomial
+SRR10203118	PRJNA574851	Macaca mulatta	unknown	laboratory	manual:transgenic macaque disease model (study title)	Macaca mulatta	binomial
+SRR30347322	PRJNA1151203	Macaca mulatta	unknown	unknown	none	Macaca mulatta	binomial
+SRR11450245	PRJNA616045	Macaca mulatta	unknown	laboratory	manual:various animal models (study description)	Macaca mulatta	binomial
+SRR10203112	PRJNA574851	Macaca mulatta	unknown	laboratory	manual:transgenic macaque disease model (study title)	Macaca mulatta	binomial
+SRR30347316	PRJNA1151203	Macaca mulatta	unknown	unknown	none	Macaca mulatta	binomial
+SRR24915836	PRJNA983076	Macropus giganteus	captive	captive	sample:'Zoo'	Macropus giganteus	binomial
+SRR24915804	PRJNA983076	Mandrillus sphinx	captive	captive	sample:'Zoo'	Mandrillus sphinx	binomial
+SRR25948540	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948541	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948554	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948545	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948550	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948547	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948546	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948551	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948549	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948539	PRJNA1014131	Manis javanica	unknown	captive	study:'Captiv'	Manis javanica	binomial
+SRR25948548	PRJNA1014131	Manis pentadactyla	unknown	captive	study:'Captiv'	Manis pentadactyla	binomial
+SRR25948542	PRJNA1014131	Manis pentadactyla	unknown	captive	study:'Captiv'	Manis pentadactyla	binomial
+SRR25948543	PRJNA1014131	Manis pentadactyla	unknown	captive	study:'Captiv'	Manis pentadactyla	binomial
+SRR10800397	PRJNA590085	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398714	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398829	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398826	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398712	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398730	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398785	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398741	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398705	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+ERR4398732	PRJEB39685	Meleagris gallopavo	domestic	domestic	v1:domestic species list	Meleagris gallopavo	binomial
+SRR34488299	PRJNA1288570	Mergus squamatus	unknown	wild	sample:'Nature Reserve'	Mergus squamatus	binomial
+SRR35029484	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR35029483	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR35029494	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR35029489	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR35029503	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR35029497	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR35029499	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR35029501	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR35029495	PRJNA1307627	Mergus squamatus	unknown	wild	"manual:merganser sampled ""across rivers"" (study description)"	Mergus squamatus	binomial
+SRR29323619	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323625	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323630	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323620	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323633	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323624	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323615	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323606	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323617	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR29323618	PRJNA1121382	Mesocricetus auratus	unknown	laboratory	manual:SARS-CoV-2 infection model in hamsters (study title)	Mesocricetus auratus	binomial
+SRR24915827	PRJNA983076	Microcebus murinus	captive	captive	sample:'Zoo'	Microcebus murinus	binomial
+SRR31057891	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057885	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057886	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057893	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057888	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057889	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057894	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057895	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057884	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR31057887	PRJNA1175391	Micropterus salmoides	unknown	captive	manual:feeding trial with macroalgae diets (study description)	Micropterus salmoides	binomial
+SRR9122728	PRJNA449069	Microtus ochrogaster	unknown	unknown	none	Microtus ochrogaster	binomial
+SRR13282563	PRJNA674340	Microtus ochrogaster	unknown	laboratory	manual:model organism probiotic study (study description)	Microtus ochrogaster	binomial
+SRR9335148	PRJNA449069	Microtus ochrogaster	unknown	unknown	none	Microtus ochrogaster	binomial
+SRR13282553	PRJNA674340	Microtus ochrogaster	unknown	laboratory	manual:model organism probiotic study (study description)	Microtus ochrogaster	binomial
+SRR9130099	PRJNA449069	Microtus ochrogaster	unknown	unknown	none	Microtus ochrogaster	binomial
+SRR13282578	PRJNA674340	Microtus ochrogaster	unknown	laboratory	manual:model organism probiotic study (study description)	Microtus ochrogaster	binomial
+SRR9129758	PRJNA449069	Microtus ochrogaster	unknown	unknown	none	Microtus ochrogaster	binomial
+SRR13282549	PRJNA674340	Microtus ochrogaster	unknown	laboratory	manual:model organism probiotic study (study description)	Microtus ochrogaster	binomial
+SRR9130027	PRJNA449069	Microtus ochrogaster	unknown	unknown	none	Microtus ochrogaster	binomial
+SRR13282573	PRJNA674340	Microtus ochrogaster	unknown	laboratory	manual:model organism probiotic study (study description)	Microtus ochrogaster	binomial
+SRR14298099	PRJNA665590	Mirounga leonina	unknown	wild	manual:Antarctic seals (study title)	Mirounga leonina	binomial
+SRR14298097	PRJNA665590	Mirounga leonina	unknown	wild	manual:Antarctic seals (study title)	Mirounga leonina	binomial
+SRR14298096	PRJNA665590	Mirounga leonina	unknown	wild	manual:Antarctic seals (study title)	Mirounga leonina	binomial
+SRR14298100	PRJNA665590	Mirounga leonina	unknown	wild	manual:Antarctic seals (study title)	Mirounga leonina	binomial
+SRR14298098	PRJNA665590	Mirounga leonina	unknown	wild	manual:Antarctic seals (study title)	Mirounga leonina	binomial
+SRR17257194	PRJNA789782	Mops condylurus	unknown	wild	manual:bat coronavirus surveillance in Eswatini (study description)	Mops condylurus	binomial
+SRR17257195	PRJNA789782	Mops pumilus	unknown	wild	manual:bat coronavirus surveillance in Eswatini (study description)	Mops pumilus	binomial
+SRR35316913	PRJNA1322284	Murinae sp.	unknown	wild	manual:rodent fecal pellets collected during field work (study title)	Murinae sp.	genus_only_unresolved
+SRR35316917	PRJNA1322284	Murinae sp.	unknown	wild	manual:rodent fecal pellets collected during field work (study title)	Murinae sp.	genus_only_unresolved
+SRR35316919	PRJNA1322284	Murinae sp.	unknown	wild	manual:rodent fecal pellets collected during field work (study title)	Murinae sp.	genus_only_unresolved
+SRR35316914	PRJNA1322284	Murinae sp.	unknown	wild	manual:rodent fecal pellets collected during field work (study title)	Murinae sp.	genus_only_unresolved
+DRR1001193	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001205	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001195	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001186	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001203	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001204	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001198	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001192	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001188	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+DRR1001190	PRJDB41576	Mus	unknown	laboratory	manual:DSS colitis model (study description)	Mus musculus	manual:laboratory DSS colitis mouse model
+SRR14411345	PRJNA725899	Mus musculus	unknown	wild	study:'wild'	Mus musculus	binomial
+SRR33047554	PRJNA1208073	Mus musculus	unknown	laboratory	manual:CD-1 mice infection model (study description)	Mus musculus	binomial
+SRR14411339	PRJNA725899	Mus musculus	unknown	wild	study:'wild'	Mus musculus	binomial
+SRR33047550	PRJNA1208073	Mus musculus	unknown	laboratory	manual:CD-1 mice infection model (study description)	Mus musculus	binomial
+SRR14411346	PRJNA725899	Mus musculus	unknown	wild	study:'wild'	Mus musculus	binomial
+SRR33047545	PRJNA1208073	Mus musculus	unknown	laboratory	manual:CD-1 mice infection model (study description)	Mus musculus	binomial
+SRR14411337	PRJNA725899	Mus musculus	unknown	wild	study:'wild'	Mus musculus	binomial
+SRR33047547	PRJNA1208073	Mus musculus	unknown	laboratory	manual:CD-1 mice infection model (study description)	Mus musculus	binomial
+SRR14411343	PRJNA725899	Mus musculus	unknown	wild	study:'wild'	Mus musculus	binomial
+SRR33047549	PRJNA1208073	Mus musculus	unknown	laboratory	manual:CD-1 mice infection model (study description)	Mus musculus	binomial
+SRR36290872	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290888	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290883	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290908	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290934	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290882	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290927	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290890	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290935	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR36290914	PRJNA1337465	Mustela nigripes	unknown	captive	manual:probiotic treatment of black-footed ferrets (captive recovery programme; study description)	Mustela nigripes	binomial
+SRR11425450	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425451	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425453	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425461	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425463	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425446	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425466	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425440	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425436	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR11425447	PRJNA613381	Myodes glareolus	unknown	wild	study:'wild'	Myodes glareolus	binomial
+SRR15526222	PRJNA755866	Myotis brandtii	unknown	wild	manual:bat virus surveillance in Russia (study description)	Myotis brandtii	binomial
+SRR15508011	PRJNA755866	Myotis dasycneme	unknown	wild	manual:bat virus surveillance in Russia (study description)	Myotis dasycneme	binomial
+SRR15533116	PRJNA755866	Myotis daubentonii	unknown	wild	manual:bat virus surveillance in Russia (study description)	Myotis daubentonii	binomial
+SRR15533060	PRJNA755866	Myotis daubentonii	unknown	wild	manual:bat virus surveillance in Russia (study description)	Myotis daubentonii	binomial
+SRR23925006	PRJNA942254	Myrmecophaga tridactyla	unknown	unknown	none	Myrmecophaga tridactyla	binomial
+SRR23925004	PRJNA942254	Myrmecophaga tridactyla	unknown	captive	sample:'Zoo'	Myrmecophaga tridactyla	binomial
+SRR23925008	PRJNA942254	Myrmecophaga tridactyla	unknown	unknown	none	Myrmecophaga tridactyla	binomial
+DRR783479	PRJDB37067	Naemorhedus goral	unknown	captive	study:'Captiv'	Naemorhedus goral	binomial
+DRR783480	PRJDB37067	Naemorhedus goral	unknown	captive	study:'Captiv'	Naemorhedus goral	binomial
+SRR24915830	PRJNA983076	Nestor notabilis	captive	captive	sample:'Zoo'	Nestor notabilis	binomial
+SRR18250961	PRJNA812273	Nomascus hainanus	unknown	unknown	none	Nomascus hainanus	binomial
+SRR24915842	PRJNA983076	Notamacropus rufogriseus	captive	captive	sample:'Zoo'	Notamacropus rufogriseus	binomial
+SRR15524477	PRJNA755866	Nyctalus noctula	unknown	wild	manual:bat virus surveillance in Russia (study description)	Nyctalus noctula	binomial
+SRR15524530	PRJNA755866	Nyctalus noctula	unknown	wild	manual:bat virus surveillance in Russia (study description)	Nyctalus noctula	binomial
+SRR26069921	PRJNA1017798	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR26459630	PRJNA1030894	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR16767943	PRJNA777737	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR22354916	PRJNA903767	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR26069915	PRJNA1017798	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR26459683	PRJNA1030894	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR16767938	PRJNA777737	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR22354898	PRJNA903767	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR26069918	PRJNA1017798	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR26459592	PRJNA1030894	Ochotona curzoniae	unknown	unknown	none	Ochotona curzoniae	binomial
+SRR24145992	PRJNA887424	Odocoileus virginianus	unknown	unknown	none	Odocoileus virginianus	binomial
+SRR23924999	PRJNA942254	Orycteropus afer	unknown	unknown	none	Orycteropus afer	binomial
+SRR24915785	PRJNA983076	Orycteropus afer	captive	captive	sample:'Zoo'	Orycteropus afer	binomial
+SRR23924997	PRJNA942254	Orycteropus afer	unknown	unknown	none	Orycteropus afer	binomial
+SRR23925002	PRJNA942254	Orycteropus afer	unknown	unknown	none	Orycteropus afer	binomial
+SRR37899126	PRJNA1062615	Oryctolagus	unknown	unknown	none	Oryctolagus cuniculus	manual:monotypic genus
+DRR859199	PRJDB39464	Ovis ammon	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Ovis ammon	binomial
+DRR783485	PRJDB37067	Ovis ammon	unknown	captive	study:'Captiv'	Ovis ammon	binomial
+DRR859204	PRJDB39464	Ovis ammon	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Ovis ammon	binomial
+DRR783483	PRJDB37067	Ovis ammon	unknown	captive	study:'Captiv'	Ovis ammon	binomial
+DRR859203	PRJDB39464	Ovis ammon	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Ovis ammon	binomial
+DRR783481	PRJDB37067	Ovis ammon	unknown	captive	study:'Captiv'	Ovis ammon	binomial
+DRR859208	PRJDB39464	Ovis ammon	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Ovis ammon	binomial
+DRR783484	PRJDB37067	Ovis ammon	unknown	captive	study:'Captiv'	Ovis ammon	binomial
+DRR859209	PRJDB39464	Ovis ammon	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Ovis ammon	binomial
+DRR783482	PRJDB37067	Ovis ammon	unknown	captive	study:'Captiv'	Ovis ammon	binomial
+SRR27109675	PRJNA1047964	Ovis aries	domestic	domestic	v1:domestic species list	Ovis aries	binomial
+SRR26714008	PRJNA785979	Ovis aries	domestic	domestic	study:'farm'	Ovis aries	binomial
+SRR33479115	PRJNA1260587	Ovis aries	domestic	domestic	v1:domestic species list	Ovis aries	binomial
+SRR40008779	PRJNA1506122	Ovis aries	domestic	domestic	study:'Livestock'	Ovis aries	binomial
+SRR24145993	PRJNA887424	Ovis aries	domestic	domestic	v1:domestic species list	Ovis aries	binomial
+SRR37117079	PRJNA1418985	Ovis aries	domestic	domestic	v1:domestic species list	Ovis aries	binomial
+SRR24915795	PRJNA983076	Ovis aries	domestic	captive	sample:'Zoo'	Ovis aries	binomial
+SRR27109668	PRJNA1047964	Ovis aries	domestic	domestic	v1:domestic species list	Ovis aries	binomial
+SRR26714007	PRJNA785979	Ovis aries	domestic	domestic	study:'farm'	Ovis aries	binomial
+SRR33479051	PRJNA1260587	Ovis aries	domestic	domestic	v1:domestic species list	Ovis aries	binomial
+SRR8978348	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978459	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978482	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978301	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978303	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978321	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978461	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978264	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978222	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR8978300	PRJNA539933	Pan troglodytes	unknown	unknown	"manual:study mixes ""wild and captive"" apes; per-sample status not in metadata"	Pan troglodytes	binomial
+SRR34498341	PRJNA1289876	Panthera leo	unknown	unknown	none	Panthera leo	binomial
+SRR34498296	PRJNA1289876	Panthera leo	unknown	unknown	none	Panthera leo	binomial
+SRR34498353	PRJNA1289876	Panthera leo	unknown	unknown	none	Panthera leo	binomial
+SRR24915839	PRJNA983076	Panthera onca	captive	captive	sample:'Zoo'	Panthera onca	binomial
+SRR33574413	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574408	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574439	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574431	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574448	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574416	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574443	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574461	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574419	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR33574455	PRJNA1257558	Pantholops hodgsonii	unknown	unknown	none	Pantholops hodgsonii	binomial
+SRR10800385	PRJNA590085	Pavo cristatus	unknown	unknown	none	Pavo cristatus	binomial
+SRR10605906	PRJNA593618	Peromyscus leucopus	wild	wild	study:'wild'	Peromyscus leucopus	binomial
+SRR35041886	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041921	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041903	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041890	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041925	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041883	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041901	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041889	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041920	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR35041891	PRJNA1308267	Petauroides volans	unknown	wild	manual:greater gliders sampled in southeastern NSW forests (study title)	Petauroides volans	binomial
+SRR22536469	PRJNA907943	Petaurus gracilis	unknown	unknown	none	Petaurus gracilis	binomial
+SRR22536466	PRJNA907943	Petaurus gracilis	unknown	unknown	none	Petaurus gracilis	binomial
+SRR22536468	PRJNA907943	Petaurus gracilis	unknown	unknown	none	Petaurus gracilis	binomial
+SRR22536467	PRJNA907943	Petaurus gracilis	unknown	unknown	none	Petaurus gracilis	binomial
+SRR10800384	PRJNA590085	Phasianus colchicus	unknown	unknown	none	Phasianus colchicus	binomial
+SRR16510770	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510783	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510778	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510771	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510782	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510784	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510780	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510769	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510781	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR16510779	PRJNA772888	Prionailurus bengalensis	unknown	wild	manual:environmental feces of otter and leopard cat (study title/description)	Prionailurus bengalensis	binomial
+SRR13274888	PRJNA684050	Propithecus coquereli	unknown	wild	study:'wild'	Propithecus coquereli	binomial
+SRR13274889	PRJNA684050	Propithecus coquereli	unknown	wild	study:'wild'	Propithecus coquereli	binomial
+SRR11106679	PRJNA606765	Propithecus diadema	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Propithecus diadema	binomial
+SRR11106688	PRJNA606765	Propithecus diadema	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Propithecus diadema	binomial
+SRR11106680	PRJNA606765	Propithecus diadema	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Propithecus diadema	binomial
+SRR11106686	PRJNA606765	Propithecus diadema	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Propithecus diadema	binomial
+SRR11106689	PRJNA606765	Propithecus diadema	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Propithecus diadema	binomial
+SRR11106684	PRJNA606765	Propithecus diadema	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Propithecus diadema	binomial
+SRR11106685	PRJNA606765	Propithecus diadema	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Propithecus diadema	binomial
+SRR11106681	PRJNA606765	Propithecus diadema	unknown	wild	manual:folivorous lemurs living in the same habitat (study description)	Propithecus diadema	binomial
+SRR23924980	PRJNA942254	Proteles cristata	unknown	unknown	none	Proteles cristata	binomial
+SRR23924982	PRJNA942254	Proteles cristata	unknown	unknown	none	Proteles cristata	binomial
+SRR23924975	PRJNA942254	Proteles cristata	unknown	unknown	none	Proteles cristata	binomial
+SRR23924971	PRJNA942254	Proteles cristata	unknown	unknown	none	Proteles cristata	binomial
+SRR23924977	PRJNA942254	Proteles cristata	unknown	unknown	none	Proteles cristata	binomial
+SRR23924973	PRJNA942254	Proteles cristata	unknown	unknown	none	Proteles cristata	binomial
+DRR859216	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859214	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859219	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859213	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859218	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859212	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859210	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859220	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859217	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+DRR859221	PRJDB39464	Pseudois nayaur	unknown	wild	manual:three sympatric mountain ungulates sampled in the field (study description)	Pseudois nayaur	binomial
+SRR7614712	PRJNA481090	Pygoscelis adeliae	unknown	unknown	none	Pygoscelis adeliae	binomial
+DRR818153	PRJDB38848	Pyrrhocorax pyrrhocorax	unknown	wild	study:'wild'	Pyrrhocorax pyrrhocorax	binomial
+DRR848363	PRJDB38851	Pyrrhocorax pyrrhocorax	unknown	wild	study:'wild'	Pyrrhocorax pyrrhocorax	binomial
+DRR818152	PRJDB38848	Pyrrhocorax pyrrhocorax	unknown	wild	study:'wild'	Pyrrhocorax pyrrhocorax	binomial
+DRR848365	PRJDB38851	Pyrrhocorax pyrrhocorax	unknown	wild	study:'wild'	Pyrrhocorax pyrrhocorax	binomial
+DRR818155	PRJDB38848	Pyrrhocorax pyrrhocorax	unknown	wild	study:'wild'	Pyrrhocorax pyrrhocorax	binomial
+DRR848364	PRJDB38851	Pyrrhocorax pyrrhocorax	unknown	wild	study:'wild'	Pyrrhocorax pyrrhocorax	binomial
+DRR818154	PRJDB38848	Pyrrhocorax pyrrhocorax	unknown	wild	study:'wild'	Pyrrhocorax pyrrhocorax	binomial
+DRR848362	PRJDB38851	Pyrrhocorax pyrrhocorax	unknown	wild	study:'wild'	Pyrrhocorax pyrrhocorax	binomial
+SRR10800391	PRJNA590085	Pyrrhura molinae	unknown	unknown	none	Pyrrhura molinae	binomial
+SRR35284496	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284492	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284500	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284507	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284497	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284499	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284493	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284495	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284494	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR35284498	PRJNA1320924	Rangifer tarandus	captive	captive	sample:'captiv'	Rangifer tarandus	binomial
+SRR7267721	PRJNA474710	Rattus	unknown	laboratory	study:'Sprague'	Rattus norvegicus	manual:Sprague-Dawley strain (study description)
+SRR22319448	PRJNA902684	Rattus	unknown	laboratory	manual:rat mastitis animal model (study description)	Rattus norvegicus	manual:laboratory rat model
+SRR7267782	PRJNA474710	Rattus	unknown	laboratory	study:'Sprague'	Rattus norvegicus	manual:Sprague-Dawley strain (study description)
+SRR22319431	PRJNA902684	Rattus	unknown	laboratory	manual:rat mastitis animal model (study description)	Rattus norvegicus	manual:laboratory rat model
+SRR7267761	PRJNA474710	Rattus	unknown	laboratory	study:'Sprague'	Rattus norvegicus	manual:Sprague-Dawley strain (study description)
+SRR22319424	PRJNA902684	Rattus	unknown	laboratory	manual:rat mastitis animal model (study description)	Rattus norvegicus	manual:laboratory rat model
+SRR7267729	PRJNA474710	Rattus	unknown	laboratory	study:'Sprague'	Rattus norvegicus	manual:Sprague-Dawley strain (study description)
+SRR22319383	PRJNA902684	Rattus	unknown	laboratory	manual:rat mastitis animal model (study description)	Rattus norvegicus	manual:laboratory rat model
+SRR7267716	PRJNA474710	Rattus	unknown	laboratory	study:'Sprague'	Rattus norvegicus	manual:Sprague-Dawley strain (study description)
+SRR22319401	PRJNA902684	Rattus	unknown	laboratory	manual:rat mastitis animal model (study description)	Rattus norvegicus	manual:laboratory rat model
+SRR10138110	PRJNA564888	Rattus tanezumi	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Rattus tanezumi	binomial
+SRR10097268	PRJNA564888	Rattus tanezumi	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Rattus tanezumi	binomial
+SRR24915810	PRJNA983076	Rhea americana	captive	captive	sample:'Zoo'	Rhea americana	binomial
+SRR6824191	PRJNA436633	Rhinopithecus roxellana	unknown	unknown	none	Rhinopithecus roxellana	binomial
+SRR34938331	PRJNA1293089	Rhinopithecus roxellana	unknown	wild	study:'wild'	Rhinopithecus roxellana	binomial
+SRR38817116	PRJNA1470050	Rhinopithecus roxellana	unknown	wild	study:'Nature Reserve'	Rhinopithecus roxellana	binomial
+SRR6824176	PRJNA436633	Rhinopithecus roxellana	captive	unknown	none	Rhinopithecus roxellana	binomial
+SRR34938333	PRJNA1293089	Rhinopithecus roxellana	unknown	wild	study:'wild'	Rhinopithecus roxellana	binomial
+SRR38817117	PRJNA1470050	Rhinopithecus roxellana	unknown	wild	study:'Nature Reserve'	Rhinopithecus roxellana	binomial
+SRR6824201	PRJNA436633	Rhinopithecus roxellana	unknown	unknown	none	Rhinopithecus roxellana	binomial
+SRR34938332	PRJNA1293089	Rhinopithecus roxellana	unknown	wild	study:'wild'	Rhinopithecus roxellana	binomial
+SRR38817111	PRJNA1470050	Rhinopithecus roxellana	unknown	wild	study:'Nature Reserve'	Rhinopithecus roxellana	binomial
+SRR6824187	PRJNA436633	Rhinopithecus roxellana	unknown	unknown	none	Rhinopithecus roxellana	binomial
+SRR14209493	PRJNA721235	Romerolagus diazi	unknown	unknown	none	Romerolagus diazi	binomial
+SRR34575285	PRJNA1292972	Romerolagus diazi	unknown	wild	sample:'National Park'	Romerolagus diazi	binomial
+SRR14209496	PRJNA721235	Romerolagus diazi	unknown	unknown	none	Romerolagus diazi	binomial
+SRR34575289	PRJNA1292972	Romerolagus diazi	unknown	wild	sample:'National Park'	Romerolagus diazi	binomial
+SRR14209494	PRJNA721235	Romerolagus diazi	unknown	unknown	none	Romerolagus diazi	binomial
+SRR34575288	PRJNA1292972	Romerolagus diazi	unknown	wild	sample:'National Park'	Romerolagus diazi	binomial
+SRR14209495	PRJNA721235	Romerolagus diazi	unknown	unknown	none	Romerolagus diazi	binomial
+SRR34575286	PRJNA1292972	Romerolagus diazi	unknown	wild	sample:'National Park'	Romerolagus diazi	binomial
+SRR34575290	PRJNA1292972	Romerolagus diazi	unknown	wild	sample:'National Park'	Romerolagus diazi	binomial
+SRR34575291	PRJNA1292972	Romerolagus diazi	unknown	wild	sample:'National Park'	Romerolagus diazi	binomial
+SRR24915843	PRJNA983076	Rousettus aegyptiacus	captive	captive	sample:'Zoo'	Rousettus aegyptiacus	binomial
+SRR27603320	PRJNA1065468	Saguinus labiatus	unknown	unknown	none	Saguinus labiatus	binomial
+SRR24915818	PRJNA983076	Saimiri boliviensis	captive	captive	sample:'Zoo'	Saimiri boliviensis	binomial
+SRR28863750	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863746	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863748	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863763	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863747	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863745	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863762	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863751	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863744	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR28863749	PRJNA1106546	Sceloporus grammicus	unknown	wild	manual:non-lethal method field sampling of lizards (study description)	Sceloporus grammicus	binomial
+SRR17257193	PRJNA789782	Scotophilus dinganii	unknown	wild	manual:bat coronavirus surveillance in Eswatini (study description)	Scotophilus dinganii	binomial
+SRR30347324	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347310	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347311	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347306	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347307	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347309	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347329	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347326	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347308	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR30347325	PRJNA1151203	Semnopithecus schistaceus	unknown	unknown	none	Semnopithecus schistaceus	binomial
+SRR24494645	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR24494646	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR24494637	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR24494638	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR24494642	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR24494647	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR24494644	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR24494633	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR24494648	PRJNA971188	Setophaga striata	unknown	wild	"manual:migrating warblers ""over long-distance migration"" (study title)"	Setophaga striata	binomial
+SRR23924988	PRJNA942254	Smutsia temminckii	unknown	unknown	none	Smutsia temminckii	binomial
+SRR23924986	PRJNA942254	Smutsia temminckii	unknown	unknown	none	Smutsia temminckii	binomial
+SRR23924991	PRJNA942254	Smutsia temminckii	unknown	unknown	none	Smutsia temminckii	binomial
+SRR23924993	PRJNA942254	Smutsia temminckii	unknown	unknown	none	Smutsia temminckii	binomial
+SRR23924984	PRJNA942254	Smutsia temminckii	unknown	unknown	none	Smutsia temminckii	binomial
+SRR23924995	PRJNA942254	Smutsia temminckii	unknown	unknown	none	Smutsia temminckii	binomial
+SRR24915820	PRJNA983076	Spheniscus humboldti	captive	captive	sample:'Zoo'	Spheniscus humboldti	binomial
+SRR10800386	PRJNA590085	Spilornis cheela	unknown	unknown	none	Spilornis cheela	binomial
+SRR30877950	PRJNA1166898	Sterna paradisaea	unknown	unknown	none	Sterna paradisaea	binomial
+SRR29752131	PRJNA1131836	Strigops habroptila	unknown	unknown	none	Strigops habroptila	binomial
+SRR10800394	PRJNA590085	Struthio camelus	unknown	unknown	none	Struthio camelus	binomial
+SRR10097267	PRJNA564888	Sundamys annandalei	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Sundamys annandalei	binomial
+SRR40984699	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR24915805	PRJNA983076	Suricata suricatta	captive	captive	sample:'Zoo'	Suricata suricatta	binomial
+SRR40984747	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR40984745	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR40984667	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR40984711	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR40984807	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR40984804	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR40984743	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR40984678	PRJNA1538192	Suricata suricatta	unknown	unknown	none	Suricata suricatta	binomial
+SRR25161329	PRJNA991276	Sus scrofa	unknown	unknown	none	Sus scrofa	binomial
+SRR12960524	PRJNA672868	Sus scrofa	unknown	unknown	none	Sus scrofa	binomial
+SRR26443177	PRJNA688310	Sus scrofa	unknown	unknown	none	Sus scrofa	binomial
+SRR35701443	PRJNA1335288	Sus scrofa	unknown	domestic	sample:'pig farm'	Sus scrofa	binomial
+SRR8655119	PRJNA524980	Sus scrofa	unknown	unknown	none	Sus scrofa	binomial
+SRR36982492	PRJNA1328634	Sus scrofa	unknown	unknown	none	Sus scrofa	binomial
+SRR15057928	PRJNA741980	Sus scrofa	unknown	unknown	none	Sus scrofa	binomial
+SRR5240730	PRJNA373834	Sus scrofa	unknown	unknown	none	Sus scrofa	binomial
+SRR35550812	PRJNA1332145	Sus scrofa	unknown	unknown	none	Sus scrofa	binomial
+SRR39139005	PRJNA1478122	Sus scrofa	domestic	domestic	v1:domestic species list	Sus scrofa	binomial
+SRR23924969	PRJNA942254	Tamandua tetradactyla	unknown	unknown	none	Tamandua tetradactyla	binomial
+SRR23924964	PRJNA942254	Tamandua tetradactyla	unknown	unknown	none	Tamandua tetradactyla	binomial
+SRR23924966	PRJNA942254	Tamandua tetradactyla	unknown	unknown	none	Tamandua tetradactyla	binomial
+SRR24915802	PRJNA983076	Tapirus terrestris	captive	captive	sample:'Zoo'	Tapirus terrestris	binomial
+SRR24915812	PRJNA983076	Tapirus terrestris	captive	captive	sample:'Zoo'	Tapirus terrestris	binomial
+SRR24915792	PRJNA983076	Tragelaphus oryx	captive	captive	sample:'Zoo'	Tragelaphus oryx	binomial
+SRR10097263	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR10097261	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR10097269	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR10097265	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR10097271	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR10097262	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR10097270	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR10097264	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR10097266	PRJNA564888	Tupaia glis	unknown	wild	manual:crowdsourced faeces natural-history sampling of small mammals (study title)	Tupaia glis	binomial
+SRR24915816	PRJNA983076	Varecia variegata	captive	captive	sample:'Zoo'	Varecia variegata	binomial
+SRR19580888	PRJNA847183	Vicugna pacos	unknown	domestic	study:'livestock'	Vicugna pacos	binomial
