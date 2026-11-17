@@ -79,3 +79,10 @@ three concurrent DIAMOND searches at `-b 1` need ~5.4 GB each. DIAMOND block siz
 The reference database (99 MB) fits in one block at either setting, so each query is searched against the whole
 reference in one pass. Thread count did not change memory (5.36 GB at 3 threads). P1 (run at `-b 1`) is not re-run.
 The 40 P2 runs finished before the change used `-b 1`.
+- Further fetch change (2026-11-17, no effect on reads used): remote `fastq-dump` spent ~4-5 min per process fetching
+  the original spot-name column (11 spots took 236 s; the same rows without names took 11 s with `vdb-dump`), so each
+  P2 run took ~45 min to fetch. The fetcher now makes one `vdb-dump` call per run for all 10 blocks
+  (`-I -C READ,QUALITY,READ_LEN`; read 1 = first segment, converted by `vdb_tab_to_r1fq.py`, which also checks that
+  every planned row arrives once, in order). Check on SRR32584038, rows 7,236,266-7,256,265 (20,000 reads): bases and
+  qualities identical to `fastq-dump --split-files` read 1 (identical md5). Only the FASTQ header differs (SRA row
+  number instead of the original spot name). Per-block `fastq-dump` remains as automatic fallback.
