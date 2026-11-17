@@ -6,9 +6,9 @@
 LIST=${1:?run list}
 cd "/home/angsuman/extra_spac/Metagenomic Paper" || exit 1
 NC=$(nproc); SL=$(( NC / 6 )); [ "$SL" -lt 1 ] && SL=1
-export HS_REMOTE=1 HS_SAMPLING=offsets HS_SOURCE=aws HS_DMND_SLOTS=$SL HS_DMND_THREADS=6 HS_DMND_BLOCK=0.4
+export HS_REMOTE=1 HS_SAMPLING=offsets HS_SOURCE=aws HS_FETCH=sra HS_DMND_SLOTS=$SL HS_DMND_THREADS=6 HS_DMND_BLOCK=0.4
 for pass in 0 1 2; do
   echo "pass $pass $(date -Is) list=$LIST slots=$SL"
-  bash analysis/scripts/run_queue.sh "$LIST" $(( SL + 2 )) 5000000 3
+  bash analysis/scripts/run_queue.sh "$LIST" $(( SL + 4 )) 5000000 3
 done
 date -Is > analysis/logs/ALL_DONE
