@@ -1,0 +1,6 @@
+run	feature	level	reads	rpkm	cpg	qc_reads	n_streamed
+DRR848364	Cytochrome_bd_oxidase_CydA	gene	85	20.19	nan	2900395	5000000
+DRR848364	acsB	gene	0	0	nan	2900395	5000000
+DRR848364	fdhA	gene	2	0.238839	nan	2900395	5000000
+DRR848364	mcrA	gene	0	0	nan	2900395	5000000
+DRR848364	rpoB	gene	0	0	nan	2900395	5000000

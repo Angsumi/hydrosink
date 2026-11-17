@@ -4,3 +4,9 @@ P2 pass 0 2026-11-17T10:31:39+05:30 (restart after oomd kill, P=5)
 [2026-11-17T10:31:39+05:30] queue start: 930 runs, P=5, N=5000000, threads/job=3
 P2 pass 0 2026-11-17T10:33:57+05:30 (2 DIAMOND slots x 7 threads, P=4)
 [2026-11-17T10:33:57+05:30] queue start: 930 runs, P=4, N=5000000, threads/job=3
+P2 pass 0 2026-11-17T10:51:10+05:30 (-b 0.4, 3 slots x 5 threads, P=6)
+[2026-11-17T10:51:10+05:30] queue start: 930 runs, P=6, N=5000000, threads/job=3
+P2 pass 0 2026-11-17T11:08:30+05:30 (-b 0.4, 3x5 threads, P=6, 8 fastq-dump max)
+[2026-11-17T11:08:30+05:30] queue start: 930 runs, P=6, N=5000000, threads/job=3
+P2 pass 0 2026-11-17T12:28:18+05:30 (vdb-dump fetch, -b 0.4, 3x5 threads, P=6)
+[2026-11-17T12:28:18+05:30] queue start: 930 runs, P=6, N=5000000, threads/job=3
