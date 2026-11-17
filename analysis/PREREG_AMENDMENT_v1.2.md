@@ -91,3 +91,8 @@ The 40 P2 runs finished before the change used `-b 1`.
   versions (DIAMOND 2.1.10, fastp 0.23.4, Python 3.11.18, sra-tools 3.1.1; database md5 8a5077c1...).
   Check: P2 run SRR32584022 processed on a VM gave a marker table byte-identical to the local one.
   Assignment: `inventory/p2_remote_claims.txt` (skipped locally) split into `inventory/p2_vm_<vm>.txt`.
+- Fetch on the cloud VMs (2026-11-17 14:11 IST, no effect on reads used): the whole .sra object is downloaded from
+  the same AWS location (size checked against Content-Length, ~60 MB/s) and the 10 blocks are extracted locally with
+  the same vdb-dump/converter in 5 parallel groups, reassembled in block order, then the .sra file is deleted.
+  Check on SRR32584038: output FASTQ byte-identical (md5) to the single-stream extraction, whose reads matched
+  fastq-dump. 86 more runs moved from this PC to the VMs (lists in `inventory/p2_vm_*.txt`).

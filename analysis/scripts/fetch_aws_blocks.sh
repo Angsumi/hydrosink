@@ -21,23 +21,66 @@ for k in $(seq 0 $((K - 1))); do
   b=$((a + B - 1)); [ "$b" -gt "$S" ] && b=$S
   [ "$a" -le "$S" ] && echo "$k $a $b" >> "$TMP/plan"
 done
-# Fast path (default, HS_FETCH=vdb): one vdb-dump process for all blocks, without the NAME column.
-# fastq-dump spends minutes per process fetching original spot names remotely; bases/qualities are identical.
+# Fast paths (no NAME column; fastq-dump spends minutes per process fetching original spot names remotely;
+# bases/qualities are identical). The 10 blocks are split into HS_VDB_PAR groups extracted in parallel
+# (vdb-dump | vdb_tab_to_r1fq.py per group, each checking its own rows), then concatenated in block order.
+#   HS_FETCH=vdb : vdb-dump reads the run remotely from the SRA copy on AWS (default; used on this PC).
+#   HS_FETCH=sra : download the whole .sra file from AWS once (size checked), extract locally, delete it
+#                  (cloud VMs: ~60 MB/s download; same SRA object, so the same reads).
 EXP=0; while read -r k a b; do EXP=$((EXP + b - a + 1)); done < "$TMP/plan"
-if [ "${HS_FETCH:-vdb}" = vdb ]; then
-  RANGES=$(awk '{printf "%s%s-%s", (NR>1?",":""), $2, $3}' "$TMP/plan")
+FETCH=${HS_FETCH:-vdb}
+if [ "$FETCH" = vdb ] || [ "$FETCH" = sra ]; then
   PY=${HS_PY:-/home/angsuman/extra_spac/software_libs/conda_envs/hydrosink/bin/python3.11}
   CONV="$(cd "$(dirname "$0")" && pwd)/vdb_tab_to_r1fq.py"
+  VP=${HS_VDB_PAR:-$([ "$FETCH" = sra ] && echo 5 || echo 2)}  # remote vdb-dump ~0.5 GB RAM each: 2 on this PC
   for t in 1 2 3; do
-    timeout 3600 "$SRA/vdb-dump" -I -R "$RANGES" -C READ,QUALITY,READ_LEN -f tab "$RUN" 2> "$TMP/vdb.err" \
-      | "$PY" -I "$CONV" "$RUN" "$TMP/plan" > "$OUT" 2> "$TMP/conv.err"
-    st=("${PIPESTATUS[@]}")
-    if [ "${st[0]}" -eq 0 ] && [ "${st[1]}" -eq 0 ] && [ "$(wc -l < "$OUT")" -eq $((4 * EXP)) ]; then
-      rm -rf "$TMP"; echo "$RUN $MODE $EXP reads (vdb-dump)"; exit 0
+    SRC="$RUN"; ok=1
+    if [ "$FETCH" = sra ]; then
+      SRC="$TMP/$RUN.sra"; U="https://sra-pub-run-odp.s3.amazonaws.com/sra/$RUN/$RUN"
+      CL=$(curl -sI --max-time 60 "$U" | awk -F': ' 'tolower($1)=="content-length"{print $2+0}')
+      curl -sf --max-time 3600 -o "$SRC" "$U" || ok=0
+      [ "$ok" = 1 ] && [ -n "$CL" ] && [ "$(stat -c %s "$SRC" 2>/dev/null || echo 0)" -eq "$CL" ] || ok=0
     fi
-    echo "vdb-dump attempt $t failed (rc ${st[*]}): $(tail -c 200 "$TMP/conv.err")"; sleep $((20 * t))
+    if [ "$ok" = 1 ]; then
+      awk -v n="$VP" -v d="$TMP" '{print > (d "/plan.g" ((NR-1) % n))}' "$TMP/plan"
+      pids=()
+      for g in $(seq 0 $((VP - 1))); do
+        [ -s "$TMP/plan.g$g" ] || continue
+        R=$(awk '{printf "%s%s-%s", (NR>1?",":""), $2, $3}' "$TMP/plan.g$g")
+        ( timeout 3600 "$SRA/vdb-dump" -I -R "$R" -C READ,QUALITY,READ_LEN -f tab "$SRC" 2> "$TMP/vdb.g$g.err" \
+            | "$PY" -I "$CONV" "$RUN" "$TMP/plan.g$g" > "$TMP/g$g.fq" 2> "$TMP/conv.g$g.err"
+          st=("${PIPESTATUS[@]}"); [ "${st[0]}" -eq 0 ] && [ "${st[1]}" -eq 0 ] ) &
+        pids+=($!)
+      done
+      for p in "${pids[@]}"; do wait "$p" || ok=0; done
+    fi
+    if [ "$ok" = 1 ]; then
+      # reassemble in block order: block k is line k of plan, assigned to group (k mod VP), in order within group
+      python3 -I - "$TMP" "$VP" "$OUT" <<'EOF' || ok=0
+import sys, itertools
+tmp, vp, out = sys.argv[1], int(sys.argv[2]), sys.argv[3]
+plan = [tuple(map(int, l.split())) for l in open(f"{tmp}/plan")]
+fh = {g: open(f"{tmp}/g{g}.fq") for g in range(min(vp, len(plan)))}
+with open(out, "w") as o:
+    for i, (k, a, b) in enumerate(plan):
+        f = fh[i % vp]
+        for _ in range(4 * (b - a + 1)):
+            l = f.readline()
+            if not l:
+                sys.exit("short group file")
+            o.write(l)
+for f in fh.values():
+    if f.readline():
+        sys.exit("extra lines in group file")
+EOF
+    fi
+    rm -f "$TMP/$RUN.sra" "$TMP"/g*.fq
+    if [ "$ok" = 1 ] && [ "$(wc -l < "$OUT")" -eq $((4 * EXP)) ]; then
+      rm -rf "$TMP"; echo "$RUN $MODE $EXP reads ($FETCH, $VP parallel groups)"; exit 0
+    fi
+    echo "$FETCH attempt $t failed: $(cat "$TMP"/conv.g*.err 2>/dev/null | tail -c 200)"; sleep $((20 * t))
   done
-  echo "vdb-dump failed 3x; falling back to per-block fastq-dump"
+  echo "$FETCH failed 3x; falling back to per-block fastq-dump"
 fi
 fetch() {  # k a b
   local k=$1 a=$2 b=$3 want=$(( 4 * ($3 - $2 + 1) )) t f
