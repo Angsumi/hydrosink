@@ -1,11 +1,14 @@
-# [TITLE: set after P2 results] Gut fermentation architecture and hydrogen-sink potential across vertebrates: a pre-registered, phylogenetically controlled synthesis of public metagenomes
+# Hindgut enrichment of acetogenic potential within ruminants does not generalise across vertebrates: a pre-registered, phylogenetically controlled synthesis of gut hydrogen-sink genes in public metagenomes
 
 *Draft v1 (2026-11-17). Every number in this draft comes from a script-generated file in `analysis/results/` (file named in brackets). Items marked **[NOT DONE]** were pre-specified but not executed; they are listed under Limitations. Reference codes [Lxx] map to `literature.csv`; only entries marked VERIFIED there are cited.*
 
 ---
 
 ## Abstract
-[RESULTS-DEPENDENT; written last]
+**Background.** Gut microbes dispose of fermentative H₂ mainly through methanogenesis, reductive acetogenesis and respiratory pathways. Within ruminants, the hindgut is enriched for acetogens relative to the rumen, but whether gut fermentation architecture governs H₂-sink partitioning across vertebrates is untested.
+**Methods.** We fixed four predictions, outcomes and analysis code before inspecting data. Public shotgun gut metagenomes were screened from ENA, and 5 × 10⁶ forward reads per run were searched against a curated marker database. Abundances were expressed as copies per genome (*rpoB*-normalised). The primary outcome was ln(*acsB*/*mcrA*). Within-animal foregut-versus-hindgut contrasts (53 ruminants, two studies) were pooled by random-effects meta-analysis. Cross-host faecal data (802 samples, 166 species, 179 studies) were analysed with Bayesian phylogenetic mixed models.
+**Results.** In all 53 animals the hindgut had a higher *acsB*:*mcrA* ratio than the foregut: pooled 2.62 ln units (95% CI 2.23–3.01), about 12-fold, driven by *acsB*. Across vertebrates, fermentation site did not predict the faecal ratio (ΔDIC −0.08; foregut − hindgut 0.47, 95% HPD −0.95 to 1.79), in every pre-specified sensitivity analysis. Host phylogeny accounted for 39% of variance (95% HPD 21–67%). Foregut and hindgut hosts carried 21–53-fold more of both *mcrA* and *acsB* than simple guts. Methanogenic and acetogenic potential were not negatively proportional within studies (pooled ρp 0.03, 95% CI −0.10 to 0.17).
+**Conclusions.** The hindgut acetogenic shift is a robust within-ruminant regularity, but it does not translate into a cross-vertebrate faecal pattern. Gut architecture predicts the amount of hydrogenotrophic potential, while its partitioning follows host phylogeny. These results constrain generalisations from ruminant compartments to vertebrate methane biology.
 
 ## Introduction
 Fermentation in vertebrate guts releases molecular hydrogen (H₂). If H₂ accumulates, re-oxidation of reduced cofactors becomes thermodynamically unfavourable and fermentation slows, so hydrogenotrophic microbes that keep H₂ partial pressure low are central to gut function [L03]. Several guilds compete for this H₂. Hydrogenotrophic methanogens reduce CO₂ to methane, an energy loss to the host and a greenhouse gas. Reductive acetogens produce acetate, which the host can absorb. Respiratory hydrogenotrophs couple H₂ oxidation to the reduction of sulfate, nitrate, nitrite or fumarate [L03]. In the rumen, H₂ uptake is distributed among these guilds, and alternative uptake pathways are expressed more in low-methane sheep [L03].
@@ -104,10 +107,129 @@ Pre-specified P2 sensitivity analyses:
 Run accessions, curated metadata and per-sample marker tables are in `analysis/inventory/` and `analysis/results/per_sample/`; DIAMOND hits are in `analysis/results/hits/`, with SHA-256 manifests (`p1_manifest.sha256`, `p2_manifest.sha256`). All code is in `analysis/scripts/`. [Archive with DOI at submission.]
 
 ## Results
-[RESULTS-DEPENDENT]
+### Data set
+Screening reduced 136,708 candidate runs to 19,385 eligible runs, of which 8,293 were faecal. Capping at 10 runs per host species gave 930 P2 runs [`prisma_log.tsv`].
+
+Of the 930 runs:
+- 926 were quantified. The other 4 runs (one study) consisted entirely of 76-bp reads, below the length filter, and yielded no reads after QC. The screen's read-length estimate had counted both mates of each spot and so missed this.
+- 845 passed the *rpoB* QC threshold.
+- 802 samples from 166 host species and 179 studies entered the phylogenetic models [`prisma_final.tsv`]. Genus-only hosts without a tree tip were excluded at this step.
+
+The modelled set comprised 207 foregut, 250 hindgut, 67 avian-caecal and 278 simple-gut samples; 655 were mammalian [`table1_p2.tsv`]. Captivity was wild for 274 samples, captive, domestic or laboratory for 263, and unknown for 265.
+
+Read depth was uniform by design: median 4.96 × 10⁶ reads after QC, median 5,707 *rpoB* reads per sample. *mcrA* (≥ 2 reads) was detected in 88% of foregut, 60% of hindgut, 28% of avian-caecal and 12% of simple-gut samples; *acsB* in 97%, 98%, 78% and 67% [`detection_by_site.tsv`; Fig. S1].
+
+P1 comprised 253 of 254 runs passing QC, from 53 animals with both chambers sampled: 16 goats from Li 2025 [L02] and 37 animals of seven ruminant species from Xie 2021 [L04] [`table1_p1.tsv`].
+
+### P1: the hindgut is enriched for acetogenic relative to methanogenic potential in every animal
+ALR_acet was higher in the hindgut than in the foregut in **53 of 53 animals**. The pooled stratum-level difference was **2.62 ln units** (95% CI 2.23–3.01; 95% prediction interval 1.69–3.55; *k* = 8 strata; I² = 70%) [`p1_pooled.tsv`; Fig. 2]. This corresponds to a median per-animal 12.5-fold higher *acsB*:*mcrA* ratio [`p1_per_animal.tsv`].
+
+The effect was present in each study separately: Li 2025, 1.99 (1.54–2.44); Xie 2021, 2.71 (2.33–3.08). It was also present in the three-level model with strata nested in study: 2.43 (1.62–3.24) [`p1_per_study.tsv`]. Other checks:
+- One-stage mixed model: 2.72 (2.39–3.06) [`p1_mixed_model.tsv`].
+- Leave-one-stratum-out estimates: 2.56 to 2.71 [`p1_leave1out.tsv`].
+- Rumen versus caecum only: 2.72. Rumen versus rectum: 2.80 [`p1_sensitivity.tsv`].
+
+The contrast was driven by *acsB*: +2.92 ln units (2.15–3.70), higher in 53/53 animals. *mcrA* did not differ: +0.25 (−0.31 to 0.80; *q* = 0.39). Among secondary markers [`p1_pooled.tsv`]:
+- *dsrA* and group-B [FeFe]-hydrogenase were higher in the hindgut.
+- *nrfA* (−2.92), *narG* (−1.00), group-1 [NiFe]-hydrogenase (−0.94) and the respiratory sum (−1.33) were lower.
+- ALR_resp was therefore lower in the hindgut: −1.58 (−2.53 to −0.62).
+
+Thus, within ruminants, the hindgut has more acetogenic but less respiratory H₂-uptake potential than the foregut, with similar methanogenic potential.
+
+The pre-specified head-versus-multi-offset sampling check was run on 5 P1 runs [`p1_offsets_vs_head.tsv`]. In 22 of 25 run × gene-group comparisons the 95% CI of the ratio included 1. In one rumen sample (SRR12529313), head sampling gave 32% more *acsB* than multi-offset sampling (ratio 0.68, 95% CI 0.62–0.74). That is 0.39 ln units, small relative to the P1 contrast but larger than counting noise.
+
+### P2: fermentation site does not predict faecal ALR_acet across vertebrates
+In the phylogenetic mixed model, adding fermentation site did not improve fit for ALR_acet: ΔDIC = −0.08 [`p2_model_comparison.tsv`]. No site contrast had a 95% HPD interval excluding zero [`p2_contrasts.tsv`; Fig. 3]:
+
+| Contrast | Posterior mean | 95% HPD |
+|---|---|---|
+| Foregut − hindgut | 0.47 | −0.95 to 1.79 |
+| Hindgut − simple | −0.66 | −2.19 to 1.01 |
+| Foregut − simple | −0.19 | −2.03 to 1.76 |
+| Avian caecal − simple | 1.13 | −0.88 to 3.17 |
+
+Of the variance in ALR_acet, the share attributable to host phylogeny was 0.39 (95% HPD 0.21–0.67), to species 0.15 and to study 0.16 [`p2_variance_partition.tsv`]. Diet, captivity, depth and read length had no credible effects [`p2_fixed_effects.tsv`].
+
+The null result for the site contrasts was consistent across every pre-specified sensitivity analysis; all contrast intervals included zero [`p2_sensitivity.tsv`, `p2_sensitivity_v1_1.tsv`]:
+- mammals only (626 samples);
+- non-domestic (691);
+- ≤ 3 samples per species (355);
+- ≥ 1,000 *rpoB* reads (747);
+- herbivores only (452);
+- known captivity (537);
+- with a sequencing-platform covariate.
+
+Restricting to the 12 studies that sampled more than one fermentation site (136 samples, 72 species; study as a fixed effect) also gave no clear site effect: foregut −1.25 (SE 0.89), hindgut −0.96 (SE 0.76) relative to simple [`p2_within_study.tsv`]. These within-study estimates point in the direction opposite to P1.
+
+In the marsupial hold-out (19 samples, 4 species), the model predicted no hindgut–foregut difference (+0.22). The observed difference was −3.38, but it rests on a single foregut sample. The species-level Spearman correlation was 0.4 on 4 species [`p2_holdout_marsupial.tsv`]; this validation is uninformative.
+
+Fermentation site did predict the absolute abundance of both markers, in the same direction [`p2_contrasts.tsv`]:
+
+| Contrast | ln *acsB* (95% HPD) | ln *mcrA* (95% HPD) |
+|---|---|---|
+| Hindgut − simple | +3.04 (1.69–4.56) | +3.58 (2.44–4.68) |
+| Foregut − simple | +3.91 (2.26–5.36) | +3.97 (2.45–5.32) |
+
+Avian-caecal hosts had more *acsB* than simple-gut hosts (+2.08; 0.36–3.62), but *mcrA* did not differ credibly. In the hurdle model, *mcrA* detection was strongly associated with all three fermenting categories relative to simple guts [`p2_fixed_effects.tsv`]. Fermenting guts therefore carry more of both sinks, and ALR_acet does not separate them.
+
+Because *mcrA* was undetected in 88% of simple-gut samples, ALR_acet in simple guts is often bounded by the pseudocount. 115 samples had neither marker detected, 90 of them from simple guts [`p2_analysis_set.tsv`]. The log-abundance and hurdle models are therefore the more informative description of that category.
+
+**Post-hoc check (not pre-registered).** The ENA screen excluded house mouse by taxon 10090 only, so 20 *Mus musculus* samples entered P2 under a subspecies or genus taxon, 10 of them from a DSS-colitis model. In addition, one *Elephas maximus* sample lacked a diet label. Removing all *Mus musculus* and harmonising that label gave the same result: 782 samples, ΔDIC = −0.18, foregut − hindgut 0.45 (−0.98 to 1.94) [`posthoc_no_mouse/p2_primary.tsv`].
+
+### P3: no methanogen–acetogen trade-off
+Across 34 units (30 P2 studies with ≥ 10 samples and 4 P1 study × chamber units), the pooled proportionality between *mcrA* and *acsB* was ρp = 0.03 (95% CI −0.10 to 0.17; 95% prediction interval −0.56 to 0.61; I² = 75%) [`p3_pooled.tsv`; Fig. 4]. In units where *mcrA* was detected in ≥ 50% of samples (*k* = 18), it was −0.01 (−0.20 to 0.18). Unit estimates ranged from −0.80 to 0.72 [`p3_units.tsv`]. P3 is not supported: the data are consistent with no consistent proportional relationship and do not show a trade-off.
+
+### P4 (exploratory): respiratory potential relative to methanogenic potential
+Across hosts, ALR_resp was much lower in hindgut (−5.01; −6.50 to −3.77) and foregut (−5.36; −6.92 to −3.69) than in simple-gut hosts [`p2_contrasts.tsv`]. Comparing with the *mcrA* contrasts above, most of this shift reflects higher *mcrA* in fermenting guts, not lower respiratory potential.
+
+Within animals (P1), the hindgut had lower ALR_resp than the foregut at similar *mcrA* (above). Thus the cross-host pattern is directionally consistent with P4, but within animals respiratory and methanogenic potential did not vary inversely.
+
+### Sensitivity to marker identity thresholds
+[PENDING: identity thresholds −10 / +10 percentage points; `sens_id_m10/`, `sens_id_p10/`; the 17 P1 runs needed for this are being re-quantified.]
 
 ## Discussion
-[RESULTS-DEPENDENT]
+**Summary.** The pre-registered positive control reproduced the published within-ruminant result [L02]. In every one of 53 animals across eight ruminant strata, the hindgut carried more acetogenic relative to methanogenic potential than the foregut, by about 12-fold. The test of generality failed. Across 166 vertebrate species, fermentation site did not predict the faecal *acsB*:*mcrA* ratio once host phylogeny, species and study were modelled, and this held in every pre-specified sensitivity analysis. Instead, fermenting guts carried more of both markers. Host phylogeny accounted for the largest share of variance in the ratio, as previously found for archaeal diversity with 16S data [L07]. Methanogenic and acetogenic potential were not negatively proportional within studies.
+
+**Interpretation.** The research framework anticipated this outcome: a compartment effect inside animals with phylogenetic structure dominating between them (`research_plan.md` §1.5). Three non-exclusive explanations fit the data.
+1. **Sample type.** P2 used faeces, which integrate the whole tract. In a ruminant, the faecal community reflects the hindgut and not the rumen, so "foregut" hosts are not observed at their foregut in P2. The P1 rumen-versus-rectum contrast (2.80 ln units) shows that this alone does not abolish within-animal differences. The cross-host faecal comparison, however, contrasts hosts, not chambers.
+2. **Anatomy acts on load more than on partitioning.** Fermenting guts carry more *mcrA* and more *acsB*, as expected if longer retention and more fermentable substrate support larger hydrogenotrophic populations of both guilds.
+3. **Phylogeny and its correlates.** Lineage-specific microbial associations [L07] could fix the methanogen:acetogen balance more strongly than gut architecture does.
+
+With the present design we cannot distinguish these explanations. The within-study analysis, the only one free of between-study confounding, also showed no site effect, but it rests on 12 studies.
+
+**Relation to prior work.** Marsupials show heterogeneous H₂-management potential across species [L01], and our cross-host results generalise that heterogeneity: categories defined by gut anatomy do not delimit H₂-sink partitioning. In rumen, H₂ uptake is shared among several guilds [L03]. The absence of a trade-off between *mcrA* and *acsB* is consistent with this, but gene abundance does not measure flux.
+
+**Limitations.**
+- **Marker abundance is genetic potential, not activity or flux.** *acsB* also occurs outside reductive acetogens; the pre-planned phylogenetic placement of *acsB* reads was **[NOT DONE]**.
+- **Normaliser.** The normaliser is bacterial *rpoB*, so *mcrA* copies per genome are relative to bacterial genomes.
+- **Read sampling.** Each sample is 5 × 10⁶ forward reads. P1 used head sampling, which differed from multi-offset sampling for *acsB* in one of five tested runs.
+- **Pre-specified gate.** Gate 1b failed its pre-specified rule on one of ten checks, and the protocol was changed accordingly (amendment v1.2).
+- **P1 coverage.** P1 has two source studies and only ruminants.
+- **Study imbalance in P2.** 176 of 189 inventory studies sampled a single fermentation category.
+- **Metadata.** Captivity is unknown for a third of samples. Diet is coarse and missing for hosts without EltonTraits entries. Fermentation categories are assigned by lineage rules and do not capture within-category variation, e.g. among simple-gut herbivores.
+- **Screening errors.** Mouse samples entered P2 through a screening gap (handled post hoc above). The screen's read-length estimate also missed 76-bp paired libraries.
+- **Phylogeny.** The tree is a topology with Grafen branch lengths. The dated-tree sensitivity was **[NOT DONE]**, as was the in-silico marker specificity benchmark **[NOT DONE]**.
+
+**Conclusion.** Within ruminants, the hindgut is consistently enriched for acetogenic relative to methanogenic potential. Across vertebrates, faecal H₂-sink partitioning potential follows host phylogeny more than gut fermentation architecture, and methanogenic and acetogenic potential do not trade off. Fermentation architecture predicts how much hydrogenotrophic potential a gut carries, not how it is divided.
 
 ## References
-[assembled from literature.csv, VERIFIED entries only]
+- [L01] Bowerman KL, et al. (2025) *mSystems* 11:e01608-25. doi:10.1128/msystems.01608-25
+- [L02] Li Q, et al. (2025) *Microbiome* 13:28. doi:10.1186/s40168-024-02018-1
+- [L03] Greening C, et al. (2019) *ISME J* 13:2617–2632. doi:10.1038/s41396-019-0464-2
+- [L04] Xie F, et al. (2021) *Microbiome* 9:137. doi:10.1186/s40168-021-01078-x
+- [L05] Youngblut ND, et al. (2020) *mSystems* 5:e01045-20. doi:10.1128/mSystems.01045-20
+- [L07] Youngblut ND, et al. (2021) *Nat Microbiol* 6:1443–1454. doi:10.1038/s41564-021-00980-2
+- [L08] Levin D, et al. (2021) *Science* 372:eabb5352. doi:10.1126/science.abb5352
+- [L10] Kuhn M, et al. (2026) *Nucleic Acids Res* 54:D826–D834. doi:10.1093/nar/gkaf1118
+- [L20] Stevens CE, Hume ID (1998) *Physiol Rev* 78:393–427. doi:10.1152/physrev.1998.78.2.393
+- [L21] Wilman H, et al. (2014) *Ecology* 95:2027. doi:10.1890/13-1917.1
+- [L22] Leung PM, Greening C (2021) Greening lab metabolic marker gene databases. Monash Bridges. doi:10.26180/c.5230745
+- [L23] Ricci F, et al. (2025) *Nat Commun* 16:11634. doi:10.1038/s41467-025-66734-4
+- [L25] UniProt Consortium (2025) *Nucleic Acids Res* 53:D609–D617. doi:10.1093/nar/gkae1010
+- [L26] Buchfink B, et al. (2021) *Nat Methods* 18:366–368. doi:10.1038/s41592-021-01101-x
+- [L27] Chen S, et al. (2018) *Bioinformatics* 34:i884–i890. doi:10.1093/bioinformatics/bty560
+- [L28] Hadfield JD (2010) *J Stat Softw* 33(2). doi:10.18637/jss.v033.i02
+- [L29] Viechtbauer W (2010) *J Stat Softw* 36(3). doi:10.18637/jss.v036.i03
+- [L30] IntHout J, et al. (2014) *BMC Med Res Methodol* 14:25. doi:10.1186/1471-2288-14-25
+- [L31] Page MJ, et al. (2021) *J Clin Epidemiol* 134:178–189. doi:10.1016/j.jclinepi.2021.03.001
+- [TO ADD AND VERIFY] Proportionality ρp (Erb & Notredame 2016); Open Tree of Life synthetic tree and TNRS; Grafen branch lengths.
