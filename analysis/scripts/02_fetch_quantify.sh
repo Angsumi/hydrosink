@@ -18,6 +18,8 @@ mkdir -p "$OUT" "$LOG" "$OUT/../hits"
 # worker runs this same script with HS_REMOTE=1. Results are copied back by scripts/gcp/sync_from_vm.sh.
 if [ -z "${HS_REMOTE:-}" ] && grep -qx "$RUN" "$ROOT/analysis/inventory/p2_remote_claims.txt" 2>/dev/null; then
   echo "$RUN claimed by cloud worker"; exit 0; fi
+# Runs handed to another machine after this machine's queue started (analysis/inventory/skip_here.txt) are skipped.
+if grep -qx "$RUN" "$ROOT/analysis/inventory/skip_here.txt" 2>/dev/null; then echo "$RUN moved to another machine"; exit 0; fi
 mkdir -p "$WORK"
 # Resumable download (v2, 2026-11-16): the compressed head of R1 is saved on the SSD (raw.gz) and
 # extended with HTTP byte ranges, so an interrupted run continues where it stopped instead of
