@@ -14,10 +14,10 @@ T=${THREADS:-4}
 WORK=$ROOT/analysis/work/$RUN; OUT=$ROOT/analysis/results/per_sample; LOG=$ROOT/analysis/logs
 mkdir -p "$OUT" "$LOG" "$OUT/../hits"
 [ -s "$OUT/$RUN.markers.tsv" ] && { echo "$RUN already done"; exit 0; }
-# Runs claimed by a Google Colab worker (analysis/inventory/p2_colab_claims.txt) are skipped here; the worker
-# runs this same script with HS_REMOTE=1. Results are merged back by scripts/colab/p2_sync.sh.
-if [ -z "${HS_REMOTE:-}" ] && grep -qx "$RUN" "$ROOT/analysis/inventory/p2_colab_claims.txt" 2>/dev/null; then
-  echo "$RUN claimed by Colab"; exit 0; fi
+# Runs claimed by the Google Cloud worker VM (analysis/inventory/p2_remote_claims.txt) are skipped here; the
+# worker runs this same script with HS_REMOTE=1. Results are copied back by scripts/gcp/sync_from_vm.sh.
+if [ -z "${HS_REMOTE:-}" ] && grep -qx "$RUN" "$ROOT/analysis/inventory/p2_remote_claims.txt" 2>/dev/null; then
+  echo "$RUN claimed by cloud worker"; exit 0; fi
 mkdir -p "$WORK"
 # Resumable download (v2, 2026-11-16): the compressed head of R1 is saved on the SSD (raw.gz) and
 # extended with HTTP byte ranges, so an interrupted run continues where it stopped instead of

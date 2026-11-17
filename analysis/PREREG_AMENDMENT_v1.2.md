@@ -86,3 +86,8 @@ The 40 P2 runs finished before the change used `-b 1`.
   every planned row arrives once, in order). Check on SRR32584038, rows 7,236,266-7,256,265 (20,000 reads): bases and
   qualities identical to `fastq-dump --split-files` read 1 (identical md5). Only the FASTQ header differs (SRA row
   number instead of the original spot name). Per-block `fastq-dump` remains as automatic fallback.
+- Compute (2026-11-17, no effect on results): from 13:28 IST, 704 of the remaining 859 P2 runs are processed on
+  three Google Cloud VMs (us-east4; c2d-highcpu-56, c2d-highcpu-16, n2-custom-12) with the same scripts and tool
+  versions (DIAMOND 2.1.10, fastp 0.23.4, Python 3.11.18, sra-tools 3.1.1; database md5 8a5077c1...).
+  Check: P2 run SRR32584022 processed on a VM gave a marker table byte-identical to the local one.
+  Assignment: `inventory/p2_remote_claims.txt` (skipped locally) split into `inventory/p2_vm_<vm>.txt`.
