@@ -1,6 +1,6 @@
 # Hindgut enrichment of acetogenic potential within ruminants does not generalise across vertebrates: a pre-registered, phylogenetically controlled synthesis of gut hydrogen-sink genes in public metagenomes
 
-*Draft v1 (2026-11-17). Every number in this draft comes from a script-generated file in `analysis/results/` (file named in brackets). Items marked **[NOT DONE]** were pre-specified but not executed; they are listed under Limitations. Reference codes [Lxx] map to `literature.csv`; only entries marked VERIFIED there are cited.*
+*Draft v2 (2026-11-18). Every number in this draft comes from a script-generated file in `analysis/results/` (file named in brackets). Analyses run after the main results (post-hoc, or pre-planned but executed late) are labelled as such. Reporting checklists: `analysis/reporting/`. Reference codes [Lxx] map to `literature.csv`; all cited entries are VERIFIED there.*
 
 ---
 
@@ -52,7 +52,7 @@ For P2 we kept faecal samples and capped each host species at 10 runs, drawn rou
 
 **Captivity** (wild, captive, domestic, laboratory or unknown) was curated from study and BioSample text by keyword rules plus 38 manual study-level decisions, each with an evidence quote (`analysis/config/captivity_manual.tsv`). This was done blind to marker data.
 
-**Host phylogeny** was the Open Tree of Life synthetic tree induced for the matched taxa (`01c_host_tree.py`). Because that tree is topology-only, Grafen branch lengths were added (ape `compute.brlen`). Hosts identified only to genus without a tree tip were excluded from the phylogenetic models.
+**Host phylogeny** was the Open Tree of Life synthetic tree [L34] induced for the matched taxa (`01c_host_tree.py`). Because that tree is topology-only, Grafen branch lengths [L35] were added (ape `compute.brlen`). Hosts identified only to genus without a tree tip were excluded from the phylogenetic models.
 
 ### Read sampling
 Bandwidth precluded full downloads, so each run was represented by 5 × 10⁶ forward (R1) reads; R1 only was used, as in the Greening-lab protocol [L23]. **P1** used the first 5 × 10⁶ reads ("head" sampling).
@@ -97,11 +97,22 @@ Pre-specified P2 sensitivity analyses:
 - a within-study analysis restricted to studies sampling ≥ 2 fermentation sites, with study as a fixed effect;
 - a marsupial hold-out: fit without Metatheria, then predict marsupial samples.
 
-**P3.** For each P2 study with ≥ 10 samples, and each P1 study × chamber, we computed proportionality ρp between *mcrA* and *acsB* on CLR-transformed marker profiles [rpoB and 10 markers]. Values were Fisher-z transformed with bootstrap variances (1,000 resamples) and pooled by REML with Hartung–Knapp. We also report a subset restricted to units with *mcrA* detected in ≥ 50% of samples.
+**P3.** For each P2 study with ≥ 10 samples, and each P1 study × chamber, we computed proportionality ρp [L33] between *mcrA* and *acsB* on CLR-transformed marker profiles [rpoB and 10 markers]. Values were Fisher-z transformed with bootstrap variances (1,000 resamples) and pooled by REML with Hartung–Knapp. We also report a subset restricted to units with *mcrA* detected in ≥ 50% of samples.
 
 **Sensitivity of thresholds.** Marker counts were re-derived from the saved DIAMOND hits with all identity thresholds shifted by −10 and +10 percentage points (floor 40%, the search cut-off), and the P1, P3 and primary P2 analyses were repeated (`05c_identity_sensitivity.py`, `05d_sensitivity_sets.R`). With a shift of 0 the re-derivation reproduced all 1,163 original marker tables byte for byte.
 
 ***acsB* attribution (post-hoc).** The pre-planned phylogenetic placement of *acsB* reads was not possible because reads were not retained. Instead, each *acsB* read was attributed to the NCBI taxonomy (E-utilities) of its best-hit reference protein. P1, P3 and the primary P2 model were repeated with *acsB* restricted to bacterial or to Bacillota references (`08a`–`08c` scripts).
+
+**Dated-tree sensitivity.** The Open Tree topology was kept (polytomies resolved). Each internal node was dated with the TimeTree 5 API [L36]: the MRCA age of up to 10 analysis species from each child clade, using NCBI taxon IDs. Nodes without an age, or with an age older than their parent, were interpolated between parent and oldest dated descendant. Each node was then constrained to ≤ 98% of its parent's age, giving an ultrametric tree. The primary P2 model was refitted on this tree (`05f_dated_tree.R`).
+
+**In-silico specificity benchmark.** Reads were simulated from 43 RefSeq reference genomes and one host decoy (*Bos taurus*), retrieved with NCBI Datasets [L37]. The genomes were chosen for guild diversity: methanogens, Wood–Ljungdahl carriers, sulfate/sulfite reducers, nitrate/fumarate reducers and common fermenters. Settings: wgsim (seed 20261117); 150-bp reads with fragment = read length, so each read's source coordinates are known; 500,000 reads per microbial genome and 2,000,000 host reads. The reads were processed with the study's fastp, DIAMOND and threshold settings (`analysis/bench/`; protocol written before simulation, `BENCHMARK_PROTOCOL.md`).
+
+Each assigned read was scored against the RefSeq annotation of the coding sequences it overlaps (≥ 75 bp):
+- **Precision:** the fraction of assigned reads from a true source gene.
+- **Sensitivity:** the fraction of reads with ≥ 120 bp inside a source gene that were assigned to it.
+- **False positives per million reads:** counted in genomes lacking the gene.
+
+The pre-written product-name truth patterns (v1) missed RefSeq wording; for example, McrA is annotated "coenzyme-B sulfoethylthiotransferase subunit alpha". Truth was therefore revised post hoc (v2) to use GFF gene symbols, falling back to corrected product patterns. Both versions are reported. The benchmark was run after the main analyses and serves as a methods validation, not as part of the pre-registered inference.
 
 **P1 sampling check.** Five P1 runs drawn with a fixed seed before the data were analysed were re-quantified with multi-offset sampling and compared with head sampling (amendment v1.2 §2).
 
@@ -184,7 +195,7 @@ Across 34 units (30 P2 studies with ≥ 10 samples and 4 P1 study × chamber uni
 ### P4 (exploratory): respiratory potential relative to methanogenic potential
 Across hosts, ALR_resp was much lower in hindgut (−5.01; −6.50 to −3.77) and foregut (−5.36; −6.92 to −3.69) than in simple-gut hosts [`p2_contrasts.tsv`]. Comparing with the *mcrA* contrasts above, most of this shift reflects higher *mcrA* in fermenting guts, not lower respiratory potential.
 
-Within animals (P1), the hindgut had lower ALR_resp than the foregut at similar *mcrA* (above). Thus the cross-host pattern is directionally consistent with P4, but within animals respiratory and methanogenic potential did not vary inversely.
+Within animals (P1), the hindgut had lower ALR_resp than the foregut at similar *mcrA* (above). Thus the cross-host pattern is directionally consistent with P4, but within animals respiratory and methanogenic potential did not vary inversely. Because *napA* and *frdA* showed substantial cross-assignment in the benchmark (below), ALR_resp results are the least reliable outcome here.
 
 ### Sensitivity to marker identity thresholds
 Shifting every per-gene identity threshold by −10 or +10 percentage points left all conclusions unchanged [`sens_id_m10/`, `sens_id_p10/`]:
@@ -212,6 +223,34 @@ We repeated the analyses with *acsB* counted only from bacterial references (228
 | Bacterial only | 2.66 (2.28–3.04) | −0.02 | 0.53 (−0.79 to 2.05) | 0.03 (−0.11 to 0.16) |
 | Bacillota only | 2.74 (2.36–3.13) | 0.36 | 0.52 (−0.90 to 1.96) | 0.02 (−0.11 to 0.16) |
 
+### Marker specificity benchmark
+Across 43 genomes (v2 truth) [`bench/bench_metrics_v2.tsv`]:
+
+| Marker | Carrier genomes | Precision | Sensitivity | False positives per 10⁶ reads in non-carriers |
+|---|---|---|---|---|
+| *mcrA* | 6 | 0.88 | 0.97 | 0 |
+| *acsB* | 11 | 0.84 | 0.96 | 44 |
+| *dsrA* | 4 | 0.85 | 0.98 | 0 |
+| *asrA* | 10 | 1.00 | 0.77 | 0 |
+| *nrfA* | 11 | 1.00 | 0.94 | 0 |
+| *narG* | 3 | 0.94 | 0.98 | 4.5 |
+| *napA* | 3 | 0.65 | 0.98 | 42 |
+| *frdA* | 6 | 0.57 | 0.96 | 16 |
+| *rpoB* | 43 | 1.00 | 0.78 | 0 |
+
+The 2 × 10⁶ cattle reads produced no assignment to any marker [`bench/bench_host_decoy_v2.tsv`]. The main error sources were [`bench/bench_assigned_products_v2.tsv`]:
+- ***mcrA*:** 407 reads from *mcrG* (the methyl-coenzyme M reductase γ-subunit gene) in methanogen genomes.
+- ***acsB*:** 709 of the 712 false reads came from one locus in *Methanomassiliicoccus luminyensis*. It is annotated as a partial pseudogene with a homing-endonuclease domain and sits within the acetyl-CoA decarbonylase/synthase gene cluster, plausibly an intein-interrupted ACS β-subunit gene. Excluding that locus, *acsB* precision was 0.999.
+- ***napA* and *narG*:** other molybdopterin oxidoreductases.
+- ***frdA*:** succinate dehydrogenase and L-aspartate oxidase. Counting a menaquinol:fumarate reductase flavoprotein annotated *sdhA* as correct raises *frdA* precision to 0.70.
+
+*rpoB* sensitivity was lower because archaeal RNA polymerase genes are not represented in the bacterial normaliser. With the pre-written v1 truth patterns, *mcrA* precision was 0 and *narG*/*napA* precision was 0.23–0.25 [`bench/bench_metrics.tsv`]; the audit table shows these as annotation-wording misses.
+
+Thus the primary markers (*mcrA*, *acsB*) are specific and sensitive in simulated reads from these genomes. Among the respiratory markers, *napA* and *frdA* include substantial cross-assignment from homologous enzymes, which inflates the respiratory sum used in ALR_resp (P4).
+
+### Dated-tree sensitivity
+TimeTree dated 152 of 165 nodes; 13 were interpolated and 22 were adjusted for conflicts with the topology (root 435 Myr) [`dated_tree/node_ages.tsv`]. With the dated tree, fermentation site still did not improve fit: ΔDIC = 0.99; foregut − hindgut 0.70 (95% HPD −0.96 to 2.29); hindgut − simple −1.14 (−3.11 to 0.48) [`dated_tree/p2_primary.tsv`]. The phylogenetic variance share was higher, 0.78 (0.61–0.87), and the species share lower [`dated_tree/p2_variance_partition.tsv`].
+
 ### Reproducibility
 The 17 P1 runs quantified before DIAMOND hits were archived were processed again from scratch. The second pass used a different read source (NCBI SRA on AWS instead of ENA files) and a different DIAMOND block size. All 17 marker tables were byte-identical to the originals [`p1_rerun_reproducibility.txt`].
 
@@ -237,7 +276,9 @@ With the present design we cannot distinguish these explanations. The within-stu
 - **Study imbalance in P2.** 176 of 189 inventory studies sampled a single fermentation category.
 - **Metadata.** Captivity is unknown for a third of samples. Diet is coarse and missing for hosts without EltonTraits entries. Fermentation categories are assigned by lineage rules and do not capture within-category variation, e.g. among simple-gut herbivores.
 - **Screening errors.** Mouse samples entered P2 through a screening gap (handled post hoc above). The screen's read-length estimate also missed 76-bp paired libraries.
-- **Phylogeny.** The tree is a topology with Grafen branch lengths. The dated-tree sensitivity was **[NOT DONE]**, as was the in-silico marker specificity benchmark **[NOT DONE]**.
+- **Phylogeny.** The main tree is a topology with Grafen branch lengths. A TimeTree-dated version gave the same conclusion, but 35 of 165 node ages were interpolated or adjusted.
+- **Marker specificity.** In simulated reads, *napA* and *frdA* had precision 0.65 and 0.57, so the respiratory sum (ALR_resp, P4) includes reads from homologous non-target enzymes. *mcrA* and *acsB* were specific. The benchmark genomes are reference isolates, not gut-community genomes, and the benchmark was run after the main analyses.
+- **Not done:** per-study risk-of-bias scoring and certainty-of-evidence grading (PRISMA items 11, 15, 18, 22; `analysis/reporting/PRISMA_2020_checklist.md`).
 
 **Conclusion.** Within ruminants, the hindgut is consistently enriched for acetogenic relative to methanogenic potential. Across vertebrates, faecal H₂-sink partitioning potential follows host phylogeny more than gut fermentation architecture, and methanogenic and acetogenic potential do not trade off. Fermentation architecture predicts how much hydrogenotrophic potential a gut carries, not how it is divided.
 
@@ -261,4 +302,9 @@ With the present design we cannot distinguish these explanations. The within-stu
 - [L29] Viechtbauer W (2010) *J Stat Softw* 36(3). doi:10.18637/jss.v036.i03
 - [L30] IntHout J, et al. (2014) *BMC Med Res Methodol* 14:25. doi:10.1186/1471-2288-14-25
 - [L31] Page MJ, et al. (2021) *J Clin Epidemiol* 134:178–189. doi:10.1016/j.jclinepi.2021.03.001
-- [TO ADD AND VERIFY] Proportionality ρp (Erb & Notredame 2016); Open Tree of Life synthetic tree and TNRS; Grafen branch lengths.
+- [L32] Mirzayi C, et al. (2021) *Nat Med* 27:1885–1892. doi:10.1038/s41591-021-01552-x
+- [L33] Erb I, Notredame C (2016) *Theory Biosci* 135:21–36. doi:10.1007/s12064-015-0220-8
+- [L34] Hinchliff CE, et al. (2015) *Proc Natl Acad Sci USA* 112:12764–12769. doi:10.1073/pnas.1423041112
+- [L35] Grafen A (1989) *Philos Trans R Soc B* 326:119–157. doi:10.1098/rstb.1989.0106
+- [L36] Kumar S, et al. (2022) *Mol Biol Evol* 39:msac174. doi:10.1093/molbev/msac174
+- [L37] O'Leary NA, et al. (2024) *Sci Data* 11:732. doi:10.1038/s41597-024-03571-y

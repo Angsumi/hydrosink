@@ -1,6 +1,6 @@
 # Research plan — HydroSink: a cross-vertebrate meta-analysis of gut hydrogen-sink partitioning
 
-Last updated: 2026-11-15 · Status legend used throughout:
+Last updated: 2026-11-18 · **Current status: all data processed; all pre-specified analyses, sensitivity analyses, benchmark and dated-tree checks executed; manuscript draft v2 (`manuscript/manuscript.md`).** · Status legend used throughout:
 **[VERIFIED]** checked against a primary source during this session ·
 **[HYPOTHESIS]** proposed, untested ·
 **[PLANNED]** analysis designed, code written, **not executed on real data** ·

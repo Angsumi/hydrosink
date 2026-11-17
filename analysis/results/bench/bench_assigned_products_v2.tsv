@@ -1,0 +1,67 @@
+gene	gene_symbol	source_product	counted_true	reads
+acsB	acsB	acetyl-CoA decarbonylase/synthase complex subunit alpha/beta	True	3235
+acsB		LAGLIDADG family homing endonuclease	False	613
+acsB	cdhC	CO dehydrogenase/CO-methylating acetyl-CoA synthase complex subunit beta	True	386
+acsB		hypothetical protein	False	72
+acsB		intergenic	False	27
+asrA	asrA	anaerobic sulfite reductase subunit AsrA	True	1079
+asrA		4Fe-4S dicluster domain-containing protein	False	4
+dsrA	dsrA	dissimilatory-type sulfite reductase subunit alpha	True	1059
+dsrA		ferredoxin-like domain-containing protein	False	192
+frdA		fumarate reductase flavoprotein subunit	True	823
+frdA	frdA	fumarate reductase flavoprotein subunit	True	582
+frdA	sdhA	succinate dehydrogenase flavoprotein subunit	False	522
+frdA	sdhA	8-methylmenaquinol:fumarate reductase flavoprotein subunit	False	390
+frdA	frdA	anaerobic fumarate reductase catalytic and NAD/flavoprotein subunit	True	156
+frdA		fumarate reductase	True	150
+frdA	nadB	L-aspartate oxidase	False	112
+frdA		L-aspartate oxidase	False	102
+frdA		FAD-binding protein	False	73
+frdA		FAD-dependent oxidoreductase	False	59
+frdA	tfrA	fumarate reductase (CoM/CoB) subunit TfrA	False	36
+mcrA	mcrA	coenzyme-B sulfoethylthiotransferase subunit alpha	True	2890
+mcrA	mcrG	coenzyme-B sulfoethylthiotransferase subunit gamma	False	407
+napA	napA	nitrate reductase catalytic subunit	True	753
+napA	napA	nitrate reductase catalytic subunit NapA	True	616
+napA		molybdopterin-dependent oxidoreductase	False	478
+napA		nitrate reductase	False	260
+napA	napA	periplasmic nitrate reductase NapA	True	217
+napA		molybdopterin oxidoreductase family protein	False	72
+napA	fdhF	formate dehydrogenase subunit alpha	False	18
+napA		putative nitrate reductase	False	5
+napA		molybdopterin-containing oxidoreductase family protein	False	4
+napA	fdnG	formate dehydrogenase subunit alpha	False	4
+napA		formate dehydrogenase H subunit alpha, selenocysteine-containing	False	2
+napA	fdoG	formate dehydrogenase subunit alpha	False	2
+napA		formate dehydrogenase-O alpha subunit	False	2
+napA		formate dehydrogenase-N alpha subunit	False	2
+napA	fdnG	formate dehydrogenase-N subunit alpha	False	1
+napA		putative dimethyl sulfoxide reductase, major subunit	False	1
+narG	narG	nitrate reductase 1 alpha subunit	True	660
+narG		nitrate reductase subunit alpha	True	412
+narG		nitrate reductase 1 subunit alpha	True	303
+narG		cryptic nitrate reductase 2 subunit alpha	True	303
+narG		molybdopterin-dependent oxidoreductase	False	66
+narG		DMSO/selenate family reductase complex A subunit	False	17
+narG		molybdopterin-containing oxidoreductase family protein	False	7
+narG	ynfF_2	S- and N-oxide reductase subunit A	False	6
+narG	ynfF_4	S- and N-oxide reductase subunit A	False	6
+narG	ynfF_3	S- and N-oxide reductase subunit A	False	4
+narG	phsA	thiosulfate reductase PhsA	False	4
+narG	dmsA	anaerobic dimethyl sulfoxide reductase subunit A	False	3
+nrfA		ammonia-forming cytochrome c nitrite reductase subunit c552	True	1023
+nrfA	nrfA	ammonia-forming cytochrome c nitrite reductase	True	780
+nrfA	nrfA	cytochrome c nitrite reductase cytochrome c552 subunit	True	515
+nrfA	nrfA	cytochrome C nitrite reductase subunit c552	True	121
+rpoB	rpoB	DNA-directed RNA polymerase subunit beta	True	17963
+rpoB		DNA-directed RNA polymerase subunit beta/beta'	True	915
+rpoB		DNA-directed RNA polymerase subunit beta	True	708
+rpoB	rpoB	RNA polymerase beta subunit	True	344
+rpoB	rpoB	DNA-directed RNA polymerase subunit B	True	79
+rpoB		DNA-directed RNA polymerase subunit B''	True	50
+rpoB		DNA-directed RNA polymerase subunit B	True	47
+rpoB		DNA-directed RNA polymerase subunit B'	True	8
+rpoB	rpoC	DNA-directed RNA polymerase subunit beta'	False	6
+rpoB		DNA-directed RNA polymerase subunit A'	False	1
+rpoB	rpoC	RNA polymerase beta prime subunit	False	1
+rpoB		DNA-directed RNA polymerase subunit beta'	False	1

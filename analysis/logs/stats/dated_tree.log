@@ -1,0 +1,18 @@
+nodes 165; dated by TimeTree 152; conflicts 22; interpolated 13
+       n DIC_null DIC_full      dDIC              contrast  post_mean
+   <int>    <num>    <num>     <num>                <char>      <num>
+1:   802 3095.561 3094.573 0.9881202     foregut - hindgut  0.6978418
+2:   802 3095.561 3094.573 0.9881202      hindgut - simple -1.1449393
+3:   802 3095.561 3094.573 0.9881202      foregut - simple -0.4470976
+4:   802 3095.561 3094.573 0.9881202 avian_caecal - simple  0.9749165
+          l95       u95 pMCMC
+        <num>     <num> <num>
+1: -0.9645682 2.2853724 0.420
+2: -3.1106838 0.4798282 0.216
+3: -2.6750648 1.6076068 0.676
+4: -1.5273535 3.5558091 0.478
+   component    post_mode          l95        u95
+      <char>        <num>        <num>      <num>
+1:  phylo_H2 0.7785286573 6.132501e-01 0.87130395
+2:   species 0.0003483774 1.510218e-07 0.08370165
+3:     study 0.0841672155 3.687809e-02 0.15261788

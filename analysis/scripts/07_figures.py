@@ -119,5 +119,28 @@ def figS1():
     fig.tight_layout(); save(fig, "figS1_detection_by_site")
 
 
-for f in (fig2, fig3, fig4, figS1):
+def figS2_prisma():
+    if not (ROOT / "analysis/prisma_log.tsv").exists() or not (R / "prisma_final.tsv").exists(): return
+    pl = pd.read_csv(ROOT / "analysis/prisma_log.tsv", sep="\t"); pf = pd.read_csv(R / "prisma_final.tsv", sep="\t")
+    n = lambda s: int(pf.loc[pf.stage.str.startswith(s), "n"].iloc[0])
+    main = [(f"Runs identified (ENA, 7 gut-metagenome taxa)\nn = {pl.n_after[0]:,}", None)]
+    for _, r in pl.iloc[1:9].iterrows():
+        main.append((f"{r.stage.split(' (')[0].replace('host_tax_id present', 'structured host taxon present').replace('read_count', 'read count')}\nn = {int(r.n_after):,}", f"excluded n = {int(r.excluded):,}"))
+    main += [(f"P2 runs quantified\nn = {n('P2 runs quantified')}", "no reads passing QC (76-bp reads) n = 4"),
+             (f"P2 runs passing QC (rpoB reads ≥ 200)\nn = {n('P2 runs passing QC')}", f"failed QC n = {n('P2 runs quantified') - n('P2 runs passing QC')}"),
+             (f"P2 analysis set (host on tree)\nn = {n('P2 runs in phylogenetic models')} samples, "
+              f"{pf.loc[pf.stage.str.startswith('P2 species'), 'n'].iloc[0].replace(' / ', ' species / ')} studies", f"genus-only hosts without tree tip n = {n('P2 runs passing QC') - n('P2 runs in phylogenetic models')}")]
+    fig, ax = plt.subplots(figsize=(7.2, 9.4)); ax.axis("off"); ax.set_xlim(0, 10); ax.set_ylim(0, len(main) + 2.2)
+    for i, (txt, exc) in enumerate(main):
+        y = len(main) + 1.2 - i
+        ax.text(3.2, y, txt, ha="center", va="center", fontsize=7, color=INK, bbox=dict(boxstyle="round,pad=0.35", fc="#f4f4f2", ec=MUTED, lw=0.6))
+        if i < len(main) - 1: ax.annotate("", xy=(3.2, y - 0.62), xytext=(3.2, y - 0.38), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=0.7))
+        if exc: ax.text(6.4, y + 0.5, exc, ha="left", va="center", fontsize=6.5, color=MUTED)
+    p1 = pl.iloc[-1]
+    ax.text(3.2, 0.25, f"P1 (paired compartments, Li 2025 + Xie 2021): {int(p1.n_before)} runs → {int(p1.n_after)} fermentation-chamber runs → "
+            f"{n('P1 runs passing QC')} pass QC; {n('P1 animals')} animals with both chambers", ha="center", fontsize=6.5, color=INK, wrap=True)
+    save(fig, "figS2_prisma_flow")
+
+
+for f in (fig2, fig3, fig4, figS1, figS2_prisma):
     f()

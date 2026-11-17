@@ -5,3 +5,7 @@ analysis/db/raw/
 *.fastq*
 __pycache__/
 analysis/locks/
+# benchmark read names: 265 MB, regenerated exactly by wgsim seed 20261117 + genome_accessions.tsv
+analysis/results/bench/runs/*.names.gz
+analysis/bench/genomes/
+analysis/bench/work/
