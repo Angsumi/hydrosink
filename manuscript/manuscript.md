@@ -1,72 +1,113 @@
-# Gut fermentation architecture governs hydrogen-sink partitioning across vertebrates: a phylogenetically controlled meta-analysis of public shotgun metagenomes
+# [TITLE: set after P2 results] Gut fermentation architecture and hydrogen-sink potential across vertebrates: a pre-registered, phylogenetically controlled synthesis of public metagenomes
 
-*Pre-analysis manuscript (registered-report style). The Methods are complete. **The Results and the quantitative parts of the Abstract and Discussion are intentionally empty: no data have been analysed yet.** Text in [brackets] marks content that must come from executed analyses.*
-
-Target journals: *ISME Journal* / *Microbiome* (*Nature Microbiology* if P2 and P3 hold with phylogenetic control). Reporting: PRISMA 2020 (adapted for data synthesis), STORMS checklist for microbiome studies.
+*Draft v1 (2026-11-17). Every number in this draft comes from a script-generated file in `analysis/results/` (file named in brackets). Items marked **[NOT DONE]** were pre-specified but not executed; they are listed under Limitations. Reference codes [Lxx] map to `literature.csv`; only entries marked VERIFIED there are cited.*
 
 ---
 
 ## Abstract
-**Background.** Molecular hydrogen (H₂) produced by fermentation must be consumed for fermentation to stay thermodynamically favourable. Methanogens, reductive acetogens and respiratory hydrogenotrophs compete for it, and who wins shapes methane emissions and host energy harvest. Single-lineage studies point to acetogenesis dominating ruminant hindguts and to varied H₂ management in marsupials, but no cross-vertebrate test exists.
-**Hypothesis.** Gut fermentation architecture, rather than host phylogeny or diet alone, determines how H₂ disposal is split: methanogenesis in foregut chambers, acetogenesis and respiratory sinks in hindguts. Methanogenic and acetogenic capacity trade off.
-**Methods.** Systematic, PRISMA-aligned mining of public shotgun gut metagenomes from non-human vertebrates (ENA/SRA, Metalog/SPIRE). Curated marker-gene quantification (mcrA, acsB, dsrAB, nrfA, narG/napA, frdA, HydDB hydrogenase classes) normalised to genome equivalents. A within-animal paired compartment contrast pooled by random-effects meta-analysis. Cross-host Bayesian phylogenetic mixed models. Compositional proportionality for trade-offs. Out-of-sample validation on marsupials.
-**Results.** [n studies, n samples, n host species; pooled within-host effect with 95% CI and prediction interval; ΔELPD for fermentation site; phylogenetic signal; pooled ρ(mcrA, acsB); validation performance.]
-**Conclusions.** [To be written from the results.]
+[RESULTS-DEPENDENT; written last]
 
 ## Introduction
-Fermentation in vertebrate guts releases H₂. If H₂ accumulates, NADH re-oxidation is inhibited and fermentation stalls, so hydrogenotrophs keep partial pressures low [L03]. Several guilds compete for this H₂. Hydrogenotrophic methanogens convert it to methane, which is an energy loss for the host and a greenhouse gas. Reductive acetogens make acetate, which the host can absorb. Fumarate, nitrate and sulfate reducers couple H₂ oxidation to respiration [L03]. In the rumen, alternative uptake pathways are upregulated in low-methane sheep [L03]. Within goats, acsB is about 12-fold enriched in the cecum relative to the rumen, and the authors report the same direction across several ruminant species [L02]. Marsupials show diverse H₂ management between and within species [L01].
+Fermentation in vertebrate guts releases molecular hydrogen (H₂). If H₂ accumulates, re-oxidation of reduced cofactors becomes thermodynamically unfavourable and fermentation slows, so hydrogenotrophic microbes that keep H₂ partial pressure low are central to gut function [L03]. Several guilds compete for this H₂. Hydrogenotrophic methanogens reduce CO₂ to methane, an energy loss to the host and a greenhouse gas. Reductive acetogens produce acetate, which the host can absorb. Respiratory hydrogenotrophs couple H₂ oxidation to the reduction of sulfate, nitrate, nitrite or fumarate [L03]. In the rumen, H₂ uptake is distributed among these guilds, and alternative uptake pathways are expressed more in low-methane sheep [L03].
 
-Two gaps remain. First, every functional test so far is confined to one host lineage. Cross-vertebrate work on methanogens relies on 16S amplicons and finds host phylogeny to be a strong determinant [L07], which leaves open whether functional sink partitioning follows phylogeny or gut architecture. Second, diet, phylogeny and gut anatomy are collinear across species, so cross-sectional comparisons cannot separate them. Paired compartments from the same animal provide a natural control. Large vertebrate shotgun catalogues [L04, L05, L08] and curated cross-study metadata [L10] now make a phylogenetically controlled synthesis possible.
+Which sink dominates appears to depend on where fermentation happens. In 16 goats, the reductive-acetogenesis marker *acsB* was about 12-fold more abundant in the caecum than in the rumen, and the authors reported the same direction in several ruminant species [L02]. Marsupials, in contrast, are heterogeneous: some species resemble high-methane mammals while others are enriched for respiratory H₂-uptake potential [L01]. Across 110 vertebrate species, archaeal diversity tracks host phylogeny more than diet, but that analysis used 16S amplicons and did not measure H₂-sink genes [L07]. Large shotgun catalogues of vertebrate guts now exist [L04, L05, L08], as do curated cross-study metadata [L10]. To our knowledge, no study has tested with phylogenetic and study-level control whether gut fermentation architecture predicts how H₂-disposal potential is partitioned across vertebrates.
 
-We test four pre-specified predictions (P1–P4; research_plan.md §1.5).
+We tested four predictions that were fixed, with their analysis code, before the marker data were inspected (git tags `prereg-v1`, `prereg-v1.1`, `prereg-v1.2`):
+- **P1** (within animals; positive control): in paired foregut and hindgut samples from the same animal, ln(*acsB*/*mcrA*) is higher in the hindgut.
+- **P2** (across hosts): fermentation site (foregut, hindgut, avian caecal, simple gut) explains variation in faecal ln(*acsB*/*mcrA*) beyond host phylogeny, diet, captivity and technical covariates.
+- **P3** (trade-off): within studies, methanogenic and acetogenic potential are negatively proportional.
+- **P4** (exploratory): respiratory H₂-uptake potential is higher where methanogenic potential is lower.
+
+P1 replicates the published compartment result [L02] with the same and additional ruminant data [L04]. It serves to calibrate the marker pipeline and is not presented as a new finding. The novelty claim rests on P2–P4.
 
 ## Methods
-### Protocol and registration
-Hypotheses, inclusion criteria, thresholds and models were fixed in `analysis/config/config.yaml` and `research_plan.md` before any data were downloaded. [Register on OSF before data access; add DOI.]
+### Protocol, registration and amendments
+Hypotheses, inclusion criteria, marker thresholds, outcomes and models were fixed in `analysis/config/config.yaml`, `research_plan.md` and `analysis/scripts/05_meta_analysis.R`, and committed (git tag `prereg-v1`) before any marker data from the main sets were inspected. Two amendments were committed before any P2 marker data existed:
+- **v1.1** (`analysis/PREREG_AMENDMENT_v1.1.md`): P1 re-labelled a positive control; per-study P1 estimates and a three-level model added; within-study, known-captivity, sequencing-platform and marsupial hold-out analyses added; outcome-blind curation of captivity metadata.
+- **v1.2** (`analysis/PREREG_AMENDMENT_v1.2.md`): change of P2 read sampling after a pre-specified gate failed (below).
 
-### Data sources and search
-ENA/SRA were queried with the strategy in research_plan.md §2.2. Seed projects came from the primary literature (datasets.csv). The Metalog animal subset [L10] supplied curated host and captivity metadata. Search date: [date].
+The study was not registered on an external registry; the time-stamped git history is the record.
 
-### Eligibility
-As in research_plan.md §2.3. Duplicates were removed by BioSample and by a read-level MD5 prefix. Each study was scored for risk of bias on sample type, preservation, extraction kit, depth, captivity, diet documentation and design.
+### Data sources and screening
+The European Nucleotide Archive (ENA) Portal API was queried on 15 November 2026 for Illumina WGS runs with library source METAGENOMIC and one of seven gut-associated metagenome taxa: gut, feces, rumen, bovine gut, pig gut, chicken gut and fish gut metagenome. Screening is shown as a PRISMA 2020 flow [L31] [`analysis/prisma_log.tsv`, `prisma_final.tsv`]. Criteria:
+- **Host:** a structured host taxon ID within Vertebrata, excluding human, mouse and rat.
+- **Keywords:** no keywords indicating treatments, inhibitors, in-vitro systems, controls or non-WGS libraries.
+- **Read count:** ≥ 5 × 10⁶ reads.
+- **Read length:** mean ≥ 100 bp.
+- **One run per BioSample:** the deepest.
 
-### Processing
-Reads were QC'd with fastp (Q20, length ≥ 60, deduplication) and subsampled to 5 × 10⁶ pairs (seed 20261115; 2 × 10⁶ for sensitivity). Marker reads were identified with DIAMOND blastx against a curated, guild-labelled reference (`03_build_marker_db.md`). Ambiguous families (acsB, dsrAB, frdA/sdhA) were resolved by phylogenetic placement, and guild thresholds were chosen to give simulated-read precision ≥ 0.95. Abundance was expressed as reads per kilobase per genome equivalent, with genome equivalents from SingleM single-copy marker coverage. Taxonomy came from mOTUs3 (SPIRE profiles where available). Host traits: diet class (EltonTraits), fermentation site (foregut / hindgut / simple / avian caecal; assigned from the literature and blinded to outcome), and captivity (Metalog). Host phylogeny: TimeTree/VertLife consensus.
+For P2 we kept faecal samples and capped each host species at 10 runs, drawn round-robin across studies with a fixed seed (20261115). For P1 we used the two studies with paired fermentation-chamber samples from the same animals: Li et al. 2025 (PRJNA1068803; 16 goats, rumen and caecum) [L02] and Xie et al. 2021 (PRJNA657455; seven ruminant species) [L04]. P1 was restricted to fermentation chambers: rumen, reticulum and omasum (foregut) versus caecum, colon and rectum (hindgut).
+
+### Host traits (assigned before marker data were inspected)
+**Fermentation site** was assigned from host lineage by fixed rules following Stevens & Hume [L20] (`analysis/scripts/01b_host_traits.py`):
+- **Foregut:** Ruminantia, Camelidae, Hippopotamidae, Tayassuidae, Macropodidae and Potoroidae.
+- **Hindgut:** Equidae, Rhinocerotidae, Tapiridae, Elephantidae, Sirenia, Lagomorpha, Rodentia, wombats, koala and phalangeriform marsupials, Hyracoidea, Suidae, non-colobine primates and herbivorous Testudines.
+- **Avian caecal:** Galliformes, Anseriformes, ratites, Tinamiformes, Gruiformes and Otidiformes.
+- **Simple:** all other vertebrates.
+
+**Diet class** (herbivore, omnivore or carnivore) came from EltonTraits 1.0 [L21]; hosts without an EltonTraits entry were coded "unknown".
+
+**Captivity** (wild, captive, domestic, laboratory or unknown) was curated from study and BioSample text by keyword rules plus 38 manual study-level decisions, each with an evidence quote (`analysis/config/captivity_manual.tsv`). This was done blind to marker data.
+
+**Host phylogeny** was the Open Tree of Life synthetic tree induced for the matched taxa (`01c_host_tree.py`). Because that tree is topology-only, Grafen branch lengths were added (ape `compute.brlen`). Hosts identified only to genus without a tree tip were excluded from the phylogenetic models.
+
+### Read sampling
+Bandwidth precluded full downloads, so each run was represented by 5 × 10⁶ forward (R1) reads; R1 only was used, as in the Greening-lab protocol [L23]. **P1** used the first 5 × 10⁶ reads ("head" sampling).
+
+A pre-specified gate (Gate 1b) compared head sampling against a uniform random subsample of the full file in two goat samples. The rule required every gene group to agree within 10% when ≥ 100 reads were available. One of ten checks failed: [NiFe]-hydrogenase in one rumen sample, 210 versus 189 reads, +10.3% [`gate1b_head_vs_random.tsv`]. As pre-specified, P2 therefore switched to **multi-offset sampling** (amendment v1.2): 10 blocks of 5 × 10⁵ consecutive spots, with block *k* starting at spot ⌊*k*·*S*/10⌋ + 1, where *S* is the run's spot count.
+
+Reads came from the NCBI SRA copy on AWS. A run was accepted only if every block returned exactly the planned rows. Three fetch implementations were used: remote `vdb-dump`, local extraction from the downloaded `.sra` object, and `fastq-dump`. They were verified to give identical bases and qualities (amendment v1.2 addenda).
+
+### Quality control and marker quantification
+- **Quality control:** fastp 0.23.4 [L27] (`-q 20 -l 100 --trim_poly_g --cut_tail`).
+- **Search:** DIAMOND 2.1.10 blastx [L26] (`--fast --id 40 --query-cover 80 --evalue 1e-5 --max-target-seqs 1 --max-hsps 1`).
+- **Reference:** the Greening-lab compiled metabolic marker database v3 (51 genes, all retained as competitors) [L22]. To this were added 5,635 full-length UniRef90 bacterial RpoB sequences (UniProt 2026_04) [L25] as the single-copy normaliser, and RpoC sequences as decoys (170,171 sequences in total; md5 values in `config.yaml`).
+- **Assignment:** a read was assigned to the gene of its best hit if percent identity met that gene's published read-level threshold [L23]. This was 50% for most genes, including *mcrA*, *acsB*, *dsrA*, *nrfA*, *narG*, *napA* and *frdA*, and 60% for [FeFe]- and group-4 [NiFe]-hydrogenases.
+- **Abundance:** RPKM = reads / (mean reference length in kb) / (QC reads in millions). Copies per genome (cpg) = RPKM(gene) / RPKM(*rpoB*) (`aggregate_markers.py`).
+- **Sample QC:** a sample passed if it had ≥ 200 *rpoB* reads.
+
+The DIAMOND block size was reduced from 1 to 0.4 during P2 to bound memory. A test run gave identical hit files (amendment v1.2 addendum). Processing used one workstation and four Google Cloud VMs with identical tool versions. A run processed on both gave byte-identical marker tables.
 
 ### Outcomes
-Primary: ALR_acet = log[(acsB + c)/(mcrA + c)], with c set to half the minimum non-zero value per marker. Secondary: ALR_resp (summed respiratory reductases vs mcrA), mcrA presence (hurdle), and hydrogenase class profile.
+- **Primary:** ALR_acet = ln[(*acsB* + *c*)/(*mcrA* + *c*)], where *c* is half the minimum non-zero cpg of each marker in the analysed set.
+- **Secondary:**
+  - ALR_resp, the same ratio with the summed respiratory reductases (*dsrA*, *asrA*, *nrfA*, *narG*, *napA*, *frdA*) in the numerator;
+  - log cpg of each marker;
+  - group-1 [NiFe]- and group-B [FeFe]-hydrogenases;
+  - *mcrA* detection (≥ 2 reads).
 
 ### Statistical analysis
-**P1:** Within-animal differences (hindgut minus foregut) were pooled by study. This used random-effects meta-analysis (REML τ², Hartung–Knapp–Sidik–Jonkman CI, 95% prediction interval, I², leave-one-out), and in parallel a Bayesian mixed model with random slopes by study and random intercepts for animal and host. Python and R implementations were cross-checked. **P2:** brms Gaussian models with a phylogenetic random effect (Brownian correlation matrix), host-species, and study random effects. Fixed effects: diet, captivity, sample type, log depth and read length. Models with and without fermentation site were compared by PSIS-LOO; phylogenetic signal is reported as the variance ratio (λ analogue). **P3:** Within-study proportionality ρ(mcrA, acsB) on CLR-transformed abundances, Fisher-z pooled by random effects. **Multiplicity:** Benjamini–Hochberg across marker families (q < 0.05). **Sensitivity:** contents-only, wild-only, excluding birds, depth-matched, identity thresholds 40/60%, excluding any perturbation studies, leave-one-study-out. **Validation:** model trained without marsupials, then used to predict marsupial ALR_acet (Spearman ρ, RMSE). **Positive control:** reproduce the acsB cecum enrichment in Li et al. [L02] before the main analyses.
+All analyses ran in R 4.3.3 with metafor 4.8-0 [L29], lme4 1.1-37 and MCMCglmm 2.36 [L28] (`05_meta_analysis.R`; seed 20261115).
 
-### Causality statement
-Marker abundance measures genetic potential, not flux. We interpret associations as consistent with, not proof of, differential H₂ disposal, and compare them with published direct measurements [L02].
+**P1.** For each animal we computed the hindgut-minus-foregut difference of chamber means. Differences were averaged within each study × host-species stratum, and strata were pooled by random-effects meta-analysis (REML τ², Hartung–Knapp–Sidik–Jonkman CIs [L30], 95% prediction intervals, leave-one-out). Because P1 has only two source studies, we also report each study separately and a three-level model (strata nested in study). A one-stage linear mixed model was fitted as a cross-check: random animal intercepts and random chamber slopes by stratum. Secondary outcomes were adjusted by Benjamini–Hochberg.
+
+**P2.** We fitted Gaussian MCMCglmm models with random effects for phylogeny (inverse relatedness matrix), host species and study. Fixed effects were diet class, captivity, log₁₀ *rpoB* reads and read length, plus fermentation site in the full model. Chains ran for 130,000 iterations, with 30,000 burn-in and thinning of 100. Priors were parameter-expanded for the random effects (V = 1, ν = 1, α.V = 1000) and inverse-Wishart for the residual (V = 1, ν = 0.002). Models with and without fermentation site were compared by DIC. We report posterior contrasts between sites (mean, 95% HPD interval) and the phylogenetic share of random-effect plus residual variance. *mcrA* detection was modelled with the same structure (categorical family; hurdle component).
+
+Pre-specified P2 sensitivity analyses:
+- mammals only;
+- non-domestic hosts;
+- ≤ 3 samples per species;
+- ≥ 1,000 *rpoB* reads;
+- herbivores only;
+- known captivity;
+- a sequencing-platform covariate;
+- a within-study analysis restricted to studies sampling ≥ 2 fermentation sites, with study as a fixed effect;
+- a marsupial hold-out: fit without Metatheria, then predict marsupial samples.
+
+**P3.** For each P2 study with ≥ 10 samples, and each P1 study × chamber, we computed proportionality ρp between *mcrA* and *acsB* on CLR-transformed marker profiles [rpoB and 10 markers]. Values were Fisher-z transformed with bootstrap variances (1,000 resamples) and pooled by REML with Hartung–Knapp. We also report a subset restricted to units with *mcrA* detected in ≥ 50% of samples.
+
+**Sensitivity of thresholds.** Marker counts were re-derived from the saved DIAMOND hits with all identity thresholds shifted by −10 and +10 percentage points (floor 40%, the search cut-off), and the P1, P3 and primary P2 analyses were repeated (`05c_identity_sensitivity.py`, `05d_sensitivity_sets.R`). With a shift of 0 the re-derivation reproduced all 1,163 original marker tables byte for byte.
+
+**P1 sampling check.** Five P1 runs drawn with a fixed seed before the data were analysed were re-quantified with multi-offset sampling and compared with head sampling (amendment v1.2 §2).
 
 ### Data and code availability
-All accessions are in datasets.csv and `analysis/inventory.tsv`. The code and environment are in `analysis/` [archive on Zenodo with a DOI at submission].
+Run accessions, curated metadata and per-sample marker tables are in `analysis/inventory/` and `analysis/results/per_sample/`; DIAMOND hits are in `analysis/results/hits/`, with SHA-256 manifests (`p1_manifest.sha256`, `p2_manifest.sha256`). All code is in `analysis/scripts/`. [Archive with DOI at submission.]
 
 ## Results
-*Not yet available. Planned order:*
-1. Search and screening (PRISMA flow, Fig. 2) and dataset characteristics (Table 1).
-2. Positive control and marker benchmark (Supplementary Fig. S1).
-3. P1 within-host contrast: forest plot (Fig. 3).
-4. P2 cross-host model, phylogenetic signal, and hurdle results (Fig. 4).
-5. P3 trade-off (Fig. 5) and P4 respiratory sinks.
-6. Sensitivity and marsupial validation (Supplementary Figs. S2–S4).
+[RESULTS-DEPENDENT]
 
-## Discussion (framework, to be completed from results)
-- If P1 and P2 hold: H₂ economics follow anatomy convergently across lineages. This would suggest hindgut acetogenesis as a general alternative electron sink and has implications for methane mitigation (promoting acetogens).
-- If P1 holds but P2 does not: compartment effects exist within hosts, but phylogenetic inertia dominates between hosts. This would be consistent with the 16S-based archaeal results [L07].
-- Limitations to address: ruminant-heavy paired data; faeces as a proxy for the hindgut; small n for many wild species; gene potential ≠ activity; database bias against non-model hosts [L05, L08]; captivity confounding [L09].
+## Discussion
+[RESULTS-DEPENDENT]
 
 ## References
-Only sources verified during planning are cited; full list in `literature.csv`. Items marked TO VERIFY there must be checked before submission.
-- [L01] Bowerman KL, et al. (2025) *mSystems* 11:e01608-25. doi:10.1128/msystems.01608-25
-- [L02] Li Q, et al. (2025) *Microbiome* 13:28. doi:10.1186/s40168-024-02018-1
-- [L03] Greening C, et al. (2019) *ISME J* 13:2617–2632. doi:10.1038/s41396-019-0464-2
-- [L04] Xie F, et al. (2021) *Microbiome* 9:137. doi:10.1186/s40168-021-01078-x
-- [L05] Youngblut ND, et al. (2020) *mSystems* 5:e01045-20. doi:10.1128/mSystems.01045-20
-- [L07] Youngblut ND, et al. (2021) Vertebrate host phylogeny influences gut archaeal diversity. *Nat Microbiol* [DOI to verify]
-- [L08] Levin D, et al. (2021) *Science* 372:eabb5352. doi:10.1126/science.abb5352
-- [L09] Alberdi A, et al. (2021) *Sci Rep* 11:22660. doi:10.1038/s41598-021-02015-6
-- [L10] Kuhn M, et al. (2026) *Nucleic Acids Res* 54:D826–D834. doi:10.1093/nar/gkaf1118
+[assembled from literature.csv, VERIFIED entries only]

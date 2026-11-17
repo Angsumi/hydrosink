@@ -1,0 +1,45 @@
+study	host_species	compartment	samples	animals
+Li2025_PRJNA1068803	Capra hircus	cecum	16	16
+Li2025_PRJNA1068803	Capra hircus	rumen	16	16
+Xie2021_PRJNA657455	Bubalus bubalis	cecum	5	5
+Xie2021_PRJNA657455	Bubalus bubalis	colon	5	5
+Xie2021_PRJNA657455	Bubalus bubalis	omasum	5	5
+Xie2021_PRJNA657455	Bubalus bubalis	rectum	5	5
+Xie2021_PRJNA657455	Bubalus bubalis	reticulum	5	5
+Xie2021_PRJNA657455	Bubalus bubalis	rumen	5	5
+Xie2021_PRJNA657455	Capra hircus	cecum	6	6
+Xie2021_PRJNA657455	Capra hircus	colon	6	6
+Xie2021_PRJNA657455	Capra hircus	omasum	6	6
+Xie2021_PRJNA657455	Capra hircus	rectum	6	6
+Xie2021_PRJNA657455	Capra hircus	reticulum	6	6
+Xie2021_PRJNA657455	Capra hircus	rumen	6	6
+Xie2021_PRJNA657455	Dairy cattle	cecum	6	6
+Xie2021_PRJNA657455	Dairy cattle	colon	6	6
+Xie2021_PRJNA657455	Dairy cattle	omasum	6	6
+Xie2021_PRJNA657455	Dairy cattle	rectum	6	6
+Xie2021_PRJNA657455	Dairy cattle	reticulum	6	6
+Xie2021_PRJNA657455	Dairy cattle	rumen	6	6
+Xie2021_PRJNA657455	Ovis aries	cecum	5	5
+Xie2021_PRJNA657455	Ovis aries	colon	5	5
+Xie2021_PRJNA657455	Ovis aries	omasum	5	5
+Xie2021_PRJNA657455	Ovis aries	rectum	5	5
+Xie2021_PRJNA657455	Ovis aries	reticulum	5	5
+Xie2021_PRJNA657455	Ovis aries	rumen	5	5
+Xie2021_PRJNA657455	Roe deer	cecum	5	5
+Xie2021_PRJNA657455	Roe deer	colon	5	5
+Xie2021_PRJNA657455	Roe deer	omasum	5	5
+Xie2021_PRJNA657455	Roe deer	rectum	5	5
+Xie2021_PRJNA657455	Roe deer	reticulum	5	5
+Xie2021_PRJNA657455	Roe deer	rumen	5	5
+Xie2021_PRJNA657455	Water deer	cecum	5	5
+Xie2021_PRJNA657455	Water deer	colon	5	5
+Xie2021_PRJNA657455	Water deer	omasum	5	5
+Xie2021_PRJNA657455	Water deer	rectum	5	5
+Xie2021_PRJNA657455	Water deer	reticulum	5	5
+Xie2021_PRJNA657455	Water deer	rumen	5	5
+Xie2021_PRJNA657455	Yak	cecum	5	5
+Xie2021_PRJNA657455	Yak	colon	4	4
+Xie2021_PRJNA657455	Yak	omasum	5	5
+Xie2021_PRJNA657455	Yak	rectum	5	5
+Xie2021_PRJNA657455	Yak	reticulum	5	5
+Xie2021_PRJNA657455	Yak	rumen	5	5

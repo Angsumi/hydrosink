@@ -10,10 +10,11 @@ FeFeB_cpg, rpoB_n. Pseudocounts and log-ratios are computed in R (05_meta_analys
 c = half-min-nonzero is defined on the analysed set.
 QC flag: rpoB_n >= 200 (enough single-copy reads for a stable normaliser); others kept but flagged.
 """
-import pandas as pd, numpy as np, pathlib
+import pandas as pd, numpy as np, pathlib, os
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PS = ROOT / "analysis/results/per_sample"
+PS = pathlib.Path(os.environ.get("HS_PS", ROOT / "analysis/results/per_sample"))   # override: sensitivity re-aggregations only
+OUTD = pathlib.Path(os.environ.get("HS_OUTDIR", ROOT / "analysis/results"))
 GENES = ["mcrA", "acsB", "dsrA", "asrA", "nrfA", "narG", "napA", "frdA", "sdhA", "cooS", "fdhA", "NiFe", "FeFe", "rpoB"]
 RESP = ["dsrA", "asrA", "nrfA", "narG", "napA", "frdA"]
 MIN_RPOB = 200
@@ -58,9 +59,9 @@ def build(inv_path, out_path, keep_cols):
     print(f"{out_path.name}: {len(d)} quantified / {len(inv)} planned; qc_pass {d.qc_pass.sum()}")
 
 
-build(ROOT / "analysis/inventory/p1_runs.tsv", ROOT / "analysis/results/p1_matrix.tsv",
+build(ROOT / "analysis/inventory/p1_runs.tsv", OUTD / "p1_matrix.tsv",
       ["run_accession", "study", "host_species", "animal", "compartment", "chamber", "sample_alias"])
-build(ROOT / "analysis/inventory/p2_runs.tsv", ROOT / "analysis/results/p2_matrix.tsv",
+build(ROOT / "analysis/inventory/p2_runs.tsv", OUTD / "p2_matrix.tsv",
       ["run_accession", "study_accession", "sample_accession", "species", "host_tax_id", "vclass",
        "fermentation_site", "diet_class", "plant_pct", "captivity", "sample_type", "read_len",
        "instrument_model", "country"])
