@@ -10,6 +10,7 @@ set -uo pipefail
 RUN=$1; N=$2; MODE=$3; OUT=$4; S=$5
 SRA=${HS_SRA_ENV:-/home/angsuman/extra_spac/software_libs/conda_envs/sratools/bin}
 K=10; B=$((N / K)); PAR=${HS_BLOCK_PAR:-5}
+FQD=${HS_FQD_SLOTS:-8}; LOCKS=${HS_LOCK_DIR:-$(cd "$(dirname "$0")/.." && pwd)/locks}; mkdir -p "$LOCKS"
 [ "$S" -gt 0 ] 2>/dev/null || { echo "need TOTAL_SPOTS"; exit 2; }
 # offsets with S <= N would make blocks overlap (duplicate reads): take all S spots instead
 [ "$MODE" = offsets ] && [ "$S" -le "$N" ] && MODE=head
@@ -24,7 +25,10 @@ fetch() {  # k a b
   local k=$1 a=$2 b=$3 want=$(( 4 * ($3 - $2 + 1) )) t f
   for t in 1 2 3; do
     rm -rf "$TMP/b$k"
+    # machine-wide cap on concurrent fastq-dump (each caches up to ~0.7 GB RAM when reading remotely)
+    while :; do for s in $(seq 1 "$FQD"); do exec {fd}>"$LOCKS/fqd.$s"; flock -n "$fd" && break 2; exec {fd}>&-; done; sleep 5; done
     timeout 1800 "$SRA/fastq-dump" -N "$a" -X "$b" --split-files -O "$TMP/b$k" "$RUN" > "$TMP/b$k.log" 2>&1
+    exec {fd}>&-
     f="$TMP/b$k/${RUN}_1.fastq"; [ -f "$f" ] || f="$TMP/b$k/${RUN}.fastq"
     if [ -f "$f" ] && [ "$(wc -l < "$f")" -eq "$want" ]; then mv "$f" "$TMP/r1.$k.fq"; rm -rf "$TMP/b$k"; return 0; fi
     sleep $((10 * t))
