@@ -1,0 +1,77 @@
+Version:	1.03		
+Number	Item	Recommendation	Item Source
+Abstract			
+1	Structured or Unstructured Abstract	Abstract should include information on background, methods, results, and conclusions in structured or unstructured format.	STORMS
+1.1000000000000001	Study Design	State study design in abstract.	STORMS
+1.2	Sequencing methods	State the strategy used for metagenomic classification.	STORMS
+1.3	Specimens	Describe body site(s) studied.	STORMS
+Introduction			
+2	Background and Rationale	Summarize the underlying background, scientific evidence, or theory driving the current hypothesis as well as the study objectives.	STORMS
+2.1	Hypotheses	State the pre-specified hypothesis. If the study is exploratory, state any pre-specified study objectives.	STORMS
+Methods			
+3	Study Design	Describe the study design.	STORMS
+3.1	Participants	State what the population of interest is, and the method by which participants are sampled from that population. Include relevant information on physiological state of the subjects or stage in the life history of disease under study when participants were sampled.	STORMS
+3.2	    Geographic location	State the geographic region(s) where participants were sampled from.	MIxS: geographic location (country and/or sea,region)
+3.3	    Relevant Dates	State the start and end dates for recruitment, follow-up, and data collection.	STORMS
+3.4	    Eligibility criteria	List any criteria for inclusion and exclusion of recruited participants. 	Modified STROBE
+3.5	    Antibiotics Usage	List what is known about antibiotics usage before or during sample collection.	STORMS
+3.6	    Analytic sample size	Explain how the final analytic sample size was calculated, including the number of cases and controls if relevant, and reasons for dropout at each stage of the study. This should include the number of individuals in whom microbiome sequencing was attempted and the number in whom microbiome sequencing was successful.	STORMS
+3.7	    Longitudinal Studies	For longitudinal studies, state how many follow-ups were conducted, describe sample size at follow-up by group or condition, and discuss any loss to follow-up.	STORMS
+3.8	    Matching	For matched studies, give matching criteria.	Modified STROBE
+3.9	    Ethics	State the name of the institutional review board that approved the study and protocols, protocol number and date of approval, and procedures for obtaining informed consent from participants.	STORMS
+4	Laboratory methods	State the laboratory/center where laboratory work was done. 	STORMS
+4.0999999999999996	    Specimen collection	State the body site(s) sampled from and how specimens were collected.	MIxS: sample collection device or method; host body site
+4.2	    Shipping	Describe how samples were stored and shipped to the laboratory.	STORMS
+4.3	    Storage	Describe how the laboratory stored samples, including time between collection and storage and any preservation buffers or refrigeration used.	STORMS
+4.4000000000000004	    DNA extraction	Provide DNA extraction method, including kit and version if relevant.	MIxS: nucleic acid extraction
+4.5	    Human DNA sequence depletion or microbial DNA enrichment	Describe whether human DNA sequence depletion or enrichment of microbial or viral DNA was performed.	STORMS
+4.5999999999999996	    Primer selection	Provide primer selection and DNA amplification methods as well as variable region sequenced (if applicable).	MIxS: pcr primers
+4.7	    Positive Controls	Describe any positive controls (mock communities) if used.	STORMS
+4.8	    Negative Controls	Describe any negative controls if used.	STORMS
+4.9000000000000004	    Contaminant mitigation and identification	Provide any laboratory or computational methods used to control for or identify microbiome contamination from the environment, reagents, or laboratory.	STORMS
+4.0999999999999996	    Replication	Describe any biological or technical replicates included in the sequencing, including which steps were replicated between them. 	STORMS
+4.1100000000000003	    Sequencing strategy	Major divisions of strategy, such as shotgun or amplicon sequencing.	MIxS: sequencing method
+4.12	    Sequencing methods	State whether experimental quantification was used (QMP/cell count based, spike-in based) or whether relative abundance methods were applied.	STORMS
+4.13	    Batch effects	Detail any blocking or randomization used in study design to avoid confounding of batches with exposures or outcomes. Discuss any likely sources of batch effects, if known.	STORMS
+4.1399999999999997	    Metatranscriptomics	Detail whether any mRNA enrichment was performed and whether/how retrotranscription was performed prior to sequencing. Provide size range of isolated transcripts. Describe whether the sequencing library was stranded or not. Provide details on sequencing methods and platforms.	STORMS
+4.1500000000000004	    Metaproteomics	Detail which protease was used for digestion. Provide details on proteomic methods and platforms (e.g. LC-MS/MS, instrument type, column type, mass range, resolution, scan speed, maximum injection time, isolation window, normalised collision energy, and resolution). 	STORMS
+4.16	    Metabolomics	Specify the analytic method used (such as nuclear magnetic resonance spectroscopy or mass spectrometry). For mass spectrometry, detail which fractions were obtained (polar and/or non polar) and how these were analyzed. Provide details on metabolomics methods and platforms (e.g. derivatization, instrument type, injection type, column type and instrument settings).	STORMS
+5	Data sources/ measurement 	For each non-microbiome variable, including the health condition, intervention, or other variable of interest, state how it was defined, how it was measured or collected, and any transformations applied to the variable prior to analysis. 	MIxS: host disease status 
+6	Research design for causal inference	Discuss any potential for confounding by variables that may influence both the outcome and exposure of interest. State any variables controlled for and the rationale for controlling for them.	STORMS
+6.1	    Selection bias	Discuss potential for selection or survival bias.	STORMS
+7	Bioinformatic and Statistical Methods	Describe any transformations to quantitative variables used in analyses (e.g. use of percentages instead of counts, normalization, rarefaction, categorization).	STORMS
+7.1	    Quality Control	Describe any methods to identify or filter low quality reads or samples.	MIxS: sequence quality check
+7.2	    Sequence analysis	Describe any taxonomic, functional profiling, or other sequence analysis performed.	MIxS: feature prediction; similarity search method
+7.3	    Statistical methods	Describe all statistical methods.	Modified STROBE
+7.4	    Longitudinal analysis	If the study is longitudinal, include a section that explicitly states what analysis methods were used (if any) to account for grouping of measurements by individual or patterns over time.	STORMS
+7.5	    Subgroup analysis	Describe any methods used to examine subgroups and interactions.	STROBE
+7.6	    Missing data	Explain how missing data were addressed.	STROBE
+7.7	    Sensitivity analyses	Describe any sensitivity analyses.	STROBE
+7.8	    Findings	State criteria used to select findings for reporting.	STORMS
+7.9	    Software	Cite all software (including read mapping software) and databases (including any used for taxonomic reference or annotating amplicons, if applicable) used. Include version numbers.	Modified STREGA
+8	Reproducible research	Make a statement about whether and how others can reproduce the reported analysis.	STORMS
+8.1	    Raw data access	State where raw data may be accessed including demultiplexing information.	STORMS
+8.1999999999999993	    Processed data access	State where processed data may be accessed.	STORMS
+8.3000000000000007	    Participant data access	State where individual participant data such as demographics and other covariates may be accessed, and how they can be matched to the microbiome data.	STORMS
+8.4	    Source code access	State where code may be accessed.	STORMS
+8.5	    Full results	Provide full results of all analyses, in computer-readable format, in supplementary materials.	STORMS
+Results			
+9	Descriptive data	Give characteristics of study participants (e.g. dietary, demographic, clinical, social) and information on exposures and potential confounders.	STROBE
+10	Microbiome data	Report descriptive findings for microbiome analyses with all applicable outcomes and covariates.	STORMS
+10.1	    Taxonomy	Identify taxonomy using standardized taxon classifications that are sufficient to uniquely identify taxa.	STORMS
+10.199999999999999	    Differential abundance	Report results of differential abundance analysis by the variable of interest and (if applicable) by time, clearly indicating the direction of change and total number of taxa tested.	STORMS
+10.3	    Other data types	Report other data analyzed--e.g. metabolic function, functional potential, MAG assembly, and RNAseq.	STORMS
+10.4	    Other statistical analysis	Report any statistical data analysis not covered above.	STORMS
+Discussion			
+11	Key results	Summarise key results with reference to study objectives 	STROBE
+12	Interpretation	Give a cautious overall interpretation of results considering objectives, limitations, multiplicity of analyses, results from similar studies, and other relevant evidence.	STROBE
+13	Limitations	Discuss limitations of the study, taking into account sources of potential bias or imprecision.	STROBE
+13.1	     Bias	Discuss any potential for bias to influence study findings.	STORMS
+13.2	     Generalizability	Discuss the generalisability (external validity) of the study results 	STROBE
+14	Ongoing/future work	Describe potential future research or ongoing research based on the study's findings.	STORMS
+Other information			
+15	Funding	Give the source of funding and the role of the funders for the present study and, if applicable, for the original study on which the present article is based 	STROBE
+15.1	    Acknowledgements	Include acknowledgements of those who contributed to the research but did not meet critera for authorship.	STORMS
+15.2	    Conflicts of Interest	Include a conflicts of interest statement.	STORMS
+16	Supplements	Indicate where supplements may be accessed and what materials they contain.	STORMS
+17	Supplementary data	Provide supplementary data files of results with for all taxa and all outcome variables analyzed. Indicate the taxonomic level of all taxa.	STORMS
