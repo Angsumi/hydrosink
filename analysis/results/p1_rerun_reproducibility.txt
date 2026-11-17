@@ -1,0 +1,17 @@
+SRR28204437 identical
+SRR28204439 identical
+SRR28204441 identical
+SRR28204451 identical
+SRR28204458 identical
+SRR28204462 identical
+SRR28204435 identical
+SRR28204436 identical
+SRR28204440 identical
+SRR28204452 identical
+SRR28204454 identical
+SRR28204455 identical
+SRR28204457 identical
+SRR28204459 identical
+SRR28204463 identical
+SRR28204464 identical
+SRR28204442 identical

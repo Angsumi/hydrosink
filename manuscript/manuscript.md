@@ -185,7 +185,18 @@ Across hosts, ALR_resp was much lower in hindgut (−5.01; −6.50 to −3.77) a
 Within animals (P1), the hindgut had lower ALR_resp than the foregut at similar *mcrA* (above). Thus the cross-host pattern is directionally consistent with P4, but within animals respiratory and methanogenic potential did not vary inversely.
 
 ### Sensitivity to marker identity thresholds
-[PENDING: identity thresholds −10 / +10 percentage points; `sens_id_m10/`, `sens_id_p10/`; the 17 P1 runs needed for this are being re-quantified.]
+Shifting every per-gene identity threshold by −10 or +10 percentage points left all conclusions unchanged [`sens_id_m10/`, `sens_id_p10/`]:
+
+| Threshold shift | P1 pooled ALR_acet (95% CI) | P2 ΔDIC | P2 foregut − hindgut (95% HPD) | P3 pooled ρp (95% CI) |
+|---|---|---|---|---|
+| −10 | 2.61 (2.22–3.00) | −0.17 | 0.48 (−0.86 to 2.02) | 0.01 (−0.12 to 0.15) |
+| 0 (primary) | 2.62 (2.23–3.01) | −0.08 | 0.47 (−0.95 to 1.79) | 0.03 (−0.10 to 0.17) |
+| +10 | 2.64 (2.26–3.02) | −0.76 | 0.46 (−0.91 to 1.92) | 0.08 (−0.06 to 0.22) |
+
+Under the +10 threshold, 2 P2 samples fell below the *rpoB* QC threshold, leaving 800 samples in the model.
+
+### Reproducibility
+The 17 P1 runs quantified before DIAMOND hits were archived were processed again from scratch. The second pass used a different read source (NCBI SRA on AWS instead of ENA files) and a different DIAMOND block size. All 17 marker tables were byte-identical to the originals [`p1_rerun_reproducibility.txt`].
 
 ## Discussion
 **Summary.** The pre-registered positive control reproduced the published within-ruminant result [L02]. In every one of 53 animals across eight ruminant strata, the hindgut carried more acetogenic relative to methanogenic potential than the foregut, by about 12-fold. The test of generality failed. Across 166 vertebrate species, fermentation site did not predict the faecal *acsB*:*mcrA* ratio once host phylogeny, species and study were modelled, and this held in every pre-specified sensitivity analysis. Instead, fermenting guts carried more of both markers. Host phylogeny accounted for the largest share of variance in the ratio, as previously found for archaeal diversity with 16S data [L07]. Methanogenic and acetogenic potential were not negatively proportional within studies.
