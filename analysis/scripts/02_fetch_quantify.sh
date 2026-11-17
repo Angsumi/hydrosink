@@ -80,6 +80,9 @@ if [ "$L" -lt $((4*MINR)) ]; then
 
 "$ENV/fastp" -i "$WORK/r1.fq" -o "$WORK/r1.qc.fq" -q 20 -l 100 --trim_poly_g --cut_tail \
    -w "$T" -j "$OUT/$RUN.fastp.json" -h /dev/null 2> "$WORK/fastp.log"
+# No read passes QC (e.g. all reads < 100 bp, fails the pre-registered -l 100): protocol exclusion, logged explicitly.
+if [ ! -s "$WORK/r1.qc.fq" ]; then
+  echo -e "$RUN\tNO_READS_PASS_QC\t$(date -Is)" >> "$LOG/failures.tsv"; rm -f "$OUT/$RUN.fastp.json"; rm -rf "${WORK:?}"; exit 1; fi
 # RAM guard: at most HS_DMND_SLOTS (default 3) DIAMOND jobs at once; smaller blocks (-b 1 -c 4).
 # Search parameters (sensitivity, thresholds) are unchanged, so results are identical.
 # Block size HS_DMND_BLOCK (default 0.4; P1 used 1): peak RAM 5.4 GB at -b 1 vs 2.8 GB at -b 0.4, identical hit file
