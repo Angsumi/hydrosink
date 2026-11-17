@@ -1,0 +1,13 @@
+                                analysis     k     estimate         se
+                                  <char> <int>        <num>      <num>
+1:             rho_p(mcrA,acsB) Fisher-z    34  0.033301626 0.06796360
+2: rho_p, units with mcrA detected >=50%    18 -0.008309371 0.09163595
+        ci_lb     ci_ub      pi_lb     pi_ub         p      tau2       I2
+        <num>     <num>      <num>     <num>     <num>     <num>    <num>
+1: -0.1049714 0.1715746 -0.6392495 0.7058527 0.6273814 0.1046579 75.11367
+2: -0.2016443 0.1850256 -0.7299286 0.7133098 0.9288083 0.1085870 79.95088
+            QEp   rho_pooled  rho_ci_lb rho_ci_ub
+          <num>        <num>      <num>     <num>
+1: 1.769704e-12  0.033289321 -0.1045875 0.1699106
+2: 5.542074e-10 -0.008309179 -0.1989551 0.1829427
+There were 17 warnings (use warnings() to see them)

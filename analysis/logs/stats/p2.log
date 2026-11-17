@@ -1,0 +1,60 @@
+    outcome DIC_null DIC_full        dDIC
+     <char>    <num>    <num>       <num>
+1: alr_acet 3094.158 3094.241 -0.08347559
+2: alr_resp 2900.599 2903.148 -2.54837390
+3:   l_acsB 2793.615 2790.625  2.99031862
+4:   l_mcrA 2637.843 2636.023  1.81949209
+     outcome              contrast  post_mean        l95        u95 pMCMC
+      <char>                <char>      <num>      <num>      <num> <num>
+ 1: alr_acet     foregut - hindgut  0.4652531 -0.9477526  1.7859328 0.514
+ 2: alr_acet      hindgut - simple -0.6580408 -2.1857437  1.0055599 0.428
+ 3: alr_acet      foregut - simple -0.1927878 -2.0284414  1.7648552 0.858
+ 4: alr_acet avian_caecal - simple  1.1268172 -0.8778454  3.1710629 0.258
+ 5: alr_resp     foregut - hindgut -0.3512832 -1.6188304  0.9957993 0.560
+ 6: alr_resp      hindgut - simple -5.0053758 -6.5008689 -3.7705423 0.000
+ 7: alr_resp      foregut - simple -5.3566590 -6.9195274 -3.6852736 0.000
+ 8: alr_resp avian_caecal - simple -1.4820999 -3.0239520  0.3213863 0.076
+ 9:   l_acsB     foregut - hindgut  0.8755223 -0.3369573  2.0528262 0.158
+10:   l_acsB      hindgut - simple  3.0357822  1.6876860  4.5562812 0.000
+11:   l_acsB      foregut - simple  3.9113046  2.2613192  5.3610853 0.000
+12:   l_acsB avian_caecal - simple  2.0770248  0.3626712  3.6170450 0.018
+13:   l_mcrA     foregut - hindgut  0.3989379 -0.5920192  1.5202350 0.462
+14:   l_mcrA      hindgut - simple  3.5751052  2.4419710  4.6801217 0.000
+15:   l_mcrA      foregut - simple  3.9740432  2.4540146  5.3175915 0.000
+16:   l_mcrA avian_caecal - simple  0.8255921 -0.5774852  2.2462114 0.250
+     outcome component post_mode        l95       u95
+      <char>    <char>     <num>      <num>     <num>
+ 1: alr_acet  phylo_H2 0.3856887 0.21290016 0.6743252
+ 2: alr_acet   species 0.1535432 0.05926190 0.2671897
+ 3: alr_acet     study 0.1608333 0.07140162 0.2724040
+ 4: alr_resp  phylo_H2 0.3292172 0.13127105 0.5712387
+ 5: alr_resp   species 0.1358517 0.08581220 0.2882374
+ 6: alr_resp     study 0.2202225 0.12879709 0.3540918
+ 7:   l_acsB  phylo_H2 0.3863258 0.16127371 0.6477102
+ 8:   l_acsB   species 0.1687294 0.06893177 0.2886834
+ 9:   l_acsB     study 0.2235491 0.10350344 0.3588583
+10:   l_mcrA  phylo_H2 0.4476315 0.25791033 0.6785305
+11:   l_mcrA   species 0.1403612 0.06219245 0.2519412
+12:   l_mcrA     study 0.1539661 0.06677426 0.2310828
+               set     n species studies          contrast   post_mean
+            <char> <int>   <int>   <int>            <char>       <num>
+1: captivity_known   537     114     118 foregut - hindgut -0.09482182
+2: captivity_known   537     114     118  hindgut - simple -0.15594233
+3:    platform_cov   802     166     179 foregut - hindgut  0.43424063
+4:    platform_cov   802     166     179  hindgut - simple -0.65647878
+         l95       u95 pMCMC
+       <num>     <num> <num>
+1: -1.844605 1.7254131 0.870
+2: -2.165016 1.8904904 0.876
+3: -1.031887 1.7853217 0.574
+4: -2.329367 0.8885403 0.406
+   n_studies n_samples n_species                          term   estimate
+       <int>     <int>     <int>                        <char>      <num>
+1:        12       136        72 fermentation_siteavian_caecal -0.5169708
+2:        12       136        72      fermentation_siteforegut -1.2548089
+3:        12       136        72      fermentation_sitehindgut -0.9623331
+          se          t
+       <num>      <num>
+1: 0.9730823 -0.5312714
+2: 0.8881530 -1.4128297
+3: 0.7644210 -1.2589045

@@ -5,7 +5,7 @@ Re-aggregates the saved DIAMOND best hits (results/hits/<run>.m8.gz) with every 
 by SHIFT percentage points (floored at 40, the DIAMOND --id used for the search, below which no hits were kept).
 Counting, gene lengths, RPKM and copies-per-genome follow aggregate_markers.py exactly; only the threshold changes.
 Output: analysis/results/sens_id_<m10|p10>/per_sample/<run>.markers.tsv (same format), then 05a_assemble.py builds
-the matrices in that directory. Hits for runs re-run in analysis/sens/p1_rerun_hits are taken from there.
+the matrices in that directory. Hits for runs re-run in analysis/sens/p1_rerun_hits/{root,root2} are taken from there.
 Usage: 05c_identity_sensitivity.py SHIFT
 """
 import collections, gzip, json, os, pathlib, statistics, subprocess, sys
@@ -22,13 +22,14 @@ with open(A / "db/hydrosink.labels.tsv") as f:
         if sub: rs[f"{gene}_{sub}"].append(int(L))
 kb = lambda l: statistics.mean(l) * 3 / 1000
 runs = [l.strip() for q in ("p1_queue.txt", "p2_queue.txt") for l in open(A / "inventory" / q) if l.strip()]
-alt = A / "sens/p1_rerun_hits/root/analysis/results/hits"
+alts = [A / f"sens/p1_rerun_hits/{d}/analysis/results/hits" for d in ("root", "root2")]
 missing = []
 for run in runs:
     ps = A / "results/per_sample" / f"{run}.markers.tsv"
     if not ps.exists(): continue
     h = A / "results/hits" / f"{run}.m8.gz"
-    if not h.exists(): h = alt / f"{run}.m8.gz"
+    for alt in alts:
+        if not h.exists(): h = alt / f"{run}.m8.gz"
     if not h.exists(): missing.append(run); continue
     first = open(ps).readlines()[1].split("\t"); qc, ns = int(first[6]), int(first[7])   # same qc_reads as original
     g, s = collections.Counter(), collections.Counter()
