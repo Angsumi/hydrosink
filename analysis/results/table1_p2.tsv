@@ -1,0 +1,12 @@
+fermentation_site	vclass	samples	species	studies	median_qc_reads_M	median_rpoB_reads	wild	captive_domestic_lab	captivity_unknown
+avian_caecal	Aves	67	17	15	4.99	4461.0	36	21	10
+foregut	Mammalia	207	32	56	4.98	6464.0	46	88	73
+hindgut	Lepidosauria	2	1	1	5.0	5852.0	0	2	0
+hindgut	Mammalia	243	48	56	4.95	5691.0	90	84	69
+hindgut	Testudines	5	3	3	4.93	5417.0	0	4	1
+simple	Actinopterygii	31	4	7	4.97	6312.0	1	23	7
+simple	Amphibia	13	2	2	5.0	5371.0	0	0	13
+simple	Aves	48	20	13	4.97	2799.0	31	3	14
+simple	Lepidosauria	10	1	1	4.88	4005.5	10	0	0
+simple	Mammalia	176	38	43	4.9	5234.5	60	38	78
+ALL	ALL	802	166	179	4.96	5706.5	274	263	265

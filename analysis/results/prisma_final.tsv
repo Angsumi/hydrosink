@@ -1,0 +1,10 @@
+stage	n	note
+P2 runs selected (inventory, 10 per species cap)	930	
+P2 runs quantified (marker table produced)	926	not quantified: 4 {'NO_READS_PASS_QC': 4}
+P2 runs passing QC (rpoB reads >= 200)	845	failed QC: 81
+P2 runs in phylogenetic models (host has tree tip)	802	genus-only hosts without a tip excluded
+P2 species / studies in models	166 / 179	
+P1 runs selected	254	
+P1 runs quantified	254	
+P1 runs passing QC	253	
+P1 animals with both chambers (QC pass)	53	
