@@ -124,7 +124,7 @@ def main():
     tot_rate, etas = lr, [((len(local_runs) - lhave) / lr) if lr else (0 if lhave >= len(local_runs) else None)]
 
     ips = vm_ips()
-    with ThreadPoolExecutor(len(VMS)) as ex:
+    with ThreadPoolExecutor(max(1, len(VMS))) as ex:
         live = dict(zip(VMS, ex.map(lambda v: vm_live(v, ips.get(v, ("", ""))[0]) if ips.get(v, ("", ""))[0] else None, VMS)))
     for v in VMS:
         runs = lines(os.path.join(A, f"inventory/p2_vm_{v}.txt")); rs = set(runs)
