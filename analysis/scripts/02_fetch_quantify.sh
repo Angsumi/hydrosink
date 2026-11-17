@@ -38,7 +38,8 @@ if [ ! -f "$WORK/r1.ok" ]; then
     if bash "$ROOT/analysis/scripts/fetch_aws_blocks.sh" "$RUN" "$N" "$MODE" "$WORK/r1.fq" "$RC" > "$WORK/aws.log" 2>&1; then
       touch "$WORK/r1.ok"; echo -e "$RUN\tAWS_SRA\t$MODE\t$(date -Is)" >> "$LOG/source.tsv"
     elif [ "$MODE" != head ]; then
-      echo -e "$RUN\tAWS_FAIL_$MODE\t$(date -Is)" >> "$LOG/failures.tsv"; exit 1
+      # remove partial files so a failed run cannot fill the disk (retry passes fetch again from scratch)
+      echo -e "$RUN\tAWS_FAIL_$MODE\t$(date -Is)" >> "$LOG/failures.tsv"; cp "$WORK/aws.log" "$LOG/fail_$RUN.aws.log" 2>/dev/null; rm -rf "${WORK:?}"; exit 1
     else
       echo -e "$RUN\tAWS_FAIL_ENA_FALLBACK\t$(date -Is)" >> "$LOG/flags.tsv"; rm -f "$WORK/r1.fq"
     fi
