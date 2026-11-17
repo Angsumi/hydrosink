@@ -121,7 +121,7 @@ def main():
                  if "offsets" in l and l.split("\t")[0] in lset})
     print(f"{'this PC':<14}{f'{lhave}/{len(local_runs)}':>14}{lr:>11}{fmt_eta(len(local_runs) - lhave, lr):>9}"
           f"{dm:>10}{cpu + '%':>6}{mem[2] + '/' + mem[1] + ' GB':>11}{fails:>6}  job {act}")
-    tot_rate, etas = lr, [((len(local_runs) - lhave) / lr) if lr else None]
+    tot_rate, etas = lr, [((len(local_runs) - lhave) / lr) if lr else (0 if lhave >= len(local_runs) else None)]
 
     ips = vm_ips()
     with ThreadPoolExecutor(len(VMS)) as ex:
