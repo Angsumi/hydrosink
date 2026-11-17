@@ -70,3 +70,12 @@ against the ENA MD5 before the result above was produced.
 
 ## 5. Still planned, not implemented (unchanged from v1.1)
 In-silico marker specificity benchmark; acsB phylogenetic placement; dated-tree sensitivity; Methods rewrite.
+
+## Addendum (2026-11-17, during P2; no effect on results)
+P2 started 2026-11-17 07:49. The job was stopped twice by the system memory guard (systemd-oomd) after 40 / 930 runs:
+three concurrent DIAMOND searches at `-b 1` need ~5.4 GB each. DIAMOND block size changed from `-b 1` to `-b 0.4`
+(`HS_DMND_BLOCK`). Test on P2 run SRR25820354 (same query, all other parameters equal): peak RAM 5.44 GB (`-b 1`) vs
+2.77 GB (`-b 0.4`), wall time 7:39 for both, and **identical hit files** (31,775 hits, identical md5 of sorted output).
+The reference database (99 MB) fits in one block at either setting, so each query is searched against the whole
+reference in one pass. Thread count did not change memory (5.36 GB at 3 threads). P1 (run at `-b 1`) is not re-run.
+The 40 P2 runs finished before the change used `-b 1`.
