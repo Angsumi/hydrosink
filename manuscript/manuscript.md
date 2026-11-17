@@ -101,6 +101,8 @@ Pre-specified P2 sensitivity analyses:
 
 **Sensitivity of thresholds.** Marker counts were re-derived from the saved DIAMOND hits with all identity thresholds shifted by −10 and +10 percentage points (floor 40%, the search cut-off), and the P1, P3 and primary P2 analyses were repeated (`05c_identity_sensitivity.py`, `05d_sensitivity_sets.R`). With a shift of 0 the re-derivation reproduced all 1,163 original marker tables byte for byte.
 
+***acsB* attribution (post-hoc).** The pre-planned phylogenetic placement of *acsB* reads was not possible because reads were not retained. Instead, each *acsB* read was attributed to the NCBI taxonomy (E-utilities) of its best-hit reference protein. P1, P3 and the primary P2 model were repeated with *acsB* restricted to bacterial or to Bacillota references (`08a`–`08c` scripts).
+
 **P1 sampling check.** Five P1 runs drawn with a fixed seed before the data were analysed were re-quantified with multi-offset sampling and compared with head sampling (amendment v1.2 §2).
 
 ### Data and code availability
@@ -195,6 +197,21 @@ Shifting every per-gene identity threshold by −10 or +10 percentage points lef
 
 Under the +10 threshold, 2 P2 samples fell below the *rpoB* QC threshold, leaving 800 samples in the model.
 
+### Taxonomic origin of *acsB* reads (post-hoc)
+The *acsB* reference set includes Wood–Ljungdahl homologues from non-acetogenic lineages: 122 of 371 references are archaeal and 49 come from Thermodesulfobacteriota [`acsb/acsb_ref_taxonomy.tsv`]. Attributing each read to the NCBI taxonomy of its best-hit reference [`acsb/acsb_reads_by_phylum.tsv`]:
+- Bacillota received 81–95% of *acsB* reads in every group; 63% of the Bacillota reads hit Lachnospiraceae references [`acsb/acsb_reads_by_family.tsv`].
+- Spirochaetota received 4–14%.
+- Archaeal references received ≤ 1.5% in each P2 group and 3.6% in P1 foregut samples, mostly Thermoplasmatota.
+- Thermodesulfobacteriota received 8.4% in avian-caecal samples and < 1% elsewhere.
+
+We repeated the analyses with *acsB* counted only from bacterial references (228 references) or only from Bacillota references (150). Conclusions were unchanged [`acsb_bacterial/`, `acsb_bacillota/`]:
+
+| *acsB* references | P1 pooled ALR_acet (95% CI) | P2 ΔDIC | P2 foregut − hindgut (95% HPD) | P3 pooled ρp (95% CI) |
+|---|---|---|---|---|
+| All (primary) | 2.62 (2.23–3.01) | −0.08 | 0.47 (−0.95 to 1.79) | 0.03 (−0.10 to 0.17) |
+| Bacterial only | 2.66 (2.28–3.04) | −0.02 | 0.53 (−0.79 to 2.05) | 0.03 (−0.11 to 0.16) |
+| Bacillota only | 2.74 (2.36–3.13) | 0.36 | 0.52 (−0.90 to 1.96) | 0.02 (−0.11 to 0.16) |
+
 ### Reproducibility
 The 17 P1 runs quantified before DIAMOND hits were archived were processed again from scratch. The second pass used a different read source (NCBI SRA on AWS instead of ENA files) and a different DIAMOND block size. All 17 marker tables were byte-identical to the originals [`p1_rerun_reproducibility.txt`].
 
@@ -211,7 +228,8 @@ With the present design we cannot distinguish these explanations. The within-stu
 **Relation to prior work.** Marsupials show heterogeneous H₂-management potential across species [L01], and our cross-host results generalise that heterogeneity: categories defined by gut anatomy do not delimit H₂-sink partitioning. In rumen, H₂ uptake is shared among several guilds [L03]. The absence of a trade-off between *mcrA* and *acsB* is consistent with this, but gene abundance does not measure flux.
 
 **Limitations.**
-- **Marker abundance is genetic potential, not activity or flux.** *acsB* also occurs outside reductive acetogens; the pre-planned phylogenetic placement of *acsB* reads was **[NOT DONE]**.
+- **Marker abundance is genetic potential, not activity or flux.** *acsB* also occurs outside reductive acetogens.
+- ***acsB* attribution.** The pre-planned phylogenetic placement of *acsB* reads could not be done because reads were deleted after quantification. It was replaced post hoc by best-hit taxonomic attribution and taxon-restricted re-analyses, which left all conclusions unchanged. Best-hit attribution cannot show whether a Bacillota *acsB* carrier is itself a reductive acetogen.
 - **Normaliser.** The normaliser is bacterial *rpoB*, so *mcrA* copies per genome are relative to bacterial genomes.
 - **Read sampling.** Each sample is 5 × 10⁶ forward reads. P1 used head sampling, which differed from multi-offset sampling for *acsB* in one of five tested runs.
 - **Pre-specified gate.** Gate 1b failed its pre-specified rule on one of ten checks, and the protocol was changed accordingly (amendment v1.2).
