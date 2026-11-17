@@ -38,8 +38,21 @@ if [ "$FETCH" = vdb ] || [ "$FETCH" = sra ]; then
     if [ "$FETCH" = sra ]; then
       SRC="$TMP/$RUN.sra"; U="https://sra-pub-run-odp.s3.amazonaws.com/sra/$RUN/$RUN"
       CL=$(curl -sI --max-time 60 "$U" | awk -F': ' 'tolower($1)=="content-length"{print $2+0}')
-      curl -sf --max-time 3600 -o "$SRC" "$U" || ok=0
-      [ "$ok" = 1 ] && [ -n "$CL" ] && [ "$(stat -c %s "$SRC" 2>/dev/null || echo 0)" -eq "$CL" ] || ok=0
+      if [ -z "$CL" ] || [ "$CL" -gt $(( ${HS_SRA_MAX_GB:-30} * 1073741824 )) ]; then
+        SRC="$RUN"; echo "no size or > ${HS_SRA_MAX_GB:-30} GB: reading remotely instead"   # avoid huge downloads
+      else
+        # disk reservation: wait until free space minus other runs' reservations covers this file + 5 GB
+        NEED=$(( CL / 1048576 + 5120 ))
+        while :; do
+          exec {rl}>"$LOCKS/disk.lock"; flock "$rl"
+          FREE=$(df -Pm "$TMP" | awk 'NR==2{print $4}')
+          RES=$(cat "$LOCKS"/res.* 2>/dev/null | awk '{s+=$1}END{print s+0}')
+          if [ $(( FREE - RES )) -ge "$NEED" ]; then echo "$NEED" > "$LOCKS/res.$RUN"; exec {rl}>&-; break; fi
+          exec {rl}>&-; sleep 30
+        done
+        curl -sf --max-time 3600 -o "$SRC" "$U" || ok=0
+        [ "$ok" = 1 ] && [ "$(stat -c %s "$SRC" 2>/dev/null || echo 0)" -eq "$CL" ] || ok=0
+      fi
     fi
     if [ "$ok" = 1 ]; then
       awk -v n="$VP" -v d="$TMP" '{print > (d "/plan.g" ((NR-1) % n))}' "$TMP/plan"
@@ -74,7 +87,7 @@ for f in fh.values():
         sys.exit("extra lines in group file")
 EOF
     fi
-    rm -f "$TMP/$RUN.sra" "$TMP"/g*.fq
+    rm -f "$TMP/$RUN.sra" "$TMP"/g*.fq "$LOCKS/res.$RUN"
     if [ "$ok" = 1 ] && [ "$(wc -l < "$OUT")" -eq $((4 * EXP)) ]; then
       rm -rf "$TMP"; echo "$RUN $MODE $EXP reads ($FETCH, $VP parallel groups)"; exit 0
     fi

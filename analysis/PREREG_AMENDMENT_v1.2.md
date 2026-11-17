@@ -96,3 +96,9 @@ The 40 P2 runs finished before the change used `-b 1`.
   the same vdb-dump/converter in 5 parallel groups, reassembled in block order, then the .sra file is deleted.
   Check on SRR32584038: output FASTQ byte-identical (md5) to the single-stream extraction, whose reads matched
   fastq-dump. 86 more runs moved from this PC to the VMs (lists in `inventory/p2_vm_*.txt`).
+- Disk-full incident (2026-11-17 ~16:45-17:15 IST, hs-p2-c56): concurrent whole-file downloads filled the VM disk;
+  ~25 runs were logged `AWS_FAIL_offsets` because of this local error, not because the data were unavailable.
+  Fixes: per-download disk reservation (file size + 5 GB, waits instead of failing), runs with .sra > 30 GB read
+  remotely, partial files removed on failure. These runs are re-attempted by the queue's retry passes; the PRISMA
+  "not retrievable" count will use the final state (runs without a marker table after all passes), not
+  `failures.tsv` entries.
