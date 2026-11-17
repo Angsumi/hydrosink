@@ -21,6 +21,24 @@ for k in $(seq 0 $((K - 1))); do
   b=$((a + B - 1)); [ "$b" -gt "$S" ] && b=$S
   [ "$a" -le "$S" ] && echo "$k $a $b" >> "$TMP/plan"
 done
+# Fast path (default, HS_FETCH=vdb): one vdb-dump process for all blocks, without the NAME column.
+# fastq-dump spends minutes per process fetching original spot names remotely; bases/qualities are identical.
+EXP=0; while read -r k a b; do EXP=$((EXP + b - a + 1)); done < "$TMP/plan"
+if [ "${HS_FETCH:-vdb}" = vdb ]; then
+  RANGES=$(awk '{printf "%s%s-%s", (NR>1?",":""), $2, $3}' "$TMP/plan")
+  PY=${HS_PY:-/home/angsuman/extra_spac/software_libs/conda_envs/hydrosink/bin/python3.11}
+  CONV="$(cd "$(dirname "$0")" && pwd)/vdb_tab_to_r1fq.py"
+  for t in 1 2 3; do
+    timeout 3600 "$SRA/vdb-dump" -I -R "$RANGES" -C READ,QUALITY,READ_LEN -f tab "$RUN" 2> "$TMP/vdb.err" \
+      | "$PY" -I "$CONV" "$RUN" "$TMP/plan" > "$OUT" 2> "$TMP/conv.err"
+    st=("${PIPESTATUS[@]}")
+    if [ "${st[0]}" -eq 0 ] && [ "${st[1]}" -eq 0 ] && [ "$(wc -l < "$OUT")" -eq $((4 * EXP)) ]; then
+      rm -rf "$TMP"; echo "$RUN $MODE $EXP reads (vdb-dump)"; exit 0
+    fi
+    echo "vdb-dump attempt $t failed (rc ${st[*]}): $(tail -c 200 "$TMP/conv.err")"; sleep $((20 * t))
+  done
+  echo "vdb-dump failed 3x; falling back to per-block fastq-dump"
+fi
 fetch() {  # k a b
   local k=$1 a=$2 b=$3 want=$(( 4 * ($3 - $2 + 1) )) t f
   for t in 1 2 3; do
