@@ -1,0 +1,4 @@
+run	feature	level	reads	rpkm	cpg	qc_reads	n_streamed
+SRR13282573	acsB	gene	0	0	nan	4966994	5000000
+SRR13282573	mcrA	gene	0	0	nan	4966994	5000000
+SRR13282573	rpoB	gene	0	0	nan	4966994	5000000
