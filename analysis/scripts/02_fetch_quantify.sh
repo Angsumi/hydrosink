@@ -14,6 +14,10 @@ T=${THREADS:-4}
 WORK=$ROOT/analysis/work/$RUN; OUT=$ROOT/analysis/results/per_sample; LOG=$ROOT/analysis/logs
 mkdir -p "$OUT" "$LOG" "$OUT/../hits"
 [ -s "$OUT/$RUN.markers.tsv" ] && { echo "$RUN already done"; exit 0; }
+# Runs claimed by a Google Colab worker (analysis/inventory/p2_colab_claims.txt) are skipped here; the worker
+# runs this same script with HS_REMOTE=1. Results are merged back by scripts/colab/p2_sync.sh.
+if [ -z "${HS_REMOTE:-}" ] && grep -qx "$RUN" "$ROOT/analysis/inventory/p2_colab_claims.txt" 2>/dev/null; then
+  echo "$RUN claimed by Colab"; exit 0; fi
 mkdir -p "$WORK"
 # Resumable download (v2, 2026-11-16): the compressed head of R1 is saved on the SSD (raw.gz) and
 # extended with HTTP byte ranges, so an interrupted run continues where it stopped instead of
@@ -75,11 +79,13 @@ if [ "$L" -lt $((4*MINR)) ]; then
    -w "$T" -j "$OUT/$RUN.fastp.json" -h /dev/null 2> "$WORK/fastp.log"
 # RAM guard: at most HS_DMND_SLOTS (default 3) DIAMOND jobs at once; smaller blocks (-b 1 -c 4).
 # Search parameters (sensitivity, thresholds) are unchanged, so results are identical.
+# Block size HS_DMND_BLOCK (default 0.4; P1 used 1): peak RAM 5.4 GB at -b 1 vs 2.8 GB at -b 0.4, identical hit file
+# (P2 run SRR25820354, 31,775 hits, same md5; the 99 MB reference fits in one block either way).
 # DIAMOND threads: HS_DMND_THREADS (default 5; 3 slots x 5 = 15 of 16 cores). Thread count does not change hits.
 SLOTS=${HS_DMND_SLOTS:-3}; mkdir -p "$ROOT/analysis/locks"
 while :; do for s in $(seq 1 "$SLOTS"); do exec 9>"$ROOT/analysis/locks/dmnd.$s"; flock -n 9 && break 2; done; sleep 15; done
 "$ENV/diamond" blastx -q "$WORK/r1.qc.fq" -d "$DB" -o "$WORK/hits.m8" --fast \
-   --id 40 --query-cover 80 --evalue 1e-5 --max-target-seqs 1 --max-hsps 1 -p "${HS_DMND_THREADS:-5}" -b 1 -c 4 \
+   --id 40 --query-cover 80 --evalue 1e-5 --max-target-seqs 1 --max-hsps 1 -p "${HS_DMND_THREADS:-5}" -b "${HS_DMND_BLOCK:-0.4}" -c 4 \
    --tmpdir "$WORK" --outfmt 6 qseqid sseqid pident length qlen slen evalue bitscore --quiet
 exec 9>&-
 "$ENV/python3.11" -I "$ROOT/analysis/scripts/aggregate_markers.py" --m8 "$WORK/hits.m8" \

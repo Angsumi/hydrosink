@@ -1,0 +1,6 @@
+P2 pass 0 2026-11-17T07:49:38+05:30
+[2026-11-17T07:49:38+05:30] queue start: 930 runs, P=8, N=5000000, threads/job=3
+P2 pass 0 2026-11-17T10:31:39+05:30 (restart after oomd kill, P=5)
+[2026-11-17T10:31:39+05:30] queue start: 930 runs, P=5, N=5000000, threads/job=3
+P2 pass 0 2026-11-17T10:33:57+05:30 (2 DIAMOND slots x 7 threads, P=4)
+[2026-11-17T10:33:57+05:30] queue start: 930 runs, P=4, N=5000000, threads/job=3
