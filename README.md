@@ -23,7 +23,8 @@ Every number in the manuscript comes from a file in `analysis/results/` named ne
 bash run_all.sh
 ```
 Checks file integrity, rebuilds the matrices and re-runs every model, sensitivity analysis, table and figure.
-About 2–3 h, dominated by the MCMCglmm chains. The dated-tree step needs internet access to the TimeTree API.
+Verified 2026-11-18: about 1 h on 16 cores; all 103 result tables byte-identical to the committed ones (`analysis/results/rerun_comparison.tsv`).
+Independent steps run in parallel. The dated-tree step needs internet access to the TimeTree API.
 
 ## Full pipeline (from public reads)
 1. `analysis/scripts/01_build_inventory.py`, `01b_host_traits.py`, `01c_host_tree.py`, `01d_curate_metadata.py`: screening, traits, tree, curation.

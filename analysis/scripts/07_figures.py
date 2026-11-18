@@ -29,7 +29,8 @@ LAB = {"alr_acet": "ALR acet (acsB/mcrA) †", "alr_resp": "ALR resp (respirator
 
 def save(fig, name):
     for ext in ("pdf", "png"):
-        fig.savefig(F / f"{name}.{ext}", dpi=300, bbox_inches="tight")
+        fig.savefig(F / f"{name}.{ext}", dpi=300, bbox_inches="tight",
+                    metadata={"CreationDate": None} if ext == "pdf" else None)   # no timestamp: byte-reproducible
     plt.close(fig); print("wrote", name)
 
 

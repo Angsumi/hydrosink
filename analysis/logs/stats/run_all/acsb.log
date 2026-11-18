@@ -1,0 +1,7 @@
+1184 runs; missing hits: []; 37181 run x ref rows; 419434 acsB reads; 296 / 371 references hit
+p1_matrix.tsv: 254 quantified / 254 planned; qc_pass 253
+p2_matrix.tsv: 926 quantified / 930 planned; qc_pass 845
+p1_matrix.tsv: 254 quantified / 254 planned; qc_pass 253
+p2_matrix.tsv: 926 quantified / 930 planned; qc_pass 845
+bacterial: 228 references, 1180 runs, acsB reads kept 417642
+bacillota: 150 references, 1180 runs, acsB reads kept 389102
