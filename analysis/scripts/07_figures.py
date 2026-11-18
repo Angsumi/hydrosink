@@ -13,6 +13,7 @@ import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import matplotlib.patches
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]; R = ROOT / "analysis/results"; F = ROOT / "figures"; F.mkdir(exist_ok=True)
 # categorical palette (validated: dataviz validate_palette.js, light surface; categories are always text-labelled)
@@ -120,6 +121,35 @@ def figS1():
     fig.tight_layout(); save(fig, "figS1_detection_by_site")
 
 
+def fig1_design():
+    """Study design schematic (executed design; no data values except set sizes from prisma_final.tsv)."""
+    pf = pd.read_csv(R / "prisma_final.tsv", sep="\t") if (R / "prisma_final.tsv").exists() else None
+    n = (lambda s: pf.loc[pf.stage.str.startswith(s), "n"].iloc[0]) if pf is not None else (lambda s: "?")
+    fig, ax = plt.subplots(figsize=(7.2, 4.6)); ax.axis("off"); ax.set_xlim(0, 100); ax.set_ylim(0, 64)
+    def box(x, y, w, h, txt, fc, fs=6.6):
+        ax.add_patch(matplotlib.patches.FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.4,rounding_size=1.2", fc=fc, ec=MUTED, lw=0.6))
+        ax.text(x + w / 2, y + h / 2, txt, ha="center", va="center", fontsize=fs, color=INK)
+    def arrow(x0, y0, x1, y1): ax.annotate("", xy=(x1, y1), xytext=(x0, y0), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=0.7))
+    ax.text(0, 62, "a  Hypothesis", fontsize=8.5, weight="bold", color=INK); ax.text(50, 62, "b  Design", fontsize=8.5, weight="bold", color=INK)
+    box(1, 44, 15, 10, "Fermentative H$_2$\nproduction", "#ececea")
+    box(22, 50, 24, 8, "Foregut: methanogenesis\n(mcrA) dominates", "#d6e6f8", 6.0); box(22, 39, 24, 8, "Hindgut: acetogenesis\n(acsB) + respiratory sinks", "#fbe1d6", 6.0)
+    arrow(16.5, 50, 21.5, 54); arrow(16.5, 48, 21.5, 43)
+    ax.text(1, 35, "P3: mcrA and acsB trade off\n(negative proportionality within studies)\nP4 (exploratory): respiratory sinks\nhigher where mcrA is lower",
+            fontsize=5.8, color=INK, style="italic", va="top")
+    box(50, 50.5, 49, 8, f"P1 positive control: foregut vs hindgut, same animal\nLi 2025 + Xie 2021: {n('P1 runs passing QC')} runs, {n('P1 animals')} ruminants\nrandom-effects meta-analysis", "#d6e6f8", 5.6)
+    box(50, 40, 49, 8.5, f"P2: faeces across vertebrates: {n('P2 runs in phylogenetic models')} samples,\n{str(n('P2 species')).replace(' / ', ' species, ')} studies; MCMCglmm with fermentation site,\nphylogeny, species, study, diet, captivity, technical", "#fbe1d6", 5.6)
+    box(50, 30, 49, 8, "P3: within-study proportionality ρp(mcrA, acsB), pooled\nChecks: sensitivity sets, identity ±10, acsB attribution,\ndated tree, in-silico benchmark", "#dcf1e8", 5.6)
+    ax.text(0, 24, "c  Pipeline", fontsize=8.5, weight="bold", color=INK)
+    steps = ["ENA screening\n(PRISMA)", "5 M R1 reads\nfrom SRA (P1 head;\nP2 10 offsets)", "fastp QC\n(Q20, ≥100 bp)",
+             "DIAMOND blastx vs\nGreening DB v3\n+ RpoB", "copies per genome\n(marker / rpoB\nRPKM)", "metafor,\nMCMCglmm,\nproportionality"]
+    w, gap = 14.0, 2.6
+    for i, t in enumerate(steps):
+        x = i * (w + gap); box(x + 0.5, 6, w, 11, t, "#f4f4f2", 5.6)
+        if i < len(steps) - 1: arrow(x + w + 0.7, 11.5, x + w + gap + 0.3, 11.5)
+    ax.text(0.5, 0.5, "Schematic of the executed design; set sizes from analysis/results/prisma_final.tsv.", fontsize=6, color=MUTED)
+    save(fig, "fig1_study_design")
+
+
 def figS2_prisma():
     if not (ROOT / "analysis/prisma_log.tsv").exists() or not (R / "prisma_final.tsv").exists(): return
     pl = pd.read_csv(ROOT / "analysis/prisma_log.tsv", sep="\t"); pf = pd.read_csv(R / "prisma_final.tsv", sep="\t")
@@ -143,5 +173,5 @@ def figS2_prisma():
     save(fig, "figS2_prisma_flow")
 
 
-for f in (fig2, fig3, fig4, figS1, figS2_prisma):
+for f in (fig1_design, fig2, fig3, fig4, figS1, figS2_prisma):
     f()

@@ -1,13 +1,13 @@
 # Hindgut enrichment of acetogenic potential within ruminants does not generalise across vertebrates: a pre-registered, phylogenetically controlled synthesis of gut hydrogen-sink genes in public metagenomes
 
-**Ananda Prasad**¹ (ORCID [0009-0005-1736-8148](https://orcid.org/0009-0005-1736-8148)) and **Angsuman Das**² (ORCID [0000-0001-8146-7697](https://orcid.org/0000-0001-8146-7697))
+**Ananda Prasad**¹ (ORCID [0009-0005-1736-8148](https://orcid.org/0009-0005-1736-8148)) and **Angsuman Das**²\* (ORCID [0000-0001-8146-7697](https://orcid.org/0000-0001-8146-7697))
 
 ¹ Department of Zoology, Rajiv Gandhi University, Itanagar, Arunachal Pradesh, India. anandaprasad01@gmail.com
-² Pachhunga University College (a constituent college of Mizoram University), Aizawl, Mizoram, India. angsuman.das@rgu.ac.in
+² Department of Zoology, Pachhunga University College (a constituent college of Mizoram University), Aizawl, Mizoram, India. angsuman.das@rgu.ac.in
 
-[Corresponding author: AUTHORS TO DESIGNATE]
+\*Corresponding author: Angsuman Das, angsuman.das@rgu.ac.in
 
-*Draft v2 (2026-11-18). Every number in this draft comes from a script-generated file in `analysis/results/` (file named in brackets). Analyses run after the main results (post-hoc, or pre-planned but executed late) are labelled as such. Reporting checklists: `analysis/reporting/`. Reference codes [Lxx] map to `literature.csv`; all cited entries are VERIFIED there.*
+*Draft v2.2 (2026-11-18). Every number in this draft comes from a script-generated file in `analysis/results/` (file named in brackets). Analyses run after the main results (post-hoc, or pre-planned but executed late) are labelled as such. Reporting checklists: `analysis/reporting/`. Reference codes [Lxx] map to `literature.csv`; all cited entries are VERIFIED there.*
 
 ---
 
@@ -315,9 +315,22 @@ Within ruminants, the hindgut is consistently enriched for acetogenic relative t
 ## Declarations
 **Funding.** This work was self-funded by the authors; no external funding was received.
 **Competing interests.** The authors declare no competing interests.
-**Author contributions.** [AUTHORS TO COMPLETE (e.g. CRediT roles)]
-**Acknowledgements.** [AUTHORS TO COMPLETE]
-**Use of AI tools.** [AUTHORS TO COMPLETE: describe the use of an AI coding assistant (Claude, Anthropic) for pipeline implementation, analysis execution and drafting, as required by the target journal's policy.]
+**Author contributions (CRediT).** Ananda Prasad: Conceptualization, Methodology (overall research design), Writing – original draft. Angsuman Das: Formal analysis, Investigation. Both authors reviewed and approved the final manuscript.
+**Acknowledgements.** We thank the authors of the original studies for depositing their sequencing data and metadata in public archives, the developers of the Greening-lab marker gene databases, and the maintainers of ENA/SRA, Open Tree of Life and TimeTree.
+**Use of AI tools.** An AI assistant (Claude, Anthropic) was used under the authors' direction to write and run the analysis code (all code is in the public repository), to execute the analyses, and to draft and edit the manuscript text, including the Discussion. The authors defined the research question and design, reviewed all code, results and text, and take full responsibility for the content. No AI tool is listed as an author.
+
+## Figure legends
+**Figure 1. Study design.** (a) Hypothesis: gut fermentation architecture governs how fermentative H₂ is partitioned between methanogenesis (*mcrA*) and acetogenesis (*acsB*) plus respiratory sinks, with predictions P3 and P4. (b) Design: P1, a within-animal foregut-versus-hindgut contrast in ruminants used as a positive control; P2, a cross-vertebrate phylogenetic mixed model on faecal samples; P3, within-study proportionality, with the robustness checks performed. (c) Processing pipeline.
+
+**Figure 2. Within-animal foregut-versus-hindgut contrast (P1).** (a) Pooled hindgut − foregut differences in ln units for the primary outcome (ALR_acet, ln *acsB*/*mcrA*) and secondary outcomes; points are REML estimates with 95% Hartung–Knapp confidence intervals (black) and 95% prediction intervals (grey). (b) ALR_acet difference for each study × host-species stratum (mean ± 95% CI; *n* = animals); the grey band is the pooled 95% CI. Source: `p1_pooled.tsv`, `p1_stratum_effects.tsv`.
+
+**Figure 3. Faecal ALR_acet across vertebrates (P2).** (a) Species-mean ALR_acet by fermentation site; point size is proportional to the number of samples (maximum 10) and horizontal bars are medians. (b) Posterior differences between fermentation sites (mean and 95% HPD interval) from the phylogenetic mixed model with phylogeny, species and study random effects and diet, captivity, depth and read length as fixed effects. Source: `p2_species_means.tsv`, `p2_contrasts.tsv`.
+
+**Figure 4. Proportionality between *mcrA* and *acsB* within studies (P3).** Proportionality ρp with 95% bootstrap confidence intervals for each P2 study with ≥ 10 samples (grey) and each P1 study × chamber unit (blue); point size reflects sample size. The vertical line and grey band show the pooled estimate and its 95% CI. A trade-off predicts ρp < 0. Source: `p3_units.tsv`, `p3_pooled.tsv`.
+
+**Figure S1. Marker detection by fermentation site.** Share of P2 samples with ≥ 2 reads for each marker gene. Source: `detection_by_site.tsv`.
+
+**Figure S2. PRISMA flow diagram.** Screening of ENA runs to the P2 analysis set, with exclusions at each step; the P1 paired-compartment set is summarised below. Source: `prisma_log.tsv`, `prisma_final.tsv`.
 
 ## References
 - [L01] Bowerman KL, et al. (2025) *mSystems* 11:e01608-25. doi:10.1128/msystems.01608-25

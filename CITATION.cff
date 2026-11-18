@@ -9,7 +9,7 @@ authors:
     orcid: "https://orcid.org/0009-0005-1736-8148"
   - given-names: Angsuman
     family-names: Das
-    affiliation: "Pachhunga University College (constituent college of Mizoram University), Aizawl, Mizoram, India"
+    affiliation: "Department of Zoology, Pachhunga University College (constituent college of Mizoram University), Aizawl, Mizoram, India"
     orcid: "https://orcid.org/0000-0001-8146-7697"
 repository-code: "https://github.com/Angsumi/hydrosink"
 doi: "10.5281/zenodo.24330934"
@@ -21,6 +21,6 @@ identifiers:
     value: "10.5281/zenodo.24330935"
     description: "Version v2.1.0"
 license: MIT
-version: "2.1.0"
+version: "2.2.0"
 date-released: "2026-11-18"
 keywords: [metagenomics, hydrogen, methanogenesis, acetogenesis, gut microbiome, vertebrates, meta-analysis, phylogenetic comparative methods]
