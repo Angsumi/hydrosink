@@ -1,0 +1,39 @@
+p1_matrix.tsv: 254 quantified / 254 planned; qc_pass 253
+p2_matrix.tsv: 926 quantified / 930 planned; qc_pass 845
+started p1
+started p2
+started p3
+started offs
+started idm
+started idp
+started mouse
+started acsb
+                             taxon  P1 foregut  P1 hindgut  P2 avian_caecal  P2 foregut  P2 hindgut  P2 simple
+                       TOTAL_READS     6216.00    96953.00          6905.00   180239.00    58743.00   52201.00
+              Bacteria | Bacillota       81.39       93.62            83.50       93.14       89.45      95.38
+          Bacteria | Spirochaetota       14.04        6.21             3.50        6.70        8.42       3.76
+       Archaea | Methanobacteriota        0.13        0.00             1.27        0.01        1.53       0.22
+        Archaea | Thermoplasmatota        3.51        0.05             0.12        0.04        0.35       0.08
+Bacteria | Thermodesulfobacteriota        0.76        0.04             8.36        0.07        0.14       0.43
+                                             stage         n                                      note
+  P2 runs selected (inventory, 10 per species cap)       930                                       NaN
+        P2 runs quantified (marker table produced)       926 not quantified: 4 {'NO_READS_PASS_QC': 4}
+            P2 runs passing QC (rpoB reads >= 200)       845                             failed QC: 81
+P2 runs in phylogenetic models (host has tree tip)       802   genus-only hosts without a tip excluded
+                    P2 species / studies in models 166 / 179                                       NaN
+                                  P1 runs selected       254                                       NaN
+                                P1 runs quantified       254                                       NaN
+                                P1 runs passing QC       253                                       NaN
+           P1 animals with both chambers (QC pass)        53                                       NaN
+                     n   mcrA   acsB   dsrA   asrA   nrfA   narG   napA   frdA   NiFe   FeFe
+fermentation_site                                                                           
+avian_caecal        67  0.284  0.776  0.582  0.821  0.881  0.985  0.940  0.985  0.985  0.940
+foregut            207  0.884  0.971  0.662  0.966  0.971  0.952  0.976  1.000  1.000  1.000
+hindgut            250  0.604  0.976  0.756  0.936  0.968  0.908  0.980  0.996  1.000  0.992
+simple             278  0.122  0.673  0.410  0.824  0.831  0.960  0.942  0.960  0.939  0.885
+wrote fig2_p1_within_animal
+wrote fig3_p2_cross_host
+wrote fig4_p3_tradeoff
+wrote figS1_detection_by_site
+wrote figS2_prisma_flow
+done: analysis/results/*.tsv, figures/*
