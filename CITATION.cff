@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below (and the accompanying article, when published)."
+title: "HydroSink: gut hydrogen-sink genes across vertebrates — pipeline, results and manuscript"
+type: software
+authors:
+  - given-names: Ananda
+    family-names: Prasad
+    affiliation: "Department of Zoology, Rajiv Gandhi University, Itanagar, Arunachal Pradesh, India"
+    orcid: "https://orcid.org/0009-0005-1736-8148"
+  - given-names: Angsuman
+    family-names: Das
+    affiliation: "Pachhunga University College (constituent college of Mizoram University), Aizawl, Mizoram, India"
+    orcid: "https://orcid.org/0000-0001-8146-7697"
+repository-code: "https://github.com/Angsumi/hydrosink"
+license: MIT
+version: "2.1.0"
+date-released: "2026-11-18"
+keywords: [metagenomics, hydrogen, methanogenesis, acetogenesis, gut microbiome, vertebrates, meta-analysis, phylogenetic comparative methods]

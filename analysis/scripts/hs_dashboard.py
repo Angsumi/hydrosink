@@ -13,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 A = os.path.join(ROOT, "analysis")
 G = "/home/angsuman/extra_spac/software_libs/google-cloud-sdk/bin/gcloud"
-PROJ, ZONE = "hydrosink-p2-1117", "us-east4-c"
+PROJ, ZONE = os.environ.get("HS_GCP_PROJECT", ""), os.environ.get("HS_GCP_ZONE", "us-east4-c")
 VMS = []  # all VMs deleted 2026-11-17 after final sync
 KEY = os.path.expanduser("~/.ssh/google_compute_engine")
 KH = os.path.expanduser("~/.ssh/google_compute_known_hosts")

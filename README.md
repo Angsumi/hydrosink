@@ -1,5 +1,10 @@
 # HydroSink — gut hydrogen-sink genes across vertebrates (reproducibility package)
 
+**Authors:** Ananda Prasad (Department of Zoology, Rajiv Gandhi University; ORCID 0009-0005-1736-8148) and
+Angsuman Das (Pachhunga University College, Mizoram University; ORCID 0000-0001-8146-7697). Self-funded.
+**Cite:** see `CITATION.cff` (Zenodo DOI added on first release). **Licences:** code MIT (`LICENSE`); data, figures and
+text CC BY 4.0 (`LICENSE-DATA.md`); third-party files keep their own terms.
+
 **Status (2026-11-17): data processed, all pre-specified analyses run, manuscript draft v1 in `manuscript/manuscript.md`.**
 Every number in the manuscript comes from a file in `analysis/results/` named next to it.
 

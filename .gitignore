@@ -9,3 +9,11 @@ analysis/locks/
 analysis/results/bench/runs/*.names.gz
 analysis/bench/genomes/
 analysis/bench/work/
+# regenerable by run_all.sh / validation-only, or machine-specific
+analysis/results/*/per_sample/
+analysis/results/sens_id_p0/
+analysis/results/*.rds
+analysis/sens/*/root*/analysis/db
+analysis/sens/*/root*/analysis/scripts
+analysis/sens/*/root*/analysis/locks/
+analysis/logs/gcp_sync.log

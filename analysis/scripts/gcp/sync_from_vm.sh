@@ -5,7 +5,7 @@
 set -uo pipefail
 ROOT="/home/angsuman/extra_spac/Metagenomic Paper"
 G=/home/angsuman/extra_spac/software_libs/google-cloud-sdk/bin/gcloud
-ZONE=us-east4-c; PROJ=hydrosink-p2-1117; VMS=${HS_VMS:-"hs-p2-c56"}
+ZONE=${HS_GCP_ZONE:-us-east4-c}; PROJ=${HS_GCP_PROJECT:?set HS_GCP_PROJECT}; VMS=${HS_VMS:-"hs-p2-c56"}
 KEY=$HOME/.ssh/google_compute_engine
 SSH="ssh -i $KEY -o StrictHostKeyChecking=no -o UserKnownHostsFile=$HOME/.ssh/google_compute_known_hosts -o ConnectTimeout=20"
 while :; do
