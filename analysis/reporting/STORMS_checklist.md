@@ -71,8 +71,8 @@ laboratory and participant items refer to the source studies and are answered "n
 | 13.1 | Bias | MS Limitations. |
 | 13.2 | Generalizability | MS Limitations (ruminant-only P1; faeces only P2). |
 | 14 | Ongoing/future work | MS Discussion [brief; to expand]. |
-| 15 | Funding | [AUTHORS TO COMPLETE] |
-| 15.1 | Acknowledgements | [AUTHORS TO COMPLETE] |
-| 15.2 | Conflicts of interest | [AUTHORS TO COMPLETE] |
+| 15 | Funding | Self-funded; no external funding (MS Declarations). |
+| 15.1 | Acknowledgements | MS Declarations. |
+| 15.2 | Conflicts of interest | None declared (MS Declarations). |
 | 16 | Supplements | Figs S1–S2, supplementary tables = `analysis/results/` files named in MS. |
 | 17 | Supplementary data | Per-sample marker tables (all genes) in `results/per_sample/`. |

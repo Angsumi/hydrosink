@@ -46,6 +46,6 @@ answered for that design. "MS" = `manuscript/manuscript.md`.
 | 24a | Registration | **Not registered** in an external registry; time-stamped git tags `prereg-v1`, `-v1.1`, `-v1.2`. |
 | 24b | Protocol | `research_plan.md`, `analysis/config/config.yaml`, `analysis/scripts/05_meta_analysis.R` at tag `prereg-v1`. |
 | 24c | Amendments | `analysis/PREREG_AMENDMENT_v1.1.md`, `v1.2.md`; post-hoc analyses labelled in MS. |
-| 25 | Support | [AUTHORS TO COMPLETE] (compute: Google Cloud credits on the authors' account). |
-| 26 | Competing interests | [AUTHORS TO COMPLETE] |
+| 25 | Support | Self-funded; no external funding (MS Declarations). |
+| 26 | Competing interests | None declared (MS Declarations). |
 | 27 | Availability of data, code, materials | MS "Data and code availability"; all code in `analysis/scripts/`, per-sample outputs and hits with SHA-256 manifests. |
