@@ -12,6 +12,14 @@ authors:
     affiliation: "Pachhunga University College (constituent college of Mizoram University), Aizawl, Mizoram, India"
     orcid: "https://orcid.org/0000-0001-8146-7697"
 repository-code: "https://github.com/Angsumi/hydrosink"
+doi: "10.5281/zenodo.24330934"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24330934"
+    description: "Concept DOI (all versions)"
+  - type: doi
+    value: "10.5281/zenodo.24330935"
+    description: "Version v2.1.0"
 license: MIT
 version: "2.1.0"
 date-released: "2026-11-18"
