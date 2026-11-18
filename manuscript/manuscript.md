@@ -1,5 +1,12 @@
 # Hindgut enrichment of acetogenic potential within ruminants does not generalise across vertebrates: a pre-registered, phylogenetically controlled synthesis of gut hydrogen-sink genes in public metagenomes
 
+**Ananda Prasad**¹ (ORCID [0009-0005-1736-8148](https://orcid.org/0009-0005-1736-8148)) and **Angsuman Das**² (ORCID [0000-0001-8146-7697](https://orcid.org/0000-0001-8146-7697))
+
+¹ Department of Zoology, Rajiv Gandhi University, Itanagar, Arunachal Pradesh, India. anandaprasad01@gmail.com
+² Pachhunga University College (a constituent college of Mizoram University), Aizawl, Mizoram, India. angsuman.das@rgu.ac.in
+
+[Corresponding author: AUTHORS TO DESIGNATE]
+
 *Draft v2 (2026-11-18). Every number in this draft comes from a script-generated file in `analysis/results/` (file named in brackets). Analyses run after the main results (post-hoc, or pre-planned but executed late) are labelled as such. Reporting checklists: `analysis/reporting/`. Reference codes [Lxx] map to `literature.csv`; all cited entries are VERIFIED there.*
 
 ---
@@ -117,7 +124,7 @@ The pre-written product-name truth patterns (v1) missed RefSeq wording; for exam
 **P1 sampling check.** Five P1 runs drawn with a fixed seed before the data were analysed were re-quantified with multi-offset sampling and compared with head sampling (amendment v1.2 §2).
 
 ### Data and code availability
-Run accessions, curated metadata and per-sample marker tables are in `analysis/inventory/` and `analysis/results/per_sample/`; DIAMOND hits are in `analysis/results/hits/`, with SHA-256 manifests (`p1_manifest.sha256`, `p2_manifest.sha256`). All code is in `analysis/scripts/`. [Archive with DOI at submission.]
+Code, per-sample results, analysis outputs and this manuscript are available at https://github.com/Angsumi/hydrosink (archived on Zenodo, DOI [assigned on release]). Run accessions, curated metadata and per-sample marker tables are in `analysis/inventory/` and `analysis/results/per_sample/`; DIAMOND hits are in `analysis/results/hits/`, with SHA-256 manifests (`p1_manifest.sha256`, `p2_manifest.sha256`). All code is in `analysis/scripts/`. [Archive with DOI at submission.]
 
 ## Results
 ### Data set
@@ -255,16 +262,38 @@ TimeTree dated 152 of 165 nodes; 13 were interpolated and 22 were adjusted for c
 The 17 P1 runs quantified before DIAMOND hits were archived were processed again from scratch. The second pass used a different read source (NCBI SRA on AWS instead of ENA files) and a different DIAMOND block size. All 17 marker tables were byte-identical to the originals [`p1_rerun_reproducibility.txt`]. The complete statistical analysis was re-run from the per-sample outputs with a single script (`run_all.sh`; 57 min on 16 cores). All 103 result tables were byte-identical to those reported here [`rerun_comparison.tsv`].
 
 ## Discussion
-**Summary.** The pre-registered positive control reproduced the published within-ruminant result [L02]. In every one of 53 animals across eight ruminant strata, the hindgut carried more acetogenic relative to methanogenic potential than the foregut, by about 12-fold. The test of generality failed. Across 166 vertebrate species, fermentation site did not predict the faecal *acsB*:*mcrA* ratio once host phylogeny, species and study were modelled, and this held in every pre-specified sensitivity analysis. Instead, fermenting guts carried more of both markers. Host phylogeny accounted for the largest share of variance in the ratio, as previously found for archaeal diversity with 16S data [L07]. Methanogenic and acetogenic potential were not negatively proportional within studies.
+### Summary
+The pre-registered positive control reproduced the published within-ruminant result [L02]. In every one of 53 animals across eight ruminant strata, the hindgut carried more acetogenic relative to methanogenic potential than the foregut, by about 12-fold. The cross-vertebrate generalisation failed. Across 166 species, fermentation site did not predict the faecal *acsB*:*mcrA* ratio once host phylogeny, species and study were modelled. This held in every pre-specified sensitivity analysis, with threshold shifts, with taxon-restricted *acsB*, and on a dated host tree. Fermenting guts instead carried far more of both markers, host phylogeny accounted for the largest share of variance in the ratio, and methanogenic and acetogenic potential were not negatively proportional within studies.
 
-**Interpretation.** The research framework anticipated this outcome: a compartment effect inside animals with phylogenetic structure dominating between them (`research_plan.md` §1.5). Three non-exclusive explanations fit the data.
-1. **Sample type.** P2 used faeces, which integrate the whole tract. In a ruminant, the faecal community reflects the hindgut and not the rumen, so "foregut" hosts are not observed at their foregut in P2. The P1 rumen-versus-rectum contrast (2.80 ln units) shows that this alone does not abolish within-animal differences. The cross-host faecal comparison, however, contrasts hosts, not chambers.
-2. **Anatomy acts on load more than on partitioning.** Fermenting guts carry more *mcrA* and more *acsB*, as expected if longer retention and more fermentable substrate support larger hydrogenotrophic populations of both guilds.
-3. **Phylogeny and its correlates.** Lineage-specific microbial associations [L07] could fix the methanogen:acetogen balance more strongly than gut architecture does.
+### What changes inside a ruminant
+The within-animal shift is an expansion of acetogenic potential, not a loss of methanogenic potential. *acsB* rose by 2.92 ln units in the hindgut while *mcrA* did not change (+0.25, 95% CI −0.31 to 0.80), so the ratio moved almost entirely through its numerator. In the hindgut, 94% of *acsB* reads were attributed to Bacillota references and 59% to Lachnospiraceae references [`acsb/acsb_reads_by_family.tsv`], and restricting *acsB* to bacterial or Bacillota references strengthened rather than weakened the contrast (2.66 and 2.74 ln units).
 
-With the present design we cannot distinguish these explanations. The within-study analysis, the only one free of between-study confounding, also showed no site effect, but it rests on 12 studies.
+The benchmark supports reading this as acetyl-CoA synthase potential: *acsB* reads were assigned with a precision of 0.999 outside one archaeal locus and with sensitivity 0.96. Respiratory H₂-uptake potential, by contrast, was lower in the hindgut (*nrfA* −2.92, *narG* −1.00, group-1 [NiFe]-hydrogenase −0.94 ln units), while *dsrA* was higher. Within a ruminant, therefore, the hindgut does not substitute respiratory sinks for methanogenesis. It adds acetogenic potential on top of an unchanged methanogenic background, with a shift among respiratory pathways from nitrate/nitrite reduction towards sulfite reduction. Whether that potential translates into acetogenic flux cannot be decided from gene abundance; Li et al. reported direct measurements for goats [L02].
 
-**Relation to prior work.** Marsupials show heterogeneous H₂-management potential across species [L01], and our cross-host results generalise that heterogeneity: categories defined by gut anatomy do not delimit H₂-sink partitioning. In rumen, H₂ uptake is shared among several guilds [L03]. The absence of a trade-off between *mcrA* and *acsB* is consistent with this, but gene abundance does not measure flux.
+### Why the within-animal pattern does not appear across hosts
+**The null result is informative, not merely imprecise.** The foregut − hindgut contrast across hosts had a 95% HPD of −0.95 to 1.79 ln units. A cross-host hindgut advantage larger than about 1 ln unit is therefore incompatible with the data, and the 2.6-unit within-animal effect lies far outside that range. The same holds on the dated tree (−0.96 to 2.29) and in every sensitivity set.
+
+**Three explanations, not mutually exclusive, fit this pattern.**
+1. **Faeces sample the distal gut of every host.** In ruminants, the rumen-versus-rectum contrast (2.80 ln units) was as large as rumen versus caecum, so ruminant faeces carry the acetogen-rich, hindgut-type signature. A faecal comparison of "foregut" and "hindgut" hosts therefore compares two distal-gut communities, and P1 itself predicts little difference between them. P2, as designed, could detect architecture effects only insofar as foregut fermentation leaves a trace in the distal gut. Our data indicate that it does not do so for the *acsB*:*mcrA* ratio. The prediction conflated a chamber-level property with a host-level faecal one; this is a design lesson, not only a biological finding.
+2. **Architecture sets the amount of hydrogenotrophic potential, not its partition.** Relative to simple guts, foregut and hindgut hosts carried 21–53-fold more of both *mcrA* and *acsB*, and *mcrA* detection was strongly associated with every fermenting category. The marker genes rise together, so their ratio does not move. In simple guts *mcrA* was undetected in 88% of samples, so their ratio is often bounded by the pseudocount. For these hosts the relevant contrast is presence versus absence of a methanogenic guild, which the hurdle model captures, not a shift in partitioning.
+3. **Host lineage carries more of the signal than anatomy.** Phylogeny accounted for 39% of variance in the ratio with Grafen branch lengths and 78% on the dated tree. The estimate depends on branch lengths, but is large under both. This parallels the strong host-phylogenetic signal in gut archaeal diversity [L07] and suggests that lineage-specific microbial associations shape the methanogen:acetogen balance more than the compartment in which fermentation takes place. Study accounted for a further 16%, a reminder that technical and cohort differences between data sets are non-trivial in cross-study syntheses.
+
+The within-study analysis is the only design free of between-study confounding. It also showed no site effect, with point estimates in the direction opposite to P1, but it rests on 12 studies and 136 samples.
+
+### No trade-off between methanogenic and acetogenic potential
+A simple competitive model predicts that where methanogens are abundant, acetogens are scarce. Within studies we found no such relationship: pooled ρp 0.03, prediction interval −0.56 to 0.61. Units ranged from clearly negative (−0.80) to clearly positive (0.72), so the relationship is context-dependent rather than absent everywhere. Together with the joint increase of both markers in fermenting guts, this suggests that methanogenic and acetogenic potential are driven largely by a shared factor, the overall size of the hydrogenotrophic community, rather than by mutual exclusion. That fits the view that H₂ uptake in fermenting guts is shared among several guilds [L03]. Gene potential does not reveal which guild consumes most H₂ at a given time.
+
+### Respiratory sinks (P4)
+Across hosts, respiratory relative to methanogenic potential was much lower in fermenting guts, but mostly because *mcrA* was higher there. Within animals, respiratory potential was lower in the hindgut at unchanged *mcrA*. The data therefore do not show respiratory and methanogenic potential varying inversely as P4 proposed. Two of the respiratory markers (*napA*, *frdA*) also showed substantial cross-assignment from homologous enzymes in the benchmark, so this is the least reliable of the four outcomes.
+
+### Relation to prior work and implications
+These results agree with, and extend, single-lineage studies. Within ruminants, our pooled estimate across seven species and two studies matches the hindgut acetogen enrichment reported for goats [L02]. Across hosts, the heterogeneity of H₂-management potential reported among marsupials [L01] appears to be the general case: categories defined by gut anatomy do not delimit how H₂-sink potential is partitioned. Approaches to methane mitigation that rely on acetogens displacing methanogens find no support in natural cross-host variation of gene potential, where the two rise together. Within the ruminant tract, the hindgut remains a compartment where acetogenic potential is consistently high.
+
+**Future work.** Four next steps follow:
+- Compartment-resolved sampling of non-ruminant foregut fermenters (camelids, macropods) and of hindgut fermenters, to test P1 outside ruminants.
+- Metatranscriptomic or flux measurements to relate potential to activity.
+- Read placement or genome-resolved attribution of *acsB* to separate reductive acetogens from other Wood–Ljungdahl carriers.
+- Better metadata on diet and captivity for wild hosts.
 
 **Limitations.**
 - **Marker abundance is genetic potential, not activity or flux.** *acsB* also occurs outside reductive acetogens.
@@ -280,7 +309,15 @@ With the present design we cannot distinguish these explanations. The within-stu
 - **Marker specificity.** In simulated reads, *napA* and *frdA* had precision 0.65 and 0.57, so the respiratory sum (ALR_resp, P4) includes reads from homologous non-target enzymes. *mcrA* and *acsB* were specific. The benchmark genomes are reference isolates, not gut-community genomes, and the benchmark was run after the main analyses.
 - **Not done:** per-study risk-of-bias scoring and certainty-of-evidence grading (PRISMA items 11, 15, 18, 22; `analysis/reporting/PRISMA_2020_checklist.md`).
 
-**Conclusion.** Within ruminants, the hindgut is consistently enriched for acetogenic relative to methanogenic potential. Across vertebrates, faecal H₂-sink partitioning potential follows host phylogeny more than gut fermentation architecture, and methanogenic and acetogenic potential do not trade off. Fermentation architecture predicts how much hydrogenotrophic potential a gut carries, not how it is divided.
+### Conclusion
+Within ruminants, the hindgut is consistently enriched for acetogenic relative to methanogenic potential, through more *acsB* rather than less *mcrA*. Across vertebrates, faecal H₂-sink partitioning potential follows host phylogeny more than gut fermentation architecture, a cross-host effect as large as the within-animal one is excluded, and methanogenic and acetogenic potential do not trade off. Gut fermentation architecture predicts how much hydrogenotrophic potential a gut carries, not how that potential is divided.
+
+## Declarations
+**Funding.** This work was self-funded by the authors; no external funding was received.
+**Competing interests.** The authors declare no competing interests.
+**Author contributions.** [AUTHORS TO COMPLETE (e.g. CRediT roles)]
+**Acknowledgements.** [AUTHORS TO COMPLETE]
+**Use of AI tools.** [AUTHORS TO COMPLETE: describe the use of an AI coding assistant (Claude, Anthropic) for pipeline implementation, analysis execution and drafting, as required by the target journal's policy.]
 
 ## References
 - [L01] Bowerman KL, et al. (2025) *mSystems* 11:e01608-25. doi:10.1128/msystems.01608-25

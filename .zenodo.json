@@ -1,0 +1,12 @@
+{
+  "title": "HydroSink: gut hydrogen-sink genes across vertebrates — pipeline, results and manuscript",
+  "upload_type": "software",
+  "description": "Pre-registered synthesis of public gut shotgun metagenomes testing whether gut fermentation architecture governs hydrogen-sink partitioning (acsB vs mcrA) across vertebrates. Contains the full pipeline (screening, read sampling, DIAMOND marker quantification), per-sample results with SHA-256 manifests, all analysis outputs, a marker specificity benchmark, reporting checklists and the manuscript draft. Code: MIT; data, figures and text: CC BY 4.0.",
+  "creators": [
+    {"name": "Prasad, Ananda", "affiliation": "Department of Zoology, Rajiv Gandhi University, Itanagar, Arunachal Pradesh, India", "orcid": "0009-0005-1736-8148"},
+    {"name": "Das, Angsuman", "affiliation": "Pachhunga University College (constituent college of Mizoram University), Aizawl, Mizoram, India", "orcid": "0000-0001-8146-7697"}
+  ],
+  "license": "MIT",
+  "keywords": ["metagenomics", "hydrogen", "methanogenesis", "acetogenesis", "gut microbiome", "vertebrates", "meta-analysis", "phylogenetic comparative methods"],
+  "access_right": "open"
+}
