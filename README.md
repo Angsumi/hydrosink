@@ -2,7 +2,7 @@
 
 **Authors:** Ananda Prasad (Department of Zoology, Rajiv Gandhi University; ORCID 0009-0005-1736-8148) and
 Angsuman Das (Department of Zoology, Pachhunga University College, Mizoram University; ORCID 0000-0001-8146-7697; corresponding author, angsuman.das@rgu.ac.in). Self-funded.
-**Cite:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24330934.svg)](https://doi.org/10.5281/zenodo.24330934) (all versions; v2.1.0 = doi:10.5281/zenodo.24330935); see `CITATION.cff`. **Licences:** code MIT (`LICENSE`); data, figures and
+**Cite:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24330934.svg)](https://doi.org/10.5281/zenodo.24330934) (all versions; v2.2.0 = doi:10.5281/zenodo.24331026; v2.1.0 = doi:10.5281/zenodo.24330935); see `CITATION.cff`. **Licences:** code MIT (`LICENSE`); data, figures and
 text CC BY 4.0 (`LICENSE-DATA.md`); third-party files keep their own terms.
 
 **Status (2026-11-17): data processed, all pre-specified analyses run, manuscript draft v1 in `manuscript/manuscript.md`.**

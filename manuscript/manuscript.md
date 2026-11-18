@@ -124,7 +124,7 @@ The pre-written product-name truth patterns (v1) missed RefSeq wording; for exam
 **P1 sampling check.** Five P1 runs drawn with a fixed seed before the data were analysed were re-quantified with multi-offset sampling and compared with head sampling (amendment v1.2 §2).
 
 ### Data and code availability
-Code, per-sample results, analysis outputs and this manuscript are available at https://github.com/Angsumi/hydrosink (archived on Zenodo: version used here, v2.1.0, doi:10.5281/zenodo.24330935; all versions, doi:10.5281/zenodo.24330934). Run accessions, curated metadata and per-sample marker tables are in `analysis/inventory/` and `analysis/results/per_sample/`; DIAMOND hits are in `analysis/results/hits/`, with SHA-256 manifests (`p1_manifest.sha256`, `p2_manifest.sha256`). All code is in `analysis/scripts/`. [Archive with DOI at submission.]
+Code, per-sample results, analysis outputs and this manuscript are available at https://github.com/Angsumi/hydrosink (archived on Zenodo: version v2.2.0, doi:10.5281/zenodo.24331026 (analysis outputs identical to v2.1.0, doi:10.5281/zenodo.24330935); all versions, doi:10.5281/zenodo.24330934). Run accessions, curated metadata and per-sample marker tables are in `analysis/inventory/` and `analysis/results/per_sample/`; DIAMOND hits are in `analysis/results/hits/`, with SHA-256 manifests (`p1_manifest.sha256`, `p2_manifest.sha256`). All code is in `analysis/scripts/`. [Archive with DOI at submission.]
 
 ## Results
 ### Data set
