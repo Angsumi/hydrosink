@@ -17,3 +17,7 @@ analysis/sens/*/root*/analysis/db
 analysis/sens/*/root*/analysis/scripts
 analysis/sens/*/root*/analysis/locks/
 analysis/logs/gcp_sync.log
+
+# Local execution logs
+analysis/logs/**/*.log
+analysis/bench/*.log

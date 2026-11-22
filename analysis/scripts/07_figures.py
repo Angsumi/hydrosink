@@ -68,7 +68,11 @@ def fig2():
 
 def fig3():
     if not (R / "p2_species_means.tsv").exists(): return
-    sp = pd.read_csv(R / "p2_species_means.tsv", sep="\t"); con = pd.read_csv(R / "p2_contrasts.tsv", sep="\t")
+    groups = pd.read_csv(R / "p2_species_means.tsv", sep="\t")
+    groups["alr_sum"] = groups.alr_acet * groups.n
+    sp = groups.groupby(["species", "fermentation_site"], as_index=False)[["n", "alr_sum"]].sum()
+    sp["alr_acet"] = sp.alr_sum / sp.n
+    con = pd.read_csv(R / "p2_contrasts.tsv", sep="\t")
     order = ["foregut", "hindgut", "avian_caecal", "simple"]
     fig, (a, b) = plt.subplots(1, 2, figsize=(7.2, 3.3), gridspec_kw={"width_ratios": [1.2, 1]})
     rng = np.random.default_rng(20261115)
@@ -79,13 +83,13 @@ def fig3():
         a.hlines(v.alr_acet.median(), i - 0.3, i + 0.3, color=INK, lw=1.6)
     a.set_xticks(range(4), [f"{SITE_LAB[s]}\n({(sp.fermentation_site == s).sum()} spp.)" for s in order])
     a.axhline(0, color=MUTED, lw=0.8, zorder=0); a.grid(axis="y", color=GRID, lw=0.6); a.set_axisbelow(True)
-    a.set_ylabel("Species mean ALR acet, ln(acsB/mcrA)"); a.set_title("a  Faecal ALR acet by fermentation site", loc="left", fontsize=8.5)
+    a.set_ylabel("Species mean ALR acet (adjusted log ratio)"); a.set_title("a  Faecal ALR acet by fermentation site", loc="left", fontsize=8.5)
     c = con[con.outcome == "alr_acet"].iloc[::-1].reset_index(drop=True); y = np.arange(len(c))
     b.hlines(y, c.l95, c.u95, color=INK, lw=1.6); b.plot(c.post_mean, y, "o", ms=5, color=INK, mec="white", mew=1)
     b.set_yticks(y, [x.replace("avian_caecal", "avian caecal") for x in c.contrast]); vline0(b)
     b.set_xlabel("Posterior difference in ALR acet (95% HPD)")
     b.set_title("b  Phylogenetic mixed model contrasts", loc="left", fontsize=8.5)
-    fig.text(0.01, -0.03, "a: points = host species (size ∝ samples, max 10), bar = median. b: MCMCglmm with phylogeny, species and study "
+    fig.text(0.01, -0.03, "a: one point per host species, with area increasing with sample count (max 10). Bars show medians. b: MCMCglmm with phylogeny, species and study "
              "random effects; diet, captivity, depth, read length fixed. Source: p2_species_means.tsv, p2_contrasts.tsv",
              fontsize=6.5, color=MUTED, wrap=True)
     fig.tight_layout(); save(fig, "fig3_p2_cross_host")
@@ -103,7 +107,7 @@ def fig4():
     a.axvspan(p.rho_ci_lb, p.rho_ci_ub, color=GRID, zorder=0); a.axvline(p.rho_pooled, color=INK, lw=1); vline0(a)
     a.set_xlabel("Proportionality ρp(mcrA, acsB), 95% CI"); a.set_xlim(-1, 1); a.set_xticks([-1, -0.5, 0, 0.5, 1])
     a.set_title(f"Pooled ρp = {p.rho_pooled:.2f} (95% CI {p.rho_ci_lb:.2f} to {p.rho_ci_ub:.2f}; {int(p.k)} units)", loc="left", fontsize=8)
-    fig.text(0.01, -0.01, "Blue: P1 study × chamber units; grey: P2 studies with ≥10 samples. A trade-off predicts ρp < 0. "
+    fig.text(0.01, -0.01, "Blue: P1 study × chamber units; grey: P2 studies with ≥10 samples. Intervals use the bootstrap variance on the Fisher z scale. "
              "Source: p3_units.tsv, p3_pooled.tsv", fontsize=6.3, color=MUTED, wrap=True)
     fig.tight_layout(); save(fig, "fig4_p3_tradeoff")
 
@@ -132,16 +136,16 @@ def fig1_design():
     def arrow(x0, y0, x1, y1): ax.annotate("", xy=(x1, y1), xytext=(x0, y0), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=0.7))
     ax.text(0, 62, "a  Hypothesis", fontsize=8.5, weight="bold", color=INK); ax.text(50, 62, "b  Design", fontsize=8.5, weight="bold", color=INK)
     box(1, 44, 15, 10, "Fermentative H$_2$\nproduction", "#ececea")
-    box(22, 50, 24, 8, "Foregut: methanogenesis\n(mcrA) dominates", "#d6e6f8", 6.0); box(22, 39, 24, 8, "Hindgut: acetogenesis\n(acsB) + respiratory sinks", "#fbe1d6", 6.0)
+    box(22, 50, 24, 8, "Foregut: lower predicted\nacsB/mcrA marker ratio", "#d6e6f8", 6.0); box(22, 39, 24, 8, "Hindgut: higher predicted\nacsB/mcrA marker ratio", "#fbe1d6", 6.0)
     arrow(16.5, 50, 21.5, 54); arrow(16.5, 48, 21.5, 43)
-    ax.text(1, 35, "P3: mcrA and acsB trade off\n(negative proportionality within studies)\nP4 (exploratory): respiratory sinks\nhigher where mcrA is lower",
+    ax.text(1, 35, "P3: negative mcrA–acsB proportionality\nwithin study units\nP4 (exploratory): more respiratory markers\nwhere mcrA is lower",
             fontsize=5.8, color=INK, style="italic", va="top")
     box(50, 50.5, 49, 8, f"P1 positive control: foregut vs hindgut, same animal\nLi 2025 + Xie 2021: {n('P1 runs passing QC')} runs, {n('P1 animals')} ruminants\nrandom-effects meta-analysis", "#d6e6f8", 5.6)
     box(50, 40, 49, 8.5, f"P2: faeces across vertebrates: {n('P2 runs in phylogenetic models')} samples,\n{str(n('P2 species')).replace(' / ', ' species, ')} studies; MCMCglmm with fermentation site,\nphylogeny, species, study, diet, captivity, technical", "#fbe1d6", 5.6)
     box(50, 30, 49, 8, "P3: within-study proportionality ρp(mcrA, acsB), pooled\nChecks: sensitivity sets, identity ±10, acsB attribution,\ndated tree, in-silico benchmark", "#dcf1e8", 5.6)
     ax.text(0, 24, "c  Pipeline", fontsize=8.5, weight="bold", color=INK)
     steps = ["ENA screening\n(PRISMA)", "5 M R1 reads\nfrom SRA (P1 head;\nP2 10 offsets)", "fastp QC\n(Q20, ≥100 bp)",
-             "DIAMOND blastx vs\nGreening DB v3\n+ RpoB", "copies per genome\n(marker / rpoB\nRPKM)", "metafor,\nMCMCglmm,\nproportionality"]
+             "DIAMOND blastx vs\nGreening DB v3\n+ RpoB", "Marker RPKM /\nbacterial rpoB RPKM", "metafor,\nMCMCglmm,\nproportionality"]
     w, gap = 14.0, 2.6
     for i, t in enumerate(steps):
         x = i * (w + gap); box(x + 0.5, 6, w, 11, t, "#f4f4f2", 5.6)

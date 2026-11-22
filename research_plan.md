@@ -1,15 +1,21 @@
 # Research plan — HydroSink: a cross-vertebrate meta-analysis of gut hydrogen-sink partitioning
 
-Last updated: 2026-11-18 · **Current status: all data processed; all pre-specified analyses, sensitivity analyses, benchmark and dated-tree checks executed; manuscript draft v2 (`manuscript/manuscript.md`).** · Status legend used throughout:
+## Protocol record
+
+The original planning and execution notes below record decisions available at the time. References to superseded scripts and working logs point to material in the [archived source snapshot](https://github.com/Angsumi/hydrosink/tree/v2.2.0) or the earlier protocol commits. The executed methods and results are in [the manuscript](manuscript/manuscript.md), [the reproducibility instructions](README.md) and the two protocol amendments.
+
+The initial protocol and analysis commits are `67eb757` and `eec1a3e`. The `prereg-v1` tag follows those commits and includes Gate 1a results. P1 became a positive control for a previously published pattern in the same source datasets. The final P2 models used faeces, a phylogenetic covariance matrix and DIC. P3 pooled study-unit proportionality without removing host effects within units. The planned *acsB* placement was replaced with post hoc best-hit attribution.
+
+### Status legend for the historical notes
 **[VERIFIED]** checked against a primary source during this session ·
 **[HYPOTHESIS]** proposed, untested ·
 **[PLANNED]** analysis designed, code written, **not executed on real data** ·
 **[TO VERIFY]** recalled or partially sourced; must be checked before use ·
 **[NOT DONE]** nothing produced yet.
 
-> **Status update (session 2, 2026-11-15, evening).** This machine has network access to ENA/NCBI and R 4.6. The environment, the marker database, the inventory and the PRISMA screening are now **executed** (see §6). Quantification has started with Gate 1a (the positive control). **No biological result is reported anywhere until it is computed.** The note below describes session 1.
+> **Historical status update (session 2, 2026-11-15, evening).** This machine has network access to ENA/NCBI and R 4.6. The environment, the marker database, the inventory and the PRISMA screening are now **executed** (see §6). Quantification has started with Gate 1a (the positive control). **No biological result is reported anywhere until it is computed.** The note below describes session 1.
 >
-> **Honest status (session 1).** Phases 1–2 (literature and dataset feasibility) were carried out with web search. Phase 3 code is written and has been checked for syntax. Only the Python random-effects module was test-run, and only on **synthetic data** to confirm the code works. **No public metagenome has been downloaded or profiled, and no biological result exists yet.** The execution environment had no network route to ENA/SRA (the HTTPS proxy refused the connection with a 403), and no R installation.
+> **Historical status (session 1).** Phases 1–2 (literature and dataset feasibility) were carried out with web search. Phase 3 code is written and has been checked for syntax. Only the Python random-effects module was test-run, and only on **synthetic data** to confirm the code works. **No public metagenome has been downloaded or profiled, and no biological result exists yet.** The execution environment had no network route to ENA/SRA (the HTTPS proxy refused the connection with a 403), and no R installation.
 
 ---
 
@@ -109,7 +115,7 @@ Planned framing: association vs causation (gene potential ≠ flux, so we will c
 | 2026-11-15 | Within-host compartment contrast (P1) is primary | Strongest design against confounding |
 | 2026-11-15 | Halted before data processing | No network route to SRA/ENA and no R in the execution environment |
 
-## Immediate next steps (on a machine with SRA access, conda and R ≥ 4.3)
+## Original next steps before execution
 1. `conda env create -f analysis/env/environment.yml`
 2. `python analysis/scripts/01_build_inventory.py --seeds datasets.csv --metalog <metalog_animal.tsv> --out analysis/inventory.tsv`, then complete the PRISMA log
 3. Build the marker database (`03_build_marker_db.md`); validate it on Li 2025 to reproduce their ~12× acsB cecum enrichment (positive control)

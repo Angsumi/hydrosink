@@ -1,5 +1,7 @@
 # Pre-registration amendment v1.1 (2026-11-16)
 
+**Later reporting note (2026-11-22).** This document records the amendments and sample counts at the time. The final P2 model included 802 runs. Excluding hosts without a tree tip changes the target population and can introduce selection bias. P1 compares samples from the same two data sources used by Li et al. The benchmark and the dated-tree analysis were subsequently completed. Best-hit reference attribution replaced the planned read placement. See the [executed methods and results](../manuscript/manuscript.md).
+
 **Status at time of amendment:** 0 / 930 P2 samples quantified, no `p1_matrix.tsv` / `p2_matrix.tsv` assembled;
 P1: 56 / 254 per-sample marker tables exist but have not been assembled or inspected. Only the Gate 1a positive
 control (Li 2025 goats; acsB, mcrA per pair) has been examined. Amended code was tested only on synthetic random data

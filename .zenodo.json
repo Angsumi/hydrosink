@@ -1,7 +1,7 @@
 {
   "title": "HydroSink: gut hydrogen-sink genes across vertebrates — pipeline, results and manuscript",
   "upload_type": "software",
-  "description": "Pre-registered synthesis of public gut shotgun metagenomes testing whether gut fermentation architecture governs hydrogen-sink partitioning (acsB vs mcrA) across vertebrates. Contains the full pipeline (screening, read sampling, DIAMOND marker quantification), per-sample results with SHA-256 manifests, all analysis outputs, a marker specificity benchmark, reporting checklists and the manuscript draft. Code: MIT; data, figures and text: CC BY 4.0.",
+  "description": "Secondary analysis of public gut shotgun metagenomes with a dated analysis protocol. Compares acsB and mcrA marker abundances between paired ruminant gut compartments and across faecal samples from vertebrates. Contains the full pipeline (screening, read sampling, DIAMOND marker quantification), per-sample results with SHA-256 manifests, all analysis outputs, a marker specificity benchmark, reporting checklists and the manuscript draft. Code: MIT; data, figures and text: CC BY 4.0.",
   "creators": [
     {
       "name": "Prasad, Ananda",

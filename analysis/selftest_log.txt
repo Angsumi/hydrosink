@@ -1,5 +1,0 @@
-SELFTEST on SIMULATED data (true mu = 1.0, tau = 0.4, k = 8) - not a biological result
-mean estimated mu over 200 sims = 0.985; HKSJ 95% CI coverage = 0.930
-example pooled fit: {"k": 8, "mu": 0.8984, "se": 0.1942, "ci_lo": 0.4393, "ci_hi": 1.3575, "p": 0.0024, "tau2": 0.2543, "Q": 43.1805, "Q_p": 0.0, "I2": 83.789, "pi_lo": -0.4238, "pi_hi": 2.2205, "typical_v": 0.0376}
-leave-one-out mu range: (0.708, 1.01)
-SELFTEST PASSED

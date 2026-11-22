@@ -173,10 +173,10 @@ run_p2 <- function() {
   sens <- rbindlist(lapply(names(sets), function(nm) {
     s <- copy(sets[[nm]]); s[, fermentation_site := droplevels(fermentation_site)]
     s[, diet_class := droplevels(diet_class)]; s[, captivity := droplevels(captivity)]
-    tr <- keep.tip(pt$tree, unique(s$phylo)); Ai <- inverseA(tr, nodes = "TIPS")$Ainv
+    tr <- keep.tip(pt$tree, unique(s$phylo)); subset_Ainv <- inverseA(tr, nodes = "TIPS")$Ainv
     cv <- if (nm == "herbivores_only") "captivity + log_rpoB + read_len_c" else cov_null
     if (nm == "non_domestic") cv <- "diet_class + log_rpoB + read_len_c"
-    m <- fit_mcmc(as.formula(paste("alr_acet ~ fermentation_site +", cv)), s, Ai)
+    m <- fit_mcmc(as.formula(paste("alr_acet ~ fermentation_site +", cv)), s, subset_Ainv)
     lv <- levels(s$fermentation_site)
     out <- list(); if (all(c("foregut", "hindgut") %in% lv)) out[[1]] <- contrast(m, "foregut", "hindgut", "foregut - hindgut")
     if ("hindgut" %in% lv) out[[2]] <- contrast(m, "hindgut", "simple", "hindgut - simple")
@@ -192,8 +192,8 @@ run_p2 <- function() {
                 platform_cov = list(s = d, cv = paste(cov_null, "+ platform")))
   sens2 <- rbindlist(lapply(names(extra), function(nm) {
     s <- copy(extra[[nm]]$s); for (f in c("fermentation_site", "diet_class", "captivity")) s[, (f) := droplevels(get(f))]
-    tr <- keep.tip(pt$tree, unique(s$phylo)); Ai <- inverseA(tr, nodes = "TIPS")$Ainv
-    m <- fit_mcmc(as.formula(paste("alr_acet ~ fermentation_site +", extra[[nm]]$cv)), s, Ai)
+    tr <- keep.tip(pt$tree, unique(s$phylo)); subset_Ainv <- inverseA(tr, nodes = "TIPS")$Ainv
+    m <- fit_mcmc(as.formula(paste("alr_acet ~ fermentation_site +", extra[[nm]]$cv)), s, subset_Ainv)
     lv <- levels(s$fermentation_site); out <- list()
     if (all(c("foregut", "hindgut") %in% lv)) out[[1]] <- contrast(m, "foregut", "hindgut", "foregut - hindgut")
     if ("hindgut" %in% lv) out[[2]] <- contrast(m, "hindgut", "simple", "hindgut - simple")
@@ -220,9 +220,9 @@ run_p2 <- function() {
   ho <- d[marsupial == TRUE]; tr0 <- d[marsupial == FALSE]
   if (nrow(ho) >= 5 && uniqueN(ho$fermentation_site) >= 2) {
     for (f in c("fermentation_site", "diet_class", "captivity")) tr0[, (f) := droplevels(get(f))]
-    Ai <- inverseA(keep.tip(pt$tree, unique(tr0$phylo)), nodes = "TIPS")$Ainv
+    subset_Ainv <- inverseA(keep.tip(pt$tree, unique(tr0$phylo)), nodes = "TIPS")$Ainv
     fx <- as.formula(paste("alr_acet ~ fermentation_site +", cov_null))
-    m <- fit_mcmc(fx, tr0, Ai)
+    m <- fit_mcmc(fx, tr0, subset_Ainv)
     hd <- copy(ho); for (f in c("fermentation_site", "diet_class", "captivity")) hd[, (f) := factor(as.character(get(f)), levels = levels(tr0[[f]]))]
     hd <- hd[complete.cases(hd[, .(fermentation_site, diet_class, captivity)])]
     X <- model.matrix(update(fx, NULL ~ .), data = hd)

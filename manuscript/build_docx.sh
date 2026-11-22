@@ -2,11 +2,12 @@
 # Build the Word version of the manuscript (figures embedded after the legends). Needs pandoc >= 3 (PANDOC=...).
 set -euo pipefail
 cd "$(dirname "$0")/.."
-PANDOC=${PANDOC:-/home/angsuman/extra_spac/software_libs/conda_envs/docs/bin/pandoc}
+PANDOC=${PANDOC:-pandoc}
 V=$(grep -oE 'Draft v[0-9.]+' manuscript/manuscript.md | head -n 1 | cut -c8-)
-T=$(mktemp --suffix=.md); trap 'rm -f "$T"' EXIT
-cp manuscript/manuscript.md "$T"
-cat >> "$T" <<'EOM'
+TITLE=$(sed -n '1s/^# //p' manuscript/manuscript.md)
+WORK=$(mktemp -d); trap 'rm -rf "$WORK"' EXIT
+tail -n +2 manuscript/manuscript.md > "$WORK/manuscript.md"
+cat >> "$WORK/manuscript.md" <<'EOM'
 
 ## Figures
 ![Figure 1. Study design.](figures/fig1_study_design.png){width=16cm}
@@ -21,5 +22,31 @@ cat >> "$T" <<'EOM'
 
 ![Figure S2. PRISMA flow diagram.](figures/figS2_prisma_flow.png){width=13cm}
 EOM
-"$PANDOC" "$T" -f markdown -t docx --resource-path=. -o "manuscript/HydroSink_manuscript_v${V}.docx"
+"$PANDOC" "$WORK/manuscript.md" -f markdown -t docx --metadata "title=$TITLE" \
+  --resource-path=. -o "$WORK/manuscript.docx"
+python3 - "$WORK/manuscript.docx" "manuscript/HydroSink_manuscript_v${V}.docx" <<'PYDOCX'
+import sys
+from xml.dom import minidom
+from zipfile import ZipFile
+
+word = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+with ZipFile(sys.argv[1]) as source, ZipFile(sys.argv[2], "w") as output:
+    for item in source.infolist():
+        data = source.read(item)
+        if item.filename == "word/styles.xml":
+            doc = minidom.parseString(data)
+            for style in doc.getElementsByTagNameNS(word, "style"):
+                style_id = style.getAttributeNS(word, "styleId")
+                if style_id != "Title" and not style_id.startswith("Heading"):
+                    continue
+                for color in style.getElementsByTagNameNS(word, "color"):
+                    for attr in ("themeColor", "themeTint", "themeShade"):
+                        if color.hasAttributeNS(word, attr):
+                            color.removeAttributeNS(word, attr)
+                    color.setAttributeNS(word, "w:val", "000000")
+                for border in style.getElementsByTagNameNS(word, "pBdr"):
+                    border.parentNode.removeChild(border)
+            data = doc.toxml(encoding="utf-8")
+        output.writestr(item, data)
+PYDOCX
 echo "wrote manuscript/HydroSink_manuscript_v${V}.docx"

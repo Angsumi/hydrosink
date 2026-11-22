@@ -1,5 +1,7 @@
 # Pre-registration amendment v1.2 (2026-11-16)
 
+**Later reporting note (2026-11-22).** The final P2 set produced 926 marker tables. The four remaining runs had no reads passing the minimum-length filter. The five-run P1 comparison and subsequent sensitivity analyses are reported in the [manuscript](../manuscript/manuscript.md). Historical operational files are available in the [archived source snapshot](https://github.com/Angsumi/hydrosink/tree/v2.2.0).
+
 **Status at time of amendment:** 0 / 930 P2 samples quantified (no P2 marker table exists); P1: 107 / 254 per-sample
 marker tables exist, not assembled or analysed. Results inspected so far: Gate 1a (prereg v1), Gate 1b (this document).
 Base version: git tag `prereg-v1.1`. Nothing in the primary outcome (ALR_acet), contrasts, models, marker thresholds or
@@ -16,7 +18,7 @@ rumen (SRR28204452). Rule (`gate1b_compare.py`, committed before data): every ge
 | Ce14 | -3.8 % pass | +3.2 % pass | -0.3 % pass | -8.2 % pass | -7.3 % pass |
 | Rum14 | -8.5 % pass | -0.8 % pass | +5.7 % pass | **+10.3 % FAIL** (210 vs 189 reads) | -5.8 % pass |
 
-Source: `analysis/results/gate1b_head_vs_random.tsv` (commit 58da916). **Result: FAIL (9 / 10 checks).**
+Source: `analysis/results/gate1b_head_vs_random.tsv` (commit 6eb1a38). **Result: FAIL (9 / 10 checks).**
 
 Interpretation, stated without changing the result: with ~200 reads per subsample the Poisson standard error of a
 ratio is about 10 % (sqrt(1/210 + 1/189) = 0.10), and the exact conditional test for 210 vs 189 (scaled by rpoB reads,
@@ -63,7 +65,7 @@ against the ENA MD5 before the result above was produced.
   (`02a_fetch_aws.sh`) is removed.
 
 ## 4. Pipeline fix recorded here for completeness (before this amendment, no effect on results)
-- ENA byte-range resume (commit 560fe68): `curl --retry` could duplicate bytes after a dropped connection,
+- ENA byte-range resume (commit 70d09c2): `curl --retry` could duplicate bytes after a dropped connection,
   corrupting the partial gzip; the read-count check then extended the download to the whole file. Affected runs
   were in flight only (seven partial files deleted). A completed run required all 5 M reads to decompress without
   error before the corruption point, so finished samples are unaffected.
