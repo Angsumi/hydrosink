@@ -7,15 +7,15 @@
 
 \*Corresponding author: Angsuman Das, angsuman.das@rgu.ac.in
 
-*Draft v2.3 (2026-11-22). The figures and result tables cited below are available in the repository. Reporting checklists are in `analysis/reporting/`, and reference codes [Lxx] identify records in `literature.csv`.*
+*Draft v2.4 (2026-11-22). The figures and result tables cited below are available in the repository. Reporting checklists are in `analysis/reporting/`, and reference codes [Lxx] identify records in `literature.csv`.*
 
 ## Abstract
 
 **Background.** Microbial consumption of fermentative H₂ can support methanogenesis, reductive acetogenesis and respiration. We asked whether the relative abundance of marker genes for these pathways varies among gut compartments in ruminants or among vertebrates with different fermentation sites.
 
-**Methods.** We quantified marker genes in public shotgun metagenomes using five million forward reads per sequenced run. The primary outcome was the pseudocount-adjusted log ratio of the acetyl-CoA synthase marker *acsB* to the methyl-coenzyme M reductase marker *mcrA*. We used DIAMOND blastx to assign reads to markers. We pooled paired compartment contrasts from 53 ruminants in two studies and fitted Bayesian phylogenetic mixed models to 802 faecal samples from 166 vertebrate species in 179 studies.
+**Methods.** We quantified marker genes in public shotgun metagenomes using five million forward reads per sequenced run. The primary outcome was the pseudocount-adjusted log ratio of the acetyl-CoA synthase marker *acsB* to the methyl-coenzyme M reductase marker *mcrA*. We used DIAMOND blastx to assign reads to markers. We pooled paired compartment contrasts from 53 ruminants in two studies and fitted Bayesian phylogenetic mixed models, each run as four independent chains, to 802 faecal samples from 166 vertebrate species in 179 studies, and to the 782 samples that remain after removing house-mouse samples excluded by the eligibility criteria.
 
-**Results.** The ratio was higher in the hindgut in all 53 ruminants. The pooled hindgut-minus-foregut difference was 2.62 natural-log units (95% CI 2.23–3.01), driven principally by higher *acsB* abundance. For the faecal samples, adding fermentation site to the model changed the deviance information criterion by −0.08 (reduced minus full model). The foregut-minus-hindgut contrast was 0.47 log units (95% highest posterior density interval −0.95 to 1.79). Phylogeny accounted for an estimated 39% of the total random-effect and residual variance, rising to 78% with an alternative dated tree. Foregut and hindgut hosts had higher bacterial-*rpoB*-normalised abundances of both markers than hosts classified as simple-gut. Pooled within-study proportionality was close to zero (ρp = 0.03, 95% CI −0.10 to 0.17), with substantial variation among study units.
+**Results.** The ratio was higher in the hindgut in all 53 ruminants. The pooled hindgut-minus-foregut difference was 2.62 natural-log units (95% CI 2.23–3.01), driven principally by higher *acsB* abundance. For the faecal samples, adding fermentation site to the model did not improve fit: the deviance information criterion changed by −0.31 (reduced minus full model; range over chains −0.61 to −0.14), and by −0.72 in the 782-sample set. The foregut-minus-hindgut contrast was 0.47 log units (95% highest posterior density interval −0.98 to 1.93; 782 samples: 0.43, −0.95 to 1.93). Chains of the ratio and abundance models converged (potential scale reduction factor ≤ 1.005). Phylogeny accounted for an estimated 46% (95% interval 20–67%) of the total random-effect and residual variance, rising to 78% with an alternative dated tree. Foregut and hindgut hosts had higher bacterial-*rpoB*-normalised abundances of both markers than hosts classified as simple-gut. Pooled within-study proportionality was close to zero (ρp = 0.03, 95% CI −0.10 to 0.17), with substantial variation among study units.
 
 **Conclusions.** The paired ruminant data confirm distal enrichment of *acsB* relative to *mcrA*. Fermentation site explained little of the faecal log-ratio variation in the fitted cross-host models. The two comparisons represent different anatomical contrasts. DNA marker abundances capture genetic potential with no direct measurement of pathway activity or hydrogen flux.
 
@@ -101,7 +101,9 @@ The statistical analyses ran in R 4.3.3 with metafor 4.8-0 [L29], lme4 1.1-37 an
 
 **P1.** For each animal we computed the hindgut-minus-foregut difference of chamber means. Differences were averaged within each study × host-species stratum, and strata were pooled by random-effects meta-analysis (REML τ², Hartung–Knapp–Sidik–Jonkman CIs [L30], 95% prediction intervals, leave-one-out). Because P1 has only two source studies, we also report each study separately and a three-level model (strata nested in study). A one-stage linear mixed model was fitted as a cross-check: random animal intercepts and random chamber slopes by stratum. Secondary outcomes were adjusted by Benjamini–Hochberg.
 
-**P2.** We fitted Gaussian MCMCglmm models with random effects for phylogeny (inverse relatedness matrix), host species and study. Fixed effects were diet class, captivity, log₁₀ *rpoB* reads and read length, plus fermentation site in the full model. Chains ran for 130,000 iterations, with 30,000 burn-in and thinning of 100. Priors were parameter-expanded for the random effects (V = 1, ν = 1, α.V = 1000) and inverse-Wishart for the Gaussian residual (V = 1, ν = 0.002). The categorical model fixed the residual variance at 1. Models were compared using the deviance information criterion (ΔDIC = reduced-model DIC minus full-model DIC). We report posterior means and 95% highest posterior density (HPD) intervals for site contrasts, and posterior modes and 95% HPD intervals for the variance shares. We fitted a separate categorical model for *mcrA* detection with the same fixed and random effects.
+**P2.** We fitted Gaussian MCMCglmm models with random effects for phylogeny (inverse relatedness matrix), host species and study. Fixed effects were diet class, captivity, log₁₀ *rpoB* reads and read length, plus fermentation site in the full model. Chains ran for 130,000 iterations, with 30,000 burn-in and thinning of 100, giving 1,000 retained draws per chain. Priors were parameter-expanded for the random effects (V = 1, ν = 1, α.V = 1000) and inverse-Wishart for the Gaussian residual (V = 1, ν = 0.002). The categorical model fixed the residual variance at 1. Models were compared using the deviance information criterion (ΔDIC = reduced-model DIC minus full-model DIC). We report posterior means and 95% highest posterior density (HPD) intervals for site contrasts, and posterior modes and 95% HPD intervals for the variance shares. We fitted a separate categorical model for *mcrA* detection with the same fixed and random effects.
+
+**P2 convergence (post hoc).** The pre-registered analysis ran one chain per model. After internal review we refitted every P2 model (null and full models for the four Gaussian outcomes, and the detection model) as four independent chains with distinct seeds and otherwise unchanged settings (`05h_convergence.R`; coda 0.19-4.1). We report the Gelman–Rubin potential scale reduction factor (PSRF; point estimate and upper 95% limit) and the pooled effective sample size (ESS) for every fixed effect, variance component, variance share and site contrast, and estimates pooled over the 4,000 draws. Because DIC varies between chains, ΔDIC is given as the mean and range over chains. The detection model mixed slowly at the standard length and was refitted with 1,300,000 iterations (300,000 burn-in, thinning 1,000). The check was run on the full analysis set and on the 782-sample set without house mouse (below). Single-chain sensitivity refits were not repeated.
 
 Pre-specified P2 sensitivity analyses:
 
@@ -174,16 +176,22 @@ The paired data show higher hindgut *acsB* abundance and a lower summed respirat
 The pre-specified head-versus-multi-offset sampling check was run on 5 P1 runs [`p1_offsets_vs_head.tsv`]. In 22 of 25 run × gene-group comparisons the 95% CI of the ratio included 1. In one rumen sample (SRR12529313), multi-offset sampling gave 32% lower *rpoB*-normalised *acsB* abundance than head sampling (offsets/head = 0.68, 95% CI 0.62–0.74). The difference was −0.39 ln units. This run-level check does not quantify sampling bias in the pooled P1 contrast.
 
 ### P2 Faecal marker ratios by fermentation site
-In the phylogenetic mixed model, adding fermentation site did not improve fit for ALR_acet: ΔDIC = −0.08 [`p2_model_comparison.tsv`]. No site contrast had a 95% HPD interval excluding zero [`p2_contrasts.tsv`; Fig. 3]:
+The ENA screen excluded house mouse by taxon 10090 only, so 20 *Mus musculus* samples entered P2 under a subspecies or genus taxon, 10 of them from a DSS-colitis model, although the eligibility criteria excluded mouse. One *Elephas maximus* sample also lacked a diet label. We therefore report the pre-registered 802-sample analysis set alongside a 782-sample set that removes all *Mus musculus* and harmonises that label (post hoc; 165 species, 177 studies).
 
-| Contrast | Posterior mean | 95% HPD |
+All Gaussian P2 models converged across four chains: the largest PSRF was 1.004 (upper limit 1.008) in the 802-sample set and 1.005 (1.012) in the 782-sample set, and the smallest ESS was 1,886 and 2,413 of 4,000 draws [`convergence/n802/`, `convergence/n782/`]. In both sets, adding fermentation site did not improve fit for ALR_acet, and no site contrast had a 95% HPD interval excluding zero [`convergence/*/dic.tsv`, `convergence/*/contrasts.tsv`; Fig. 3]:
+
+| | 802 samples (pre-registered analysis set) | 782 samples (no house mouse) |
 |---|---|---|
-| Foregut − hindgut | 0.47 | −0.95 to 1.79 |
-| Hindgut − simple | −0.66 | −2.19 to 1.01 |
-| Foregut − simple | −0.19 | −2.03 to 1.76 |
-| Avian caecal − simple | 1.13 | −0.88 to 3.17 |
+| ΔDIC, mean (range over 4 chains) | −0.31 (−0.61 to −0.14) | −0.72 (−1.14 to −0.41) |
+| Foregut − hindgut | 0.47 (−0.98 to 1.93) | 0.43 (−0.95 to 1.93) |
+| Hindgut − simple | −0.63 (−2.26 to 0.87) | −0.65 (−2.26 to 0.93) |
+| Foregut − simple | −0.16 (−2.03 to 1.80) | −0.22 (−2.06 to 1.64) |
+| Avian caecal − simple | 1.20 (−0.70 to 3.13) | 1.29 (−0.73 to 3.14) |
+| Phylogenetic variance share | 0.46 (0.20–0.67) | 0.43 (0.19–0.66) |
 
-Of the total random-effect and residual variance in ALR_acet, the share attributable to host phylogeny was 0.39 (95% HPD 0.21–0.67), to species 0.15 and to study 0.16 [`p2_variance_partition.tsv`]. The reported intervals for diet, captivity, depth and read length overlapped zero [`p2_fixed_effects.tsv`].
+Contrasts are posterior means (95% HPD); the variance share is the posterior mode (95% HPD). The original single-chain run gave ΔDIC = −0.08 and foregut − hindgut 0.47 (−0.95 to 1.79) [`p2_model_comparison.tsv`, `p2_contrasts.tsv`]; the single-chain sensitivity analyses below are compared with these values. Chain-to-chain differences in ΔDIC of up to 0.7 units mean that ΔDIC differences below about 1 between refits should not be interpreted.
+
+Of the total random-effect and residual variance in ALR_acet, species accounted for 0.14 and study for 0.15 (802 samples) [`convergence/n802/variance_partition.tsv`]. The posterior mode of the phylogenetic share varied between chains (0.35–0.46), whereas the pooled 95% HPD interval matched the single-chain interval (mode 0.39, 0.21–0.67) [`p2_variance_partition.tsv`]. The reported intervals for diet, captivity, depth and read length overlapped zero [`p2_fixed_effects.tsv`].
 
 The site contrast intervals included zero in the following pre-specified model refits [`p2_sensitivity.tsv`, `p2_sensitivity_v1_1.tsv`]:
 
@@ -199,18 +207,17 @@ Restricting to the 12 studies that sampled more than one fermentation site (136 
 
 In the marsupial hold-out (19 samples, 4 species), the model predicted no hindgut–foregut difference (+0.22). The observed difference was −3.38, but it rests on a single foregut sample. The species-level Spearman correlation was 0.4 on 4 species [`p2_holdout_marsupial.tsv`]; the small hold-out and single foregut sample limit the assessment.
 
-Foregut and hindgut hosts had higher *rpoB*-normalised abundances of both markers than simple-gut hosts [`p2_contrasts.tsv`]:
+Foregut and hindgut hosts had higher *rpoB*-normalised abundances of both markers than simple-gut hosts (four chains, 802 samples) [`convergence/n802/contrasts.tsv`]:
 
 | Contrast | ln *acsB* (95% HPD) | ln *mcrA* (95% HPD) |
 |---|---|---|
-| Hindgut − simple | +3.04 (1.69–4.56) | +3.58 (2.44–4.68) |
-| Foregut − simple | +3.91 (2.26–5.36) | +3.97 (2.45–5.32) |
+| Hindgut − simple | +3.07 (1.67–4.36) | +3.58 (2.48–4.77) |
+| Foregut − simple | +3.91 (2.18–5.37) | +4.02 (2.59–5.42) |
 
-Avian-caecal hosts had more *acsB* than simple-gut hosts (+2.08; 0.36–3.62), but *mcrA* did not differ credibly. In the separate detection model, *mcrA* was more often detected in all three fermenting categories than in simple-gut hosts [`p2_fixed_effects.tsv`].
+Avian-caecal hosts had more *acsB* than simple-gut hosts (+2.11; 0.40–3.59), but *mcrA* did not differ credibly. Estimates in the 782-sample set differed by ≤ 0.12 [`convergence/n782/contrasts.tsv`]. In the separate detection model, *mcrA* was more often detected in all three fermenting categories than in simple-gut hosts [`p2_fixed_effects.tsv`]. In the longer four-chain refit, all fixed effects of the detection model had PSRF ≤ 1.005 in both sets; the phylogenetic variance component had PSRF 1.06 (ESS 445) in the 802-sample set and 1.007 in the 782-sample set, and the site effects kept the same direction and similar magnitude [`convergence/n802_detect_long/`, `convergence/n782_detect_long/`].
 
 At the two-read detection threshold, *mcrA* was undetected in 88% of simple-gut samples and neither marker was detected in 115 samples, including 90 from simple-gut hosts [`p2_analysis_set.tsv`]. The pseudocounts have greater influence at low counts and determine the ratio when both counts are zero. The separate abundance and detection results help interpret these samples.
 
-**Post-hoc check (not pre-registered).** The ENA screen excluded house mouse by taxon 10090 only, so 20 *Mus musculus* samples entered P2 under a subspecies or genus taxon, 10 of them from a DSS-colitis model. In addition, one *Elephas maximus* sample lacked a diet label. Removing all *Mus musculus* and harmonising that label gave the same result: 782 samples, ΔDIC = −0.18, foregut − hindgut 0.45 (−0.98 to 1.94) [`posthoc_no_mouse/p2_primary.tsv`].
 
 ### P3 Within-study marker proportionality
 Across 34 units (30 P2 studies with ≥ 10 samples and 4 P1 study × chamber units), the pooled proportionality between *mcrA* and *acsB* was ρp = 0.03 (95% CI −0.10 to 0.17; 95% prediction interval −0.56 to 0.61; I² = 75%) [`p3_pooled.tsv`; Fig. 4]. In units where *mcrA* was detected in ≥ 50% of samples (*k* = 18), it was −0.01 (−0.20 to 0.18). Unit estimates ranged from −0.80 to 0.72 [`p3_units.tsv`]. The estimates provide little evidence for a consistently negative association on the chosen compositional scale.
@@ -226,7 +233,7 @@ Shifting every per-gene identity threshold by −10 or +10 percentage points lef
 | Threshold shift | P1 pooled ALR_acet (95% CI) | P2 ΔDIC | P2 foregut − hindgut (95% HPD) | P3 pooled ρp (95% CI) |
 |---|---|---|---|---|
 | −10 | 2.61 (2.22–3.00) | −0.17 | 0.48 (−0.86 to 2.02) | 0.01 (−0.12 to 0.15) |
-| 0 (primary) | 2.62 (2.23–3.01) | −0.08 | 0.47 (−0.95 to 1.79) | 0.03 (−0.10 to 0.17) |
+| 0 (primary, single chain) | 2.62 (2.23–3.01) | −0.08 | 0.47 (−0.95 to 1.79) | 0.03 (−0.10 to 0.17) |
 | +10 | 2.64 (2.26–3.02) | −0.76 | 0.46 (−0.91 to 1.92) | 0.08 (−0.06 to 0.22) |
 
 Under the +10 threshold, 2 P2 samples fell below the *rpoB* QC threshold, leaving 800 samples in the model.
@@ -243,7 +250,7 @@ We repeated the analyses with *acsB* counted only from bacterial references (228
 
 | *acsB* references | P1 pooled ALR_acet (95% CI) | P2 ΔDIC | P2 foregut − hindgut (95% HPD) | P3 pooled ρp (95% CI) |
 |---|---|---|---|---|
-| All (primary) | 2.62 (2.23–3.01) | −0.08 | 0.47 (−0.95 to 1.79) | 0.03 (−0.10 to 0.17) |
+| All (primary, single chain) | 2.62 (2.23–3.01) | −0.08 | 0.47 (−0.95 to 1.79) | 0.03 (−0.10 to 0.17) |
 | Bacterial only | 2.66 (2.28–3.04) | −0.02 | 0.53 (−0.79 to 2.05) | 0.03 (−0.11 to 0.16) |
 | Bacillota only | 2.74 (2.36–3.13) | 0.36 | 0.52 (−0.90 to 1.96) | 0.02 (−0.11 to 0.16) |
 
@@ -277,7 +284,7 @@ Sensitivity was high for both primary markers on this panel, with precision of 0
 TimeTree dated 152 of 165 nodes; 13 were interpolated and 22 were adjusted for conflicts with the topology (root 435 Myr) [`dated_tree/node_ages.tsv`]. With the dated tree, fermentation site still did not improve fit: ΔDIC = 0.99; foregut − hindgut 0.70 (95% HPD −0.96 to 2.29); hindgut − simple −1.14 (−3.11 to 0.48) [`dated_tree/p2_primary.tsv`]. The phylogenetic variance share was higher, 0.78 (0.61–0.87), and the species share lower [`dated_tree/p2_variance_partition.tsv`].
 
 ### Reproducibility
-The 17 P1 runs quantified before DIAMOND hits were archived were processed again from scratch. The second pass used a different read source (NCBI SRA on AWS instead of ENA files) and a different DIAMOND block size. All 17 marker tables were byte-identical to the originals [`p1_rerun_reproducibility.txt`]. For the archived analysis, the complete statistical analysis was re-run from the per-sample outputs with a single script (`run_all.sh`; 57 min on 16 cores). All 103 result tables were byte-identical to those reported here [`rerun_comparison.tsv`].
+The 17 P1 runs quantified before DIAMOND hits were archived were processed again from scratch. The second pass used a different read source (NCBI SRA on AWS instead of ENA files) and a different DIAMOND block size. All 17 marker tables were byte-identical to the originals [`p1_rerun_reproducibility.txt`]. For the archived analysis, the complete statistical analysis was re-run from the per-sample outputs with a single script (`run_all.sh`; 57 min on 16 cores). All 103 result tables were byte-identical to those reported here [`rerun_comparison.tsv`]. The post-hoc four-chain convergence check (`05h_convergence.R`; about 1.5 h on 16 cores) was added to `run_all.sh` in this version; its outputs [`convergence/`] were not part of that comparison.
 
 ## Discussion
 
@@ -293,7 +300,7 @@ The fitted P2 models gave little evidence that fermentation site accounted for f
 
 Faecal samples mainly represent the distal gut. Ruminant rectal samples in P1 resembled the caecal samples in their enrichment relative to rumen samples. Consequently, P2 can only capture anatomical differences that are reflected in faeces. Foregut and hindgut hosts nevertheless had higher *rpoB*-normalised *mcrA* and *acsB* abundances than simple-gut hosts. At low counts, the ratio is sensitive to pseudocount choice, particularly in the simple-gut group, which had few *mcrA* detections.
 
-Estimated phylogenetic variance was substantial under both tree specifications, and the difference between 39% and 78% shows its sensitivity to branch lengths and variance allocation. The archived model summaries provide no multi-chain convergence assessment. Site categories were assigned by lineage, so the model has limited leverage to distinguish anatomy from other lineage-associated host traits. The within-study fit reduces differences between contributing studies but covers only 12 studies and does not remove differences between hosts within those studies.
+Estimated phylogenetic variance was substantial under both tree specifications, and the difference between 46% and 78% shows its sensitivity to branch lengths and variance allocation. The cross-host result does not reflect poor mixing or the misadmitted mouse samples: four independent chains converged and gave the same contrasts with and without house mouse. Site categories were assigned by lineage, so the model has limited leverage to distinguish anatomy from other lineage-associated host traits. The within-study fit reduces differences between contributing studies but covers only 12 studies and does not remove differences between hosts within those studies.
 
 ### Within-study association and respiratory markers
 
@@ -303,7 +310,7 @@ Higher *mcrA* abundance in fermenting hosts contributes to the lower respiratory
 
 ### Limitations
 
-P1 draws on two studies of ruminants. P2 is a capped, observational sample of public faecal metagenomes. Diet was grouped into broad classes and missing in 145 samples, and captivity was unknown in 265 samples. Most inventory studies sampled a single fermentation category. The initial screen admitted 20 mouse samples, including samples from a colitis model, and four libraries whose individual reads were shorter than the threshold. One analyst managed the automated screening and metadata curation. The no-mouse sensitivity analysis was performed after the primary analysis.
+P1 draws on two studies of ruminants. P2 is a capped, observational sample of public faecal metagenomes. Diet was grouped into broad classes and missing in 145 samples, and captivity was unknown in 265 samples. Most inventory studies sampled a single fermentation category. The initial screen admitted 20 mouse samples, including samples from a colitis model, and four libraries whose individual reads were shorter than the threshold. One analyst managed the automated screening and metadata curation. The no-mouse analysis and the multi-chain convergence check were performed after the primary analysis; single-chain sensitivity refits were not repeated with multiple chains.
 
 All abundance estimates depend on five million forward reads per run before quality control, the marker database, sequence-assignment thresholds and the bacterial *rpoB* denominator. P1 used head sampling, and the limited comparison with multi-offset sampling found a difference for *acsB* in one run. The planned phylogenetic placement of *acsB* could not be completed because the original reads were not retained. The post hoc best-hit attribution and specificity benchmark have limited taxonomic resolution and cannot establish error rates in mixed gut communities. Marker abundances describe DNA recovered from the sampled communities. Neither per-study risk of bias nor certainty of evidence was formally graded.
 
@@ -327,7 +334,7 @@ The paired ruminant samples consistently showed hindgut enrichment of *acsB* rel
 
 **Figure 2. Within-animal foregut-versus-hindgut contrast (P1).** (a) Pooled hindgut − foregut differences in ln units for the primary outcome (ALR_acet, the pseudocount-adjusted *acsB*:*mcrA* log ratio) and secondary outcomes; points are REML estimates with 95% Hartung–Knapp confidence intervals (black) and 95% prediction intervals (grey). (b) ALR_acet difference for each study × host-species stratum (mean and approximate 95% CI; *n* = animals); the grey band is the pooled 95% CI. Source: `p1_pooled.tsv`, `p1_stratum_effects.tsv`.
 
-**Figure 3. Faecal ALR_acet across vertebrates (P2).** (a) Species-mean ALR_acet by fermentation site; point area increases with the number of samples (maximum 10) and horizontal bars are medians. (b) Posterior differences between fermentation sites (mean and 95% HPD interval) from the phylogenetic mixed model with phylogeny, species and study random effects and diet, captivity, depth and read length as fixed effects. Source: `p2_species_means.tsv`, `p2_contrasts.tsv`.
+**Figure 3. Faecal ALR_acet across vertebrates (P2).** (a) Species-mean ALR_acet by fermentation site; point area increases with the number of samples (maximum 10) and horizontal bars are medians. (b) Posterior differences between fermentation sites (mean and 95% HPD interval, pooled over four chains) from the phylogenetic mixed model with phylogeny, species and study random effects and diet, captivity, depth and read length as fixed effects, for the 802-sample analysis set (filled) and the 782-sample set without house mouse (open). Panel (a) shows the 802-sample set. Source: `p2_species_means.tsv`, `convergence/n802/contrasts.tsv`, `convergence/n782/contrasts.tsv`.
 
 **Figure 4. Proportionality between *mcrA* and *acsB* within studies (P3).** Proportionality ρp with 95% intervals derived from the bootstrap variance on the Fisher z scale for each P2 study with ≥ 10 samples (grey) and each P1 study × chamber unit (blue); point size reflects sample size. The vertical line and grey band show the pooled estimate and its 95% CI. Negative ρp indicates negative association between the centred log-ratio coordinates. Source: `p3_units.tsv`, `p3_pooled.tsv`.
 

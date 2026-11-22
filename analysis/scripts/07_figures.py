@@ -84,13 +84,23 @@ def fig3():
     a.set_xticks(range(4), [f"{SITE_LAB[s]}\n({(sp.fermentation_site == s).sum()} spp.)" for s in order])
     a.axhline(0, color=MUTED, lw=0.8, zorder=0); a.grid(axis="y", color=GRID, lw=0.6); a.set_axisbelow(True)
     a.set_ylabel("Species mean ALR acet (adjusted log ratio)"); a.set_title("a  Faecal ALR acet by fermentation site", loc="left", fontsize=8.5)
-    c = con[con.outcome == "alr_acet"].iloc[::-1].reset_index(drop=True); y = np.arange(len(c))
-    b.hlines(y, c.l95, c.u95, color=INK, lw=1.6); b.plot(c.post_mean, y, "o", ms=5, color=INK, mec="white", mew=1)
-    b.set_yticks(y, [x.replace("avian_caecal", "avian caecal") for x in c.contrast]); vline0(b)
+    # b: four-chain pooled contrasts (05h_convergence.R) for the 802-sample set and the 782-sample set without house mouse;
+    #    falls back to the single-chain p2_contrasts.tsv if the convergence outputs are absent
+    sets = [("802 samples", R / "convergence/n802/contrasts.tsv", INK, INK), ("782 samples (no house mouse)", R / "convergence/n782/contrasts.tsv", MUTED, "white")]
+    sets = [x for x in sets if x[1].exists()] or [("802 samples (single chain)", R / "p2_contrasts.tsv", INK, INK)]
+    labels = None
+    for k, (lab, path, col, face) in enumerate(sets):
+        c = pd.read_csv(path, sep="\t"); c = c[c.outcome == "alr_acet"].iloc[::-1].reset_index(drop=True)
+        y = np.arange(len(c)) + (0.14 - 0.28 * k if len(sets) > 1 else 0); labels = labels or list(c.contrast)
+        b.hlines(y, c.l95, c.u95, color=col, lw=1.6); b.plot(c.post_mean, y, "o", ms=5, color=col, mfc=face, mec=col, mew=1.2, label=lab)
+    b.set_yticks(np.arange(len(labels)), [x.replace("avian_caecal", "avian caecal") for x in labels]); vline0(b)
+    if len(sets) > 1:
+        b.set_ylim(-1.3, len(labels) - 0.5)   # room for the legend below the last contrast
+        b.legend(frameon=False, fontsize=6.5, loc="lower right", handlelength=1)
     b.set_xlabel("Posterior difference in ALR acet (95% HPD)")
     b.set_title("b  Phylogenetic mixed model contrasts", loc="left", fontsize=8.5)
-    fig.text(0.01, -0.03, "a: one point per host species, with area increasing with sample count (max 10). Bars show medians. b: MCMCglmm with phylogeny, species and study "
-             "random effects; diet, captivity, depth, read length fixed. Source: p2_species_means.tsv, p2_contrasts.tsv",
+    fig.text(0.01, -0.09, "a: one point per host species, with area increasing with sample count (max 10). Bars show medians. b: MCMCglmm with phylogeny, species and study "
+             "random effects; diet, captivity, depth, read length fixed; estimates pooled over four chains. Source: p2_species_means.tsv, convergence/n802|n782/contrasts.tsv",
              fontsize=6.5, color=MUTED, wrap=True)
     fig.tight_layout(); save(fig, "fig3_p2_cross_host")
 
@@ -177,5 +187,8 @@ def figS2_prisma():
     save(fig, "figS2_prisma_flow")
 
 
+import sys
+only = set(sys.argv[1:])          # e.g. "07_figures.py fig3" redraws one figure; default all
 for f in (fig1_design, fig2, fig3, fig4, figS1, figS2_prisma):
+    if only and f.__name__ not in only: continue
     f()

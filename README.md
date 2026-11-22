@@ -5,7 +5,7 @@ Angsuman Das (Department of Zoology, Pachhunga University College, Mizoram Unive
 **Cite:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24330934.svg)](https://doi.org/10.5281/zenodo.24330934) (all versions; v2.2.0 = doi:10.5281/zenodo.24331026; v2.1.0 = doi:10.5281/zenodo.24330935); see `CITATION.cff`. **Licences:** code MIT (`LICENSE`); data, figures and
 text CC BY 4.0 (`LICENSE-DATA.md`); third-party files keep their own terms.
 
-**Manuscript draft v2.3 (2026-11-22).** Read the [Markdown manuscript](manuscript/manuscript.md) or [Word manuscript](manuscript/HydroSink_manuscript_v2.3.docx). This editorial revision uses the archived analysis outputs. The paired ruminant comparison is a positive control using previously analysed data. The cross-host results describe faecal marker abundances.
+**Manuscript draft v2.4 (2026-11-22).** Read the [Markdown manuscript](manuscript/manuscript.md) or [Word manuscript](manuscript/HydroSink_manuscript_v2.4.docx). This revision adds a post-hoc four-chain convergence check of the cross-host models and reports the 782-sample set without house mouse alongside the 802-sample analysis set. The paired ruminant comparison is a positive control using previously analysed data. The cross-host results describe faecal marker abundances.
 
 Rebuild the Word draft with `bash manuscript/build_docx.sh` (Pandoc 3 and Python 3). Set `PANDOC` to the executable path if needed.
 
@@ -31,6 +31,7 @@ HS_ENV=/path/to/hydrosink/bin bash run_all.sh
 ```
 Set `HS_ENV` to the installed analysis environment's `bin` directory. The script checks file integrity, rebuilds matrices and regenerates the main models, supported sensitivity analyses, tables and figures. The sequencing workflow and marker benchmark run separately.
 Verified 2026-11-18: about 1 h on 16 cores; all 103 result tables byte-identical to the committed ones (`analysis/results/rerun_comparison.tsv`).
+Since 2026-11-22 the script also runs the post-hoc four-chain P2 convergence check (`05h_convergence.R`; outputs in `analysis/results/convergence/`), adding about 1.5 h; set `HS_SKIP_CONVERGENCE=1` to skip it. Its outputs are not covered by the byte-identity check above.
 Independent model fits run in parallel. The dated-tree step uses committed TimeTree responses and requests missing ages from the API.
 
 ## Full pipeline (from public reads)

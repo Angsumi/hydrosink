@@ -24,6 +24,6 @@ identifiers:
     value: "10.5281/zenodo.24330935"
     description: "Version v2.1.0"
 license: MIT
-version: "2.2.0"
-date-released: "2026-11-18"
+version: "2.4.0"
+date-released: "2026-11-22"
 keywords: [metagenomics, hydrogen, methanogenesis, acetogenesis, gut microbiome, vertebrates, meta-analysis, phylogenetic comparative methods]

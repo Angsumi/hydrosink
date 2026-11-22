@@ -1,0 +1,2 @@
+label	n	species	studies	chains	nitt	burnin	thin	draws_per_chain	seeds	max_psrf	max_psrf_upper	min_ess	worst_psrf_param	worst_ess_param
+n782_detect_long	782	165	177	4	1300000	3e+05	1000	1000	20262122;20263122;20264122;20265122	1.00707846304973	1.00959938502113	365.947617377438	mcrA_present full phylo	mcrA_present full phylo

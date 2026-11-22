@@ -2,7 +2,10 @@
 # Build the Word version of the manuscript (figures embedded after the legends). Needs pandoc >= 3 (PANDOC=...).
 set -euo pipefail
 cd "$(dirname "$0")/.."
-PANDOC=${PANDOC:-pandoc}
+# pandoc: $PANDOC, else on PATH, else the project's 'docs' conda env
+DOCS_PANDOC=/home/angsuman/extra_spac/software_libs/conda_envs/docs/bin/pandoc
+PANDOC=${PANDOC:-$(command -v pandoc || echo "$DOCS_PANDOC")}
+[ -x "$PANDOC" ] || { echo "pandoc not found: set PANDOC=/path/to/pandoc"; exit 1; }
 V=$(grep -oE 'Draft v[0-9.]+' manuscript/manuscript.md | head -n 1 | cut -c8-)
 TITLE=$(sed -n '1s/^# //p' manuscript/manuscript.md)
 WORK=$(mktemp -d); trap 'rm -rf "$WORK"' EXIT
